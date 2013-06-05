@@ -5,6 +5,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TO8_DotNet", "TO8_DotNet\TO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxiService", "TaxiService\TaxiService.csproj", "{14B2A6E2-F8BE-4A39-BAE5-FCFF3614CFE3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C49DBC54-744B-459C-A997-6291BA61A772}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Dropbox\Themaopdracht 8\Client\Client.sln = ..\..\..\Dropbox\Themaopdracht 8\Client\Client.sln
+		..\..\..\Dropbox\Themaopdracht 8\Client\Client.v11.suo = ..\..\..\Dropbox\Themaopdracht 8\Client\Client.v11.suo
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
