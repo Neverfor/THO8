@@ -6,15 +6,17 @@ using System.ServiceModel;
 using System.Text;
 
 // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService" in both code and config file together.
-[ServiceContract]
+
+[ServiceContract(Namespace = "http://taxiservice.michaeldv.nl/webservices")]
 public interface ITaxiService
 {
+
 
 	[OperationContract]
     ServicesDataContracts.TaxiPriceInfo GetTaxiPriceInfo(ServicesDataContracts.TaxiPriceInfoRequest taxiPriceInfoRequest);
 
     [OperationContract]
-    ServicesDataContracts.TaxiBooking DoTaxiBooking(ServicesDataContracts.TaxiPriceInfo taxiPriceInfo);
+    ServicesDataContracts.TaxiBooking DoTaxiBooking(ServicesDataContracts.TaxiBookingRequest taxiBookingRequest);
 
     [OperationContract]
     ServicesDataContracts.UserBookings GetUserBookings(ServicesDataContracts.UserBookingsRequest userBookingsRequest);

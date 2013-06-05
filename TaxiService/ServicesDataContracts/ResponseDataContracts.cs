@@ -82,4 +82,12 @@ namespace ServicesDataContracts
         List<TaxiBooking> TaxiBookings { get; set; }
     }
 
+
+    [DataContract]
+    public class TaxiBooking : TaxiPriceInfo
+    {
+       
+    }
+
+
 }

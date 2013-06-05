@@ -51,10 +51,11 @@ namespace ServicesDataContracts
         }
     }
 
-    [DataContract(Name="TaxiBooking")]
-    public class TaxiBooking : TaxiPriceInfo
+    [DataContract(Name="TaxiBookingRequest")]
+    public class TaxiBookingRequest : TaxiPriceInfo
     {
-      
+        [DataMember(IsRequired = true)]
+        public string UserToken { get; set; }
     }
 
     [DataContract]

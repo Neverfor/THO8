@@ -6,6 +6,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxiService", "TaxiService\TaxiService.csproj", "{14B2A6E2-F8BE-4A39-BAE5-FCFF3614CFE3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "GUI\GUI.csproj", "{7F3C4885-40DF-46EE-98AB-260B9A38FEC7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{14B2A6E2-F8BE-4A39-BAE5-FCFF3614CFE3} = {14B2A6E2-F8BE-4A39-BAE5-FCFF3614CFE3}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
