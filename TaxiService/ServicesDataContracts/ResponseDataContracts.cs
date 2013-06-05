@@ -79,7 +79,7 @@ namespace ServicesDataContracts
     public class UserBookings
     {
         [DataMember]
-        List<TaxiBooking> TaxiBookings { get; set; }
+        public List<TaxiBooking> TaxiBookings { get; set; }
     }
 
 
