@@ -34,6 +34,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,15 +45,61 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\TaxiService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Properties\DataSources\ServicesDataContracts.TaxiPriceInfo.datasource" />
+    <None Include="Properties\DataSources\ServicesDataContracts.UserBookings.datasource" />
+    <None Include="Properties\DataSources\TaxiBooking.datasource" />
+    <None Include="Service References\TaxiService\TaxiService.wsdl" />
+    <None Include="Service References\TaxiService\TaxiService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TaxiService\TaxiService1.wsdl" />
+    <None Include="Service References\TaxiService\TaxiService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TaxiService\TaxiService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TaxiService\TaxiService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TaxiService\TaxiService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TaxiService\TaxiService.csproj">
       <Project>{14b2a6e2-f8be-4a39-bae5-fcff3614cfe3}</Project>
       <Name>TaxiService</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\TaxiService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TaxiService\TaxiService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TaxiService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TaxiService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TaxiService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

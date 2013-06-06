@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b2df365f-e90c-4770-afeb-d77d354f6c30" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:49267/TaxiService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TaxiService.wsdl" MetadataType="Wsdl" ID="e25cd13c-84fd-4b80-a26e-f0e7bc02bb74" SourceId="1" SourceUrl="http://localhost:49267/TaxiService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="TaxiService1.wsdl" MetadataType="Wsdl" ID="59826b44-7d39-4f1b-a162-4dc2490586b5" SourceId="1" SourceUrl="http://localhost:49267/TaxiService.svc?wsdl" />
+    <MetadataFile FileName="TaxiService.xsd" MetadataType="Schema" ID="a70d13d4-c8bf-4a1e-8a31-5f84cdc47230" SourceId="1" SourceUrl="http://localhost:49267/TaxiService.svc?xsd=xsd4" />
+    <MetadataFile FileName="TaxiService1.xsd" MetadataType="Schema" ID="b98afc27-3d8b-46bc-9358-6465bee69d3c" SourceId="1" SourceUrl="http://localhost:49267/TaxiService.svc?xsd=xsd3" />
+    <MetadataFile FileName="TaxiService.disco" MetadataType="Disco" ID="bece315d-8fd5-41eb-942e-ffe08a0085ef" SourceId="1" SourceUrl="http://localhost:49267/TaxiService.svc?disco" />
+    <MetadataFile FileName="TaxiService2.xsd" MetadataType="Schema" ID="37c3b6c2-c783-4a8b-80cb-1966bd2b9be4" SourceId="1" SourceUrl="http://localhost:49267/TaxiService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TaxiService3.xsd" MetadataType="Schema" ID="c9a80c86-869f-4ab5-92b0-cdc92065756c" SourceId="1" SourceUrl="http://localhost:49267/TaxiService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TaxiService4.xsd" MetadataType="Schema" ID="4a8154f1-bb78-4ebf-a728-c58024290feb" SourceId="1" SourceUrl="http://localhost:49267/TaxiService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
