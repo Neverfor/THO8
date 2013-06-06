@@ -4,6 +4,8 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using ServicesDataContracts;
+using System.Data.SqlClient;
+
 
 public class TaxiService : ITaxiService
 {
@@ -53,7 +55,29 @@ public class TaxiService : ITaxiService
         taxiBooking.AmountOfPassengers = taxiBookingRequest.AmountOfPassengers;
 
         //open connection to database
-        //insert new row to table "TaxiBooking"
+
+        try
+        {
+            SqlConnection thisConnection = new SqlConnection(@"Network Library=DBMSSOCN;Data Source=tcp:apv8jive40.database.windows.net,1433;database=team3-to8;User id=michael@apv8jive40;Password=Ditisonzedatabase!;");
+            thisConnection.Open();
+            //start by creating new command
+            SqlCommand thisCommand = thisConnection.CreateCommand();
+            //insert new row to table "TaxiBooking"
+            //for testing will be used random id generator, taxiID will always be 999.
+            Random random = new Random();
+            int Id = random.Next(1, 10000);
+            int TaxiId = 999;
+
+            thisCommand.CommandText = "INSERT INTO TaxiBooking values('" +Id+ "', '" +TaxiId+ "')";
+            thisCommand.ExecuteNonQuery();
+            thisConnection.Close();
+        }
+        catch (SqlException e)
+        {
+            Console.WriteLine(e.Message);
+        }
+
+        
         //link it to user
         //close connection
 
