@@ -4,35 +4,30 @@ using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
 
-namespace TaxiService
+public class ConnectionManager
 {
-    public class ConnectionManager
+    private static ConnectionManager instance;
+    private SqlConnection con;
+
+    private ConnectionManager()
     {
-        private static ConnectionManager instance;
-        private SqlConnection con;
+        con = new SqlConnection(@"Network Library=DBMSSOCN;" +
+                                "Data Source=apv8jive40.database.windows.net,1433;" +
+                                "database=team3-to8;" +
+                                "User id=michael@apv8jive40;" +
+                                "Password=Ditisonzedatabase!;"
+                                );
+    }
 
-        private ConnectionManager()
+    public static ConnectionManager Instance
+    {
+        get
         {
-            con = new SqlConnection(@"Network Library=DBMSSOCN;" +
-                                    "Data Source=apv8jive40.database.windows.net,1433;" +
-                                    "database=team3-to8;" +
-                                    "User id=michael@apv8jive40;" +
-                                    "Password=Ditisonzedatabase!;"
-                                    );
-        }
-
-        public static ConnectionManager Instance
-        {
-            get
+            if (instance == null)
             {
-                if (instance == null)
-                {
-                    instance = new ConnectionManager();
-                }
-                return instance;
+                instance = new ConnectionManager();
             }
+            return instance;
         }
-
-        public 
     }
 }

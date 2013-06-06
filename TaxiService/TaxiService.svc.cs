@@ -56,27 +56,27 @@ public class TaxiService : ITaxiService
 
         //open connection to database
 
-        try
-        {
-            SqlConnection thisConnection = new SqlConnection(@"Network Library=DBMSSOCN;Data Source=tcp:apv8jive40.database.windows.net,1433;database=team3-to8;User id=michael@apv8jive40;Password=Ditisonzedatabase!;");
-            thisConnection.Open();
-            //start by creating new command
-            SqlCommand thisCommand = thisConnection.CreateCommand();
-            //insert new row to table "TaxiBooking"
-            //for testing will be used random id generator, taxiID will always be 999.
-            Random random = new Random();
-            int Id = random.Next(1, 10000);
-            int TaxiId = 999;
+        //try
+        //{
+        //    SqlConnection thisConnection = new SqlConnection(@"Network Library=DBMSSOCN;Data Source=tcp:apv8jive40.database.windows.net,1433;database=team3-to8;User id=michael@apv8jive40;Password=Ditisonzedatabase!;");
+        //    thisConnection.Open();
+        //    //start by creating new command
+        //    SqlCommand thisCommand = thisConnection.CreateCommand();
+        //    //insert new row to table "TaxiBooking"
+        //    //for testing will be used random id generator, taxiID will always be 999.
+        //    Random random = new Random();
+        //    int Id = random.Next(1, 10000);
+        //    int TaxiId = 999;
 
-            //link it to user [Not yet implemented] 
-            thisCommand.CommandText = "INSERT INTO TaxiBooking values('" +Id+ "', '" +TaxiId+ "')";
-            thisCommand.ExecuteNonQuery();
-            thisConnection.Close();
-        }
-        catch (SqlException e)
-        {
+        //    //link it to user [Not yet implemented] 
+        //    thisCommand.CommandText = "INSERT INTO TaxiBooking values('" +Id+ "', '" +TaxiId+ "')";
+        //    thisCommand.ExecuteNonQuery();
+        //    thisConnection.Close();
+        //}
+        //catch (SqlException e)
+        //{
 
-        }
+        //}
 
         
 
