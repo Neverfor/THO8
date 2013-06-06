@@ -55,31 +55,24 @@ public class TaxiService : ITaxiService
         taxiBooking.AmountOfPassengers = taxiBookingRequest.AmountOfPassengers;
 
         //open connection to database
-
-        //try
-        //{
-        //    SqlConnection thisConnection = new SqlConnection(@"Network Library=DBMSSOCN;Data Source=tcp:apv8jive40.database.windows.net,1433;database=team3-to8;User id=michael@apv8jive40;Password=Ditisonzedatabase!;");
-        //    thisConnection.Open();
-        //    //start by creating new command
-        //    SqlCommand thisCommand = thisConnection.CreateCommand();
-        //    //insert new row to table "TaxiBooking"
-        //    //for testing will be used random id generator, taxiID will always be 999.
-        //    Random random = new Random();
-        //    int Id = random.Next(1, 10000);
-        //    int TaxiId = 999;
-
-        //    //link it to user [Not yet implemented] 
-        //    thisCommand.CommandText = "INSERT INTO TaxiBooking values('" +Id+ "', '" +TaxiId+ "')";
-        //    thisCommand.ExecuteNonQuery();
-        //    thisConnection.Close();
-        //}
-        //catch (SqlException e)
-        //{
-
-        //}
-
-        
-
+        SqlConnection con = ConnectionManager.Instance.CreateConnection();
+        try
+        {
+            con.Open();
+            SqlCommand sqlCmd = con.CreateCommand();
+            sqlCmd.CommandText = string.Format("INSERT INTO TaxiBooking (taxi, departureAddress, destinationAddress, dateTime, isDepartureTime, AmountOfPassengers) values ({0}, {1}, {2}, {3}, {4}, {5})",
+                1, //taxi id
+                1, 2, //address id
+                taxiBooking.DateTime,
+                taxiBooking.IsDepartureTime.ToString(),
+                taxiBooking.AmountOfPassengers);
+            sqlCmd.ExecuteNonQuery();
+        }
+        catch (SqlException e) { }
+        finally
+        {
+            con.Close();
+        }
 
         return taxiBooking;
     }
