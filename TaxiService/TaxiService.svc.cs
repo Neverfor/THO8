@@ -68,18 +68,18 @@ public class TaxiService : ITaxiService
             int Id = random.Next(1, 10000);
             int TaxiId = 999;
 
+            //link it to user [Not yet implemented] 
             thisCommand.CommandText = "INSERT INTO TaxiBooking values('" +Id+ "', '" +TaxiId+ "')";
             thisCommand.ExecuteNonQuery();
             thisConnection.Close();
         }
         catch (SqlException e)
         {
-            Console.WriteLine(e.Message);
+
         }
 
         
-        //link it to user
-        //close connection
+
 
         return taxiBooking;
     }
