@@ -22,7 +22,8 @@ namespace TestingConsole
                 //insert new row to table "TaxiBooking"
                 //for testing will be used random id generator, taxiID will always be 999.
                 Random random = new Random();
-                int Id = 1;
+                int rand = random.Next(1, 999999);
+                int Id = rand;
                 int TaxiId = 2;
 
                 //link it to user [Not yet implemented] 
