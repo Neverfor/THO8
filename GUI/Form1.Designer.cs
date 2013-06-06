@@ -260,7 +260,7 @@
             this.tfCountry2.Location = new System.Drawing.Point(131, 110);
             this.tfCountry2.Name = "tfCountry2";
             this.tfCountry2.Size = new System.Drawing.Size(139, 20);
-            this.tfCountry2.TabIndex = 11;
+            this.tfCountry2.TabIndex = 18;
             // 
             // lblDate
             // 

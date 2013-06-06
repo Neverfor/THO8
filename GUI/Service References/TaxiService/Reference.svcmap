@@ -22,6 +22,7 @@
     <MetadataSource Address="http://localhost:49267/TaxiService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
+    <MetadataFile FileName="TaxiService1.wsdl" MetadataType="Wsdl" ID="7cb48e49-b452-4f6c-bf33-f4db50a3e3a4" SourceId="1" SourceUrl="http://localhost:49267/TaxiService.svc?wsdl=wsdl0" />
     <MetadataFile FileName="TaxiService.wsdl" MetadataType="Wsdl" ID="7d2acc5c-24c7-4659-9921-d394e2a69b2d" SourceId="1" SourceUrl="http://localhost:49267/TaxiService.svc?wsdl" />
     <MetadataFile FileName="TaxiService.xsd" MetadataType="Schema" ID="bc1afe44-95ef-433a-8c82-dc215f374903" SourceId="1" SourceUrl="http://localhost:49267/TaxiService.svc?xsd=xsd4" />
     <MetadataFile FileName="TaxiService1.xsd" MetadataType="Schema" ID="0e8bf88c-8c64-40b2-b60d-3d7221a38614" SourceId="1" SourceUrl="http://localhost:49267/TaxiService.svc?xsd=xsd3" />

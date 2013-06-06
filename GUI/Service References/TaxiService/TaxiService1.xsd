@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:49267/TaxiService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ServicesDataContracts" />
   <xs:complexType name="Address">
     <xs:sequence>
       <xs:element name="City" nillable="true" type="xs:string" />
@@ -10,4 +11,18 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Address" nillable="true" type="tns:Address" />
+  <xs:complexType name="TaxiBooking">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/ServicesDataContracts" base="q1:TaxiPriceInfo">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TaxiBooking" nillable="true" type="tns:TaxiBooking" />
+  <xs:complexType name="ArrayOfTaxiBooking">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaxiBooking" nillable="true" type="tns:TaxiBooking" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTaxiBooking" nillable="true" type="tns:ArrayOfTaxiBooking" />
 </xs:schema>

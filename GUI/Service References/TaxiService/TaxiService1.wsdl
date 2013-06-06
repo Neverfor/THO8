@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://taxiservice.michaeldv.nl/webservices" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://taxiservice.michaeldv.nl/webservices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://taxiservice.michaeldv.nl/webservices/Imports">
+      <xsd:import schemaLocation="http://localhost:49267/TaxiService.svc?xsd=xsd0" namespace="http://taxiservice.michaeldv.nl/webservices" />
+      <xsd:import schemaLocation="http://localhost:49267/TaxiService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:49267/TaxiService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ServicesDataContracts" />
+      <xsd:import schemaLocation="http://localhost:49267/TaxiService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/" />
+      <xsd:import schemaLocation="http://localhost:49267/TaxiService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ITaxiService_GetTaxiPriceInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaxiPriceInfo" />
+  </wsdl:message>
+  <wsdl:message name="ITaxiService_GetTaxiPriceInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaxiPriceInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaxiService_DoTaxiBooking_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoTaxiBooking" />
+  </wsdl:message>
+  <wsdl:message name="ITaxiService_DoTaxiBooking_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoTaxiBookingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaxiService_GetUserBookings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserBookings" />
+  </wsdl:message>
+  <wsdl:message name="ITaxiService_GetUserBookings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserBookingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaxiService_CancelBooking_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelBooking" />
+  </wsdl:message>
+  <wsdl:message name="ITaxiService_CancelBooking_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelBookingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaxiService_GetCitys_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCitys" />
+  </wsdl:message>
+  <wsdl:message name="ITaxiService_GetCitys_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCitysResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaxiService_GetAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddress" />
+  </wsdl:message>
+  <wsdl:message name="ITaxiService_GetAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaxiService_GetSpecialLocations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpecialLocations" />
+  </wsdl:message>
+  <wsdl:message name="ITaxiService_GetSpecialLocations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpecialLocationsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ITaxiService">
+    <wsdl:operation name="GetTaxiPriceInfo">
+      <wsdl:input wsaw:Action="http://taxiservice.michaeldv.nl/webservices/ITaxiService/GetTaxiPriceInfo" message="tns:ITaxiService_GetTaxiPriceInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://taxiservice.michaeldv.nl/webservices/ITaxiService/GetTaxiPriceInfoResponse" message="tns:ITaxiService_GetTaxiPriceInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoTaxiBooking">
+      <wsdl:input wsaw:Action="http://taxiservice.michaeldv.nl/webservices/ITaxiService/DoTaxiBooking" message="tns:ITaxiService_DoTaxiBooking_InputMessage" />
+      <wsdl:output wsaw:Action="http://taxiservice.michaeldv.nl/webservices/ITaxiService/DoTaxiBookingResponse" message="tns:ITaxiService_DoTaxiBooking_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserBookings">
+      <wsdl:input wsaw:Action="http://taxiservice.michaeldv.nl/webservices/ITaxiService/GetUserBookings" message="tns:ITaxiService_GetUserBookings_InputMessage" />
+      <wsdl:output wsaw:Action="http://taxiservice.michaeldv.nl/webservices/ITaxiService/GetUserBookingsResponse" message="tns:ITaxiService_GetUserBookings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelBooking">
+      <wsdl:input wsaw:Action="http://taxiservice.michaeldv.nl/webservices/ITaxiService/CancelBooking" message="tns:ITaxiService_CancelBooking_InputMessage" />
+      <wsdl:output wsaw:Action="http://taxiservice.michaeldv.nl/webservices/ITaxiService/CancelBookingResponse" message="tns:ITaxiService_CancelBooking_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCitys">
+      <wsdl:input wsaw:Action="http://taxiservice.michaeldv.nl/webservices/ITaxiService/GetCitys" message="tns:ITaxiService_GetCitys_InputMessage" />
+      <wsdl:output wsaw:Action="http://taxiservice.michaeldv.nl/webservices/ITaxiService/GetCitysResponse" message="tns:ITaxiService_GetCitys_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAddress">
+      <wsdl:input wsaw:Action="http://taxiservice.michaeldv.nl/webservices/ITaxiService/GetAddress" message="tns:ITaxiService_GetAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://taxiservice.michaeldv.nl/webservices/ITaxiService/GetAddressResponse" message="tns:ITaxiService_GetAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecialLocations">
+      <wsdl:input wsaw:Action="http://taxiservice.michaeldv.nl/webservices/ITaxiService/GetSpecialLocations" message="tns:ITaxiService_GetSpecialLocations_InputMessage" />
+      <wsdl:output wsaw:Action="http://taxiservice.michaeldv.nl/webservices/ITaxiService/GetSpecialLocationsResponse" message="tns:ITaxiService_GetSpecialLocations_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

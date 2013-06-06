@@ -24,14 +24,16 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TaxiPriceInfo" nillable="true" type="tns:TaxiPriceInfo" />
-  <xs:complexType name="TaxiBooking">
+  <xs:complexType name="TaxiBookingRequest">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:TaxiPriceInfo">
-        <xs:sequence />
+        <xs:sequence>
+          <xs:element name="UserToken" nillable="true" type="xs:string" />
+        </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="TaxiBooking" nillable="true" type="tns:TaxiBooking" />
+  <xs:element name="TaxiBookingRequest" nillable="true" type="tns:TaxiBookingRequest" />
   <xs:complexType name="UserBookingsRequest">
     <xs:sequence>
       <xs:element minOccurs="0" name="BookingId" type="xs:int" />
@@ -41,16 +43,10 @@
   <xs:element name="UserBookingsRequest" nillable="true" type="tns:UserBookingsRequest" />
   <xs:complexType name="UserBookings">
     <xs:sequence>
-      <xs:element minOccurs="0" name="TaxiBookings" nillable="true" type="tns:ArrayOfTaxiBooking" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="TaxiBookings" nillable="true" type="q5:ArrayOfTaxiBooking" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="UserBookings" nillable="true" type="tns:UserBookings" />
-  <xs:complexType name="ArrayOfTaxiBooking">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaxiBooking" nillable="true" type="tns:TaxiBooking" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfTaxiBooking" nillable="true" type="tns:ArrayOfTaxiBooking" />
   <xs:complexType name="CancelBookingRequest">
     <xs:sequence>
       <xs:element name="BookingId" type="xs:int" />

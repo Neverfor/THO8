@@ -93,6 +93,7 @@
     <None Include="Service References\TaxiService\TaxiService.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\TaxiService\TaxiService1.wsdl" />
     <None Include="Service References\TaxiService\TaxiService1.xsd">
       <SubType>Designer</SubType>
     </None>
