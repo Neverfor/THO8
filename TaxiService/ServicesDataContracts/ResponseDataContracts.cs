@@ -75,19 +75,11 @@ namespace ServicesDataContracts
         }
     }
 
+
     [DataContract]
     public class UserBookings
     {
         [DataMember]
         public List<TaxiBooking> TaxiBookings { get; set; }
     }
-
-
-    [DataContract]
-    public class TaxiBooking : TaxiPriceInfo
-    {
-       
-    }
-
-
 }

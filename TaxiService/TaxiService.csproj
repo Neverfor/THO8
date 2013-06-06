@@ -71,6 +71,7 @@
     <Compile Include="ServicesDataContracts\RequestsDataContracts.cs" />
     <Compile Include="ServicesDataContracts\ResponseDataContracts.cs" />
     <Compile Include="Taxi.cs" />
+    <Compile Include="TaxiBooking.cs" />
     <Compile Include="TaxiService.svc.cs">
       <DependentUpon>TaxiService.svc</DependentUpon>
     </Compile>
