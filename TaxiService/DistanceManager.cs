@@ -6,7 +6,7 @@ using System.Net;
 using System.IO;
 using System.Xml.Linq;
 
-namespace TaxiService
+namespace WebService
 {
     public class DistanceManager
     {
