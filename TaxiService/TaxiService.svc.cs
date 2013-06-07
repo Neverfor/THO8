@@ -5,9 +5,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using ServicesDataContracts;
 using System.Data.SqlClient;
-
-namespace WebService
-{
+using TaxiService;
     public class TaxiService : ITaxiService
     {
         public TaxiPriceInfo GetTaxiPriceInfo(TaxiPriceInfoRequest taxiPriceInfoRequest)
@@ -125,5 +123,3 @@ namespace WebService
         }
     }
 
-
-}

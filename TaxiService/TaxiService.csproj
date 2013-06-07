@@ -80,6 +80,7 @@
     <Compile Include="TaxiService.svc.cs">
       <DependentUpon>TaxiService.svc</DependentUpon>
     </Compile>
+    <Compile Include="WebServiceContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -103,7 +104,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>52162</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:49267/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
