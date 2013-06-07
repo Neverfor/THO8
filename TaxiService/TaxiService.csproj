@@ -67,9 +67,12 @@
     <Compile Include="Domain\Address.cs" />
     <Compile Include="Domain\Taxi.cs" />
     <Compile Include="IWebService.cs" />
+    <Compile Include="Managers\ConnectionManager.cs" />
+    <Compile Include="Managers\DistanceManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceDataContracts\RequestDataContracts.cs" />
     <Compile Include="ServiceDataContracts\ResponseDataContracts.cs" />
+    <Compile Include="Domain\TaxiBooking.cs" />
     <Compile Include="WebService.svc.cs">
       <DependentUpon>WebService.svc</DependentUpon>
     </Compile>

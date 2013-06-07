@@ -4,6 +4,10 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using TaxiService.ServicesDataContracts;
+using TaxiService.Domain;
+using TaxiService.Managers;
+using System.Data.SqlClient;
 
 namespace TaxiService
 {
