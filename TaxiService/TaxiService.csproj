@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Address.cs" />
     <Compile Include="ConnectionManager.cs" />
+    <Compile Include="DistanceManager.cs" />
     <Compile Include="ITaxiService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServicesDataContracts\RequestsDataContracts.cs" />
