@@ -82,7 +82,7 @@ namespace ServicesDataContracts
     public class GetAddressRequest
     {
         [DataMember(IsRequired = true)]
-        public int LocationType { get; set; }
+        public string LocationType { get; set; }
 
         [DataMember(IsRequired = true)]
         public string LocationName { get; set; }

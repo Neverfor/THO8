@@ -118,7 +118,7 @@ public class TaxiService : ITaxiService
         throw new NotImplementedException();
     }
 
-    public string[] GetSpecialLocations(string locationType)
+    public string[] GetSpecialLocations(string LocationType)
     {
         throw new NotImplementedException();
     }
