@@ -97,7 +97,24 @@ namespace TaxiClient
                 }
 
                 //show message with response; ask to accept or to cancel
-                MessageBox.Show("success!!!!!!!!!!!");
+                string concerningTime = "Aankomst tijd";
+                if (response.IsDepartureTime) concerningTime = "Vertrek tijd";
+                DialogResult result = MessageBox.Show(
+                    String.Format("Er is een beschikbare taxi gevonden: \nTaxi Id. nummer: {0} \nTaxi type: {1} \nPrijs: {2}\nVan: {3}\nNaar: {4}\n{5}: {6}\nAantal passagiers: {7}",
+                        response.TaxiId,
+                        response.TaxiType,
+                        response.Price,
+                        response.DepartureAddress.ToString(),
+                        response.DestinationAddress.ToString(),
+                        concerningTime, response.DateTime,
+                        response.AmountOfPassengers),
+                    "Mogelijke taxi",
+                    MessageBoxButtons.YesNo
+                    );
+                if (result == DialogResult.Yes)
+                {
+                    //doTaxiBooking(..);
+                }
             }
             else
             {
