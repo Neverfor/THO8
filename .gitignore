@@ -10,6 +10,7 @@
 *.config
 *.cscfg
 *.azurePubxml
+Profiles/
 
 # Build results
 
