@@ -48,7 +48,7 @@ namespace TaxiService
 
         public ServicesDataContracts.TaxiBooking DoTaxiBooking(TaxiBookingRequest taxiBookingRequest)
         {
-            string userToken = taxiBookingRequest.UserToken;
+            //string userToken = taxiBookingRequest.UserToken;
             UserService.UserService us = new UserService.UserServiceClient();
             string userToken = us.Login("michael", "welkom123");
             //call user-service for verification
