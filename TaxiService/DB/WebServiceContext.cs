@@ -16,5 +16,9 @@ namespace TaxiService.DB
         }
         public DbSet<Taxi> Taxis { get; set; }
         public DbSet<TaxiBooking> Bookings { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<City> Cities { get; set; }
     }
+
+ 
 }
