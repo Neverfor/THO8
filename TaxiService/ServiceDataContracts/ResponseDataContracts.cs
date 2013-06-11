@@ -83,4 +83,14 @@ namespace TaxiService.ServicesDataContracts
         [DataMember]
         public List<TaxiBooking> TaxiBookings { get; set; }
     }
+
+    [DataContract]
+    public class TaxiBooking : TaxiPriceInfo
+    {
+        [DataMember]
+        public int Id { get; set; }
+
+        [DataMember]
+        public string UserToken { get; set; }
+    }
 }

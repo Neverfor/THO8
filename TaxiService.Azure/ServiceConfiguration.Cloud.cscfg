@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="TaxiService.Azure" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="3" osVersion="*" schemaVersion="2013-03.2.0">
+  <Role name="TaxiService">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=taxiwebservice;AccountKey=brPmOfB4PZl44fCQBv+dWrmOz+ggujf3oyVxSp8nmGiJ07eAz8uxXx0/8ifO0/09nLHIxpml7cbwtdGVgErKkg==" />
+    </ConfigurationSettings>
+  </Role>
+</ServiceConfiguration>
