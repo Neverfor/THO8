@@ -17,7 +17,7 @@ namespace TaxiService
         TaxiPriceInfo GetTaxiPriceInfo(TaxiPriceInfoRequest taxiPriceInfoRequest);
 
         [OperationContract]
-        TaxiBooking DoTaxiBooking(TaxiBookingRequest taxiBookingRequest);
+        ServicesDataContracts.TaxiBooking DoTaxiBooking(TaxiBookingRequest taxiBookingRequest);
 
         [OperationContract]
         UserBookings GetUserBookings(UserBookingsRequest userBookingsRequest);

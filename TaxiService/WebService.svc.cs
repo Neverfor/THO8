@@ -8,6 +8,7 @@ using TaxiService.ServicesDataContracts;
 using TaxiService.Domain;
 using TaxiService.Managers;
 using System.Data.SqlClient;
+using TaxiService.DB;
 
 namespace TaxiService
 {
@@ -17,40 +18,38 @@ namespace TaxiService
     {
         public TaxiPriceInfo GetTaxiPriceInfo(TaxiPriceInfoRequest taxiPriceInfoRequest)
         {
-            List<Taxi> taxis = new List<Taxi>();
-            Taxi taxi1 = new Taxi();
-            taxi1.Id = 1;
-            taxi1.PricePerKm = 5.00;
-            taxi1.Type = "Sedan";
-            taxis.Add(taxi1);
-
-            Taxi taxiMetLaagstePrijs = null;
-            foreach (Taxi taxi in taxis)
+            using (var db = new WebServiceContext())
             {
-                if (taxiMetLaagstePrijs == null || taxiMetLaagstePrijs.PricePerKm > taxi.PricePerKm)
-                    taxiMetLaagstePrijs = taxi;
+                List<Taxi> taxis = db.Taxis.ToList();
+                
+                Taxi taxiMetLaagstePrijs = null;
+                foreach (Taxi taxi in taxis)
+                {
+                    if (taxiMetLaagstePrijs == null || taxiMetLaagstePrijs.PricePerKm > taxi.PricePerKm)
+                        taxiMetLaagstePrijs = taxi;
+                }
+
+                TaxiPriceInfo priceInfo = new TaxiPriceInfo();
+                priceInfo.Price = taxiMetLaagstePrijs.PricePerKm * 10; //statische 10km
+                priceInfo.TaxiId = taxiMetLaagstePrijs.Id;
+                priceInfo.TaxiType = taxiMetLaagstePrijs.Type;
+                priceInfo.DepartureAddress = taxiPriceInfoRequest.DepartureAddress;
+                priceInfo.AmountOfPassengers = taxiPriceInfoRequest.AmountOfPassengers;
+                priceInfo.DateTime = taxiPriceInfoRequest.DateTime;
+                priceInfo.DestinationAddress = taxiPriceInfoRequest.DestinationAddress;
+                priceInfo.IsDepartureTime = taxiPriceInfoRequest.IsDepartureTime;
+
+                return priceInfo;
             }
-
-            TaxiPriceInfo priceInfo = new TaxiPriceInfo();
-            priceInfo.Price = taxiMetLaagstePrijs.PricePerKm * 10; //statische 10km
-            priceInfo.TaxiId = taxiMetLaagstePrijs.Id;
-            priceInfo.TaxiType = taxiMetLaagstePrijs.Type;
-            priceInfo.DepartureAddress = taxiPriceInfoRequest.DepartureAddress;
-            priceInfo.AmountOfPassengers = taxiPriceInfoRequest.AmountOfPassengers;
-            priceInfo.DateTime = taxiPriceInfoRequest.DateTime;
-            priceInfo.DestinationAddress = taxiPriceInfoRequest.DestinationAddress;
-            priceInfo.IsDepartureTime = taxiPriceInfoRequest.IsDepartureTime;
-
-            return priceInfo;
         }
 
 
-        public TaxiBooking DoTaxiBooking(TaxiBookingRequest taxiBookingRequest)
+        public ServicesDataContracts.TaxiBooking DoTaxiBooking(TaxiBookingRequest taxiBookingRequest)
         {
             string userToken = taxiBookingRequest.UserToken;
             //call user-service for verification
 
-            TaxiBooking taxiBooking = new TaxiBooking();
+            ServicesDataContracts.TaxiBooking taxiBooking = new ServicesDataContracts.TaxiBooking();
             taxiBooking.TaxiId = taxiBookingRequest.TaxiId;
             taxiBooking.TaxiType = taxiBookingRequest.TaxiType;
             taxiBooking.Price = taxiBookingRequest.Price;
@@ -91,10 +90,10 @@ namespace TaxiService
             bool bookingIsSpecified = (userBookingsRequest.BookingId == null);
 
             UserBookings ubs = new UserBookings();
-            ubs.TaxiBookings = new List<TaxiBooking>();
+            ubs.TaxiBookings = new List<ServicesDataContracts.TaxiBooking>();
             if (bookingIsSpecified)
             {
-                TaxiBooking tb = new TaxiBooking();
+                ServicesDataContracts.TaxiBooking tb = new ServicesDataContracts.TaxiBooking();
                 //select * from TaxiBooking where bookingId = userBookingsRequest.BookingId
                 //set tb with select data
                 ubs.TaxiBookings.Add(tb);
