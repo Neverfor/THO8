@@ -28,6 +28,11 @@ namespace TaxiService.Domain
         {
 
         }
+
+        public override string ToString() 
+        {
+            return Street + Number + City + ZipCode + City + Country;
+        }
     }
 
 }
