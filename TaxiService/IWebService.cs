@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using TaxiService.ServicesDataContracts;
-using TaxiService.Domain;
+using To8Libraries.Domain;
 
 namespace TaxiService
 {

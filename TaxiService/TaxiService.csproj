@@ -92,24 +92,19 @@
     <Content Include="Service References\UserService\TaxiService.UserService.User.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\UserService\UserService.disco" />
-    <Content Include="Service References\UserService\configuration91.svcinfo" />
-    <Content Include="Service References\UserService\configuration.svcinfo" />
-    <Content Include="Service References\UserService\Reference.svcmap">
+    <None Include="Service References\UserService\UserService.disco" />
+    <None Include="Service References\UserService\configuration91.svcinfo" />
+    <None Include="Service References\UserService\configuration.svcinfo" />
+    <None Include="Service References\UserService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <Content Include="Web.config" />
     <Content Include="WebService.svc" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DB\WebServiceContext.cs" />
-    <Compile Include="Domain\Address.cs" />
-    <Compile Include="Domain\City.cs" />
-    <Compile Include="Domain\Taxi.cs" />
-    <Compile Include="Domain\User.cs" />
     <Compile Include="IWebService.cs" />
-    <Compile Include="Managers\ConnectionManager.cs" />
     <Compile Include="Managers\DistanceManager.cs" />
     <Compile Include="Migrations\201306110846161_InitialCreate.cs" />
     <Compile Include="Migrations\201306110846161_InitialCreate.Designer.cs">
@@ -128,22 +123,21 @@
     </Compile>
     <Compile Include="ServiceDataContracts\RequestDataContracts.cs" />
     <Compile Include="ServiceDataContracts\ResponseDataContracts.cs" />
-    <Compile Include="Domain\TaxiBooking.cs" />
     <Compile Include="WebService.svc.cs">
       <DependentUpon>WebService.svc</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="Service References\UserService\UserService.wsdl" />
+    <None Include="Service References\UserService\UserService.wsdl" />
     <None Include="Service References\UserService\UserService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Service References\UserService\UserService1.wsdl" />
+    <None Include="Service References\UserService\UserService1.wsdl" />
     <None Include="Service References\UserService\UserService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Service References\UserService\UserService2.wsdl" />
+    <None Include="Service References\UserService\UserService2.wsdl" />
     <None Include="Service References\UserService\UserService2.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -173,6 +167,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\UserService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\To8Libraries\To8Libraries.csproj">
+      <Project>{fc6b4d74-817b-4535-9a92-f93984a334dd}</Project>
+      <Name>To8Libraries</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Runtime.Serialization;
 
-namespace TaxiService.Domain
+namespace To8Libraries.Domain
 {
     public class TaxiBooking
     {

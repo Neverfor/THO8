@@ -5,7 +5,7 @@ using System.Text;
 using System.Runtime.Serialization;
 
 
-namespace TaxiService.Domain
+namespace To8Libraries.Domain
 {
     [DataContract]
     public class Taxi

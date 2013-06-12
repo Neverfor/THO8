@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using TaxiService.ServicesDataContracts;
-using TaxiService.Domain;
+using To8Libraries.Domain;
 using TaxiService.Managers;
 using System.Data.SqlClient;
 using TaxiService.DB;
@@ -53,8 +53,7 @@ namespace TaxiService
         public ServicesDataContracts.TaxiBooking DoTaxiBooking(TaxiBookingRequest taxiBookingRequest)
         {
             //string userToken = taxiBookingRequest.UserToken;
-            UserService.UserService us = new UserService.UserServiceClient();
-            string userToken = us.Login("michael", "welkom123");
+            User user = To8Libraries.UserHelper.getUser(taxiBookingRequest.UserToken);
             //call user-service for verification
             using (var db = new WebServiceContext())
             {
@@ -63,7 +62,8 @@ namespace TaxiService
                            select t;
 
                 //Create TaxiBooking for persistancy
-                Domain.TaxiBooking taxiBooking = new Domain.TaxiBooking();
+                To8Libraries.Domain.TaxiBooking taxiBooking = new To8Libraries.Domain.TaxiBooking();
+                taxiBooking.User = user;
                 taxiBooking.Taxi = taxi.First();
                 taxiBooking.Price = taxiBookingRequest.Price;
                 taxiBooking.DepartureAddress = taxiBookingRequest.DepartureAddress;
@@ -91,7 +91,7 @@ namespace TaxiService
 
         public UserBookings GetUserBookings(UserBookingsRequest userBookingsRequest)
         {
-            string userToken = userBookingsRequest.UserToken;
+            User user = To8Libraries.UserHelper.getUser(userBookingsRequest.UserToken);
             //call user-service for verification
             bool bookingIsSpecified = (userBookingsRequest.BookingId == null);
 
@@ -100,17 +100,15 @@ namespace TaxiService
 
             using (var db = new WebServiceContext())
             {
-                User u = db.Users.First(); //Replace this with code from UserTokenService to get the user
-
                 if (bookingIsSpecified)
                 {
                     //Get bookings from user
                     var bookings = from b in db.Bookings 
-                                   where b.User.Equals(u) 
+                                   where b.User.Equals(user) 
                                    select b;
 
                     //Loop through found bookings and create the objects for the response
-                    foreach (Domain.TaxiBooking b in bookings)
+                    foreach (To8Libraries.Domain.TaxiBooking b in bookings)
                     {
                         ServicesDataContracts.TaxiBooking taxiBooking = new ServicesDataContracts.TaxiBooking();
                         taxiBooking.TaxiId = b.Taxi.Id;
@@ -137,8 +135,8 @@ namespace TaxiService
         {
             using (var db = new WebServiceContext())
             {
-                User u = db.Users.First(); //Replace this with code from UserTokenService to get the user
-                return (u.Bookings.RemoveAll(b => b.Id.Equals(cancelBookingRequest.BookingId)) > 0);
+                User user = To8Libraries.UserHelper.getUser(cancelBookingRequest.UserToken);
+                return (user.Bookings.RemoveAll(b => b.Id.Equals(cancelBookingRequest.BookingId)) > 0); //TODO: kijken of dit werkt
                 //TODO: remove booking from database table??
             }
         }
