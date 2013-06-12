@@ -14,8 +14,8 @@ namespace TaxiService.Domain
         public double Price { get; set; }
         public Address DepartureAddress  { get; set; }
         public Address DestinationAddress { get; set; }
-        public DateTime DateTime { get; set; }
-        public bool IsDepartureTimen { get; set; }
+        public DateTime DepartureTime { get; set; }
+        public DateTime ArrivalTime { get; set; }
         public int AmountOfPassengers { get; set; }
     }
 }

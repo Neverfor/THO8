@@ -42,9 +42,8 @@ namespace TaxiService
                 priceInfo.TaxiType = taxiMetLaagstePrijs.Type;
                 priceInfo.DepartureAddress = taxiPriceInfoRequest.DepartureAddress;
                 priceInfo.AmountOfPassengers = taxiPriceInfoRequest.AmountOfPassengers;
-                priceInfo.DateTime = taxiPriceInfoRequest.DateTime;
                 priceInfo.DestinationAddress = taxiPriceInfoRequest.DestinationAddress;
-                priceInfo.IsDepartureTime = taxiPriceInfoRequest.IsDepartureTime;
+                //set arrivalTime and dateTime
 
                 return priceInfo;
             }
@@ -69,7 +68,7 @@ namespace TaxiService
                 taxiBooking.Price = taxiBookingRequest.Price;
                 taxiBooking.DepartureAddress = taxiBookingRequest.DepartureAddress;
                 taxiBooking.DestinationAddress = taxiBookingRequest.DestinationAddress;
-                taxiBooking.DateTime = taxiBookingRequest.DateTime;
+                //set arrivalTime and dateTime
                 taxiBooking.AmountOfPassengers = taxiBookingRequest.AmountOfPassengers;
 
                 //Add booking and save
@@ -83,7 +82,7 @@ namespace TaxiService
                 rtn.Price = taxiBookingRequest.Price;
                 rtn.DepartureAddress = taxiBookingRequest.DepartureAddress;
                 rtn.DestinationAddress = taxiBookingRequest.DestinationAddress;
-                rtn.DateTime = taxiBookingRequest.DateTime;
+                //set arrivalTime and dateTime
                 rtn.AmountOfPassengers = taxiBookingRequest.AmountOfPassengers;
 
                 return rtn;
@@ -119,7 +118,7 @@ namespace TaxiService
                         taxiBooking.Price = b.Price;
                         taxiBooking.DepartureAddress = b.DepartureAddress;
                         taxiBooking.DestinationAddress = b.DestinationAddress;
-                        taxiBooking.DateTime = b.DateTime;
+                        //set arrivalTime and dateTime
                         taxiBooking.AmountOfPassengers = b.AmountOfPassengers;
                         ubs.TaxiBookings.Add(taxiBooking); //add to the response
                     }                  
