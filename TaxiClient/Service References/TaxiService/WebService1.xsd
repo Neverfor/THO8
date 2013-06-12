@@ -14,10 +14,10 @@
   <xs:complexType name="TaxiPriceInfo">
     <xs:sequence>
       <xs:element minOccurs="0" name="AmountOfPassengers" type="xs:int" />
-      <xs:element minOccurs="0" name="DateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ArrivalTime" type="xs:dateTime" />
       <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/TaxiService.Domain" minOccurs="0" name="DepartureAddress" nillable="true" type="q3:Address" />
+      <xs:element minOccurs="0" name="DepartureTime" type="xs:dateTime" />
       <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/TaxiService.Domain" minOccurs="0" name="DestinationAddress" nillable="true" type="q4:Address" />
-      <xs:element minOccurs="0" name="IsDepartureTime" type="xs:boolean" />
       <xs:element minOccurs="0" name="Price" type="xs:double" />
       <xs:element minOccurs="0" name="TaxiId" type="xs:int" />
       <xs:element minOccurs="0" name="TaxiType" nillable="true" type="xs:string" />

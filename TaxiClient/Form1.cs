@@ -97,20 +97,19 @@ namespace TaxiClient
                 }
 
                 //show message with response; ask to accept or to cancel
-                string concerningTime = "Aankomst tijd";
-                if (response.IsDepartureTime) concerningTime = "Vertrek tijd";
                 Address a1 = response.DepartureAddress;
                 Address a2 = response.DestinationAddress;
                 string sDepartureAddress = string.Format("{0} {1} {2} {3} {4}", a1.Street, a1.Number, a1.ZipCode, a1.City, a1.Country);
                 string sDestinationAddress = string.Format("{0} {1} {2} {3} {4}", a2.Street, a2.Number, a2.ZipCode, a2.City, a2.Country);
                 DialogResult result = MessageBox.Show(
-                    String.Format("Er is een beschikbare taxi gevonden: \n\nTaxi Id.:\t\t{0} \nTaxi type:\t\t{1} \nPrijs:\t\t{2} \nVan:\t\t{3} \nNaar:\t\t{4} \n{5}:\t{6} \nAantal passagiers:\t{7} \n\nWilt u deze taxi boeken?",
+                    String.Format("Er is een beschikbare taxi gevonden: \n\nTaxi Id.:\t\t{0} \nTaxi type:\t\t{1} \nPrijs:\t\t{2} \nVan:\t\t{3} \nNaar:\t\t{4} \nvanaf:\t\t{5} \nTot:\t\t{6} \nAantal passagiers:\t{7} \n\nWilt u deze taxi boeken?",
                         response.TaxiId,
                         response.TaxiType,
                         response.Price,
                         sDepartureAddress,
                         sDestinationAddress,
-                        concerningTime, response.DateTime,
+                        response.DepartureTime, 
+                        response.ArrivalTime,
                         response.AmountOfPassengers),
                     "Mogelijke taxi",
                     MessageBoxButtons.YesNo
