@@ -50,7 +50,7 @@ namespace TaxiService
         {
             string userToken = taxiBookingRequest.UserToken;
             UserService.UserService us = new UserService.UserServiceClient();
-            string userToken = us.Login("michael", "welkom123");
+            User u = us.GetUser(userToken);
             //call user-service for verification
             using (var db = new WebServiceContext())
             {
