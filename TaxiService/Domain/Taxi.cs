@@ -18,5 +18,8 @@ namespace TaxiService.Domain
 
         [DataMember]
         public string Type { get; set; }
+
+        [DataMember]
+        public int maxPassengers { get; set; }
     }
 }

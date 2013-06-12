@@ -10,70 +10,29 @@ namespace TaxiService.ServicesDataContracts
     [DataContract]
     public class TaxiPriceInfo
     {
-        int taxiId = 0;
-        string taxiType = "Car";
-        double price = 0.00;
-        Address departureAddress = null;
-        Address destinationAddress = null;
-        DateTime dateTime = DateTime.Now;
-        bool isDepartureTime = true;
-        int amountOfPassengers = 1;
+        [DataMember]
+        public int TaxiId { get; set; }
 
         [DataMember]
-        public Address DepartureAddress
-        {
-            get { return departureAddress; }
-            set { departureAddress = value; }
-        }
+        public string TaxiType { get; set; }
 
         [DataMember]
-        public Address DestinationAddress
-        {
-            get { return destinationAddress; }
-            set { destinationAddress = value; }
-        }
+        public double Price { get; set; }
 
         [DataMember]
-        public DateTime DateTime
-        {
-            get { return dateTime; }
-            set { dateTime = value; }
-        }
+        public Address DepartureAddress { get; set; }
 
         [DataMember]
-        public bool IsDepartureTime
-        {
-            get { return isDepartureTime; }
-            set { isDepartureTime = value; }
-        }
+        public Address DestinationAddress { get; set; }
 
         [DataMember]
-        public int AmountOfPassengers
-        {
-            get { return amountOfPassengers; }
-            set { amountOfPassengers = value; }
-        }
+        public DateTime DepartureTime { get; set; }
 
         [DataMember]
-        public int TaxiId
-        {
-            get { return taxiId; }
-            set { taxiId = value; }
-        }
+        public DateTime ArrivalTime { get; set; }
 
         [DataMember]
-        public string TaxiType
-        {
-            get { return taxiType; }
-            set { taxiType = value; }
-        }
-
-        [DataMember]
-        public double Price
-        {
-            get { return price; }
-            set { price = value; }
-        }
+        public int AmountOfPassengers { get; set; }
     }
 
 
