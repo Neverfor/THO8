@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -20,19 +20,24 @@ namespace TaxiService
         {
             using (var db = new WebServiceContext())
             {
-                
-                
                 List<Taxi> taxis = db.Taxis.ToList();
                 
                 Taxi taxiMetLaagstePrijs = null;
+
                 foreach (Taxi taxi in taxis)
                 {
                     if (taxiMetLaagstePrijs == null || taxiMetLaagstePrijs.PricePerKm > taxi.PricePerKm)
                         taxiMetLaagstePrijs = taxi;
                 }
 
+                Address a1 = taxiPriceInfoRequest.DepartureAddress;
+                Address a2 = taxiPriceInfoRequest.DestinationAddress;
+                string sDepartureAddress = string.Format("{0} {1} {2} {3} {4}", a1.Street, a1.Number, a1.ZipCode, a1.City, a1.Country);
+                string sDestinationAddress = string.Format("{0} {1} {2} {3} {4}", a2.Street, a2.Number, a2.ZipCode, a2.City, a2.Country);
+                double distanceInKm = DistanceManager.Instance.DistanceInKmBetween(sDepartureAddress, sDestinationAddress);
+
                 TaxiPriceInfo priceInfo = new TaxiPriceInfo();
-                priceInfo.Price = taxiMetLaagstePrijs.PricePerKm * 10; //statische 10km
+                priceInfo.Price = 50 + (taxiMetLaagstePrijs.PricePerKm * distanceInKm); 
                 priceInfo.TaxiId = taxiMetLaagstePrijs.Id;
                 priceInfo.TaxiType = taxiMetLaagstePrijs.Type;
                 priceInfo.DepartureAddress = taxiPriceInfoRequest.DepartureAddress;
@@ -48,9 +53,9 @@ namespace TaxiService
 
         public ServicesDataContracts.TaxiBooking DoTaxiBooking(TaxiBookingRequest taxiBookingRequest)
         {
-            string userToken = taxiBookingRequest.UserToken;
+            //string userToken = taxiBookingRequest.UserToken;
             UserService.UserService us = new UserService.UserServiceClient();
-            User u = us.GetUser(userToken);
+            string userToken = us.Login("michael", "welkom123");
             //call user-service for verification
             using (var db = new WebServiceContext())
             {
