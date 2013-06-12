@@ -239,16 +239,16 @@ namespace TaxiClient.TaxiService {
         private int AmountOfPassengersField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime DateTimeField;
+        private System.DateTime ArrivalTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private TaxiClient.TaxiService.Address DepartureAddressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TaxiClient.TaxiService.Address DestinationAddressField;
+        private System.DateTime DepartureTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool IsDepartureTimeField;
+        private TaxiClient.TaxiService.Address DestinationAddressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double PriceField;
@@ -283,14 +283,14 @@ namespace TaxiClient.TaxiService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime DateTime {
+        public System.DateTime ArrivalTime {
             get {
-                return this.DateTimeField;
+                return this.ArrivalTimeField;
             }
             set {
-                if ((this.DateTimeField.Equals(value) != true)) {
-                    this.DateTimeField = value;
-                    this.RaisePropertyChanged("DateTime");
+                if ((this.ArrivalTimeField.Equals(value) != true)) {
+                    this.ArrivalTimeField = value;
+                    this.RaisePropertyChanged("ArrivalTime");
                 }
             }
         }
@@ -309,6 +309,19 @@ namespace TaxiClient.TaxiService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime DepartureTime {
+            get {
+                return this.DepartureTimeField;
+            }
+            set {
+                if ((this.DepartureTimeField.Equals(value) != true)) {
+                    this.DepartureTimeField = value;
+                    this.RaisePropertyChanged("DepartureTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public TaxiClient.TaxiService.Address DestinationAddress {
             get {
                 return this.DestinationAddressField;
@@ -317,19 +330,6 @@ namespace TaxiClient.TaxiService {
                 if ((object.ReferenceEquals(this.DestinationAddressField, value) != true)) {
                     this.DestinationAddressField = value;
                     this.RaisePropertyChanged("DestinationAddress");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool IsDepartureTime {
-            get {
-                return this.IsDepartureTimeField;
-            }
-            set {
-                if ((this.IsDepartureTimeField.Equals(value) != true)) {
-                    this.IsDepartureTimeField = value;
-                    this.RaisePropertyChanged("IsDepartureTime");
                 }
             }
         }
