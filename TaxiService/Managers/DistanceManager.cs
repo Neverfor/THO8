@@ -47,5 +47,28 @@ namespace TaxiService.Managers
                 return 0;
             }
         }
+
+        public int DurationInMinBetween(string departurePoint, string destination)
+        {
+            using (WebClient wc = new WebClient())
+            {
+                string url = wc.DownloadString(@"http://maps.googleapis.com/maps/api/distancematrix/xml?origins=" +
+                                               departurePoint + "&destinations=" + destination +
+                                               "&mode=driving&sensor=false&language=en-EN&units=km"
+                                               );
+
+                XDocument xmldoc = XDocument.Parse(url);
+
+                Console.WriteLine(xmldoc.ToString());
+
+                if (xmldoc.Root.Element("row").Element("element").Element("status").Value == "OK")
+                {
+                    string sSeconds = xmldoc.Root.Element("row").Element("element").Element("duration").Element("value").Value;
+                    int minutes = (Convert.ToInt32(sSeconds) / 60);
+                    return minutes;
+                }
+                return 0;
+            }
+        }
     }
 }

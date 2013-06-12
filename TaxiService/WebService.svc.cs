@@ -43,7 +43,18 @@ namespace TaxiService
                 priceInfo.DepartureAddress = taxiPriceInfoRequest.DepartureAddress;
                 priceInfo.AmountOfPassengers = taxiPriceInfoRequest.AmountOfPassengers;
                 priceInfo.DestinationAddress = taxiPriceInfoRequest.DestinationAddress;
-                //set arrivalTime and dateTime
+                int duration = DistanceManager.Instance.DurationInMinBetween(sDepartureAddress, sDestinationAddress);
+                if (taxiPriceInfoRequest.IsDepartureTime)
+                {
+                    priceInfo.DepartureTime = taxiPriceInfoRequest.DateTime;
+                    priceInfo.ArrivalTime = priceInfo.DepartureTime.AddMinutes(duration);
+                }
+                else
+                {
+                    TimeSpan substraction = new TimeSpan(0, duration, 0);
+                    priceInfo.ArrivalTime = taxiPriceInfoRequest.DateTime;
+                    priceInfo.DepartureTime = priceInfo.ArrivalTime.Subtract(substraction);
+                }
 
                 return priceInfo;
             }
@@ -68,7 +79,8 @@ namespace TaxiService
                 taxiBooking.Price = taxiBookingRequest.Price;
                 taxiBooking.DepartureAddress = taxiBookingRequest.DepartureAddress;
                 taxiBooking.DestinationAddress = taxiBookingRequest.DestinationAddress;
-                //set arrivalTime and dateTime
+                taxiBooking.DepartureTime = taxiBookingRequest.DepartureTime;
+                taxiBooking.ArrivalTime = taxiBookingRequest.ArrivalTime;
                 taxiBooking.AmountOfPassengers = taxiBookingRequest.AmountOfPassengers;
 
                 //Add booking and save
@@ -82,7 +94,8 @@ namespace TaxiService
                 rtn.Price = taxiBookingRequest.Price;
                 rtn.DepartureAddress = taxiBookingRequest.DepartureAddress;
                 rtn.DestinationAddress = taxiBookingRequest.DestinationAddress;
-                //set arrivalTime and dateTime
+                rtn.DepartureTime = taxiBookingRequest.DepartureTime;
+                rtn.ArrivalTime = taxiBookingRequest.ArrivalTime;
                 rtn.AmountOfPassengers = taxiBookingRequest.AmountOfPassengers;
 
                 return rtn;
@@ -118,7 +131,8 @@ namespace TaxiService
                         taxiBooking.Price = b.Price;
                         taxiBooking.DepartureAddress = b.DepartureAddress;
                         taxiBooking.DestinationAddress = b.DestinationAddress;
-                        //set arrivalTime and dateTime
+                        taxiBooking.DepartureTime = b.DepartureTime;
+                        taxiBooking.ArrivalTime = b.ArrivalTime;
                         taxiBooking.AmountOfPassengers = b.AmountOfPassengers;
                         ubs.TaxiBookings.Add(taxiBooking); //add to the response
                     }                  
