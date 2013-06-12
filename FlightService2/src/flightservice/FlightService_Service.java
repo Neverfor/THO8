@@ -16,7 +16,7 @@ import flightserviceDTO.ArrayOfPassengerDTO;
 import flightserviceDTO.BookingDTO;
 
 //Service Implementation
-@WebService(endpointInterface = "???")
+@WebService(endpointInterface = "flightservice.FlightService")
 public class FlightService_Service implements FlightService{
 
 	@Override
