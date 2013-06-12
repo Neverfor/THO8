@@ -10,8 +10,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxiClient", "TaxiClient\Ta
 		{06218725-ECF3-46D9-8A67-B063851BDCA1} = {06218725-ECF3-46D9-8A67-B063851BDCA1}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientFlightPart", "..\..\Visual Studio 2012\Projects\ClientFlightPart\ClientFlightPart\ClientFlightPart.csproj", "{F3BBE24D-4C63-48AF-BC54-1D9BF2A5FB2C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "To8Libraries", "To8Libraries\To8Libraries.csproj", "{FC6B4D74-817B-4535-9A92-F93984A334DD}"
 EndProject
 Global
@@ -32,10 +30,6 @@ Global
 		{6CF2B362-5C9A-4963-B0CA-B7E4C58524C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CF2B362-5C9A-4963-B0CA-B7E4C58524C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CF2B362-5C9A-4963-B0CA-B7E4C58524C6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F3BBE24D-4C63-48AF-BC54-1D9BF2A5FB2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F3BBE24D-4C63-48AF-BC54-1D9BF2A5FB2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F3BBE24D-4C63-48AF-BC54-1D9BF2A5FB2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F3BBE24D-4C63-48AF-BC54-1D9BF2A5FB2C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FC6B4D74-817B-4535-9A92-F93984A334DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FC6B4D74-817B-4535-9A92-F93984A334DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC6B4D74-817B-4535-9A92-F93984A334DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
