@@ -56,23 +56,33 @@ namespace TaxiService
                     at = taxiPriceInfoRequest.DateTime;
                     dt = at.Subtract(new TimeSpan(0, duration, 0));
                 }
-                if (dt.Minute < (DateTime.Now.Minute + 5))
+                if (dt.Minute < (DateTime.Now.Minute + 10))
                     throw new System.ArgumentException("U dient 10 minuten vooruit te plannen");
 
-                
-                List<Taxi> taxis = db.Taxis.ToList();
-               
-                Taxi taxiMetLaagstePrijs = null;
+                // validate: available taxis
+                var unAvailableTaxis = from b in db.Bookings
+                                        where (b.DepartureTime < dt && b.ArrivalTime > dt) || 
+                                        (b.DepartureTime < at && b.ArrivalTime > at) || 
+                                        (b.DepartureTime > dt && b.ArrivalTime < at)
+                                        select b.Taxi;
+                List<Taxi> availableTaxis = db.Taxis.ToList();
+                foreach (Taxi t1 in availableTaxis)
+                    foreach (Taxi t2 in unAvailableTaxis)
+                        if (t1 == t2) availableTaxis.Remove(t1);
+                if (availableTaxis.Count == 0)
+                    throw new System.ArgumentException("Er zijn geen taxis beschikbaar voor de opgegeven tijd");
 
-                foreach (Taxi taxi in taxis)
-                    if (taxiMetLaagstePrijs == null || 
-                        taxiMetLaagstePrijs.PricePerKm > taxi.PricePerKm)
-                        taxiMetLaagstePrijs = taxi;
+
+                Taxi taxiMinPrice = null;
+                foreach (Taxi taxi in availableTaxis)
+                    if (taxiMinPrice == null ||
+                        taxiMinPrice.PricePerKm > taxi.PricePerKm)
+                        taxiMinPrice = taxi;
              
                 TaxiPriceInfo priceInfo = new TaxiPriceInfo();
-                priceInfo.Price = 10 + (taxiMetLaagstePrijs.PricePerKm * distance); 
-                priceInfo.TaxiId = taxiMetLaagstePrijs.Id;
-                priceInfo.TaxiType = taxiMetLaagstePrijs.Type;
+                priceInfo.Price = 10 + (taxiMinPrice.PricePerKm * distance);
+                priceInfo.TaxiId = taxiMinPrice.Id;
+                priceInfo.TaxiType = taxiMinPrice.Type;
                 priceInfo.DepartureAddress = a1;
                 priceInfo.DestinationAddress = a2;
                 priceInfo.ArrivalTime = at;
