@@ -20,41 +20,64 @@ namespace TaxiService
         {
             using (var db = new WebServiceContext())
             {
-                List<Taxi> taxis = db.Taxis.ToList();
-                
-                Taxi taxiMetLaagstePrijs = null;
-
-                foreach (Taxi taxi in taxis)
-                {
-                    if (taxiMetLaagstePrijs == null || taxiMetLaagstePrijs.PricePerKm > taxi.PricePerKm)
-                        taxiMetLaagstePrijs = taxi;
-                }
-
+                // validate: request parameter-values
                 Address a1 = taxiPriceInfoRequest.DepartureAddress;
                 Address a2 = taxiPriceInfoRequest.DestinationAddress;
-                string sDepartureAddress = string.Format("{0} {1} {2} {3} {4}", a1.Street, a1.Number, a1.ZipCode, a1.City, a1.Country);
-                string sDestinationAddress = string.Format("{0} {1} {2} {3} {4}", a2.Street, a2.Number, a2.ZipCode, a2.City, a2.Country);
-                double distanceInKm = DistanceManager.Instance.DistanceInKmBetween(sDepartureAddress, sDestinationAddress);
+                if (a1.Street  == "" || a1.Street  == null ||
+                    a1.Number  == 0  || a1.Number  == null ||
+                    a1.ZipCode == "" || a1.ZipCode == null ||
+                    a1.City    == "" || a1.City    == null ||
+                    a1.Country == "" || a1.Country == null ||
 
-                TaxiPriceInfo priceInfo = new TaxiPriceInfo();
-                priceInfo.Price = 50 + (taxiMetLaagstePrijs.PricePerKm * distanceInKm); 
-                priceInfo.TaxiId = taxiMetLaagstePrijs.Id;
-                priceInfo.TaxiType = taxiMetLaagstePrijs.Type;
-                priceInfo.DepartureAddress = taxiPriceInfoRequest.DepartureAddress;
-                priceInfo.AmountOfPassengers = taxiPriceInfoRequest.AmountOfPassengers;
-                priceInfo.DestinationAddress = taxiPriceInfoRequest.DestinationAddress;
+                    a2.Street  == "" || a2.Street  == null ||
+                    a2.Number  == 0  || a2.Number  == null ||
+                    a2.ZipCode == "" || a2.ZipCode == null ||
+                    a2.City    == "" || a2.City    == null ||
+                    a2.Country == "" || a2.Country == null )
+                    throw new System.ArgumentException("Sommige gegevens zijn niet (correct) ingevoerd");
+
+                // validate: existence of addresses
+                string sDepartureAddress = string.Format("{0} {1} {2} {3} {4}", a1.Street, a1.Number, a1.ZipCode, a1.City, a1.Country);
+                string sDestinationAddress = string.Format("{0} {1} {2} {3} {4}", a1.Street, a1.Number, a1.ZipCode, a1.City, a1.Country);
+                double distance = DistanceManager.Instance.DistanceInKmBetween(sDepartureAddress, sDestinationAddress);
+                if (distance == 0) 
+                    throw new System.ArgumentException("Incorrect(e) adres(sen)");
+
+                // validate: departureTime hasn't begun yet
                 int duration = DistanceManager.Instance.DurationInMinBetween(sDepartureAddress, sDestinationAddress);
+                DateTime dt, at;
                 if (taxiPriceInfoRequest.IsDepartureTime)
                 {
-                    priceInfo.DepartureTime = taxiPriceInfoRequest.DateTime;
-                    priceInfo.ArrivalTime = priceInfo.DepartureTime.AddMinutes(duration);
+                    dt = taxiPriceInfoRequest.DateTime;
+                    at = dt.AddMinutes(duration);
                 }
                 else
                 {
-                    TimeSpan substraction = new TimeSpan(0, duration, 0);
-                    priceInfo.ArrivalTime = taxiPriceInfoRequest.DateTime;
-                    priceInfo.DepartureTime = priceInfo.ArrivalTime.Subtract(substraction);
+                    at = taxiPriceInfoRequest.DateTime;
+                    dt = at.Subtract(new TimeSpan(0, duration, 0));
                 }
+                if (dt.Minute < (DateTime.Now.Minute + 5))
+                    throw new System.ArgumentException("U dient 10 minuten vooruit te plannen");
+
+                
+                List<Taxi> taxis = db.Taxis.ToList();
+               
+                Taxi taxiMetLaagstePrijs = null;
+
+                foreach (Taxi taxi in taxis)
+                    if (taxiMetLaagstePrijs == null || 
+                        taxiMetLaagstePrijs.PricePerKm > taxi.PricePerKm)
+                        taxiMetLaagstePrijs = taxi;
+             
+                TaxiPriceInfo priceInfo = new TaxiPriceInfo();
+                priceInfo.Price = 10 + (taxiMetLaagstePrijs.PricePerKm * distance); 
+                priceInfo.TaxiId = taxiMetLaagstePrijs.Id;
+                priceInfo.TaxiType = taxiMetLaagstePrijs.Type;
+                priceInfo.DepartureAddress = a1;
+                priceInfo.DestinationAddress = a2;
+                priceInfo.ArrivalTime = at;
+                priceInfo.DepartureTime = dt;
+                priceInfo.AmountOfPassengers = taxiPriceInfoRequest.AmountOfPassengers;
 
                 return priceInfo;
             }
