@@ -33,7 +33,12 @@ namespace TaxiService
                     a2.Number  == 0  || a2.Number  == null ||
                     a2.ZipCode == "" || a2.ZipCode == null ||
                     a2.City    == "" || a2.City    == null ||
-                    a2.Country == "" || a2.Country == null )
+                    a2.Country == "" || a2.Country == null ||
+                    
+                    taxiPriceInfoRequest.DateTime == null        ||
+                    taxiPriceInfoRequest.IsDepartureTime == null ||
+                    taxiPriceInfoRequest.AmountOfPassengers == 0 ||
+                    taxiPriceInfoRequest.AmountOfPassengers == null)
                     throw new System.ArgumentException("Sommige gegevens zijn niet (correct) ingevoerd");
 
                 // validate: existence of addresses

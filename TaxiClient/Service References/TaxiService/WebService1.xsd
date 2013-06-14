@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TaxiService.ServicesDataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TaxiService.ServicesDataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:52297/WebService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/TaxiService.Domain" />
+  <xs:import schemaLocation="http://localhost:52297/WebService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/To8Libraries.Domain" />
   <xs:complexType name="TaxiPriceInfoRequest">
     <xs:sequence>
       <xs:element name="AmountOfPassengers" type="xs:int" />
       <xs:element name="DateTime" type="xs:dateTime" />
-      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/TaxiService.Domain" name="DepartureAddress" nillable="true" type="q1:Address" />
-      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/TaxiService.Domain" name="DestinationAddress" nillable="true" type="q2:Address" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/To8Libraries.Domain" name="DepartureAddress" nillable="true" type="q1:Address" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/To8Libraries.Domain" name="DestinationAddress" nillable="true" type="q2:Address" />
       <xs:element name="IsDepartureTime" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
@@ -15,9 +15,9 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="AmountOfPassengers" type="xs:int" />
       <xs:element minOccurs="0" name="ArrivalTime" type="xs:dateTime" />
-      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/TaxiService.Domain" minOccurs="0" name="DepartureAddress" nillable="true" type="q3:Address" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/To8Libraries.Domain" minOccurs="0" name="DepartureAddress" nillable="true" type="q3:Address" />
       <xs:element minOccurs="0" name="DepartureTime" type="xs:dateTime" />
-      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/TaxiService.Domain" minOccurs="0" name="DestinationAddress" nillable="true" type="q4:Address" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/To8Libraries.Domain" minOccurs="0" name="DestinationAddress" nillable="true" type="q4:Address" />
       <xs:element minOccurs="0" name="Price" type="xs:double" />
       <xs:element minOccurs="0" name="TaxiId" type="xs:int" />
       <xs:element minOccurs="0" name="TaxiType" nillable="true" type="xs:string" />

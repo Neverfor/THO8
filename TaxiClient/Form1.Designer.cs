@@ -132,13 +132,13 @@
             this.rbArrival.Name = "rbArrival";
             this.rbArrival.Size = new System.Drawing.Size(71, 17);
             this.rbArrival.TabIndex = 18;
-            this.rbArrival.TabStop = true;
             this.rbArrival.Text = "aankomst";
             this.rbArrival.UseVisualStyleBackColor = true;
             // 
             // rbDeparture
             // 
             this.rbDeparture.AutoSize = true;
+            this.rbDeparture.Checked = true;
             this.rbDeparture.Location = new System.Drawing.Point(106, 332);
             this.rbDeparture.Name = "rbDeparture";
             this.rbDeparture.Size = new System.Drawing.Size(58, 17);

@@ -5,7 +5,7 @@
       <xsd:import schemaLocation="http://localhost:52297/WebService.svc?xsd=xsd0" namespace="http://taxiservice.michaeldv.nl/webservices" />
       <xsd:import schemaLocation="http://localhost:52297/WebService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:52297/WebService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TaxiService.ServicesDataContracts" />
-      <xsd:import schemaLocation="http://localhost:52297/WebService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/TaxiService.Domain" />
+      <xsd:import schemaLocation="http://localhost:52297/WebService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/To8Libraries.Domain" />
       <xsd:import schemaLocation="http://localhost:52297/WebService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
