@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TaxiClient
 {
-    public partial class Main : Form
+    public partial class MainForm : Form
     {
-        public Main()
+        public MainForm()
         {
             InitializeComponent();
         }

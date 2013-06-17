@@ -115,14 +115,14 @@ namespace TaxiClient
 
         private void hotelBookingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             HotelForm hm = new HotelForm();
             hm.Show();
         }
 
         private void taxiBookingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             TaxiForm tx = new TaxiForm();
             tx.Show();
         }
