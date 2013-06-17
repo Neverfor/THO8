@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TaxiClient.TaxiService;
+using System.ServiceModel;
 
 namespace TaxiClient
 {
@@ -23,9 +24,9 @@ namespace TaxiClient
             TaxiPriceInfoRequest request;
             TaxiPriceInfo response;
 
-            try
+            using (WebServiceClient client = new WebServiceClient())
             {
-                using (WebServiceClient client = new WebServiceClient())
+                try
                 {
                     Address departureAddress = new Address();
                     departureAddress.Street = tbDepStreet.Text;
@@ -82,14 +83,18 @@ namespace TaxiClient
                         //doTaxiBooking(..);
                     }
                 }
-            }
-            catch (FormatException fe)
-            {
-                MessageBox.Show("U dient numerieke waarden in te voeren bij sommige velden");
-            }
-            catch (System.ArgumentException ae)
-            {
-                MessageBox.Show(ae.Message);
+                catch (FormatException fe)
+                {
+                    MessageBox.Show("U dient in sommige velden een numerieke waarde in te voeren");
+                }
+                catch (FaultException fe)
+                {
+                    MessageBox.Show(fe.Message);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }

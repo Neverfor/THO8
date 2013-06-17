@@ -24,29 +24,27 @@ namespace TaxiService
                 Address a1 = taxiPriceInfoRequest.DepartureAddress;
                 Address a2 = taxiPriceInfoRequest.DestinationAddress;
                 if (a1.Street  == "" || a1.Street  == null ||
-                    a1.Number  == 0  || a1.Number  == null ||
+                    a1.Number  == 0  ||
                     a1.ZipCode == "" || a1.ZipCode == null ||
                     a1.City    == "" || a1.City    == null ||
                     a1.Country == "" || a1.Country == null ||
 
                     a2.Street  == "" || a2.Street  == null ||
-                    a2.Number  == 0  || a2.Number  == null ||
+                    a2.Number  == 0  ||
                     a2.ZipCode == "" || a2.ZipCode == null ||
                     a2.City    == "" || a2.City    == null ||
                     a2.Country == "" || a2.Country == null ||
                     
-                    taxiPriceInfoRequest.DateTime == null        ||
-                    taxiPriceInfoRequest.IsDepartureTime == null ||
-                    taxiPriceInfoRequest.AmountOfPassengers == 0 ||
-                    taxiPriceInfoRequest.AmountOfPassengers == null)
-                    throw new System.ArgumentException("Sommige gegevens zijn niet (correct) ingevoerd");
+                    taxiPriceInfoRequest.DateTime == null  ||
+                    taxiPriceInfoRequest.AmountOfPassengers == 0)
+                    throw new FaultException("Sommige gegevens zijn niet (correct) ingevoerd");
 
                 // validate: existence of addresses
                 string sDepartureAddress = string.Format("{0} {1} {2} {3} {4}", a1.Street, a1.Number, a1.ZipCode, a1.City, a1.Country);
                 string sDestinationAddress = string.Format("{0} {1} {2} {3} {4}", a1.Street, a1.Number, a1.ZipCode, a1.City, a1.Country);
                 double distance = DistanceManager.Instance.DistanceInKmBetween(sDepartureAddress, sDestinationAddress);
-                if (distance == 0) 
-                    throw new System.ArgumentException("Incorrect(e) adres(sen)");
+                if (distance == 0)
+                    throw new FaultException("Incorrect(e) adres(sen)");
 
                 // validate: departureTime hasn't begun yet
                 int duration = DistanceManager.Instance.DurationInMinBetween(sDepartureAddress, sDestinationAddress);
@@ -62,7 +60,7 @@ namespace TaxiService
                     dt = at.Subtract(new TimeSpan(0, duration, 0));
                 }
                 if (dt.Minute < (DateTime.Now.Minute + 10))
-                    throw new System.ArgumentException("U dient 10 minuten vooruit te plannen");
+                    throw new FaultException("U dient 10 minuten vooruit te plannen");
 
                 // validate: available taxis
                 var unAvailableTaxis = from b in db.Bookings
@@ -75,7 +73,7 @@ namespace TaxiService
                     foreach (Taxi t2 in unAvailableTaxis)
                         if (t1 == t2) availableTaxis.Remove(t1);
                 if (availableTaxis.Count == 0)
-                    throw new System.ArgumentException("Er zijn geen taxis beschikbaar voor de opgegeven tijd");
+                    throw new FaultException("Er zijn geen taxis beschikbaar voor de opgegeven tijd");
 
 
                 Taxi taxiMinPrice = null;
