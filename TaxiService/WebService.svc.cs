@@ -100,7 +100,7 @@ namespace TaxiService
         public ServicesDataContracts.TaxiBooking DoTaxiBooking(TaxiBookingRequest taxiBookingRequest)
         {
             //string userToken = taxiBookingRequest.UserToken;
-            User user = To8Libraries.UserHelper.getUser(taxiBookingRequest.UserToken);
+            User user = To8Libraries.UserHelper.GetUser(taxiBookingRequest.UserToken);
             //call user-service for verification
             using (var db = new WebServiceContext())
             {
@@ -140,7 +140,7 @@ namespace TaxiService
 
         public UserBookings GetUserBookings(UserBookingsRequest userBookingsRequest)
         {
-            User user = To8Libraries.UserHelper.getUser(userBookingsRequest.UserToken);
+            User user = To8Libraries.UserHelper.GetUser(userBookingsRequest.UserToken);
             //call user-service for verification
             bool bookingIsSpecified = (userBookingsRequest.BookingId == null);
 
@@ -184,7 +184,7 @@ namespace TaxiService
         {
             using (var db = new WebServiceContext())
             {
-                User user = To8Libraries.UserHelper.getUser(cancelBookingRequest.UserToken);
+                User user = To8Libraries.UserHelper.GetUser(cancelBookingRequest.UserToken);
                 return (user.Bookings.RemoveAll(b => b.Id.Equals(cancelBookingRequest.BookingId)) > 0); //TODO: kijken of dit werkt
                 //TODO: remove booking from database table??
             }

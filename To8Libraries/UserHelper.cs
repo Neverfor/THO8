@@ -13,11 +13,11 @@ namespace To8Libraries
         * Gets user based on userToken
         * @return: User object
         */
-        public static User getUser(string userToken)
+        public static User GetUser(string userToken)
         {
             Team2.UserService us = new Team2.UserServiceClient();
             var userResponse = us.GetUser(userToken); //get user response object
-            
+
             User rtnUser = new User();
             rtnUser.Id = userResponse.UserId;
             rtnUser.FirstName = userResponse.Firstname;
@@ -29,17 +29,14 @@ namespace To8Libraries
             return rtnUser;
         }
 
-
         /*
          * Logs in the user with username and password
          * @return: string userToken
          */
-        public static string loginUser(string userName, string password)
+        public static string LoginUser(string userName, string password)
         {
             Team2.UserService us = new Team2.UserServiceClient();
             return us.Login(userName, password);
         }
-
-        
     }
 }
