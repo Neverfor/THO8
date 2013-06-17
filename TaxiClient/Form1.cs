@@ -21,7 +21,7 @@ namespace TaxiClient
 
         private void btnFindTaxi_Click(object sender, EventArgs e)
         {
-            TaxiPriceInfoRequest request;
+            TaxiPriceInfoRequest tpirequest;
             TaxiPriceInfo response;
 
             using (WebServiceClient client = new WebServiceClient())
@@ -50,16 +50,16 @@ namespace TaxiClient
                             dtpTime.Value.Minute,
                             0);
 
-                    request = new TaxiPriceInfoRequest();
-                    request.DepartureAddress = departureAddress;
-                    request.DestinationAddress = destinationAddress;
-                    request.DateTime = dateTime;
-                    if (rbDeparture.Checked) request.IsDepartureTime = true;
-                    else request.IsDepartureTime = false;
-                    request.AmountOfPassengers = Convert.ToInt32(tbPassengers.Text);
+                    tpirequest = new TaxiPriceInfoRequest();
+                    tpirequest.DepartureAddress = departureAddress;
+                    tpirequest.DestinationAddress = destinationAddress;
+                    tpirequest.DateTime = dateTime;
+                    if (rbDeparture.Checked) tpirequest.IsDepartureTime = true;
+                    else tpirequest.IsDepartureTime = false;
+                    tpirequest.AmountOfPassengers = Convert.ToInt32(tbPassengers.Text);
 
 
-                    response = client.GetTaxiPriceInfo(request);
+                    response = client.GetTaxiPriceInfo(tpirequest);
 
                     Address a1 = response.DepartureAddress;
                     Address a2 = response.DestinationAddress;
@@ -81,7 +81,16 @@ namespace TaxiClient
                         );
                     if (result == DialogResult.Yes)
                     {
-                        //doTaxiBooking(..);
+                        TaxiBookingRequest tbrequest = new TaxiBookingRequest();
+                        tbrequest.DepartureAddress = response.DepartureAddress;
+                        tbrequest.DestinationAddress = response.DestinationAddress;
+                        tbrequest.DepartureTime = response.DepartureTime;
+                        tbrequest.ArrivalTime = response.ArrivalTime;
+                        tbrequest.TaxiId = response.TaxiId;
+                        //tbrequest.TaxiType = response.TaxiType;       //not really necessary
+                        tbrequest.Price = response.Price;
+                        tbrequest.AmountOfPassengers = response.AmountOfPassengers;
+                        client.DoTaxiBooking(tbrequest);
                     }
                 }
                 catch (FormatException fe)
