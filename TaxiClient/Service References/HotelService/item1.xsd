@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://hotelservice.com" elementFormDefault="qualified" targetNamespace="http://hotelservice.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://82.171.241.182:49772/Design_Time_Addresses/HotelService/HotelBookingInterface/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/HotelService" />
+  <xs:element name="getHotels">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="location" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getHotelsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/HotelService" minOccurs="0" name="getHotelsResult" nillable="true" type="q1:ArrayOfHotel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRoomTypesFromHotel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hotelId" type="xs:short" />
+        <xs:element minOccurs="0" name="arrivalDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="departureDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="totalPersons" type="xs:short" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRoomTypesFromHotelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/HotelService" minOccurs="0" name="getRoomTypesFromHotelResult" nillable="true" type="q2:ArrayOfRoomType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="bookRoom">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hotelId" type="xs:short" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/HotelService" minOccurs="0" name="bookingRows" nillable="true" type="q3:ArrayOfBookingRow" />
+        <xs:element minOccurs="0" name="arrivalDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="departureDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="totalPersons" type="xs:short" />
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="bookRoomResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bookRoomResult" type="xs:short" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getBooking">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bookingId" type="xs:short" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getBookingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/HotelService" minOccurs="0" name="getBookingResult" nillable="true" type="q4:Booking" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBookingsFromUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBookingsFromUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/HotelService" minOccurs="0" name="GetBookingsFromUserResult" nillable="true" type="q5:ArrayOfBooking" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelBooking">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bookingId" type="xs:short" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelBookingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CancelBookingResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

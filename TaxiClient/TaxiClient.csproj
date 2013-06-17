@@ -69,8 +69,19 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="HotelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HotelForm.Designer.cs">
+      <DependentUpon>HotelForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\HotelService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\TaxiService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -82,6 +93,9 @@
     <EmbeddedResource Include="FlightForm2.resx">
       <DependentUpon>FlightForm2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HotelForm.resx">
+      <DependentUpon>HotelForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -91,6 +105,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -101,6 +116,29 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Service References\HotelService\HotelBookingService.wsdl" />
+    <None Include="Service References\HotelService\item.wsdl" />
+    <None Include="Service References\HotelService\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HotelService\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HotelService\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HotelService\item3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HotelService\TaxiClient.HotelService.Booking.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HotelService\TaxiClient.HotelService.Hotel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HotelService\TaxiClient.HotelService.RoomType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\TaxiService\TaxiClient.TaxiService.TaxiBooking.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -135,6 +173,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\HotelService\" />
     <WCFMetadataStorage Include="Service References\TaxiService\" />
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +187,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\TaxiService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HotelService\item.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HotelService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HotelService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HotelService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

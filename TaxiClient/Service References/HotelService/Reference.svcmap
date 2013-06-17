@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="85f01263-48ac-4c13-a4b5-4287f4d41aa7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://82.171.241.182:49772/Design_Time_Addresses/HotelService/HotelBookingInterface/?" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item.wsdl" MetadataType="Wsdl" ID="7d75e993-3d16-4da4-893c-252f0f19225a" SourceId="1" SourceUrl="http://82.171.241.182:49772/Design_Time_Addresses/HotelService/HotelBookingInterface/?wsdl=wsdl0" />
+    <MetadataFile FileName="HotelBookingService.wsdl" MetadataType="Wsdl" ID="696a65f6-6ef1-4309-806b-cfc7ce806289" SourceId="1" SourceUrl="http://82.171.241.182:49772/Design_Time_Addresses/HotelService/HotelBookingInterface/?wsdl" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="42ef520e-0297-4803-a653-5edf073ffac3" SourceId="1" SourceUrl="http://82.171.241.182:49772/Design_Time_Addresses/HotelService/HotelBookingInterface/?disco" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="e78caf20-4974-40d6-9522-df8ed2e1289c" SourceId="1" SourceUrl="http://82.171.241.182:49772/Design_Time_Addresses/HotelService/HotelBookingInterface/?xsd=xsd1" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="50513e0e-d442-4ab8-b1a0-99c25de0e204" SourceId="1" SourceUrl="http://82.171.241.182:49772/Design_Time_Addresses/HotelService/HotelBookingInterface/?xsd=xsd0" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="a01151aa-90a9-42f4-812e-e6729e849498" SourceId="1" SourceUrl="http://82.171.241.182:49772/Design_Time_Addresses/HotelService/HotelBookingInterface/?xsd=xsd3" />
+    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="b9e07460-7792-4ec0-83f1-f2f29b36e468" SourceId="1" SourceUrl="http://82.171.241.182:49772/Design_Time_Addresses/HotelService/HotelBookingInterface/?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

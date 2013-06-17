@@ -63,6 +63,7 @@ namespace TaxiClient
 
                     Address a1 = response.DepartureAddress;
                     Address a2 = response.DestinationAddress;
+
                     string sDepartureAddress = string.Format("{0} {1} {2} {3} {4}", a1.Street, a1.Number, a1.ZipCode, a1.City, a1.Country);
                     string sDestinationAddress = string.Format("{0} {1} {2} {3} {4}", a2.Street, a2.Number, a2.ZipCode, a2.City, a2.Country);
                     DialogResult result = MessageBox.Show(

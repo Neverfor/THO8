@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://hotelservice.com" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://hotelservice.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://hotelservice.com/Imports">
+      <xsd:import schemaLocation="http://82.171.241.182:49772/Design_Time_Addresses/HotelService/HotelBookingInterface/?xsd=xsd0" namespace="http://hotelservice.com" />
+      <xsd:import schemaLocation="http://82.171.241.182:49772/Design_Time_Addresses/HotelService/HotelBookingInterface/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://82.171.241.182:49772/Design_Time_Addresses/HotelService/HotelBookingInterface/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/HotelService" />
+      <xsd:import schemaLocation="http://82.171.241.182:49772/Design_Time_Addresses/HotelService/HotelBookingInterface/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IHotelBookingService_getHotels_InputMessage">
+    <wsdl:part name="parameters" element="tns:getHotels" />
+  </wsdl:message>
+  <wsdl:message name="IHotelBookingService_getHotels_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getHotelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelBookingService_getRoomTypesFromHotel_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRoomTypesFromHotel" />
+  </wsdl:message>
+  <wsdl:message name="IHotelBookingService_getRoomTypesFromHotel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRoomTypesFromHotelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelBookingService_bookRoom_InputMessage">
+    <wsdl:part name="parameters" element="tns:bookRoom" />
+  </wsdl:message>
+  <wsdl:message name="IHotelBookingService_bookRoom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:bookRoomResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelBookingService_getBooking_InputMessage">
+    <wsdl:part name="parameters" element="tns:getBooking" />
+  </wsdl:message>
+  <wsdl:message name="IHotelBookingService_getBooking_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getBookingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelBookingService_GetBookingsFromUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBookingsFromUser" />
+  </wsdl:message>
+  <wsdl:message name="IHotelBookingService_GetBookingsFromUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBookingsFromUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelBookingService_CancelBooking_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelBooking" />
+  </wsdl:message>
+  <wsdl:message name="IHotelBookingService_CancelBooking_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelBookingResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IHotelBookingService">
+    <wsdl:operation name="getHotels">
+      <wsdl:input wsaw:Action="http://hotelservice.com/IHotelBookingService/getHotels" message="tns:IHotelBookingService_getHotels_InputMessage" />
+      <wsdl:output wsaw:Action="http://hotelservice.com/IHotelBookingService/getHotelsResponse" message="tns:IHotelBookingService_getHotels_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRoomTypesFromHotel">
+      <wsdl:input wsaw:Action="http://hotelservice.com/IHotelBookingService/getRoomTypesFromHotel" message="tns:IHotelBookingService_getRoomTypesFromHotel_InputMessage" />
+      <wsdl:output wsaw:Action="http://hotelservice.com/IHotelBookingService/getRoomTypesFromHotelResponse" message="tns:IHotelBookingService_getRoomTypesFromHotel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="bookRoom">
+      <wsdl:input wsaw:Action="http://hotelservice.com/IHotelBookingService/bookRoom" message="tns:IHotelBookingService_bookRoom_InputMessage" />
+      <wsdl:output wsaw:Action="http://hotelservice.com/IHotelBookingService/bookRoomResponse" message="tns:IHotelBookingService_bookRoom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getBooking">
+      <wsdl:input wsaw:Action="http://hotelservice.com/IHotelBookingService/getBooking" message="tns:IHotelBookingService_getBooking_InputMessage" />
+      <wsdl:output wsaw:Action="http://hotelservice.com/IHotelBookingService/getBookingResponse" message="tns:IHotelBookingService_getBooking_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookingsFromUser">
+      <wsdl:input wsaw:Action="http://hotelservice.com/IHotelBookingService/GetBookingsFromUser" message="tns:IHotelBookingService_GetBookingsFromUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://hotelservice.com/IHotelBookingService/GetBookingsFromUserResponse" message="tns:IHotelBookingService_GetBookingsFromUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelBooking">
+      <wsdl:input wsaw:Action="http://hotelservice.com/IHotelBookingService/CancelBooking" message="tns:IHotelBookingService_CancelBooking_InputMessage" />
+      <wsdl:output wsaw:Action="http://hotelservice.com/IHotelBookingService/CancelBookingResponse" message="tns:IHotelBookingService_CancelBooking_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
