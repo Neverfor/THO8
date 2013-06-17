@@ -59,8 +59,8 @@ namespace TaxiService
                     at = taxiPriceInfoRequest.DateTime;
                     dt = at.Subtract(new TimeSpan(0, duration, 0));
                 }
-                if (dt.Minute < (DateTime.Now.Minute + 10))
-                    throw new FaultException("U dient 10 minuten vooruit te plannen");
+                if (dt < (DateTime.Now.AddMinutes(10)))
+                    throw new FaultException(string.Format("De vertrekdatum dient 10 minuten na {0} te zijn", DateTime.Now.ToString()));
 
                 // validate: available taxis
                 var unAvailableTaxis = from b in db.Bookings
