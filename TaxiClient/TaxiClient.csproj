@@ -63,11 +63,17 @@
     <Compile Include="FlightForm2.Designer.cs">
       <DependentUpon>FlightForm2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="TaxiForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="TaxiForm.Designer.cs">
+      <DependentUpon>TaxiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="HotelForm.cs">
       <SubType>Form</SubType>
@@ -93,8 +99,14 @@
     <EmbeddedResource Include="FlightForm2.resx">
       <DependentUpon>FlightForm2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TaxiForm.resx">
+      <DependentUpon>TaxiForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HotelForm.resx">
       <DependentUpon>HotelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

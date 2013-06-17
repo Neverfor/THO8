@@ -46,5 +46,24 @@ namespace TaxiClient
             }
             
         }
+
+        private void flightBookingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Not avaible YET.");
+        }
+
+        private void hotelBookingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            HotelForm hm = new HotelForm();
+            hm.Show();
+        }
+
+        private void taxiBookingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TaxiForm tx = new TaxiForm();
+            tx.Show();
+        }
     }
 }
