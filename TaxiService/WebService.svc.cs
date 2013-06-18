@@ -116,7 +116,7 @@ namespace TaxiService
 
                 //Create TaxiBooking for persistancy
                 To8Libraries.Domain.TaxiBooking taxiBooking = new To8Libraries.Domain.TaxiBooking();
-                taxiBooking.User = user;
+                taxiBooking.UserName = user.UserName;
                 taxiBooking.Taxi = taxi.First();
                 taxiBooking.Price = taxiBookingRequest.Price;
                 taxiBooking.DepartureAddress = taxiBookingRequest.DepartureAddress;
@@ -159,7 +159,7 @@ namespace TaxiService
                 {
                     //Get bookings from user
                     var bookings = from b in db.Bookings 
-                                   where b.User.Equals(user) 
+                                   where b.UserName.Equals(user.UserName) 
                                    select b;
 
                     //Loop through found bookings and create the objects for the response

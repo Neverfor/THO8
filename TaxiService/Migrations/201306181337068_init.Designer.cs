@@ -5,13 +5,13 @@ namespace TaxiService.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    public sealed partial class idweggehaald : IMigrationMetadata
+    public sealed partial class init : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(idweggehaald));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(init));
         
         string IMigrationMetadata.Id
         {
-            get { return "201306181300583_id weggehaald"; }
+            get { return "201306181337068_init"; }
         }
         
         string IMigrationMetadata.Source

@@ -96,17 +96,9 @@
     <Compile Include="DB\WebServiceContext.cs" />
     <Compile Include="IWebService.cs" />
     <Compile Include="Managers\DistanceManager.cs" />
-    <Compile Include="Migrations\201306110846161_InitialCreate.cs" />
-    <Compile Include="Migrations\201306110846161_InitialCreate.Designer.cs">
-      <DependentUpon>201306110846161_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201306111318183_NewDb.cs" />
-    <Compile Include="Migrations\201306111318183_NewDb.Designer.cs">
-      <DependentUpon>201306111318183_NewDb.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201306121330075_Taxi update.cs" />
-    <Compile Include="Migrations\201306121330075_Taxi update.Designer.cs">
-      <DependentUpon>201306121330075_Taxi update.cs</DependentUpon>
+    <Compile Include="Migrations\201306181337068_init.cs" />
+    <Compile Include="Migrations\201306181337068_init.Designer.cs">
+      <DependentUpon>201306181337068_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -126,17 +118,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201306110846161_InitialCreate.resx">
-      <DependentUpon>201306110846161_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201306111318183_NewDb.resx">
-      <DependentUpon>201306111318183_NewDb.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201306121330075_Taxi update.resx">
-      <DependentUpon>201306121330075_Taxi update.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
@@ -144,6 +125,11 @@
       <Project>{fc6b4d74-817b-4535-9a92-f93984a334dd}</Project>
       <Name>To8Libraries</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201306181337068_init.resx">
+      <DependentUpon>201306181337068_init.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

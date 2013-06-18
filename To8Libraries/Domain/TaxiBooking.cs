@@ -9,7 +9,7 @@ namespace To8Libraries.Domain
     public class TaxiBooking
     {
         public int Id { get; set; }
-        public User User { get; set; }
+        public string UserName { get; set; }
         public Taxi Taxi { get; set; }
         public double Price { get; set; }
         public Address DepartureAddress  { get; set; }
