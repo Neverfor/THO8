@@ -63,17 +63,23 @@ namespace TaxiService
                     throw new FaultException(string.Format("De vertrekdatum dient 10 minuten na {0} te zijn", DateTime.Now.ToString()));
 
                 // validate: available taxis
-                var unAvailableTaxis = from b in db.Bookings
-                                        where (b.DepartureTime < dt && b.ArrivalTime > dt) || 
-                                        (b.DepartureTime < at && b.ArrivalTime > at) || 
-                                        (b.DepartureTime > dt && b.ArrivalTime < at)
-                                        select b.Taxi;
-                List<Taxi> availableTaxis = db.Taxis.ToList();
+                var availableTaxisDueToPassengers = from t in db.Taxis
+                                                    where t.maxPassengers >= taxiPriceInfoRequest.AmountOfPassengers
+                                                    select t;
+                List<Taxi> availableTaxis = availableTaxisDueToPassengers.ToList<Taxi>();
+                if (availableTaxis.Count == 0)
+                    throw new FaultException("Er is geen taxi beschikbaar voor het opgegeven aantal passagiers");
+
+                var unAvailableTaxisDueToTime = from b in db.Bookings
+                                                where (b.DepartureTime < dt && b.ArrivalTime > dt) || 
+                                                (b.DepartureTime < at && b.ArrivalTime > at) || 
+                                                (b.DepartureTime > dt && b.ArrivalTime < at)
+                                                select b.Taxi;
                 foreach (Taxi t1 in availableTaxis)
-                    foreach (Taxi t2 in unAvailableTaxis)
+                    foreach (Taxi t2 in unAvailableTaxisDueToTime)
                         if (t1 == t2) availableTaxis.Remove(t1);
                 if (availableTaxis.Count == 0)
-                    throw new FaultException("Er zijn geen taxis beschikbaar voor de opgegeven tijd");
+                    throw new FaultException("Er is geen taxi beschikbaar voor de opgegeven tijd");
 
 
                 Taxi taxiMinPrice = null;
