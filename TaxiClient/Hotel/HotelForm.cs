@@ -35,8 +35,19 @@ namespace TaxiClient
              
             using (HotelBookingServiceClient client = new HotelBookingServiceClient())
             {
-                String name = textBox1.ToString();
-                String location = textBox2.ToString();
+                String name = null;//textBox1.ToString();
+                String location = null;//textBox2.ToString();
+
+                /*
+                if (textBox1.ToString() == "" || textBox1.ToString() == null)
+                {
+                    name = null;
+                }
+                if (textBox2.ToString() == "" || textBox2.ToString() == null)
+                {
+                    location = null;
+                }
+                */
                 
                 hotels = client.getHotels(name, location);
                // hotels = client.getHotelsAsync(name, location);
