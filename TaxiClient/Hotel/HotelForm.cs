@@ -31,8 +31,8 @@ namespace TaxiClient
         private void button1_Click(object sender, EventArgs e)
         {
             
-            Hotel hotel = new Hotel();
-            Hotel[] hotels;
+            //Hotel hotel = new Hotel();
+           Hotel[] hotels;
              
             using (HotelBookingServiceClient client = new HotelBookingServiceClient())
             {
@@ -40,8 +40,14 @@ namespace TaxiClient
                 String location = "";
                 
                 hotels = client.getHotels(name, location);
-
-                MessageBox.Show("The following hotels were found: " + hotels.ToString());
+               // hotels = client.getHotelsAsync(name, location);
+                String hotelList = "List of hotels:";
+                foreach(Hotel hotel in hotels) 
+                {
+                    hotelList += "\n" + hotel.Location.ToString() +
+                    hotel.Name.ToString();
+                }
+                MessageBox.Show("The following hotels were found: " + hotelList);
 
             }
             
