@@ -287,6 +287,7 @@
             this.ClientSize = new System.Drawing.Size(367, 451);
             this.Controls.Add(this.gbRegister);
             this.Name = "RegisterForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registreren";
             this.gbRegister.ResumeLayout(false);
             this.gbRegister.PerformLayout();

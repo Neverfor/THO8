@@ -113,6 +113,7 @@
             this.Controls.Add(this.llblRegisterForm);
             this.Controls.Add(this.gbLogin);
             this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Aanmelden";
             this.gbLogin.ResumeLayout(false);
             this.gbLogin.PerformLayout();
