@@ -82,6 +82,7 @@ namespace TaxiClient
                     if (result == DialogResult.Yes)
                     {
                         TaxiBookingRequest tbrequest = new TaxiBookingRequest();
+                        tbrequest.UserToken = Session.UserToken;
                         tbrequest.DepartureAddress = response.DepartureAddress;
                         tbrequest.DestinationAddress = response.DestinationAddress;
                         tbrequest.DepartureTime = response.DepartureTime;
@@ -91,6 +92,8 @@ namespace TaxiClient
                         tbrequest.Price = response.Price;
                         tbrequest.AmountOfPassengers = response.AmountOfPassengers;
                         client.DoTaxiBooking(tbrequest);
+
+                        tabPage2.Show();
                     }
                 }
                 catch (FormatException fe)
