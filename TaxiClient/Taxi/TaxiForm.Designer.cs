@@ -415,27 +415,27 @@
             this.hotelBookingToolStripMenuItem,
             this.taxiBookingToolStripMenuItem});
             this.chooseBookingToolStripMenuItem.Name = "chooseBookingToolStripMenuItem";
-            this.chooseBookingToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
-            this.chooseBookingToolStripMenuItem.Text = "Kiez Boeking";
+            this.chooseBookingToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
+            this.chooseBookingToolStripMenuItem.Text = "Kies Boeking";
             // 
             // flightBookingToolStripMenuItem
             // 
             this.flightBookingToolStripMenuItem.Name = "flightBookingToolStripMenuItem";
-            this.flightBookingToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.flightBookingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.flightBookingToolStripMenuItem.Text = "Vlucht Boeking";
             this.flightBookingToolStripMenuItem.Click += new System.EventHandler(this.flightBookingToolStripMenuItem_Click);
             // 
             // hotelBookingToolStripMenuItem
             // 
             this.hotelBookingToolStripMenuItem.Name = "hotelBookingToolStripMenuItem";
-            this.hotelBookingToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.hotelBookingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.hotelBookingToolStripMenuItem.Text = "Hotel Boeking";
             this.hotelBookingToolStripMenuItem.Click += new System.EventHandler(this.hotelBookingToolStripMenuItem_Click);
             // 
             // taxiBookingToolStripMenuItem
             // 
             this.taxiBookingToolStripMenuItem.Name = "taxiBookingToolStripMenuItem";
-            this.taxiBookingToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.taxiBookingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.taxiBookingToolStripMenuItem.Text = "Taxi Boeking";
             this.taxiBookingToolStripMenuItem.Click += new System.EventHandler(this.taxiBookingToolStripMenuItem_Click);
             // 
