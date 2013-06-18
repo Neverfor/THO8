@@ -51,22 +51,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FlightForm1.cs">
+    <Compile Include="Flight\FlightForm1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FlightForm1.Designer.cs">
+    <Compile Include="Flight\FlightForm1.Designer.cs">
       <DependentUpon>FlightForm1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FlightForm2.cs">
+    <Compile Include="Flight\FlightForm2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FlightForm2.Designer.cs">
+    <Compile Include="Flight\FlightForm2.Designer.cs">
       <DependentUpon>FlightForm2.cs</DependentUpon>
     </Compile>
-    <Compile Include="TaxiForm.cs">
+    <Compile Include="Authentication\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TaxiForm.Designer.cs">
+    <Compile Include="Authentication\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Taxi\TaxiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Taxi\TaxiForm.Designer.cs">
       <DependentUpon>TaxiForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
@@ -75,10 +81,10 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="HotelForm.cs">
+    <Compile Include="Hotel\HotelForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HotelForm.Designer.cs">
+    <Compile Include="Hotel\HotelForm.Designer.cs">
       <DependentUpon>HotelForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -93,16 +99,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FlightForm1.resx">
+    <EmbeddedResource Include="Flight\FlightForm1.resx">
       <DependentUpon>FlightForm1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FlightForm2.resx">
+    <EmbeddedResource Include="Flight\FlightForm2.resx">
       <DependentUpon>FlightForm2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TaxiForm.resx">
+    <EmbeddedResource Include="Authentication\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Taxi\TaxiForm.resx">
       <DependentUpon>TaxiForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HotelForm.resx">
+    <EmbeddedResource Include="Hotel\HotelForm.resx">
       <DependentUpon>HotelForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
@@ -217,6 +226,10 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Attraction\" />
+    <Folder Include="Car\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
