@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabTaxi = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnFindTaxi = new System.Windows.Forms.Button();
@@ -67,11 +68,27 @@
             this.flightBookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hotelBookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.taxiBookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.userBookingsDG = new System.Windows.Forms.DataGridView();
+            this.taxiBookingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.userBookingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.taxiTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountOfPassengersDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.arrivalTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departureAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departureTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.destinationAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.taxiIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabTaxi.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.gbDestinationAddress.SuspendLayout();
             this.gbDepartureAddress.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.userBookingsDG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.taxiBookingsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBookingsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabTaxi
@@ -390,6 +407,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.userBookingsDG);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -415,29 +433,129 @@
             this.hotelBookingToolStripMenuItem,
             this.taxiBookingToolStripMenuItem});
             this.chooseBookingToolStripMenuItem.Name = "chooseBookingToolStripMenuItem";
-            this.chooseBookingToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
+            this.chooseBookingToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
             this.chooseBookingToolStripMenuItem.Text = "Kies Boeking";
             // 
             // flightBookingToolStripMenuItem
             // 
             this.flightBookingToolStripMenuItem.Name = "flightBookingToolStripMenuItem";
-            this.flightBookingToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.flightBookingToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.flightBookingToolStripMenuItem.Text = "Vlucht Boeking";
             this.flightBookingToolStripMenuItem.Click += new System.EventHandler(this.flightBookingToolStripMenuItem_Click);
             // 
             // hotelBookingToolStripMenuItem
             // 
             this.hotelBookingToolStripMenuItem.Name = "hotelBookingToolStripMenuItem";
-            this.hotelBookingToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.hotelBookingToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.hotelBookingToolStripMenuItem.Text = "Hotel Boeking";
             this.hotelBookingToolStripMenuItem.Click += new System.EventHandler(this.hotelBookingToolStripMenuItem_Click);
             // 
             // taxiBookingToolStripMenuItem
             // 
             this.taxiBookingToolStripMenuItem.Name = "taxiBookingToolStripMenuItem";
-            this.taxiBookingToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.taxiBookingToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.taxiBookingToolStripMenuItem.Text = "Taxi Boeking";
             this.taxiBookingToolStripMenuItem.Click += new System.EventHandler(this.taxiBookingToolStripMenuItem_Click);
+            // 
+            // userBookingsDG
+            // 
+            this.userBookingsDG.AllowUserToAddRows = false;
+            this.userBookingsDG.AllowUserToDeleteRows = false;
+            this.userBookingsDG.AutoGenerateColumns = false;
+            this.userBookingsDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.userBookingsDG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.taxiTypeDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn,
+            this.amountOfPassengersDataGridViewTextBoxColumn,
+            this.arrivalTimeDataGridViewTextBoxColumn,
+            this.departureAddressDataGridViewTextBoxColumn,
+            this.departureTimeDataGridViewTextBoxColumn,
+            this.destinationAddressDataGridViewTextBoxColumn,
+            this.taxiIdDataGridViewTextBoxColumn});
+            this.userBookingsDG.DataSource = this.taxiBookingsBindingSource;
+            this.userBookingsDG.Location = new System.Drawing.Point(6, 15);
+            this.userBookingsDG.Name = "userBookingsDG";
+            this.userBookingsDG.ReadOnly = true;
+            this.userBookingsDG.Size = new System.Drawing.Size(477, 188);
+            this.userBookingsDG.TabIndex = 0;
+            this.userBookingsDG.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // taxiBookingsBindingSource
+            // 
+            this.taxiBookingsBindingSource.DataMember = "TaxiBookings";
+            this.taxiBookingsBindingSource.DataSource = this.userBookingsBindingSource;
+            // 
+            // userBookingsBindingSource
+            // 
+            this.userBookingsBindingSource.DataSource = typeof(TaxiClient.TaxiService.UserBookings);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MaxInputLength = 500;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 25;
+            // 
+            // taxiTypeDataGridViewTextBoxColumn
+            // 
+            this.taxiTypeDataGridViewTextBoxColumn.DataPropertyName = "TaxiType";
+            this.taxiTypeDataGridViewTextBoxColumn.HeaderText = "TaxiType";
+            this.taxiTypeDataGridViewTextBoxColumn.Name = "taxiTypeDataGridViewTextBoxColumn";
+            this.taxiTypeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.priceDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // amountOfPassengersDataGridViewTextBoxColumn
+            // 
+            this.amountOfPassengersDataGridViewTextBoxColumn.DataPropertyName = "AmountOfPassengers";
+            this.amountOfPassengersDataGridViewTextBoxColumn.HeaderText = "AmountOfPassengers";
+            this.amountOfPassengersDataGridViewTextBoxColumn.Name = "amountOfPassengersDataGridViewTextBoxColumn";
+            this.amountOfPassengersDataGridViewTextBoxColumn.ReadOnly = true;
+            this.amountOfPassengersDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // arrivalTimeDataGridViewTextBoxColumn
+            // 
+            this.arrivalTimeDataGridViewTextBoxColumn.DataPropertyName = "ArrivalTime";
+            this.arrivalTimeDataGridViewTextBoxColumn.HeaderText = "ArrivalTime";
+            this.arrivalTimeDataGridViewTextBoxColumn.Name = "arrivalTimeDataGridViewTextBoxColumn";
+            this.arrivalTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // departureAddressDataGridViewTextBoxColumn
+            // 
+            this.departureAddressDataGridViewTextBoxColumn.DataPropertyName = "DepartureAddress";
+            this.departureAddressDataGridViewTextBoxColumn.HeaderText = "DepartureAddress";
+            this.departureAddressDataGridViewTextBoxColumn.Name = "departureAddressDataGridViewTextBoxColumn";
+            this.departureAddressDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // departureTimeDataGridViewTextBoxColumn
+            // 
+            this.departureTimeDataGridViewTextBoxColumn.DataPropertyName = "DepartureTime";
+            this.departureTimeDataGridViewTextBoxColumn.HeaderText = "DepartureTime";
+            this.departureTimeDataGridViewTextBoxColumn.Name = "departureTimeDataGridViewTextBoxColumn";
+            this.departureTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // destinationAddressDataGridViewTextBoxColumn
+            // 
+            this.destinationAddressDataGridViewTextBoxColumn.DataPropertyName = "DestinationAddress";
+            this.destinationAddressDataGridViewTextBoxColumn.HeaderText = "DestinationAddress";
+            this.destinationAddressDataGridViewTextBoxColumn.Name = "destinationAddressDataGridViewTextBoxColumn";
+            this.destinationAddressDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // taxiIdDataGridViewTextBoxColumn
+            // 
+            this.taxiIdDataGridViewTextBoxColumn.DataPropertyName = "TaxiId";
+            this.taxiIdDataGridViewTextBoxColumn.HeaderText = "TaxiId";
+            this.taxiIdDataGridViewTextBoxColumn.Name = "taxiIdDataGridViewTextBoxColumn";
+            this.taxiIdDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // TaxiForm
             // 
@@ -450,6 +568,7 @@
             this.Name = "TaxiForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Taxi";
+            this.Load += new System.EventHandler(this.TaxiForm_Load);
             this.tabTaxi.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -457,8 +576,12 @@
             this.gbDestinationAddress.PerformLayout();
             this.gbDepartureAddress.ResumeLayout(false);
             this.gbDepartureAddress.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.userBookingsDG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.taxiBookingsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBookingsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -505,5 +628,17 @@
         private System.Windows.Forms.ToolStripMenuItem flightBookingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hotelBookingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem taxiBookingToolStripMenuItem;
+        private System.Windows.Forms.DataGridView userBookingsDG;
+        private System.Windows.Forms.BindingSource taxiBookingsBindingSource;
+        private System.Windows.Forms.BindingSource userBookingsBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn taxiTypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amountOfPassengersDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn arrivalTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn departureAddressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn departureTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn destinationAddressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn taxiIdDataGridViewTextBoxColumn;
     }
 }

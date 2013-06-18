@@ -151,39 +151,46 @@ namespace TaxiService
             bool bookingIsSpecified = (userBookingsRequest.BookingId == null);
 
             UserBookings ubs = new UserBookings();
-           
+            ubs.TaxiBookings = new List<ServicesDataContracts.TaxiBooking>();
+
 
             using (var db = new WebServiceContext())
             {
-                if (bookingIsSpecified)
+                IQueryable<To8Libraries.Domain.TaxiBooking> bookings = null;
+                if (!bookingIsSpecified)
                 {
                     //Get bookings from user
-                    var bookings = from b in db.Bookings 
-                                   where b.UserName.Equals(user.UserName) 
-                                   select b;
+                    bookings = from b in db.Bookings
+                               where b.UserName.Equals(user.UserName)
+                               select b;
 
-                    //Loop through found bookings and create the objects for the response
-                    foreach (To8Libraries.Domain.TaxiBooking b in bookings)
-                    {
-                        ServicesDataContracts.TaxiBooking taxiBooking = new ServicesDataContracts.TaxiBooking();
-                        taxiBooking.TaxiId = b.Taxi.Id;
-                        taxiBooking.TaxiType = b.Taxi.Type;
-                        taxiBooking.Price = b.Price;
-                        taxiBooking.DepartureAddress = b.DepartureAddress;
-                        taxiBooking.DestinationAddress = b.DestinationAddress;
-                        //set arrivalTime and dateTime
-                        taxiBooking.AmountOfPassengers = b.AmountOfPassengers;
-                        ubs.TaxiBookings.Add(taxiBooking); //add to the response
-                    }                  
                 }
                 else
                 {
-                    //select * from TaxiBooking where user = user...
-                    //add TaxiBooking objects to ubs.TaxiBookings
+                    //Get booking with id from user
+                    bookings = from b in db.Bookings
+                               where b.UserName.Equals(user.UserName) && b.Id.Equals(userBookingsRequest.BookingId)
+                               select b;
                 }
-
-                return ubs;
+                var bookingsList = bookings.ToList<To8Libraries.Domain.TaxiBooking>();
+                //Loop through found bookings and create the objects for the response
+                foreach (To8Libraries.Domain.TaxiBooking b in bookingsList)
+                {
+                    ServicesDataContracts.TaxiBooking taxiBooking = new ServicesDataContracts.TaxiBooking();
+                    taxiBooking.Id = b.Id;
+                    taxiBooking.TaxiId = b.Taxi.Id;
+                    taxiBooking.TaxiType = b.Taxi.Type;
+                    taxiBooking.Price = b.Price;
+                    taxiBooking.DepartureAddress = b.DepartureAddress;
+                    taxiBooking.DestinationAddress = b.DestinationAddress;
+                    //set arrivalTime and dateTime
+                    taxiBooking.AmountOfPassengers = b.AmountOfPassengers;
+                    ubs.TaxiBookings.Add(taxiBooking); //add to the response
+                }
             }
+
+
+            return ubs;
         }
 
         public bool CancelBooking(CancelBookingRequest cancelBookingRequest)

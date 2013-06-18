@@ -28,5 +28,10 @@ namespace To8Libraries.Domain
         {
 
         }
+
+        public override string ToString()
+        {
+            return this.Street + " " + this.Number + ", " + this.City + ", " + this.Country;
+        }
     }
 }

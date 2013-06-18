@@ -16,7 +16,14 @@ namespace TaxiClient
     {
         public TaxiForm()
         {
+          
             InitializeComponent();
+            using (WebServiceClient client = new WebServiceClient())
+            {
+                UserBookingsRequest req = new UserBookingsRequest();
+                req.UserToken = Session.UserToken;
+                userBookingsDG.DataSource = client.GetUserBookings(req).TaxiBookings;
+            }
         }
 
         private void btnFindTaxi_Click(object sender, EventArgs e)
@@ -128,6 +135,16 @@ namespace TaxiClient
             this.Close();
             TaxiForm tx = new TaxiForm();
             tx.Show();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void TaxiForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

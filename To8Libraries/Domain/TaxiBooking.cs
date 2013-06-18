@@ -10,7 +10,7 @@ namespace To8Libraries.Domain
     {
         public int Id { get; set; }
         public string UserName { get; set; }
-        public Taxi Taxi { get; set; }
+        public virtual Taxi Taxi { get; set; }
         public double Price { get; set; }
         public Address DepartureAddress  { get; set; }
         public Address DestinationAddress { get; set; }
