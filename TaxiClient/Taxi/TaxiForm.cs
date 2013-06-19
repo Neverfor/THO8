@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using TaxiClient.TaxiService;
 using System.ServiceModel;
 
+using System.Diagnostics;
+
 namespace TaxiClient
 {
     public partial class TaxiForm : Form
@@ -149,6 +151,22 @@ namespace TaxiClient
 
         private void tabPage2_Click(object sender, EventArgs e)
         {
+            userBookingsDG.Refresh();
+        }
+
+        private void btnCancelBooking_Click(object sender, EventArgs e)
+        {
+            int i = userBookingsDG.SelectedRows[0].Index;
+            string s = userBookingsDG.Rows[i].Cells[0].Value.ToString();
+            MessageBox.Show(s);
+
+            CancelBookingRequest cbrequest = new CancelBookingRequest();
+            cbrequest.BookingId = Convert.ToInt32(s);
+            cbrequest.UserToken = Session.UserToken;
+            using (WebServiceClient client = new WebServiceClient())
+            {
+                client.CancelBooking(cbrequest);
+            }
             userBookingsDG.Refresh();
         }
     }
