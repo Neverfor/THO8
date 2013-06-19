@@ -147,7 +147,7 @@ namespace TaxiService
 
         public UserBookings GetUserBookings(UserBookingsRequest userBookingsRequest)
         {
-            User user = To8Libraries.UserHelper.GetUser(userBookingsRequest.UserToken);
+            string user = To8Libraries.UserHelper.GetUser(userBookingsRequest.UserToken).UserName;
             //call user-service for verification
             bool bookingIsSpecified = (userBookingsRequest.BookingId == null);
 
@@ -162,7 +162,7 @@ namespace TaxiService
                 {
                     //Get bookings from user
                     bookings = from b in db.Bookings
-                               where b.UserName.Equals(user.UserName)
+                               where b.UserName.Equals(user)
                                select b;
 
                 }
@@ -170,7 +170,7 @@ namespace TaxiService
                 {
                     //Get booking with id from user
                     bookings = from b in db.Bookings
-                               where b.UserName.Equals(user.UserName) && b.Id.Equals(userBookingsRequest.BookingId)
+                               where b.UserName.Equals(user) && b.Id.Equals(userBookingsRequest.BookingId)
                                select b;
                 }
                 var bookingsList = bookings.ToList<To8Libraries.Domain.TaxiBooking>();
@@ -199,9 +199,30 @@ namespace TaxiService
         {
             using (var db = new WebServiceContext())
             {
-                User user = To8Libraries.UserHelper.GetUser(cancelBookingRequest.UserToken);
-                return (user.Bookings.RemoveAll(b => b.Id.Equals(cancelBookingRequest.BookingId)) > 0); //TODO: kijken of dit werkt
-                //TODO: remove booking from database table??
+                bool b = false;
+                string user = To8Libraries.UserHelper.GetUser(cancelBookingRequest.UserToken).UserName;
+                Debug.WriteLine(user);
+
+                var canceledTaxiBooking = from tb in db.Bookings
+                                          where tb.Id == cancelBookingRequest.BookingId
+                                          select tb;
+                foreach (To8Libraries.Domain.TaxiBooking tb in canceledTaxiBooking)
+                {
+                    Debug.WriteLine("LEES DIIIT" + tb.UserName + " " + tb.Id);
+                    if (tb.UserName == user)
+                    {
+
+                        Debug.WriteLine("match!");
+                        db.Bookings.Remove(tb);
+                        Debug.WriteLine("removed!");
+                        //db.SaveChanges();
+                        Debug.WriteLine("saved!");
+
+                        b = true;
+                    }
+                    break;
+                }
+                return b;
             }
         }
 

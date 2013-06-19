@@ -139,16 +139,6 @@ namespace TaxiClient
             tx.Show();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void TaxiForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void tabPage2_Click(object sender, EventArgs e)
         {
             userBookingsDG.Refresh();
@@ -156,16 +146,22 @@ namespace TaxiClient
 
         private void btnCancelBooking_Click(object sender, EventArgs e)
         {
-            int i = userBookingsDG.SelectedRows[0].Index;
-            string s = userBookingsDG.Rows[i].Cells[0].Value.ToString();
-            MessageBox.Show(s);
+            int selectedRow = userBookingsDG.SelectedRows[0].Index;
+            int selectedId = Convert.ToInt32(userBookingsDG.Rows[selectedRow].Cells[0].Value.ToString());
 
-            CancelBookingRequest cbrequest = new CancelBookingRequest();
-            cbrequest.BookingId = Convert.ToInt32(s);
-            cbrequest.UserToken = Session.UserToken;
-            using (WebServiceClient client = new WebServiceClient())
+            try
             {
-                client.CancelBooking(cbrequest);
+                using (WebServiceClient client = new WebServiceClient())
+                {
+                    CancelBookingRequest cbrequest = new CancelBookingRequest();
+                    cbrequest.BookingId = Convert.ToInt32(selectedId);
+                    cbrequest.UserToken = Session.UserToken;
+                    client.CancelBooking(cbrequest);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
             userBookingsDG.Refresh();
         }

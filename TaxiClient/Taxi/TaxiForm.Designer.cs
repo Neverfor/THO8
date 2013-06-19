@@ -63,16 +63,18 @@
             this.tbDepNumber = new System.Windows.Forms.TextBox();
             this.tbDepStreet = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnCancelBooking = new System.Windows.Forms.Button();
             this.userBookingsDG = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.taxiTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userTokenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amountOfPassengersDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.arrivalTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departureAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departureTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.destinationAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departureTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.arrivalTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.taxiIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.taxiTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.taxiBookingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.userBookingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -80,7 +82,6 @@
             this.flightBookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hotelBookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.taxiBookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnCancelBooking = new System.Windows.Forms.Button();
             this.tabTaxi.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.gbDestinationAddress.SuspendLayout();
@@ -99,7 +100,7 @@
             this.tabTaxi.Location = new System.Drawing.Point(13, 52);
             this.tabTaxi.Name = "tabTaxi";
             this.tabTaxi.SelectedIndex = 0;
-            this.tabTaxi.Size = new System.Drawing.Size(795, 465);
+            this.tabTaxi.Size = new System.Drawing.Size(781, 465);
             this.tabTaxi.TabIndex = 0;
             // 
             // tabPage1
@@ -118,14 +119,14 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(787, 439);
+            this.tabPage1.Size = new System.Drawing.Size(773, 439);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Taxi";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // btnFindTaxi
             // 
-            this.btnFindTaxi.Location = new System.Drawing.Point(706, 410);
+            this.btnFindTaxi.Location = new System.Drawing.Point(692, 413);
             this.btnFindTaxi.Name = "btnFindTaxi";
             this.btnFindTaxi.Size = new System.Drawing.Size(75, 23);
             this.btnFindTaxi.TabIndex = 20;
@@ -413,11 +414,21 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(787, 439);
+            this.tabPage2.Size = new System.Drawing.Size(773, 439);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "...";
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // btnCancelBooking
+            // 
+            this.btnCancelBooking.Location = new System.Drawing.Point(660, 410);
+            this.btnCancelBooking.Name = "btnCancelBooking";
+            this.btnCancelBooking.Size = new System.Drawing.Size(106, 23);
+            this.btnCancelBooking.TabIndex = 1;
+            this.btnCancelBooking.Text = "Annuleer boeking";
+            this.btnCancelBooking.UseVisualStyleBackColor = true;
+            this.btnCancelBooking.Click += new System.EventHandler(this.btnCancelBooking_Click);
             // 
             // userBookingsDG
             // 
@@ -426,92 +437,109 @@
             this.userBookingsDG.AllowUserToResizeColumns = false;
             this.userBookingsDG.AllowUserToResizeRows = false;
             this.userBookingsDG.AutoGenerateColumns = false;
+            this.userBookingsDG.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.userBookingsDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.userBookingsDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.userBookingsDG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
-            this.taxiTypeDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn,
+            this.userTokenDataGridViewTextBoxColumn,
             this.amountOfPassengersDataGridViewTextBoxColumn,
-            this.arrivalTimeDataGridViewTextBoxColumn,
             this.departureAddressDataGridViewTextBoxColumn,
-            this.departureTimeDataGridViewTextBoxColumn,
             this.destinationAddressDataGridViewTextBoxColumn,
-            this.taxiIdDataGridViewTextBoxColumn});
+            this.departureTimeDataGridViewTextBoxColumn,
+            this.arrivalTimeDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn,
+            this.taxiIdDataGridViewTextBoxColumn,
+            this.taxiTypeDataGridViewTextBoxColumn});
             this.userBookingsDG.DataSource = this.taxiBookingsBindingSource;
-            this.userBookingsDG.Location = new System.Drawing.Point(6, 15);
+            this.userBookingsDG.GridColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.userBookingsDG.Location = new System.Drawing.Point(6, 6);
+            this.userBookingsDG.MultiSelect = false;
             this.userBookingsDG.Name = "userBookingsDG";
             this.userBookingsDG.ReadOnly = true;
             this.userBookingsDG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.userBookingsDG.Size = new System.Drawing.Size(773, 305);
+            this.userBookingsDG.Size = new System.Drawing.Size(760, 392);
             this.userBookingsDG.TabIndex = 0;
-            this.userBookingsDG.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.userBookingsDG.VirtualMode = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.MaxInputLength = 500;
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 25;
+            this.idDataGridViewTextBoxColumn.Visible = false;
             // 
-            // taxiTypeDataGridViewTextBoxColumn
+            // userTokenDataGridViewTextBoxColumn
             // 
-            this.taxiTypeDataGridViewTextBoxColumn.DataPropertyName = "TaxiType";
-            this.taxiTypeDataGridViewTextBoxColumn.HeaderText = "TaxiType";
-            this.taxiTypeDataGridViewTextBoxColumn.Name = "taxiTypeDataGridViewTextBoxColumn";
-            this.taxiTypeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.priceDataGridViewTextBoxColumn.Width = 50;
+            this.userTokenDataGridViewTextBoxColumn.DataPropertyName = "UserToken";
+            this.userTokenDataGridViewTextBoxColumn.HeaderText = "UserToken";
+            this.userTokenDataGridViewTextBoxColumn.Name = "userTokenDataGridViewTextBoxColumn";
+            this.userTokenDataGridViewTextBoxColumn.ReadOnly = true;
+            this.userTokenDataGridViewTextBoxColumn.Visible = false;
             // 
             // amountOfPassengersDataGridViewTextBoxColumn
             // 
             this.amountOfPassengersDataGridViewTextBoxColumn.DataPropertyName = "AmountOfPassengers";
-            this.amountOfPassengersDataGridViewTextBoxColumn.HeaderText = "AmountOfPassengers";
+            this.amountOfPassengersDataGridViewTextBoxColumn.HeaderText = "Passagiers";
             this.amountOfPassengersDataGridViewTextBoxColumn.Name = "amountOfPassengersDataGridViewTextBoxColumn";
             this.amountOfPassengersDataGridViewTextBoxColumn.ReadOnly = true;
-            this.amountOfPassengersDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // arrivalTimeDataGridViewTextBoxColumn
-            // 
-            this.arrivalTimeDataGridViewTextBoxColumn.DataPropertyName = "ArrivalTime";
-            this.arrivalTimeDataGridViewTextBoxColumn.HeaderText = "ArrivalTime";
-            this.arrivalTimeDataGridViewTextBoxColumn.Name = "arrivalTimeDataGridViewTextBoxColumn";
-            this.arrivalTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.amountOfPassengersDataGridViewTextBoxColumn.Width = 70;
             // 
             // departureAddressDataGridViewTextBoxColumn
             // 
             this.departureAddressDataGridViewTextBoxColumn.DataPropertyName = "DepartureAddress";
-            this.departureAddressDataGridViewTextBoxColumn.HeaderText = "DepartureAddress";
+            this.departureAddressDataGridViewTextBoxColumn.HeaderText = "Vertrek adres";
             this.departureAddressDataGridViewTextBoxColumn.Name = "departureAddressDataGridViewTextBoxColumn";
             this.departureAddressDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // departureTimeDataGridViewTextBoxColumn
-            // 
-            this.departureTimeDataGridViewTextBoxColumn.DataPropertyName = "DepartureTime";
-            this.departureTimeDataGridViewTextBoxColumn.HeaderText = "DepartureTime";
-            this.departureTimeDataGridViewTextBoxColumn.Name = "departureTimeDataGridViewTextBoxColumn";
-            this.departureTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.departureAddressDataGridViewTextBoxColumn.Width = 135;
             // 
             // destinationAddressDataGridViewTextBoxColumn
             // 
             this.destinationAddressDataGridViewTextBoxColumn.DataPropertyName = "DestinationAddress";
-            this.destinationAddressDataGridViewTextBoxColumn.HeaderText = "DestinationAddress";
+            this.destinationAddressDataGridViewTextBoxColumn.HeaderText = "Aankomst adres";
             this.destinationAddressDataGridViewTextBoxColumn.Name = "destinationAddressDataGridViewTextBoxColumn";
             this.destinationAddressDataGridViewTextBoxColumn.ReadOnly = true;
+            this.destinationAddressDataGridViewTextBoxColumn.Width = 135;
+            // 
+            // departureTimeDataGridViewTextBoxColumn
+            // 
+            this.departureTimeDataGridViewTextBoxColumn.DataPropertyName = "DepartureTime";
+            this.departureTimeDataGridViewTextBoxColumn.HeaderText = "Vertrek tijd";
+            this.departureTimeDataGridViewTextBoxColumn.Name = "departureTimeDataGridViewTextBoxColumn";
+            this.departureTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.departureTimeDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // arrivalTimeDataGridViewTextBoxColumn
+            // 
+            this.arrivalTimeDataGridViewTextBoxColumn.DataPropertyName = "ArrivalTime";
+            this.arrivalTimeDataGridViewTextBoxColumn.HeaderText = "Aankomst tijd";
+            this.arrivalTimeDataGridViewTextBoxColumn.Name = "arrivalTimeDataGridViewTextBoxColumn";
+            this.arrivalTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.arrivalTimeDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Prijs";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.priceDataGridViewTextBoxColumn.Width = 40;
             // 
             // taxiIdDataGridViewTextBoxColumn
             // 
             this.taxiIdDataGridViewTextBoxColumn.DataPropertyName = "TaxiId";
-            this.taxiIdDataGridViewTextBoxColumn.HeaderText = "TaxiId";
+            this.taxiIdDataGridViewTextBoxColumn.HeaderText = "Taxi nr.";
             this.taxiIdDataGridViewTextBoxColumn.Name = "taxiIdDataGridViewTextBoxColumn";
             this.taxiIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.taxiIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // taxiTypeDataGridViewTextBoxColumn
+            // 
+            this.taxiTypeDataGridViewTextBoxColumn.DataPropertyName = "TaxiType";
+            this.taxiTypeDataGridViewTextBoxColumn.HeaderText = "Taxi type";
+            this.taxiTypeDataGridViewTextBoxColumn.Name = "taxiTypeDataGridViewTextBoxColumn";
+            this.taxiTypeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // taxiBookingsBindingSource
             // 
@@ -528,7 +556,7 @@
             this.chooseBookingToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(820, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(807, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -563,28 +591,17 @@
             this.taxiBookingToolStripMenuItem.Text = "Taxi Boeking";
             this.taxiBookingToolStripMenuItem.Click += new System.EventHandler(this.taxiBookingToolStripMenuItem_Click);
             // 
-            // btnCancelBooking
-            // 
-            this.btnCancelBooking.Location = new System.Drawing.Point(703, 413);
-            this.btnCancelBooking.Name = "btnCancelBooking";
-            this.btnCancelBooking.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelBooking.TabIndex = 1;
-            this.btnCancelBooking.Text = "Annuleer";
-            this.btnCancelBooking.UseVisualStyleBackColor = true;
-            this.btnCancelBooking.Click += new System.EventHandler(this.btnCancelBooking_Click);
-            // 
             // TaxiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(820, 529);
+            this.ClientSize = new System.Drawing.Size(807, 529);
             this.Controls.Add(this.tabTaxi);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "TaxiForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Taxi";
-            this.Load += new System.EventHandler(this.TaxiForm_Load);
             this.tabTaxi.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -647,15 +664,16 @@
         private System.Windows.Forms.DataGridView userBookingsDG;
         private System.Windows.Forms.BindingSource taxiBookingsBindingSource;
         private System.Windows.Forms.BindingSource userBookingsBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn taxiTypeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn amountOfPassengersDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn arrivalTimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn departureAddressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn departureTimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn destinationAddressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn taxiIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnCancelBooking;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn userTokenDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amountOfPassengersDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn departureAddressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn destinationAddressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn departureTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn arrivalTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn taxiIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn taxiTypeDataGridViewTextBoxColumn;
     }
 }
