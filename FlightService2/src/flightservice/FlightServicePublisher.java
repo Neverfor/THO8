@@ -3,7 +3,6 @@ package flightservice;
 import javax.xml.ws.Endpoint;
 
 import flightservice.FlightService_Service;
-import flightservice.FlightService;
 import flightservice.FlightServiceGetAirportsExceptionFaultFaultMessage;
 
 public class FlightServicePublisher {

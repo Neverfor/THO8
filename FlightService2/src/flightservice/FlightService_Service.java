@@ -13,7 +13,6 @@ import flightserviceDTO.AirportDTO;
 import flightserviceDTO.ArrayOfAirportDTO;
 import flightserviceDTO.ArrayOfBookingDTO;
 import flightserviceDTO.ArrayOfFlightDTO;
-import flightserviceDTO.FlightDTO;
 import flightserviceDTO.ArrayOfPassengerDTO;
 import flightserviceDTO.BookingDTO;
 
@@ -59,15 +58,7 @@ public class FlightService_Service implements FlightService{
 	public ArrayOfAirportDTO getAirports(
 			@WebParam(name = "searchValue", targetNamespace = "http://flightservice.themaopdracht8.nl") String searchValue)
 			throws FlightServiceGetAirportsExceptionFaultFaultMessage {
-		// TODO Auto-generated method stub
-		
-		ArrayOfAirportDTO AirportArray = new ArrayOfAirportDTO();
-		AirportDTO Airport = new AirportDTO();
-		
-		// Airport.setAiportId(id);
-		// Airport.setName(value);
-		// AirportArray.addAirportDTO(Airport);
-		
+		// TODO Auto-generated method stub		
 		return null;
 	}
 
