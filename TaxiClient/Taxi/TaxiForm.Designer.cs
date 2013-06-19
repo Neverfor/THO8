@@ -63,14 +63,7 @@
             this.tbDepNumber = new System.Windows.Forms.TextBox();
             this.tbDepStreet = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.chooseBookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.flightBookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hotelBookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.taxiBookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userBookingsDG = new System.Windows.Forms.DataGridView();
-            this.taxiBookingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.userBookingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.taxiTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,15 +73,22 @@
             this.departureTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.destinationAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.taxiIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.taxiBookingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.userBookingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.chooseBookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.flightBookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hotelBookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.taxiBookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabTaxi.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.gbDestinationAddress.SuspendLayout();
             this.gbDepartureAddress.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userBookingsDG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.taxiBookingsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBookingsBindingSource)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabTaxi
@@ -179,7 +179,7 @@
             this.dtpTime.ShowUpDown = true;
             this.dtpTime.Size = new System.Drawing.Size(57, 20);
             this.dtpTime.TabIndex = 14;
-            this.dtpTime.Value = new System.DateTime(2013, 6, 11, 14, 27, 39, 0);
+            this.dtpTime.Value = new System.DateTime(2013, 6, 19, 12, 29, 4, 375);
             // 
             // lblTime
             // 
@@ -205,7 +205,7 @@
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(172, 20);
             this.dtpDate.TabIndex = 11;
-            this.dtpDate.Value = new System.DateTime(2013, 6, 11, 14, 26, 29, 0);
+            this.dtpDate.Value = new System.DateTime(2013, 6, 19, 12, 29, 4, 384);
             // 
             // gbDestinationAddress
             // 
@@ -415,47 +415,7 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "...";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.chooseBookingToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(522, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // chooseBookingToolStripMenuItem
-            // 
-            this.chooseBookingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.flightBookingToolStripMenuItem,
-            this.hotelBookingToolStripMenuItem,
-            this.taxiBookingToolStripMenuItem});
-            this.chooseBookingToolStripMenuItem.Name = "chooseBookingToolStripMenuItem";
-            this.chooseBookingToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
-            this.chooseBookingToolStripMenuItem.Text = "Kies Boeking";
-            // 
-            // flightBookingToolStripMenuItem
-            // 
-            this.flightBookingToolStripMenuItem.Name = "flightBookingToolStripMenuItem";
-            this.flightBookingToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.flightBookingToolStripMenuItem.Text = "Vlucht Boeking";
-            this.flightBookingToolStripMenuItem.Click += new System.EventHandler(this.flightBookingToolStripMenuItem_Click);
-            // 
-            // hotelBookingToolStripMenuItem
-            // 
-            this.hotelBookingToolStripMenuItem.Name = "hotelBookingToolStripMenuItem";
-            this.hotelBookingToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.hotelBookingToolStripMenuItem.Text = "Hotel Boeking";
-            this.hotelBookingToolStripMenuItem.Click += new System.EventHandler(this.hotelBookingToolStripMenuItem_Click);
-            // 
-            // taxiBookingToolStripMenuItem
-            // 
-            this.taxiBookingToolStripMenuItem.Name = "taxiBookingToolStripMenuItem";
-            this.taxiBookingToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.taxiBookingToolStripMenuItem.Text = "Taxi Boeking";
-            this.taxiBookingToolStripMenuItem.Click += new System.EventHandler(this.taxiBookingToolStripMenuItem_Click);
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // userBookingsDG
             // 
@@ -480,15 +440,6 @@
             this.userBookingsDG.Size = new System.Drawing.Size(477, 188);
             this.userBookingsDG.TabIndex = 0;
             this.userBookingsDG.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // taxiBookingsBindingSource
-            // 
-            this.taxiBookingsBindingSource.DataMember = "TaxiBookings";
-            this.taxiBookingsBindingSource.DataSource = this.userBookingsBindingSource;
-            // 
-            // userBookingsBindingSource
-            // 
-            this.userBookingsBindingSource.DataSource = typeof(TaxiClient.TaxiService.UserBookings);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -557,6 +508,56 @@
             this.taxiIdDataGridViewTextBoxColumn.Name = "taxiIdDataGridViewTextBoxColumn";
             this.taxiIdDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // taxiBookingsBindingSource
+            // 
+            this.taxiBookingsBindingSource.DataMember = "TaxiBookings";
+            this.taxiBookingsBindingSource.DataSource = this.userBookingsBindingSource;
+            // 
+            // userBookingsBindingSource
+            // 
+            this.userBookingsBindingSource.DataSource = typeof(TaxiClient.TaxiService.UserBookings);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.chooseBookingToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(522, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // chooseBookingToolStripMenuItem
+            // 
+            this.chooseBookingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.flightBookingToolStripMenuItem,
+            this.hotelBookingToolStripMenuItem,
+            this.taxiBookingToolStripMenuItem});
+            this.chooseBookingToolStripMenuItem.Name = "chooseBookingToolStripMenuItem";
+            this.chooseBookingToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
+            this.chooseBookingToolStripMenuItem.Text = "Kies Boeking";
+            // 
+            // flightBookingToolStripMenuItem
+            // 
+            this.flightBookingToolStripMenuItem.Name = "flightBookingToolStripMenuItem";
+            this.flightBookingToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.flightBookingToolStripMenuItem.Text = "Vlucht Boeking";
+            this.flightBookingToolStripMenuItem.Click += new System.EventHandler(this.flightBookingToolStripMenuItem_Click);
+            // 
+            // hotelBookingToolStripMenuItem
+            // 
+            this.hotelBookingToolStripMenuItem.Name = "hotelBookingToolStripMenuItem";
+            this.hotelBookingToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.hotelBookingToolStripMenuItem.Text = "Hotel Boeking";
+            this.hotelBookingToolStripMenuItem.Click += new System.EventHandler(this.hotelBookingToolStripMenuItem_Click);
+            // 
+            // taxiBookingToolStripMenuItem
+            // 
+            this.taxiBookingToolStripMenuItem.Name = "taxiBookingToolStripMenuItem";
+            this.taxiBookingToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.taxiBookingToolStripMenuItem.Text = "Taxi Boeking";
+            this.taxiBookingToolStripMenuItem.Click += new System.EventHandler(this.taxiBookingToolStripMenuItem_Click);
+            // 
             // TaxiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -577,11 +578,11 @@
             this.gbDepartureAddress.ResumeLayout(false);
             this.gbDepartureAddress.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userBookingsDG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.taxiBookingsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBookingsBindingSource)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

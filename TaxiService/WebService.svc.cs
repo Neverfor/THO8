@@ -9,6 +9,7 @@ using To8Libraries.Domain;
 using TaxiService.Managers;
 using System.Data.SqlClient;
 using TaxiService.DB;
+using System.Diagnostics;
 
 namespace TaxiService
 {
@@ -66,7 +67,9 @@ namespace TaxiService
                 var availableTaxisDueToPassengers = from t in db.Taxis
                                                     where t.maxPassengers >= taxiPriceInfoRequest.AmountOfPassengers
                                                     select t;
-                List<Taxi> availableTaxis = availableTaxisDueToPassengers.ToList<Taxi>();
+                List<Taxi> availableTaxis = new List<Taxi>();
+                foreach (Taxi t in availableTaxisDueToPassengers)
+                    availableTaxis.Add(t);
                 if (availableTaxis.Count == 0)
                     throw new FaultException("Er is geen taxi beschikbaar voor het opgegeven aantal passagiers");
 
@@ -75,12 +78,10 @@ namespace TaxiService
                                                 (b.DepartureTime < at && b.ArrivalTime > at) || 
                                                 (b.DepartureTime > dt && b.ArrivalTime < at)
                                                 select b.Taxi;
-                foreach (Taxi t1 in availableTaxis)
-                    foreach (Taxi t2 in unAvailableTaxisDueToTime)
-                        if (t1 == t2) availableTaxis.Remove(t1);
+                foreach (Taxi t in unAvailableTaxisDueToTime)
+                    if (availableTaxis.Contains(t)) availableTaxis.Remove(t);
                 if (availableTaxis.Count == 0)
                     throw new FaultException("Er is geen taxi beschikbaar voor de opgegeven tijd");
-
 
                 Taxi taxiMinPrice = null;
                 foreach (Taxi taxi in availableTaxis)
@@ -106,7 +107,7 @@ namespace TaxiService
         public ServicesDataContracts.TaxiBooking DoTaxiBooking(TaxiBookingRequest taxiBookingRequest)
         {
             //string userToken = taxiBookingRequest.UserToken;
-            User user = To8Libraries.UserHelper.GetUser(taxiBookingRequest.UserToken);
+            string user = To8Libraries.UserHelper.GetUser(taxiBookingRequest.UserToken).UserName;
             //call user-service for verification
             using (var db = new WebServiceContext())
             {
@@ -116,7 +117,7 @@ namespace TaxiService
 
                 //Create TaxiBooking for persistancy
                 To8Libraries.Domain.TaxiBooking taxiBooking = new To8Libraries.Domain.TaxiBooking();
-                taxiBooking.UserName = user.UserName;
+                taxiBooking.UserName = user;
                 taxiBooking.Taxi = taxi.First();
                 taxiBooking.Price = taxiBookingRequest.Price;
                 taxiBooking.DepartureAddress = taxiBookingRequest.DepartureAddress;
@@ -183,7 +184,8 @@ namespace TaxiService
                     taxiBooking.Price = b.Price;
                     taxiBooking.DepartureAddress = b.DepartureAddress;
                     taxiBooking.DestinationAddress = b.DestinationAddress;
-                    //set arrivalTime and dateTime
+                    taxiBooking.DepartureTime = b.DepartureTime;
+                    taxiBooking.ArrivalTime = b.ArrivalTime;
                     taxiBooking.AmountOfPassengers = b.AmountOfPassengers;
                     ubs.TaxiBookings.Add(taxiBooking); //add to the response
                 }
