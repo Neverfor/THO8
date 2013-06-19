@@ -31,13 +31,13 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AirportDTO", propOrder = {
-    "aiportId",
+    "airportId",
     "name"
 })
 public class AirportDTO {
 
     @XmlElement(name = "AiportId")
-    protected Integer aiportId;
+    protected Integer airportId;
     @XmlElementRef(name = "Name", namespace = "http://schemas.datacontract.org/2004/07/FlightService.DataModels", type = JAXBElement.class, required = false)
     protected JAXBElement<String> name;
 
@@ -49,20 +49,8 @@ public class AirportDTO {
      *     {@link Integer }
      *     
      */
-    public Integer getAiportId() {
-        return aiportId;
-    }
-
-    /**
-     * Sets the value of the aiportId property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
-     */
-    public void setAiportId(Integer value) {
-        this.aiportId = value;
+    public Integer getAirportId() {
+        return airportId;
     }
 
     /**
@@ -86,7 +74,7 @@ public class AirportDTO {
      *     
      */
     public void setName(JAXBElement<String> value) {
+    	this.airportId = airportId++;
         this.name = value;
     }
-
 }

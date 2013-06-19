@@ -65,5 +65,11 @@ public class ArrayOfAirportDTO {
         }
         return this.airportDTO;
     }
-
+    
+    public boolean addAirportDTO(AirportDTO Airport) {
+    	if(airportDTO.add(Airport)){
+    		return true;
+    	}
+		return false;
+    }
 }

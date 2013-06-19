@@ -18,7 +18,7 @@ import javax.xml.ws.WebServiceFeature;
  * 
  */
 @WebServiceClient(name = "FlightService", targetNamespace = "http://flightservice.themaopdracht8.nl", wsdlLocation = "http://flightservice.devworks.nl/FlightService.svc?singleWsdl")
-public class FlightService_Service
+public class FlightService_Service_Backup
     extends Service
 {
 

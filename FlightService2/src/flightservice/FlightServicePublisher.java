@@ -10,6 +10,6 @@ public class FlightServicePublisher {
 	
 	public static void main(String[] args) throws FlightServiceGetAirportsExceptionFaultFaultMessage {
 		
-		Endpoint.publish("http://localhost:9999/ws/flight", new FlightService_Service());
-    }
+		Endpoint.publish("http://localhost:9998/ws/flight", new FlightService_Service());
+	}
 }
