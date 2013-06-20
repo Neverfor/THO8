@@ -1,6 +1,6 @@
-﻿namespace ClientFlightPart
+﻿namespace TaxiClient.Flight
 {
-    partial class FlightForm2
+    partial class FoundFlightsForm
     {
         /// <summary>
         /// Required designer variable.
