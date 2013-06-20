@@ -10,7 +10,9 @@
 *.config
 *.cscfg
 *.azurePubxml
+persistence.xml
 Profiles/
+
 
 # Build results
 

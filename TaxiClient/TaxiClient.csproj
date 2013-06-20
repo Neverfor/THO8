@@ -57,17 +57,11 @@
     <Compile Include="Authentication\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Flight\FlightForm1.cs">
+    <Compile Include="Flight\FoundFlightsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Flight\FlightForm1.Designer.cs">
-      <DependentUpon>FlightForm1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Flight\FlightForm2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Flight\FlightForm2.Designer.cs">
-      <DependentUpon>FlightForm2.cs</DependentUpon>
+    <Compile Include="Flight\FoundFlightsForm.Designer.cs">
+      <DependentUpon>FoundFlightsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Authentication\LoginForm.cs">
       <SubType>Form</SubType>
@@ -120,14 +114,14 @@
     <EmbeddedResource Include="Authentication\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Flight\FlightForm1.resx">
-      <DependentUpon>FlightForm1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Flight\FlightForm2.resx">
-      <DependentUpon>FlightForm2.cs</DependentUpon>
+    <EmbeddedResource Include="Flight\FoundFlightsForm.resx">
+      <DependentUpon>FoundFlightsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Authentication\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Flight\FlightUC.resx">
+      <DependentUpon>FlightUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Hotel\HotelUC.resx">
       <DependentUpon>HotelUC.cs</DependentUpon>
