@@ -86,6 +86,8 @@
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(179, 20);
             this.tbPassword.TabIndex = 3;
+            this.tbPassword.UseSystemPasswordChar = true;
+            this.tbPassword.KeyUp += new System.Windows.Forms.KeyEventHandler(this.form_KeyPressed);
             // 
             // tbUsername
             // 

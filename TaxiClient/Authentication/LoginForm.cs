@@ -40,5 +40,11 @@ namespace TaxiClient.Authentication
             }
         }
 
+        private void form_KeyPressed(object sender, KeyEventArgs  e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnLogin_Click(sender, e);
+        }
+
     }
 }

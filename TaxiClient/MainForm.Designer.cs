@@ -57,6 +57,7 @@
             this.hotelBookingToolStripMenuItem,
             this.taxiBookingToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.B)));
             this.toolStripMenuItem1.Size = new System.Drawing.Size(78, 20);
             this.toolStripMenuItem1.Text = "Kies Boeking";
             this.toolStripMenuItem1.ToolTipText = "Chose of one of the many bookings that you can do through our client!";
@@ -64,21 +65,24 @@
             // flightBookingToolStripMenuItem
             // 
             this.flightBookingToolStripMenuItem.Name = "flightBookingToolStripMenuItem";
-            this.flightBookingToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.flightBookingToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.V)));
+            this.flightBookingToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.flightBookingToolStripMenuItem.Text = "Vlucht Boeking";
             this.flightBookingToolStripMenuItem.Click += new System.EventHandler(this.flightBookingToolStripMenuItem_Click);
             // 
             // hotelBookingToolStripMenuItem
             // 
             this.hotelBookingToolStripMenuItem.Name = "hotelBookingToolStripMenuItem";
-            this.hotelBookingToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.hotelBookingToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.H)));
+            this.hotelBookingToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.hotelBookingToolStripMenuItem.Text = "Hotel Boeking";
             this.hotelBookingToolStripMenuItem.Click += new System.EventHandler(this.hotelBookingToolStripMenuItem_Click);
             // 
             // taxiBookingToolStripMenuItem
             // 
             this.taxiBookingToolStripMenuItem.Name = "taxiBookingToolStripMenuItem";
-            this.taxiBookingToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.taxiBookingToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.T)));
+            this.taxiBookingToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.taxiBookingToolStripMenuItem.Text = "Taxi Boeking";
             this.taxiBookingToolStripMenuItem.Click += new System.EventHandler(this.taxiBookingToolStripMenuItem_Click);
             // 
