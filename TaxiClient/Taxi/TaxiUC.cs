@@ -20,13 +20,17 @@ namespace TaxiClient.Taxi
         {
             this.parentContainer = parentContainer;
             InitializeComponent();
+            FillDataGrid();
+        }
+
+        private void FillDataGrid()
+        {
             using (WebServiceClient client = new WebServiceClient())
             {
                 UserBookingsRequest req = new UserBookingsRequest();
                 req.UserToken = Session.UserToken;
                 userBookingsDG.DataSource = client.GetUserBookings(req).TaxiBookings;
             }
-            
         }
 
         private void btnFindTaxi_Click(object sender, EventArgs e)
@@ -123,7 +127,7 @@ namespace TaxiClient.Taxi
 
         private void tabPage2_Click(object sender, EventArgs e)
         {
-            userBookingsDG.Refresh();
+            FillDataGrid();
         }
 
         private void btnCancelBooking_Click(object sender, EventArgs e)
@@ -145,7 +149,10 @@ namespace TaxiClient.Taxi
             {
                 MessageBox.Show(ex.Message);
             }
-            userBookingsDG.Refresh();
+            FillDataGrid();
         }
+
+
+
     }
 }

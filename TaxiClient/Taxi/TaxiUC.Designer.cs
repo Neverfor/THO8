@@ -32,58 +32,58 @@
             this.taxiBookingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.userBookingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.userBookingsDG = new System.Windows.Forms.DataGridView();
-            this.taxiTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.taxiIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.arrivalTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departureTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.destinationAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departureAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountOfPassengersDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userTokenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCancelBooking = new System.Windows.Forms.Button();
+            this.userBookingsDG = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userTokenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountOfPassengersDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departureAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.destinationAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departureTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.arrivalTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.taxiIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.taxiTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.gbDepartureAddress = new System.Windows.Forms.GroupBox();
-            this.tbDepStreet = new System.Windows.Forms.TextBox();
-            this.tbDepNumber = new System.Windows.Forms.TextBox();
-            this.tbDepZipCode = new System.Windows.Forms.TextBox();
-            this.tbDepCity = new System.Windows.Forms.TextBox();
-            this.tbDepCountry = new System.Windows.Forms.TextBox();
-            this.lblDepStreet = new System.Windows.Forms.Label();
-            this.lblDepNumber = new System.Windows.Forms.Label();
-            this.lblDepZipCode = new System.Windows.Forms.Label();
-            this.lblDepCity = new System.Windows.Forms.Label();
-            this.lblDepCountry = new System.Windows.Forms.Label();
-            this.gbDestinationAddress = new System.Windows.Forms.GroupBox();
-            this.tbDestStreet = new System.Windows.Forms.TextBox();
-            this.tbDestNumber = new System.Windows.Forms.TextBox();
-            this.tbDestZipCode = new System.Windows.Forms.TextBox();
-            this.tbDestCity = new System.Windows.Forms.TextBox();
-            this.tbDestCountry = new System.Windows.Forms.TextBox();
-            this.lblDestStreet = new System.Windows.Forms.Label();
-            this.lblDestNumber = new System.Windows.Forms.Label();
-            this.lblDestZipCode = new System.Windows.Forms.Label();
-            this.lblDestCity = new System.Windows.Forms.Label();
-            this.lblDestCountry = new System.Windows.Forms.Label();
-            this.dtpDate = new System.Windows.Forms.DateTimePicker();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.lblTime = new System.Windows.Forms.Label();
-            this.dtpTime = new System.Windows.Forms.DateTimePicker();
-            this.rbDeparture = new System.Windows.Forms.RadioButton();
-            this.rbArrival = new System.Windows.Forms.RadioButton();
-            this.tbPassengers = new System.Windows.Forms.TextBox();
-            this.lblPassengers = new System.Windows.Forms.Label();
             this.btnFindTaxi = new System.Windows.Forms.Button();
+            this.lblPassengers = new System.Windows.Forms.Label();
+            this.tbPassengers = new System.Windows.Forms.TextBox();
+            this.rbArrival = new System.Windows.Forms.RadioButton();
+            this.rbDeparture = new System.Windows.Forms.RadioButton();
+            this.dtpTime = new System.Windows.Forms.DateTimePicker();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.dtpDate = new System.Windows.Forms.DateTimePicker();
+            this.gbDestinationAddress = new System.Windows.Forms.GroupBox();
+            this.lblDestCountry = new System.Windows.Forms.Label();
+            this.lblDestCity = new System.Windows.Forms.Label();
+            this.lblDestZipCode = new System.Windows.Forms.Label();
+            this.lblDestNumber = new System.Windows.Forms.Label();
+            this.lblDestStreet = new System.Windows.Forms.Label();
+            this.tbDestCountry = new System.Windows.Forms.TextBox();
+            this.tbDestCity = new System.Windows.Forms.TextBox();
+            this.tbDestZipCode = new System.Windows.Forms.TextBox();
+            this.tbDestNumber = new System.Windows.Forms.TextBox();
+            this.tbDestStreet = new System.Windows.Forms.TextBox();
+            this.gbDepartureAddress = new System.Windows.Forms.GroupBox();
+            this.lblDepCountry = new System.Windows.Forms.Label();
+            this.lblDepCity = new System.Windows.Forms.Label();
+            this.lblDepZipCode = new System.Windows.Forms.Label();
+            this.lblDepNumber = new System.Windows.Forms.Label();
+            this.lblDepStreet = new System.Windows.Forms.Label();
+            this.tbDepCountry = new System.Windows.Forms.TextBox();
+            this.tbDepCity = new System.Windows.Forms.TextBox();
+            this.tbDepZipCode = new System.Windows.Forms.TextBox();
+            this.tbDepNumber = new System.Windows.Forms.TextBox();
+            this.tbDepStreet = new System.Windows.Forms.TextBox();
             this.tabTaxi = new System.Windows.Forms.TabControl();
             ((System.ComponentModel.ISupportInitialize)(this.taxiBookingsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBookingsBindingSource)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userBookingsDG)).BeginInit();
             this.tabPage1.SuspendLayout();
-            this.gbDepartureAddress.SuspendLayout();
             this.gbDestinationAddress.SuspendLayout();
+            this.gbDepartureAddress.SuspendLayout();
             this.tabTaxi.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,10 +103,20 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(981, 676);
+            this.tabPage2.Size = new System.Drawing.Size(943, 605);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "...";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnCancelBooking
+            // 
+            this.btnCancelBooking.Location = new System.Drawing.Point(660, 410);
+            this.btnCancelBooking.Name = "btnCancelBooking";
+            this.btnCancelBooking.Size = new System.Drawing.Size(106, 23);
+            this.btnCancelBooking.TabIndex = 1;
+            this.btnCancelBooking.Text = "Annuleer boeking";
+            this.btnCancelBooking.UseVisualStyleBackColor = true;
+            this.btnCancelBooking.Click += new System.EventHandler(this.btnCancelBooking_Click);
             // 
             // userBookingsDG
             // 
@@ -140,68 +150,13 @@
             this.userBookingsDG.TabIndex = 0;
             this.userBookingsDG.VirtualMode = true;
             // 
-            // taxiTypeDataGridViewTextBoxColumn
+            // idDataGridViewTextBoxColumn
             // 
-            this.taxiTypeDataGridViewTextBoxColumn.DataPropertyName = "TaxiType";
-            this.taxiTypeDataGridViewTextBoxColumn.HeaderText = "Taxi type";
-            this.taxiTypeDataGridViewTextBoxColumn.Name = "taxiTypeDataGridViewTextBoxColumn";
-            this.taxiTypeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // taxiIdDataGridViewTextBoxColumn
-            // 
-            this.taxiIdDataGridViewTextBoxColumn.DataPropertyName = "TaxiId";
-            this.taxiIdDataGridViewTextBoxColumn.HeaderText = "Taxi nr.";
-            this.taxiIdDataGridViewTextBoxColumn.Name = "taxiIdDataGridViewTextBoxColumn";
-            this.taxiIdDataGridViewTextBoxColumn.ReadOnly = true;
-            this.taxiIdDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Prijs";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.priceDataGridViewTextBoxColumn.Width = 40;
-            // 
-            // arrivalTimeDataGridViewTextBoxColumn
-            // 
-            this.arrivalTimeDataGridViewTextBoxColumn.DataPropertyName = "ArrivalTime";
-            this.arrivalTimeDataGridViewTextBoxColumn.HeaderText = "Aankomst tijd";
-            this.arrivalTimeDataGridViewTextBoxColumn.Name = "arrivalTimeDataGridViewTextBoxColumn";
-            this.arrivalTimeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.arrivalTimeDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // departureTimeDataGridViewTextBoxColumn
-            // 
-            this.departureTimeDataGridViewTextBoxColumn.DataPropertyName = "DepartureTime";
-            this.departureTimeDataGridViewTextBoxColumn.HeaderText = "Vertrek tijd";
-            this.departureTimeDataGridViewTextBoxColumn.Name = "departureTimeDataGridViewTextBoxColumn";
-            this.departureTimeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.departureTimeDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // destinationAddressDataGridViewTextBoxColumn
-            // 
-            this.destinationAddressDataGridViewTextBoxColumn.DataPropertyName = "DestinationAddress";
-            this.destinationAddressDataGridViewTextBoxColumn.HeaderText = "Aankomst adres";
-            this.destinationAddressDataGridViewTextBoxColumn.Name = "destinationAddressDataGridViewTextBoxColumn";
-            this.destinationAddressDataGridViewTextBoxColumn.ReadOnly = true;
-            this.destinationAddressDataGridViewTextBoxColumn.Width = 135;
-            // 
-            // departureAddressDataGridViewTextBoxColumn
-            // 
-            this.departureAddressDataGridViewTextBoxColumn.DataPropertyName = "DepartureAddress";
-            this.departureAddressDataGridViewTextBoxColumn.HeaderText = "Vertrek adres";
-            this.departureAddressDataGridViewTextBoxColumn.Name = "departureAddressDataGridViewTextBoxColumn";
-            this.departureAddressDataGridViewTextBoxColumn.ReadOnly = true;
-            this.departureAddressDataGridViewTextBoxColumn.Width = 135;
-            // 
-            // amountOfPassengersDataGridViewTextBoxColumn
-            // 
-            this.amountOfPassengersDataGridViewTextBoxColumn.DataPropertyName = "AmountOfPassengers";
-            this.amountOfPassengersDataGridViewTextBoxColumn.HeaderText = "Passagiers";
-            this.amountOfPassengersDataGridViewTextBoxColumn.Name = "amountOfPassengersDataGridViewTextBoxColumn";
-            this.amountOfPassengersDataGridViewTextBoxColumn.ReadOnly = true;
-            this.amountOfPassengersDataGridViewTextBoxColumn.Width = 70;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
             // 
             // userTokenDataGridViewTextBoxColumn
             // 
@@ -211,22 +166,68 @@
             this.userTokenDataGridViewTextBoxColumn.ReadOnly = true;
             this.userTokenDataGridViewTextBoxColumn.Visible = false;
             // 
-            // idDataGridViewTextBoxColumn
+            // amountOfPassengersDataGridViewTextBoxColumn
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
+            this.amountOfPassengersDataGridViewTextBoxColumn.DataPropertyName = "AmountOfPassengers";
+            this.amountOfPassengersDataGridViewTextBoxColumn.HeaderText = "Passagiers";
+            this.amountOfPassengersDataGridViewTextBoxColumn.Name = "amountOfPassengersDataGridViewTextBoxColumn";
+            this.amountOfPassengersDataGridViewTextBoxColumn.ReadOnly = true;
+            this.amountOfPassengersDataGridViewTextBoxColumn.Width = 70;
             // 
-            // btnCancelBooking
+            // departureAddressDataGridViewTextBoxColumn
             // 
-            this.btnCancelBooking.Location = new System.Drawing.Point(660, 410);
-            this.btnCancelBooking.Name = "btnCancelBooking";
-            this.btnCancelBooking.Size = new System.Drawing.Size(106, 23);
-            this.btnCancelBooking.TabIndex = 1;
-            this.btnCancelBooking.Text = "Annuleer boeking";
-            this.btnCancelBooking.UseVisualStyleBackColor = true;
+            this.departureAddressDataGridViewTextBoxColumn.DataPropertyName = "DepartureAddress";
+            this.departureAddressDataGridViewTextBoxColumn.HeaderText = "Vertrek adres";
+            this.departureAddressDataGridViewTextBoxColumn.Name = "departureAddressDataGridViewTextBoxColumn";
+            this.departureAddressDataGridViewTextBoxColumn.ReadOnly = true;
+            this.departureAddressDataGridViewTextBoxColumn.Width = 135;
+            // 
+            // destinationAddressDataGridViewTextBoxColumn
+            // 
+            this.destinationAddressDataGridViewTextBoxColumn.DataPropertyName = "DestinationAddress";
+            this.destinationAddressDataGridViewTextBoxColumn.HeaderText = "Aankomst adres";
+            this.destinationAddressDataGridViewTextBoxColumn.Name = "destinationAddressDataGridViewTextBoxColumn";
+            this.destinationAddressDataGridViewTextBoxColumn.ReadOnly = true;
+            this.destinationAddressDataGridViewTextBoxColumn.Width = 135;
+            // 
+            // departureTimeDataGridViewTextBoxColumn
+            // 
+            this.departureTimeDataGridViewTextBoxColumn.DataPropertyName = "DepartureTime";
+            this.departureTimeDataGridViewTextBoxColumn.HeaderText = "Vertrek tijd";
+            this.departureTimeDataGridViewTextBoxColumn.Name = "departureTimeDataGridViewTextBoxColumn";
+            this.departureTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.departureTimeDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // arrivalTimeDataGridViewTextBoxColumn
+            // 
+            this.arrivalTimeDataGridViewTextBoxColumn.DataPropertyName = "ArrivalTime";
+            this.arrivalTimeDataGridViewTextBoxColumn.HeaderText = "Aankomst tijd";
+            this.arrivalTimeDataGridViewTextBoxColumn.Name = "arrivalTimeDataGridViewTextBoxColumn";
+            this.arrivalTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.arrivalTimeDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Prijs";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.priceDataGridViewTextBoxColumn.Width = 40;
+            // 
+            // taxiIdDataGridViewTextBoxColumn
+            // 
+            this.taxiIdDataGridViewTextBoxColumn.DataPropertyName = "TaxiId";
+            this.taxiIdDataGridViewTextBoxColumn.HeaderText = "Taxi nr.";
+            this.taxiIdDataGridViewTextBoxColumn.Name = "taxiIdDataGridViewTextBoxColumn";
+            this.taxiIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.taxiIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // taxiTypeDataGridViewTextBoxColumn
+            // 
+            this.taxiTypeDataGridViewTextBoxColumn.DataPropertyName = "TaxiType";
+            this.taxiTypeDataGridViewTextBoxColumn.HeaderText = "Taxi type";
+            this.taxiTypeDataGridViewTextBoxColumn.Name = "taxiTypeDataGridViewTextBoxColumn";
+            this.taxiTypeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // tabPage1
             // 
@@ -249,104 +250,90 @@
             this.tabPage1.Text = "Taxi";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // gbDepartureAddress
+            // btnFindTaxi
             // 
-            this.gbDepartureAddress.Controls.Add(this.lblDepCountry);
-            this.gbDepartureAddress.Controls.Add(this.lblDepCity);
-            this.gbDepartureAddress.Controls.Add(this.lblDepZipCode);
-            this.gbDepartureAddress.Controls.Add(this.lblDepNumber);
-            this.gbDepartureAddress.Controls.Add(this.lblDepStreet);
-            this.gbDepartureAddress.Controls.Add(this.tbDepCountry);
-            this.gbDepartureAddress.Controls.Add(this.tbDepCity);
-            this.gbDepartureAddress.Controls.Add(this.tbDepZipCode);
-            this.gbDepartureAddress.Controls.Add(this.tbDepNumber);
-            this.gbDepartureAddress.Controls.Add(this.tbDepStreet);
-            this.gbDepartureAddress.Location = new System.Drawing.Point(4, 7);
-            this.gbDepartureAddress.Name = "gbDepartureAddress";
-            this.gbDepartureAddress.Size = new System.Drawing.Size(479, 143);
-            this.gbDepartureAddress.TabIndex = 0;
-            this.gbDepartureAddress.TabStop = false;
-            this.gbDepartureAddress.Text = "Van";
+            this.btnFindTaxi.Location = new System.Drawing.Point(692, 413);
+            this.btnFindTaxi.Name = "btnFindTaxi";
+            this.btnFindTaxi.Size = new System.Drawing.Size(75, 23);
+            this.btnFindTaxi.TabIndex = 20;
+            this.btnFindTaxi.Text = "Zoek taxi";
+            this.btnFindTaxi.UseVisualStyleBackColor = true;
+            this.btnFindTaxi.Click += new System.EventHandler(this.btnFindTaxi_Click);
             // 
-            // tbDepStreet
+            // lblPassengers
             // 
-            this.tbDepStreet.Location = new System.Drawing.Point(102, 19);
-            this.tbDepStreet.Name = "tbDepStreet";
-            this.tbDepStreet.Size = new System.Drawing.Size(143, 20);
-            this.tbDepStreet.TabIndex = 0;
+            this.lblPassengers.AutoSize = true;
+            this.lblPassengers.Location = new System.Drawing.Point(39, 358);
+            this.lblPassengers.Name = "lblPassengers";
+            this.lblPassengers.Size = new System.Drawing.Size(57, 13);
+            this.lblPassengers.TabIndex = 18;
+            this.lblPassengers.Text = "passagiers";
             // 
-            // tbDepNumber
+            // tbPassengers
             // 
-            this.tbDepNumber.Location = new System.Drawing.Point(301, 19);
-            this.tbDepNumber.Name = "tbDepNumber";
-            this.tbDepNumber.Size = new System.Drawing.Size(47, 20);
-            this.tbDepNumber.TabIndex = 1;
+            this.tbPassengers.Location = new System.Drawing.Point(106, 355);
+            this.tbPassengers.Name = "tbPassengers";
+            this.tbPassengers.Size = new System.Drawing.Size(46, 20);
+            this.tbPassengers.TabIndex = 19;
             // 
-            // tbDepZipCode
+            // rbArrival
             // 
-            this.tbDepZipCode.Location = new System.Drawing.Point(102, 45);
-            this.tbDepZipCode.Name = "tbDepZipCode";
-            this.tbDepZipCode.Size = new System.Drawing.Size(69, 20);
-            this.tbDepZipCode.TabIndex = 2;
+            this.rbArrival.AutoSize = true;
+            this.rbArrival.Location = new System.Drawing.Point(171, 332);
+            this.rbArrival.Name = "rbArrival";
+            this.rbArrival.Size = new System.Drawing.Size(71, 17);
+            this.rbArrival.TabIndex = 18;
+            this.rbArrival.Text = "aankomst";
+            this.rbArrival.UseVisualStyleBackColor = true;
             // 
-            // tbDepCity
+            // rbDeparture
             // 
-            this.tbDepCity.Location = new System.Drawing.Point(102, 71);
-            this.tbDepCity.Name = "tbDepCity";
-            this.tbDepCity.Size = new System.Drawing.Size(143, 20);
-            this.tbDepCity.TabIndex = 3;
+            this.rbDeparture.AutoSize = true;
+            this.rbDeparture.Checked = true;
+            this.rbDeparture.Location = new System.Drawing.Point(106, 332);
+            this.rbDeparture.Name = "rbDeparture";
+            this.rbDeparture.Size = new System.Drawing.Size(58, 17);
+            this.rbDeparture.TabIndex = 15;
+            this.rbDeparture.TabStop = true;
+            this.rbDeparture.Text = "vertrek";
+            this.rbDeparture.UseVisualStyleBackColor = true;
             // 
-            // tbDepCountry
+            // dtpTime
             // 
-            this.tbDepCountry.Location = new System.Drawing.Point(102, 97);
-            this.tbDepCountry.Name = "tbDepCountry";
-            this.tbDepCountry.Size = new System.Drawing.Size(143, 20);
-            this.tbDepCountry.TabIndex = 4;
+            this.dtpTime.CustomFormat = "HH:mm ";
+            this.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpTime.Location = new System.Drawing.Point(305, 305);
+            this.dtpTime.Name = "dtpTime";
+            this.dtpTime.ShowUpDown = true;
+            this.dtpTime.Size = new System.Drawing.Size(57, 20);
+            this.dtpTime.TabIndex = 14;
+            this.dtpTime.Value = new System.DateTime(2013, 6, 19, 12, 29, 4, 375);
             // 
-            // lblDepStreet
+            // lblTime
             // 
-            this.lblDepStreet.AutoSize = true;
-            this.lblDepStreet.Location = new System.Drawing.Point(63, 22);
-            this.lblDepStreet.Name = "lblDepStreet";
-            this.lblDepStreet.Size = new System.Drawing.Size(33, 13);
-            this.lblDepStreet.TabIndex = 5;
-            this.lblDepStreet.Text = "straat";
+            this.lblTime.AutoSize = true;
+            this.lblTime.Location = new System.Drawing.Point(284, 306);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(20, 13);
+            this.lblTime.TabIndex = 13;
+            this.lblTime.Text = "tijd";
             // 
-            // lblDepNumber
+            // lblDate
             // 
-            this.lblDepNumber.AutoSize = true;
-            this.lblDepNumber.Location = new System.Drawing.Point(251, 22);
-            this.lblDepNumber.Name = "lblDepNumber";
-            this.lblDepNumber.Size = new System.Drawing.Size(44, 13);
-            this.lblDepNumber.TabIndex = 6;
-            this.lblDepNumber.Text = "nummer";
+            this.lblDate.AutoSize = true;
+            this.lblDate.Location = new System.Drawing.Point(64, 306);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(36, 13);
+            this.lblDate.TabIndex = 12;
+            this.lblDate.Text = "datum";
             // 
-            // lblDepZipCode
+            // dtpDate
             // 
-            this.lblDepZipCode.AutoSize = true;
-            this.lblDepZipCode.Location = new System.Drawing.Point(45, 48);
-            this.lblDepZipCode.Name = "lblDepZipCode";
-            this.lblDepZipCode.Size = new System.Drawing.Size(51, 13);
-            this.lblDepZipCode.TabIndex = 7;
-            this.lblDepZipCode.Text = "postcode";
-            // 
-            // lblDepCity
-            // 
-            this.lblDepCity.AutoSize = true;
-            this.lblDepCity.Location = new System.Drawing.Point(35, 74);
-            this.lblDepCity.Name = "lblDepCity";
-            this.lblDepCity.Size = new System.Drawing.Size(61, 13);
-            this.lblDepCity.TabIndex = 8;
-            this.lblDepCity.Text = "woonplaats";
-            // 
-            // lblDepCountry
-            // 
-            this.lblDepCountry.AutoSize = true;
-            this.lblDepCountry.Location = new System.Drawing.Point(69, 100);
-            this.lblDepCountry.Name = "lblDepCountry";
-            this.lblDepCountry.Size = new System.Drawing.Size(27, 13);
-            this.lblDepCountry.TabIndex = 9;
-            this.lblDepCountry.Text = "land";
+            this.dtpDate.Location = new System.Drawing.Point(106, 305);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(172, 20);
+            this.dtpDate.TabIndex = 11;
+            this.dtpDate.Value = new System.DateTime(2013, 6, 19, 12, 29, 4, 384);
             // 
             // gbDestinationAddress
             // 
@@ -367,67 +354,14 @@
             this.gbDestinationAddress.TabStop = false;
             this.gbDestinationAddress.Text = "Naar";
             // 
-            // tbDestStreet
+            // lblDestCountry
             // 
-            this.tbDestStreet.Location = new System.Drawing.Point(102, 19);
-            this.tbDestStreet.Name = "tbDestStreet";
-            this.tbDestStreet.Size = new System.Drawing.Size(143, 20);
-            this.tbDestStreet.TabIndex = 5;
-            // 
-            // tbDestNumber
-            // 
-            this.tbDestNumber.Location = new System.Drawing.Point(301, 19);
-            this.tbDestNumber.Name = "tbDestNumber";
-            this.tbDestNumber.Size = new System.Drawing.Size(47, 20);
-            this.tbDestNumber.TabIndex = 6;
-            // 
-            // tbDestZipCode
-            // 
-            this.tbDestZipCode.Location = new System.Drawing.Point(102, 45);
-            this.tbDestZipCode.Name = "tbDestZipCode";
-            this.tbDestZipCode.Size = new System.Drawing.Size(69, 20);
-            this.tbDestZipCode.TabIndex = 7;
-            // 
-            // tbDestCity
-            // 
-            this.tbDestCity.Location = new System.Drawing.Point(102, 71);
-            this.tbDestCity.Name = "tbDestCity";
-            this.tbDestCity.Size = new System.Drawing.Size(143, 20);
-            this.tbDestCity.TabIndex = 8;
-            // 
-            // tbDestCountry
-            // 
-            this.tbDestCountry.Location = new System.Drawing.Point(102, 97);
-            this.tbDestCountry.Name = "tbDestCountry";
-            this.tbDestCountry.Size = new System.Drawing.Size(143, 20);
-            this.tbDestCountry.TabIndex = 9;
-            // 
-            // lblDestStreet
-            // 
-            this.lblDestStreet.AutoSize = true;
-            this.lblDestStreet.Location = new System.Drawing.Point(63, 22);
-            this.lblDestStreet.Name = "lblDestStreet";
-            this.lblDestStreet.Size = new System.Drawing.Size(33, 13);
-            this.lblDestStreet.TabIndex = 5;
-            this.lblDestStreet.Text = "straat";
-            // 
-            // lblDestNumber
-            // 
-            this.lblDestNumber.AutoSize = true;
-            this.lblDestNumber.Location = new System.Drawing.Point(251, 22);
-            this.lblDestNumber.Name = "lblDestNumber";
-            this.lblDestNumber.Size = new System.Drawing.Size(44, 13);
-            this.lblDestNumber.TabIndex = 6;
-            this.lblDestNumber.Text = "nummer";
-            // 
-            // lblDestZipCode
-            // 
-            this.lblDestZipCode.AutoSize = true;
-            this.lblDestZipCode.Location = new System.Drawing.Point(45, 48);
-            this.lblDestZipCode.Name = "lblDestZipCode";
-            this.lblDestZipCode.Size = new System.Drawing.Size(51, 13);
-            this.lblDestZipCode.TabIndex = 7;
-            this.lblDestZipCode.Text = "postcode";
+            this.lblDestCountry.AutoSize = true;
+            this.lblDestCountry.Location = new System.Drawing.Point(69, 100);
+            this.lblDestCountry.Name = "lblDestCountry";
+            this.lblDestCountry.Size = new System.Drawing.Size(27, 13);
+            this.lblDestCountry.TabIndex = 9;
+            this.lblDestCountry.Text = "land";
             // 
             // lblDestCity
             // 
@@ -438,98 +372,166 @@
             this.lblDestCity.TabIndex = 8;
             this.lblDestCity.Text = "woonplaats";
             // 
-            // lblDestCountry
+            // lblDestZipCode
             // 
-            this.lblDestCountry.AutoSize = true;
-            this.lblDestCountry.Location = new System.Drawing.Point(69, 100);
-            this.lblDestCountry.Name = "lblDestCountry";
-            this.lblDestCountry.Size = new System.Drawing.Size(27, 13);
-            this.lblDestCountry.TabIndex = 9;
-            this.lblDestCountry.Text = "land";
+            this.lblDestZipCode.AutoSize = true;
+            this.lblDestZipCode.Location = new System.Drawing.Point(45, 48);
+            this.lblDestZipCode.Name = "lblDestZipCode";
+            this.lblDestZipCode.Size = new System.Drawing.Size(51, 13);
+            this.lblDestZipCode.TabIndex = 7;
+            this.lblDestZipCode.Text = "postcode";
             // 
-            // dtpDate
+            // lblDestNumber
             // 
-            this.dtpDate.Location = new System.Drawing.Point(106, 305);
-            this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(172, 20);
-            this.dtpDate.TabIndex = 11;
-            this.dtpDate.Value = new System.DateTime(2013, 6, 19, 12, 29, 4, 384);
+            this.lblDestNumber.AutoSize = true;
+            this.lblDestNumber.Location = new System.Drawing.Point(251, 22);
+            this.lblDestNumber.Name = "lblDestNumber";
+            this.lblDestNumber.Size = new System.Drawing.Size(44, 13);
+            this.lblDestNumber.TabIndex = 6;
+            this.lblDestNumber.Text = "nummer";
             // 
-            // lblDate
+            // lblDestStreet
             // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(64, 306);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(36, 13);
-            this.lblDate.TabIndex = 12;
-            this.lblDate.Text = "datum";
+            this.lblDestStreet.AutoSize = true;
+            this.lblDestStreet.Location = new System.Drawing.Point(63, 22);
+            this.lblDestStreet.Name = "lblDestStreet";
+            this.lblDestStreet.Size = new System.Drawing.Size(33, 13);
+            this.lblDestStreet.TabIndex = 5;
+            this.lblDestStreet.Text = "straat";
             // 
-            // lblTime
+            // tbDestCountry
             // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.Location = new System.Drawing.Point(284, 306);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(20, 13);
-            this.lblTime.TabIndex = 13;
-            this.lblTime.Text = "tijd";
+            this.tbDestCountry.Location = new System.Drawing.Point(102, 97);
+            this.tbDestCountry.Name = "tbDestCountry";
+            this.tbDestCountry.Size = new System.Drawing.Size(143, 20);
+            this.tbDestCountry.TabIndex = 9;
             // 
-            // dtpTime
+            // tbDestCity
             // 
-            this.dtpTime.CustomFormat = "HH:mm ";
-            this.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTime.Location = new System.Drawing.Point(305, 305);
-            this.dtpTime.Name = "dtpTime";
-            this.dtpTime.ShowUpDown = true;
-            this.dtpTime.Size = new System.Drawing.Size(57, 20);
-            this.dtpTime.TabIndex = 14;
-            this.dtpTime.Value = new System.DateTime(2013, 6, 19, 12, 29, 4, 375);
+            this.tbDestCity.Location = new System.Drawing.Point(102, 71);
+            this.tbDestCity.Name = "tbDestCity";
+            this.tbDestCity.Size = new System.Drawing.Size(143, 20);
+            this.tbDestCity.TabIndex = 8;
             // 
-            // rbDeparture
+            // tbDestZipCode
             // 
-            this.rbDeparture.AutoSize = true;
-            this.rbDeparture.Checked = true;
-            this.rbDeparture.Location = new System.Drawing.Point(106, 332);
-            this.rbDeparture.Name = "rbDeparture";
-            this.rbDeparture.Size = new System.Drawing.Size(58, 17);
-            this.rbDeparture.TabIndex = 15;
-            this.rbDeparture.TabStop = true;
-            this.rbDeparture.Text = "vertrek";
-            this.rbDeparture.UseVisualStyleBackColor = true;
+            this.tbDestZipCode.Location = new System.Drawing.Point(102, 45);
+            this.tbDestZipCode.Name = "tbDestZipCode";
+            this.tbDestZipCode.Size = new System.Drawing.Size(69, 20);
+            this.tbDestZipCode.TabIndex = 7;
             // 
-            // rbArrival
+            // tbDestNumber
             // 
-            this.rbArrival.AutoSize = true;
-            this.rbArrival.Location = new System.Drawing.Point(171, 332);
-            this.rbArrival.Name = "rbArrival";
-            this.rbArrival.Size = new System.Drawing.Size(71, 17);
-            this.rbArrival.TabIndex = 18;
-            this.rbArrival.Text = "aankomst";
-            this.rbArrival.UseVisualStyleBackColor = true;
+            this.tbDestNumber.Location = new System.Drawing.Point(301, 19);
+            this.tbDestNumber.Name = "tbDestNumber";
+            this.tbDestNumber.Size = new System.Drawing.Size(47, 20);
+            this.tbDestNumber.TabIndex = 6;
             // 
-            // tbPassengers
+            // tbDestStreet
             // 
-            this.tbPassengers.Location = new System.Drawing.Point(106, 355);
-            this.tbPassengers.Name = "tbPassengers";
-            this.tbPassengers.Size = new System.Drawing.Size(46, 20);
-            this.tbPassengers.TabIndex = 19;
+            this.tbDestStreet.Location = new System.Drawing.Point(102, 19);
+            this.tbDestStreet.Name = "tbDestStreet";
+            this.tbDestStreet.Size = new System.Drawing.Size(143, 20);
+            this.tbDestStreet.TabIndex = 5;
             // 
-            // lblPassengers
+            // gbDepartureAddress
             // 
-            this.lblPassengers.AutoSize = true;
-            this.lblPassengers.Location = new System.Drawing.Point(39, 358);
-            this.lblPassengers.Name = "lblPassengers";
-            this.lblPassengers.Size = new System.Drawing.Size(57, 13);
-            this.lblPassengers.TabIndex = 18;
-            this.lblPassengers.Text = "passagiers";
+            this.gbDepartureAddress.Controls.Add(this.lblDepCountry);
+            this.gbDepartureAddress.Controls.Add(this.lblDepCity);
+            this.gbDepartureAddress.Controls.Add(this.lblDepZipCode);
+            this.gbDepartureAddress.Controls.Add(this.lblDepNumber);
+            this.gbDepartureAddress.Controls.Add(this.lblDepStreet);
+            this.gbDepartureAddress.Controls.Add(this.tbDepCountry);
+            this.gbDepartureAddress.Controls.Add(this.tbDepCity);
+            this.gbDepartureAddress.Controls.Add(this.tbDepZipCode);
+            this.gbDepartureAddress.Controls.Add(this.tbDepNumber);
+            this.gbDepartureAddress.Controls.Add(this.tbDepStreet);
+            this.gbDepartureAddress.Location = new System.Drawing.Point(4, 7);
+            this.gbDepartureAddress.Name = "gbDepartureAddress";
+            this.gbDepartureAddress.Size = new System.Drawing.Size(479, 143);
+            this.gbDepartureAddress.TabIndex = 0;
+            this.gbDepartureAddress.TabStop = false;
+            this.gbDepartureAddress.Text = "Van";
             // 
-            // btnFindTaxi
+            // lblDepCountry
             // 
-            this.btnFindTaxi.Location = new System.Drawing.Point(692, 413);
-            this.btnFindTaxi.Name = "btnFindTaxi";
-            this.btnFindTaxi.Size = new System.Drawing.Size(75, 23);
-            this.btnFindTaxi.TabIndex = 20;
-            this.btnFindTaxi.Text = "Zoek taxi";
-            this.btnFindTaxi.UseVisualStyleBackColor = true;
+            this.lblDepCountry.AutoSize = true;
+            this.lblDepCountry.Location = new System.Drawing.Point(69, 100);
+            this.lblDepCountry.Name = "lblDepCountry";
+            this.lblDepCountry.Size = new System.Drawing.Size(27, 13);
+            this.lblDepCountry.TabIndex = 9;
+            this.lblDepCountry.Text = "land";
+            // 
+            // lblDepCity
+            // 
+            this.lblDepCity.AutoSize = true;
+            this.lblDepCity.Location = new System.Drawing.Point(35, 74);
+            this.lblDepCity.Name = "lblDepCity";
+            this.lblDepCity.Size = new System.Drawing.Size(61, 13);
+            this.lblDepCity.TabIndex = 8;
+            this.lblDepCity.Text = "woonplaats";
+            // 
+            // lblDepZipCode
+            // 
+            this.lblDepZipCode.AutoSize = true;
+            this.lblDepZipCode.Location = new System.Drawing.Point(45, 48);
+            this.lblDepZipCode.Name = "lblDepZipCode";
+            this.lblDepZipCode.Size = new System.Drawing.Size(51, 13);
+            this.lblDepZipCode.TabIndex = 7;
+            this.lblDepZipCode.Text = "postcode";
+            // 
+            // lblDepNumber
+            // 
+            this.lblDepNumber.AutoSize = true;
+            this.lblDepNumber.Location = new System.Drawing.Point(251, 22);
+            this.lblDepNumber.Name = "lblDepNumber";
+            this.lblDepNumber.Size = new System.Drawing.Size(44, 13);
+            this.lblDepNumber.TabIndex = 6;
+            this.lblDepNumber.Text = "nummer";
+            // 
+            // lblDepStreet
+            // 
+            this.lblDepStreet.AutoSize = true;
+            this.lblDepStreet.Location = new System.Drawing.Point(63, 22);
+            this.lblDepStreet.Name = "lblDepStreet";
+            this.lblDepStreet.Size = new System.Drawing.Size(33, 13);
+            this.lblDepStreet.TabIndex = 5;
+            this.lblDepStreet.Text = "straat";
+            // 
+            // tbDepCountry
+            // 
+            this.tbDepCountry.Location = new System.Drawing.Point(102, 97);
+            this.tbDepCountry.Name = "tbDepCountry";
+            this.tbDepCountry.Size = new System.Drawing.Size(143, 20);
+            this.tbDepCountry.TabIndex = 4;
+            // 
+            // tbDepCity
+            // 
+            this.tbDepCity.Location = new System.Drawing.Point(102, 71);
+            this.tbDepCity.Name = "tbDepCity";
+            this.tbDepCity.Size = new System.Drawing.Size(143, 20);
+            this.tbDepCity.TabIndex = 3;
+            // 
+            // tbDepZipCode
+            // 
+            this.tbDepZipCode.Location = new System.Drawing.Point(102, 45);
+            this.tbDepZipCode.Name = "tbDepZipCode";
+            this.tbDepZipCode.Size = new System.Drawing.Size(69, 20);
+            this.tbDepZipCode.TabIndex = 2;
+            // 
+            // tbDepNumber
+            // 
+            this.tbDepNumber.Location = new System.Drawing.Point(301, 19);
+            this.tbDepNumber.Name = "tbDepNumber";
+            this.tbDepNumber.Size = new System.Drawing.Size(47, 20);
+            this.tbDepNumber.TabIndex = 1;
+            // 
+            // tbDepStreet
+            // 
+            this.tbDepStreet.Location = new System.Drawing.Point(102, 19);
+            this.tbDepStreet.Name = "tbDepStreet";
+            this.tbDepStreet.Size = new System.Drawing.Size(143, 20);
+            this.tbDepStreet.TabIndex = 0;
             // 
             // tabTaxi
             // 
@@ -540,6 +542,7 @@
             this.tabTaxi.SelectedIndex = 0;
             this.tabTaxi.Size = new System.Drawing.Size(951, 631);
             this.tabTaxi.TabIndex = 2;
+            this.tabTaxi.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // TaxiUC
             // 
@@ -548,16 +551,17 @@
             this.Controls.Add(this.tabTaxi);
             this.Name = "TaxiUC";
             this.Size = new System.Drawing.Size(970, 645);
+            this.Click += new System.EventHandler(this.btnCancelBooking_Click);
             ((System.ComponentModel.ISupportInitialize)(this.taxiBookingsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBookingsBindingSource)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.userBookingsDG)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.gbDepartureAddress.ResumeLayout(false);
-            this.gbDepartureAddress.PerformLayout();
             this.gbDestinationAddress.ResumeLayout(false);
             this.gbDestinationAddress.PerformLayout();
+            this.gbDepartureAddress.ResumeLayout(false);
+            this.gbDepartureAddress.PerformLayout();
             this.tabTaxi.ResumeLayout(false);
             this.ResumeLayout(false);
 

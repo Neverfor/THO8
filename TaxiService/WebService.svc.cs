@@ -199,30 +199,15 @@ namespace TaxiService
         {
             using (var db = new WebServiceContext())
             {
-                bool b = false;
+                
                 string user = To8Libraries.UserHelper.GetUser(cancelBookingRequest.UserToken).UserName;
-                Debug.WriteLine(user);
-
+                
                 var canceledTaxiBooking = from tb in db.Bookings
-                                          where tb.Id == cancelBookingRequest.BookingId
+                                          where tb.Id == cancelBookingRequest.BookingId && tb.UserName.Equals(user)
                                           select tb;
-                foreach (To8Libraries.Domain.TaxiBooking tb in canceledTaxiBooking)
-                {
-                    Debug.WriteLine("LEES DIIIT" + tb.UserName + " " + tb.Id);
-                    if (tb.UserName == user)
-                    {
-
-                        Debug.WriteLine("match!");
-                        db.Bookings.Remove(tb);
-                        Debug.WriteLine("removed!");
-                        //db.SaveChanges();
-                        Debug.WriteLine("saved!");
-
-                        b = true;
-                    }
-                    break;
-                }
-                return b;
+                db.Bookings.Remove(canceledTaxiBooking.First());
+                db.SaveChanges();
+                return db.Bookings.Any(b => b.Id.Equals(cancelBookingRequest.BookingId));
             }
         }
 
