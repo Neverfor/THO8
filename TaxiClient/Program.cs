@@ -21,12 +21,13 @@ namespace TaxiClient
 
         static void LoginForm()
         {
-            Authentication.LoginForm lf = new Authentication.LoginForm();           
-            if (lf.ShowDialog() == DialogResult.OK)
+            Authentication.LoginForm lf = new Authentication.LoginForm();
+            DialogResult dr = lf.ShowDialog();
+            if (dr == DialogResult.OK)
             {
                 Application.Run(new MainForm());
             }
-            else if (lf.ShowDialog() == DialogResult.No)
+            else if (dr == DialogResult.No)
             {
                 RegisterForm();
             }
@@ -39,7 +40,8 @@ namespace TaxiClient
         static void RegisterForm()
         {
             Authentication.RegisterForm rf = new Authentication.RegisterForm();
-            if (rf.ShowDialog() == DialogResult.OK)
+            DialogResult dr = rf.ShowDialog();
+            if (dr == DialogResult.OK || dr == DialogResult.Cancel)
             {
                 LoginForm();
             }
