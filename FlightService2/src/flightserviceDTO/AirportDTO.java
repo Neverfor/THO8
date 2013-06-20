@@ -36,7 +36,7 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class AirportDTO {
 
-    @XmlElement(name = "AiportId")
+	@XmlElement(name = "AiportId")
     protected Integer airportId;
     @XmlElementRef(name = "Name", namespace = "http://schemas.datacontract.org/2004/07/FlightService.DataModels", type = JAXBElement.class, required = false)
     protected JAXBElement<String> name;
@@ -49,9 +49,6 @@ public class AirportDTO {
      *     {@link Integer }
      *     
      */
-    public Integer getAirportId() {
-        return airportId;
-    }
 
     /**
      * Gets the value of the name property.
@@ -64,6 +61,14 @@ public class AirportDTO {
     public JAXBElement<String> getName() {
         return name;
     }
+    
+    public int getAirportId() {
+        return airportId;
+    }
+ 
+    public void setAirportId(int airportid) {
+        this.airportId = airportid;
+    }
 
     /**
      * Sets the value of the name property.
@@ -74,7 +79,6 @@ public class AirportDTO {
      *     
      */
     public void setName(JAXBElement<String> value) {
-    	this.airportId = airportId++;
         this.name = value;
     }
 }
