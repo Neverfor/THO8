@@ -75,29 +75,29 @@
     <Compile Include="Authentication\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Flight\FlightUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Flight\FlightUC.Designer.cs">
+      <DependentUpon>FlightUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hotel\HotelUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Hotel\HotelUC.Designer.cs">
+      <DependentUpon>HotelUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Service References\Team2\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Session.cs" />
-    <Compile Include="Taxi\TaxiForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Taxi\TaxiForm.Designer.cs">
-      <DependentUpon>TaxiForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hotel\HotelForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Hotel\HotelForm.Designer.cs">
-      <DependentUpon>HotelForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -129,11 +129,8 @@
     <EmbeddedResource Include="Authentication\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Taxi\TaxiForm.resx">
-      <DependentUpon>TaxiForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hotel\HotelForm.resx">
-      <DependentUpon>HotelForm.cs</DependentUpon>
+    <EmbeddedResource Include="Hotel\HotelUC.resx">
+      <DependentUpon>HotelUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

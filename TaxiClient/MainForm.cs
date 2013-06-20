@@ -24,9 +24,9 @@ namespace TaxiClient
 
         private void hotelBookingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            HotelForm hm = new HotelForm();
-            hm.Show();
+            this.mainPanel.Controls.Clear();
+            this.mainPanel.Controls.Add(new Hotel.HotelUC(this));
+
         }
 
         private void taxiBookingToolStripMenuItem_Click(object sender, EventArgs e)
