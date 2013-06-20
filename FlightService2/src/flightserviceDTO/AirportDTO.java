@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -29,17 +30,16 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 
  */
+
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "AirportDTO", propOrder = {
-    "airportId",
-    "name"
-})
+@XmlRootElement(name = "AirportDTO") //S
+//@XmlType(name = "AirportDTO", propOrder = {"airportId","name"})
 public class AirportDTO {
 
-	@XmlElement(name = "AiportId")
-    protected Integer airportId;
-    @XmlElementRef(name = "Name", namespace = "http://schemas.datacontract.org/2004/07/FlightService.DataModels", type = JAXBElement.class, required = false)
-    protected JAXBElement<String> name;
+	// @XmlElement(name = "AiportId")
+    private Integer airportId;
+    // @XmlElementRef(name = "Name", namespace = "http://schemas.datacontract.org/2004/07/FlightService.DataModels", type = JAXBElement.class, required = false)
+    private String name;
 
     /**
      * Gets the value of the aiportId property.
@@ -58,7 +58,7 @@ public class AirportDTO {
      *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public JAXBElement<String> getName() {
+    public String getName() {
         return name;
     }
     
@@ -78,7 +78,7 @@ public class AirportDTO {
      *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public void setName(JAXBElement<String> value) {
+    public void setName(String value) {
         this.name = value;
     }
 }

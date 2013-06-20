@@ -6,8 +6,8 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-
 
 /**
  * <p>Java class for ArrayOfAirportDTO complex type.
@@ -28,14 +28,14 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 
  */
+
+@XmlRootElement(name = "ArrayOfAirportDTO") //S
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ArrayOfAirportDTO", propOrder = {
-    "airportDTO"
-})
+// @XmlType(name = "ArrayOfAirportDTO", propOrder = {"airportDTO"})
 public class ArrayOfAirportDTO {
 
-    @XmlElement(name = "AirportDTO", nillable = true)
-    protected List<AirportDTO> airportDTO;
+    @XmlElement(name = "AirportDTO", type = AirportDTO.class)
+    private List<AirportDTO> airportArray;
 
     /**
      * Gets the value of the airportDTO property.
@@ -59,17 +59,31 @@ public class ArrayOfAirportDTO {
      * 
      * 
      */
-    public List<AirportDTO> getAirportDTO() {
-        if (airportDTO == null) {
-            airportDTO = new ArrayList<AirportDTO>();
-        }
-        return this.airportDTO;
+    public ArrayOfAirportDTO() {}
+    
+    public ArrayOfAirportDTO(List<AirportDTO> airportArray) {
+    	this.airportArray = airportArray;
     }
     
-    public boolean addAirportDTO(AirportDTO Airport) {
-    	if(airportDTO.add(Airport)){
-    		return true;
-    	}
-		return false;
+    public List<AirportDTO> getAirports() {
+    	return airportArray;
     }
+    
+    public void setAirports(List<AirportDTO> airportArray) {
+    	this.airportArray = airportArray;
+    }
+    
+//    public List<AirportDTO> getAirportDTO() {
+//        if (airportDTO == null) {
+//            airportDTO = new ArrayList<AirportDTO>();
+//        }
+//        return this.airportDTO;
+//    }
+//    
+//    public boolean addAirportDTO(AirportDTO Airport) {
+//    	if(airportDTO.add(Airport)){
+//    		return true;
+//    	}
+//		return false;
+//    }
 }
