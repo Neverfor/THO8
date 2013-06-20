@@ -74,9 +74,9 @@ namespace TaxiService
                     throw new FaultException("Er is geen taxi beschikbaar voor het opgegeven aantal passagiers");
 
                 var unAvailableTaxisDueToTime = from b in db.Bookings
-                                                where (b.DepartureTime < dt && b.ArrivalTime > dt) || 
-                                                (b.DepartureTime < at && b.ArrivalTime > at) || 
-                                                (b.DepartureTime > dt && b.ArrivalTime < at)
+                                                where (b.DepartureTime >= dt && b.DepartureTime < at) ||
+                                                (b.ArrivalTime > dt && b.ArrivalTime < at) ||
+                                                (b.DepartureTime < dt && b.ArrivalTime > at)
                                                 select b.Taxi;
                 foreach (Taxi t in unAvailableTaxisDueToTime)
                     if (availableTaxis.Contains(t)) availableTaxis.Remove(t);

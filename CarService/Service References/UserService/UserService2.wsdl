@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://userservice.th08.nl/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://userservice.th08.nl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://userservice.th08.nl/Imports">
+      <xsd:import schemaLocation="http://userservice.devworks.nl/UserService.svc?xsd=xsd0" namespace="http://userservice.th08.nl/" />
+      <xsd:import schemaLocation="http://userservice.devworks.nl/UserService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.ServiceModel" />
+      <xsd:import schemaLocation="http://userservice.devworks.nl/UserService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://userservice.devworks.nl/UserService.svc?xsd=xsd2" namespace="http://domain.userservice.th08.nl" />
+      <xsd:import schemaLocation="http://userservice.devworks.nl/UserService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="UserService_Register_InputMessage">
+    <wsdl:part name="parameters" element="tns:Register" />
+  </wsdl:message>
+  <wsdl:message name="UserService_Register_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserService_Register_FaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q1:FaultException" />
+  </wsdl:message>
+  <wsdl:message name="UserService_IsUsernameAvailable_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsUsernameAvailable" />
+  </wsdl:message>
+  <wsdl:message name="UserService_IsUsernameAvailable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsUsernameAvailableResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserService_IsValid_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsValid" />
+  </wsdl:message>
+  <wsdl:message name="UserService_IsValid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsValidResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="UserService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserService_Login_FaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q2:FaultException" />
+  </wsdl:message>
+  <wsdl:message name="UserService_GetUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUser" />
+  </wsdl:message>
+  <wsdl:message name="UserService_GetUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserService_GetUser_FaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q3:FaultException" />
+  </wsdl:message>
+  <wsdl:message name="UserService_Edit_InputMessage">
+    <wsdl:part name="parameters" element="tns:Edit" />
+  </wsdl:message>
+  <wsdl:message name="UserService_Edit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserService_Edit_FaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/System.ServiceModel" name="detail" element="q4:FaultException" />
+  </wsdl:message>
+  <wsdl:message name="UserService_Logout_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logout" />
+  </wsdl:message>
+  <wsdl:message name="UserService_Logout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogoutResponse" />
+  </wsdl:message>
+  <wsdl:portType name="UserService">
+    <wsdl:operation name="Register">
+      <wsdl:input wsaw:Action="http://userservice.th08.nl/UserService/Register" message="tns:UserService_Register_InputMessage" />
+      <wsdl:output wsaw:Action="http://userservice.th08.nl/UserService/RegisterResponse" message="tns:UserService_Register_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://userservice.th08.nl/UserService/RegisterFaultExceptionFault" name="FaultExceptionFault" message="tns:UserService_Register_FaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUsernameAvailable">
+      <wsdl:input wsaw:Action="http://userservice.th08.nl/UserService/IsUsernameAvailable" message="tns:UserService_IsUsernameAvailable_InputMessage" />
+      <wsdl:output wsaw:Action="http://userservice.th08.nl/UserService/IsUsernameAvailableResponse" message="tns:UserService_IsUsernameAvailable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsValid">
+      <wsdl:input wsaw:Action="http://userservice.th08.nl/UserService/IsValid" message="tns:UserService_IsValid_InputMessage" />
+      <wsdl:output wsaw:Action="http://userservice.th08.nl/UserService/IsValidResponse" message="tns:UserService_IsValid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://userservice.th08.nl/UserService/Login" message="tns:UserService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://userservice.th08.nl/UserService/LoginResponse" message="tns:UserService_Login_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://userservice.th08.nl/UserService/LoginFaultExceptionFault" name="FaultExceptionFault" message="tns:UserService_Login_FaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <wsdl:input wsaw:Action="http://userservice.th08.nl/UserService/GetUser" message="tns:UserService_GetUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://userservice.th08.nl/UserService/GetUserResponse" message="tns:UserService_GetUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://userservice.th08.nl/UserService/GetUserFaultExceptionFault" name="FaultExceptionFault" message="tns:UserService_GetUser_FaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Edit">
+      <wsdl:input wsaw:Action="http://userservice.th08.nl/UserService/Edit" message="tns:UserService_Edit_InputMessage" />
+      <wsdl:output wsaw:Action="http://userservice.th08.nl/UserService/EditResponse" message="tns:UserService_Edit_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://userservice.th08.nl/UserService/EditFaultExceptionFault" name="FaultExceptionFault" message="tns:UserService_Edit_FaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <wsdl:input wsaw:Action="http://userservice.th08.nl/UserService/Logout" message="tns:UserService_Logout_InputMessage" />
+      <wsdl:output wsaw:Action="http://userservice.th08.nl/UserService/LogoutResponse" message="tns:UserService_Logout_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

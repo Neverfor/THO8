@@ -11,16 +11,16 @@ namespace CarService.Domain
     public class Car
     {
         [DataMember]
-        public string Brand { get; set; }
-        [DataMember]
         public int CarId { get; set; }
         [DataMember]
-        public CarType CarType { get; set; }
+        public string Brand { get; set; }
+        [DataMember]
+        public virtual CarType CarType { get; set; }
         [DataMember]
         public DateTime DateOfPurchase { get; set; }
         [DataMember]
-        public Dealer DealerField { get; set; }
+        public virtual Dealer Dealer { get; set; }
         [DataMember]
-        public string LicenceField { get; set; }
+        public string Licence { get; set; }
     }
 }

@@ -11,9 +11,9 @@ namespace CarService.Domain
     public class Dealer
     {
         [DataMember]
-        public City City { get; set; }
-        [DataMember]
         public int DealerId { get; set; }
+        [DataMember]
+        public virtual City City { get; set; }
         [DataMember]
         public string Name { get; set; }
     }

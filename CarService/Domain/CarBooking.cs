@@ -11,11 +11,11 @@ namespace CarService.Domain
     public class CarBooking
     {
         [DataMember]
-        public int BookingNr { get; set; }
+        public int CarBookingId { get; set; }
         [DataMember]
-        public Car Car { get; set; }
+        public virtual Car Car { get; set; }
         [DataMember]
-        public double PriceField { get; set; }
+        public double Price { get; set; }
         [DataMember]
         public DateTime StartDate { get; set; }
         [DataMember]

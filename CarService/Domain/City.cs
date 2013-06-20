@@ -13,7 +13,7 @@ namespace CarService.Domain
         [DataMember]
         public int CityId { get; set; }
         [DataMember]
-        public Country Country { get; set; }
+        public virtual Country Country { get; set; }
         [DataMember]
         public string Name { get; set; }
     }
