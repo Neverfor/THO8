@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -35,10 +36,44 @@ namespace TaxiClient
              
             using (HotelBookingServiceClient client = new HotelBookingServiceClient())
             {
-                String name = null;//textBox1.ToString();
-                String location = null;//textBox2.ToString();
+                String name = textBox2.Text;
+                String location = textBox1.Text;
+
+                if (name == "" || name == " ")
+                {
+                    name = null;
+                }
+                if (location == "" || location == " ")
+                {
+                    location = null;
+                }
+                hotels = client.getHotels(name, location);
+
+                var dict = new Dictionary<int, string>();
+
+                try { comboBox1.Items.Clear(); }
+                catch { Debug.Write("CAUGHT EXCEPTION bij comboBox1.Items.Clear()") ; }
+                foreach (Hotel hot in hotels)
+                {
+                    dict.Add(hot.HotelId, hot.Name);
+                }
+
+                comboBox1.DataSource = new BindingSource(dict, null);
+                comboBox1.DisplayMember = "Value";
+                comboBox1.ValueMember = "Key";
+
+                comboBox1.Visible = true;
+
+
                 // Hotels: Barcelona Blaza en Barcelona Caledonian
+                /*
+                comboBox1.DisplayMember = "Name";
+                comboBox1.ValueMember = "HotelId";
+                 * */
+                //comboBox1.DataSource = new[] { new Hotel() { "Name", "HotelId" } };
                 
+                
+                /*
                 hotels = client.getHotels(name, location);
                 comboBox1.Items.Clear();
                 foreach (Hotel hot in hotels)
@@ -46,9 +81,8 @@ namespace TaxiClient
                     comboBox1.Items.Add("[" + hot.Name + "] in " + hot.Location);
                 }
 
-                comboBox1.DisplayMember = "Name";
-                comboBox1.ValueMember = "HotelId";
-                comboBox1.Visible = true;
+               
+                */
 
                 /*
                 String hotelList = "List of hotels:";
@@ -90,12 +124,16 @@ namespace TaxiClient
             dateTimePicker1.Visible = true;
             dateTimePicker2.Visible = true;
 
+            try { comboBox3.Items.Clear(); }
+            catch { Debug.Write("CAUGHT EXCEPTION bij "); }
+
             RoomType[] rooms;
 
             using (HotelBookingServiceClient client = new HotelBookingServiceClient())
             {
-                short HotID = 1;
-                short aantalPersons = 1;
+                short HotID = 1; //Convert.ToInt16(comboBox1.ValueMember.Trim());
+                short aantalPersons = 1; // Convert.ToInt16(numericUpDown1.ToString());
+                
                 DateTime arrival = new DateTime(dateTimePicker1.Value.Year,
                            dateTimePicker1.Value.Month,
                            dateTimePicker1.Value.Day,
