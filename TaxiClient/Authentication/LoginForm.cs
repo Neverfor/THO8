@@ -19,9 +19,8 @@ namespace TaxiClient.Authentication
 
         private void llblRegisterForm_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();
-            RegisterForm rf = new RegisterForm();
-            rf.ShowDialog();
+            this.DialogResult = DialogResult.No;
+            this.Close();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -31,9 +30,8 @@ namespace TaxiClient.Authentication
                 using (Team2.UserServiceClient userClient = new Team2.UserServiceClient())
                 {
                     Session.UserToken = userClient.Login(tbUsername.Text, tbPassword.Text);
-
-                    this.Hide();
-                    new MainForm().Show();
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
                 }
             }
             catch (Exception ex)

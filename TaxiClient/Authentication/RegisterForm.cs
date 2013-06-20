@@ -43,8 +43,8 @@ namespace TaxiClient.Authentication
 
                     user = userClient.GetUser(userClient.Register(user));
                     MessageBox.Show(string.Format("Gebruikersnaam:\t{0}\nWachtwoord:\t{1}", user.Username, user.Password));
+                    this.DialogResult = DialogResult.OK;
                     this.Close();
-                    new LoginForm().Show();
                 }
             }
             catch (Exception ex)

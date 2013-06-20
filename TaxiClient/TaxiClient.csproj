@@ -111,6 +111,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Taxi\TaxiUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Taxi\TaxiUC.Designer.cs">
+      <DependentUpon>TaxiUC.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Authentication\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,6 +147,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Taxi\TaxiUC.resx">
+      <DependentUpon>TaxiUC.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -282,6 +291,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\To8Libraries\To8Libraries.csproj">
+      <Project>{fc6b4d74-817b-4535-9a92-f93984a334dd}</Project>
+      <Name>To8Libraries</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

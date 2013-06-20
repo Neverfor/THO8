@@ -16,7 +16,37 @@ namespace TaxiClient
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Authentication.LoginForm());
+            LoginForm();
+        }
+
+        static void LoginForm()
+        {
+            Authentication.LoginForm lf = new Authentication.LoginForm();           
+            if (lf.ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new MainForm());
+            }
+            else if (lf.ShowDialog() == DialogResult.No)
+            {
+                RegisterForm();
+            }
+            else
+            {
+                Application.Exit();
+            }
+        }
+
+        static void RegisterForm()
+        {
+            Authentication.RegisterForm rf = new Authentication.RegisterForm();
+            if (rf.ShowDialog() == DialogResult.OK)
+            {
+                LoginForm();
+            }
+            else
+            {
+                Application.Exit();
+            }
         }
     }
 }

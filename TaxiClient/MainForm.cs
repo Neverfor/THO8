@@ -31,9 +31,8 @@ namespace TaxiClient
 
         private void taxiBookingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            TaxiForm tx = new TaxiForm();
-            tx.Show();
+            this.mainPanel.Controls.Clear();
+            this.mainPanel.Controls.Add(new Taxi.TaxiUC(this));
         }
     }
 }
