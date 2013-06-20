@@ -53,12 +53,13 @@
             this.numPersons.Name = "numPersons";
             this.numPersons.Size = new System.Drawing.Size(74, 20);
             this.numPersons.TabIndex = 33;
+            this.numPersons.ValueChanged += new System.EventHandler(this.numPersons_ValueChanged);
             // 
             // bookBTN
             // 
             this.bookBTN.Location = new System.Drawing.Point(42, 289);
             this.bookBTN.Name = "bookBTN";
-            this.bookBTN.Size = new System.Drawing.Size(257, 27);
+            this.bookBTN.Size = new System.Drawing.Size(271, 27);
             this.bookBTN.TabIndex = 32;
             this.bookBTN.Text = "Book Hotel";
             this.bookBTN.UseVisualStyleBackColor = true;
@@ -69,7 +70,7 @@
             this.roomTypeCB.FormattingEnabled = true;
             this.roomTypeCB.Location = new System.Drawing.Point(137, 247);
             this.roomTypeCB.Name = "roomTypeCB";
-            this.roomTypeCB.Size = new System.Drawing.Size(75, 21);
+            this.roomTypeCB.Size = new System.Drawing.Size(176, 21);
             this.roomTypeCB.TabIndex = 31;
             this.roomTypeCB.Visible = false;
             // 
@@ -86,7 +87,7 @@
             // 
             this.departureDate.Location = new System.Drawing.Point(137, 213);
             this.departureDate.Name = "departureDate";
-            this.departureDate.Size = new System.Drawing.Size(75, 20);
+            this.departureDate.Size = new System.Drawing.Size(176, 20);
             this.departureDate.TabIndex = 29;
             this.departureDate.Visible = false;
             // 
@@ -103,7 +104,7 @@
             // 
             this.arrivalDate.Location = new System.Drawing.Point(137, 179);
             this.arrivalDate.Name = "arrivalDate";
-            this.arrivalDate.Size = new System.Drawing.Size(75, 20);
+            this.arrivalDate.Size = new System.Drawing.Size(176, 20);
             this.arrivalDate.TabIndex = 27;
             this.arrivalDate.Visible = false;
             // 
@@ -178,9 +179,9 @@
             // 
             // searchBTN
             // 
-            this.searchBTN.Location = new System.Drawing.Point(225, 37);
+            this.searchBTN.Location = new System.Drawing.Point(225, 38);
             this.searchBTN.Name = "searchBTN";
-            this.searchBTN.Size = new System.Drawing.Size(74, 54);
+            this.searchBTN.Size = new System.Drawing.Size(88, 88);
             this.searchBTN.TabIndex = 18;
             this.searchBTN.Text = "Zoek Hotel";
             this.searchBTN.UseVisualStyleBackColor = true;
@@ -208,6 +209,7 @@
             this.Controls.Add(this.searchBTN);
             this.Name = "HotelUC";
             this.Size = new System.Drawing.Size(970, 645);
+            this.Load += new System.EventHandler(this.HotelUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numPersons)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

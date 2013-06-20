@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.ComponentModel;
 using System.Drawing;
 using System.Data;
@@ -39,14 +40,16 @@ namespace TaxiClient.Hotel
 
                 if ((hotels = client.getHotels(name, location)).Count() > 0)
                 {
-                    var dict = new Dictionary<int, string>();
+                    ArrayList hotelCollections = new ArrayList();
+
                     foreach (HotelService.Hotel hot in hotels)
                     {
-                        dict.Add(hot.HotelId, hot.Name);
+                        hotelCollections.Add(hot);
+                        
                     }
-                    hotelsCB.DataSource = new BindingSource(dict, null);
-                    hotelsCB.DisplayMember = "Value";
-                    hotelsCB.ValueMember = "Key";
+                    hotelsCB.DataSource = hotelCollections;
+                    hotelsCB.DisplayMember = "Name";
+                    hotelsCB.ValueMember = "HotelId";
                     hotelsCB.Visible = true;
                 }
                 else
@@ -58,7 +61,43 @@ namespace TaxiClient.Hotel
 
         private void bookBTN_Click(object sender, EventArgs e)
         {
+            String Token = Session.UserToken.ToString();
+            string hotelStringID = hotelsCB.SelectedValue.ToString();
+            MessageBox.Show("Hotel ID is: " + hotelStringID);
+            short hotID = Convert.ToInt16(hotelStringID);
+            String perNumb = numPersons.Value.ToString();
+            short aantalPersons = Convert.ToInt16(perNumb);
+            
+             DateTime arrival = new DateTime(arrivalDate.Value.Year,
+                          arrivalDate.Value.Month,
+                          arrivalDate.Value.Day,
+                          arrivalDate.Value.Hour,
+                          arrivalDate.Value.Minute,
+                          0);
+            DateTime departure = new DateTime(departureDate.Value.Year,
+                       departureDate.Value.Month,
+                       departureDate.Value.Day,
+                       departureDate.Value.Hour,
+                       departureDate.Value.Minute,
+                       0);
 
+            /*
+            Team2.UserService usrClient = new Team2.UserServiceClient();
+            var usr = usrClient.GetUser(Token);
+            int userID = Convert.ToInt32(usr.UserId.ToString());
+             */
+            HotelService.HotelBookingServiceClient client = new HotelService.HotelBookingServiceClient();
+            HotelService.BookingRow br = new HotelService.BookingRow();
+            HotelService.BookingRow[] row = new HotelService.BookingRow[1];
+
+            short x = 1;
+            br.Amount = x;
+            br.RoomType.Amount = x;
+            br.RoomType.Name = roomTypeCB.SelectedItem.ToString();
+            br.RoomType.MaxPersons = aantalPersons;
+            row[0] = br;
+
+            client.bookRoom(hotID, row, arrival, departure, aantalPersons, Token);
         }
 
         private void hotelsCB_SelectedIndexChanged(object sender, EventArgs e)
@@ -68,43 +107,61 @@ namespace TaxiClient.Hotel
             arrivalDate.Visible = true;
             departureDate.Visible = true;
 
-            if (roomTypeCB.Items.Count > 0)
-                roomTypeCB.Items.Clear();
+            ArrayList roomies = new ArrayList();
+            String hotID = hotelsCB.SelectedValue.ToString();
+            short HotID = 0;
+           
+            MessageBox.Show("Changed hotel ID: " + hotID);
+            HotID = Convert.ToInt16(hotID);
+
+            String perNumb = numPersons.Value.ToString();
+            short aantalPersons = Convert.ToInt16(perNumb);
 
             HotelService.RoomType[] rooms;
 
+            DateTime arrival = new DateTime(arrivalDate.Value.Year,
+                          arrivalDate.Value.Month,
+                          arrivalDate.Value.Day,
+                          arrivalDate.Value.Hour,
+                          arrivalDate.Value.Minute,
+                          0);
+            DateTime departure = new DateTime(departureDate.Value.Year,
+                       departureDate.Value.Month,
+                       departureDate.Value.Day,
+                       departureDate.Value.Hour,
+                       departureDate.Value.Minute,
+                       0);
+
+            if (roomTypeCB.Items.Count > 0)
+            {
+                roomTypeCB.Items.Clear();
+            }
+
+
             using (HotelService.HotelBookingServiceClient client = new HotelService.HotelBookingServiceClient())
             {
-                short HotID = 1; //Convert.ToInt16(comboBox1.ValueMember.Trim());
-                short aantalPersons = 1; // Convert.ToInt16(numericUpDown1.ToString());
-
-                DateTime arrival = new DateTime(arrivalDate.Value.Year,
-                           arrivalDate.Value.Month,
-                           arrivalDate.Value.Day,
-                           arrivalDate.Value.Hour,
-                           arrivalDate.Value.Minute,
-                           0);
-                DateTime departure = new DateTime(departureDate.Value.Year,
-                           departureDate.Value.Month,
-                           departureDate.Value.Day,
-                           departureDate.Value.Hour,
-                           departureDate.Value.Minute,
-                           0);
                 rooms = client.getRoomTypesFromHotel(HotID, arrival, departure, aantalPersons);
 
-                /*
-               hotels = client.getHotels(name, location);
-               comboBox1.Items.Clear();
-                 * */
                 foreach (HotelService.RoomType rom in rooms)
                 {
-                    roomTypeCB.Items.Add("[" + rom.Name + "] in " + rom);
+                    roomies.Add(rom);
                 }
 
-                roomTypeCB.DisplayMember = "Name";
-                //comboBox1.ValueMember = "HotelId";
-                hotelsCB.Visible = true;
+                roomTypeCB.DataSource = roomies;
+                roomTypeCB.DisplayMember = "Description";
+                roomTypeCB.ValueMember = "Name";
+                roomTypeCB.Visible = true;
             }
+        }
+
+        private void HotelUC_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numPersons_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
