@@ -6,7 +6,7 @@ using System.ServiceModel;
 using System.Text;
 using CarService.Domain;
 using CarService.DB;
-using CarService.UserService;
+using CarService.team2;
 using System.Data.Entity;
 
 namespace CarService
