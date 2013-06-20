@@ -65,16 +65,24 @@ public class FlightService_Service implements FlightService{
 					throws FlightServiceGetAirportsExceptionFaultFaultMessage {		
 
 		List<AirportDTO> airportArray = new ArrayList<AirportDTO>();
+		List<AirportDTO> airportArray2 = new ArrayList<AirportDTO>();
 
 		try {
 			airportArray = JAXBXMLHandler.unmarshal(new File("airports.xml"));
 		} catch (JAXBException e) {
 			e.printStackTrace();
 		}
-		
 		ArrayOfAirportDTO arrayDTO = new ArrayOfAirportDTO();
-        arrayDTO.setAirports(airportArray);
 
+		System.out.println("searchvalue: " + searchValue);
+		while (airportArray.iterator().hasNext())
+		{
+			if( airportArray.iterator().next().getName() == searchValue ) {
+				airportArray2.add(airportArray.iterator().next());
+				arrayDTO.setAirports(airportArray2);
+				return arrayDTO;
+			}
+		}
 		return arrayDTO;
 	}
 
