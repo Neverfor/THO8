@@ -1,10 +1,15 @@
 
 package flightservice;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
+import javax.xml.bind.JAXBException;
 import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
@@ -30,7 +35,7 @@ public class FlightService_Service implements FlightService{
 			@WebParam(name = "destinationId", targetNamespace = "http://flightservice.themaopdracht8.nl") Integer destinationId,
 			@WebParam(name = "departureDate", targetNamespace = "http://flightservice.themaopdracht8.nl") XMLGregorianCalendar departureDate,
 			@WebParam(name = "passengers", targetNamespace = "http://flightservice.themaopdracht8.nl") Integer passengers)
-			throws FlightServiceShowFlightsByDepartureExceptionFaultFaultMessage {
+					throws FlightServiceShowFlightsByDepartureExceptionFaultFaultMessage {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -45,7 +50,7 @@ public class FlightService_Service implements FlightService{
 			@WebParam(name = "destinationId", targetNamespace = "http://flightservice.themaopdracht8.nl") Integer destinationId,
 			@WebParam(name = "arrivalDate", targetNamespace = "http://flightservice.themaopdracht8.nl") XMLGregorianCalendar arrivalDate,
 			@WebParam(name = "passengers", targetNamespace = "http://flightservice.themaopdracht8.nl") Integer passengers)
-			throws FlightServiceShowFlightsByArrivalExceptionFaultFaultMessage {
+					throws FlightServiceShowFlightsByArrivalExceptionFaultFaultMessage {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -57,9 +62,20 @@ public class FlightService_Service implements FlightService{
 	@ResponseWrapper(localName = "GetAirportsResponse", targetNamespace = "http://flightservice.themaopdracht8.nl", className = "nl.themaopdracht8.flightservice.GetAirportsResponse")
 	public ArrayOfAirportDTO getAirports(
 			@WebParam(name = "searchValue", targetNamespace = "http://flightservice.themaopdracht8.nl") String searchValue)
-			throws FlightServiceGetAirportsExceptionFaultFaultMessage {
-		// TODO Auto-generated method stub		
-		return null;
+					throws FlightServiceGetAirportsExceptionFaultFaultMessage {		
+
+		List<AirportDTO> airportArray = new ArrayList<AirportDTO>();
+
+		try {
+			airportArray = JAXBXMLHandler.unmarshal(new File("airports.xml"));
+		} catch (JAXBException e) {
+			e.printStackTrace();
+		}
+		
+		ArrayOfAirportDTO arrayDTO = new ArrayOfAirportDTO();
+        arrayDTO.setAirports(airportArray);
+
+		return arrayDTO;
 	}
 
 	@Override
@@ -71,7 +87,7 @@ public class FlightService_Service implements FlightService{
 			@WebParam(name = "flightId", targetNamespace = "http://flightservice.themaopdracht8.nl") Integer flightId,
 			@WebParam(name = "passengers", targetNamespace = "http://flightservice.themaopdracht8.nl") ArrayOfPassengerDTO passengers,
 			@WebParam(name = "userToken", targetNamespace = "http://flightservice.themaopdracht8.nl") String userToken)
-			throws FlightServiceBookFlightExceptionFaultFaultMessage {
+					throws FlightServiceBookFlightExceptionFaultFaultMessage {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -83,7 +99,7 @@ public class FlightService_Service implements FlightService{
 	@ResponseWrapper(localName = "GetPersonalBookingsResponse", targetNamespace = "http://flightservice.themaopdracht8.nl", className = "nl.themaopdracht8.flightservice.GetPersonalBookingsResponse")
 	public ArrayOfBookingDTO getPersonalBookings(
 			@WebParam(name = "userToken", targetNamespace = "http://flightservice.themaopdracht8.nl") String userToken)
-			throws FlightServiceGetPersonalBookingsExceptionFaultFaultMessage {
+					throws FlightServiceGetPersonalBookingsExceptionFaultFaultMessage {
 		// TODO Auto-generated method stub
 		return null;
 	}

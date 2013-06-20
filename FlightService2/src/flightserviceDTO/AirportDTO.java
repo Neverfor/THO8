@@ -4,11 +4,7 @@ package flightserviceDTO;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
-
 
 /**
  * <p>Java class for AirportDTO complex type.
@@ -32,13 +28,10 @@ import javax.xml.bind.annotation.XmlType;
  */
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement(name = "AirportDTO") //S
-//@XmlType(name = "AirportDTO", propOrder = {"airportId","name"})
+@XmlRootElement(name = "AirportDTO")
 public class AirportDTO {
 
-	// @XmlElement(name = "AiportId")
     private Integer airportId;
-    // @XmlElementRef(name = "Name", namespace = "http://schemas.datacontract.org/2004/07/FlightService.DataModels", type = JAXBElement.class, required = false)
     private String name;
 
     /**

@@ -1,13 +1,11 @@
 
 package flightserviceDTO;
 
-import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for ArrayOfAirportDTO complex type.
@@ -31,7 +29,6 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement(name = "ArrayOfAirportDTO") //S
 @XmlAccessorType(XmlAccessType.FIELD)
-// @XmlType(name = "ArrayOfAirportDTO", propOrder = {"airportDTO"})
 public class ArrayOfAirportDTO {
 
     @XmlElement(name = "AirportDTO", type = AirportDTO.class)
@@ -72,18 +69,4 @@ public class ArrayOfAirportDTO {
     public void setAirports(List<AirportDTO> airportArray) {
     	this.airportArray = airportArray;
     }
-    
-//    public List<AirportDTO> getAirportDTO() {
-//        if (airportDTO == null) {
-//            airportDTO = new ArrayList<AirportDTO>();
-//        }
-//        return this.airportDTO;
-//    }
-//    
-//    public boolean addAirportDTO(AirportDTO Airport) {
-//    	if(airportDTO.add(Airport)){
-//    		return true;
-//    	}
-//		return false;
-//    }
 }
