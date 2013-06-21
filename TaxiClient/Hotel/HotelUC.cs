@@ -18,7 +18,23 @@ namespace TaxiClient.Hotel
         {
             this.parentForm = parentForm;
             InitializeComponent();
+            FillDataGrid();
             
+        }
+
+        private void FillDataGrid()
+        {
+
+            Team2.UserService usrClient = new Team2.UserServiceClient();
+            String Token = Session.UserToken.ToString();
+            var usr = usrClient.GetUser(Token);
+            int userID = Convert.ToInt32(usr.UserId.ToString());
+
+            using (HotelService.HotelBookingServiceClient client = new HotelService.HotelBookingServiceClient())
+            {
+                userBookings.DataSource = client.GetBookingsFromUser(Token); //GetUserBookings(req).TaxiBookings;
+            }
+
         }
 
         private void searchBTN_Click(object sender, EventArgs e)
@@ -81,11 +97,6 @@ namespace TaxiClient.Hotel
                        departureDate.Value.Minute,
                        0);
 
-            /*
-            Team2.UserService usrClient = new Team2.UserServiceClient();
-            var usr = usrClient.GetUser(Token);
-            int userID = Convert.ToInt32(usr.UserId.ToString());
-             */
             HotelService.HotelBookingServiceClient client = new HotelService.HotelBookingServiceClient();
             HotelService.BookingRow br = new HotelService.BookingRow();
             HotelService.BookingRow[] row = new HotelService.BookingRow[1];
@@ -197,6 +208,11 @@ namespace TaxiClient.Hotel
                 roomTypeItem = roomTypeCB.Items[roomTypeCB.SelectedIndex] as HotelService.RoomType;
                 MessageBox.Show("Gekozen kamer: " + roomTypeCB.SelectedValue.ToString());
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -44,7 +44,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.searchBTN = new System.Windows.Forms.Button();
+            this.userBookings = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.numPersons)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBookings)).BeginInit();
             this.SuspendLayout();
             // 
             // numPersons
@@ -188,10 +190,23 @@
             this.searchBTN.UseVisualStyleBackColor = true;
             this.searchBTN.Click += new System.EventHandler(this.searchBTN_Click);
             // 
+            // userBookings
+            // 
+            this.userBookings.AllowUserToAddRows = false;
+            this.userBookings.AllowUserToDeleteRows = false;
+            this.userBookings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.userBookings.Location = new System.Drawing.Point(375, 38);
+            this.userBookings.Name = "userBookings";
+            this.userBookings.ReadOnly = true;
+            this.userBookings.Size = new System.Drawing.Size(580, 278);
+            this.userBookings.TabIndex = 34;
+            this.userBookings.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
             // HotelUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.userBookings);
             this.Controls.Add(this.numPersons);
             this.Controls.Add(this.bookBTN);
             this.Controls.Add(this.roomTypeCB);
@@ -212,6 +227,7 @@
             this.Size = new System.Drawing.Size(970, 645);
             this.Load += new System.EventHandler(this.HotelUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numPersons)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBookings)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,5 +251,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button searchBTN;
+        private System.Windows.Forms.DataGridView userBookings;
     }
 }
