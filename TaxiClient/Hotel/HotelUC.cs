@@ -92,9 +92,11 @@ namespace TaxiClient.Hotel
 
             short x = 1;
             br.Amount = x;
+            /*br.RoomType;
             //br.RoomType.Amount = x;
             String roomTypeNaam = roomTypeCB.SelectedValue.ToString();
             MessageBox.Show("De selected room is: " + roomTypeNaam);
+             * */
             //br.RoomType.Name = roomTypeNaam;//roomTypeCB.SelectedValue.ToString();
             br.RoomType.MaxPersons = aantalPersons;
             row[0] = br;
