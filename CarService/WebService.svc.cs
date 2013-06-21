@@ -5,8 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using CarService.Domain;
-using CarService.DB;
-using CarService.team2;
+using CarService.UserService;
 using System.Data.Entity;
 
 namespace CarService

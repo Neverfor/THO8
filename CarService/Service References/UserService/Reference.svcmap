@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5966a419-09f1-4166-8f56-14b81a2e4a24" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1a7a48e8-0677-4e7a-a3bb-af5e13a219c6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,15 +22,15 @@
     <MetadataSource Address="http://userservice.devworks.nl/UserService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="UserService.wsdl" MetadataType="Wsdl" ID="868f62fb-a6d8-40d5-b941-8e4dc8a4e11f" SourceId="1" SourceUrl="http://userservice.devworks.nl/UserService.svc?wsdl" />
-    <MetadataFile FileName="UserService.xsd" MetadataType="Schema" ID="1e5bb8b3-c1a3-4631-af6c-0aa8371a95e8" SourceId="1" SourceUrl="http://userservice.devworks.nl/UserService.svc?xsd=xsd2" />
-    <MetadataFile FileName="UserService1.xsd" MetadataType="Schema" ID="ebfa7f2f-5556-4119-9f4a-da37153baab8" SourceId="1" SourceUrl="http://userservice.devworks.nl/UserService.svc?xsd=xsd1" />
-    <MetadataFile FileName="UserService2.xsd" MetadataType="Schema" ID="b9334fe6-426d-48c9-80cc-9e7e0bb0f069" SourceId="1" SourceUrl="http://userservice.devworks.nl/UserService.svc?xsd=xsd4" />
-    <MetadataFile FileName="UserService3.xsd" MetadataType="Schema" ID="06fdeaa6-e7d5-4137-8c79-269ff7493dcb" SourceId="1" SourceUrl="http://userservice.devworks.nl/UserService.svc?xsd=xsd0" />
-    <MetadataFile FileName="UserService1.wsdl" MetadataType="Wsdl" ID="f1fb4857-f11c-4193-93b7-09b7a65c5223" SourceId="1" SourceUrl="http://userservice.devworks.nl/UserService.svc?wsdl=wsdl1" />
-    <MetadataFile FileName="UserService2.wsdl" MetadataType="Wsdl" ID="d0c33d14-cadf-4e5f-98cb-a553b2107243" SourceId="1" SourceUrl="http://userservice.devworks.nl/UserService.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="UserService4.xsd" MetadataType="Schema" ID="6a6717d4-ab51-4f49-bb95-a9d6f0a91794" SourceId="1" SourceUrl="http://userservice.devworks.nl/UserService.svc?xsd=xsd3" />
-    <MetadataFile FileName="UserService.disco" MetadataType="Disco" ID="e5936eca-09ff-4ac9-9ec1-1be01ea097d2" SourceId="1" SourceUrl="http://userservice.devworks.nl/UserService.svc?disco" />
+    <MetadataFile FileName="UserService.wsdl" MetadataType="Wsdl" ID="acba7cd3-d476-4fbd-9a21-8f5fb9c10a58" SourceId="1" SourceUrl="http://userservice.devworks.nl/UserService.svc?wsdl" />
+    <MetadataFile FileName="UserService.xsd" MetadataType="Schema" ID="145aac8c-0bb0-4c1e-985f-494b35609297" SourceId="1" SourceUrl="http://userservice.devworks.nl/UserService.svc?xsd=xsd2" />
+    <MetadataFile FileName="UserService1.xsd" MetadataType="Schema" ID="30a1fa01-dc0f-423c-93a3-19539d136c18" SourceId="1" SourceUrl="http://userservice.devworks.nl/UserService.svc?xsd=xsd1" />
+    <MetadataFile FileName="UserService2.xsd" MetadataType="Schema" ID="e65528d9-ea75-435c-9dcc-05efb6053382" SourceId="1" SourceUrl="http://userservice.devworks.nl/UserService.svc?xsd=xsd4" />
+    <MetadataFile FileName="UserService3.xsd" MetadataType="Schema" ID="e2acf1e9-00a2-4876-a100-1a585b2eb99b" SourceId="1" SourceUrl="http://userservice.devworks.nl/UserService.svc?xsd=xsd0" />
+    <MetadataFile FileName="UserService1.wsdl" MetadataType="Wsdl" ID="720b0179-8d38-406e-a11d-8e84175a7d0d" SourceId="1" SourceUrl="http://userservice.devworks.nl/UserService.svc?wsdl=wsdl1" />
+    <MetadataFile FileName="UserService2.wsdl" MetadataType="Wsdl" ID="06bc4ebd-8431-42d2-8f04-0af3868e1261" SourceId="1" SourceUrl="http://userservice.devworks.nl/UserService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="UserService4.xsd" MetadataType="Schema" ID="9b52321a-39d3-4d48-aa83-8f8b46cfff85" SourceId="1" SourceUrl="http://userservice.devworks.nl/UserService.svc?xsd=xsd3" />
+    <MetadataFile FileName="UserService.disco" MetadataType="Disco" ID="8422037d-7672-44ca-946e-d90829613142" SourceId="1" SourceUrl="http://userservice.devworks.nl/UserService.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
