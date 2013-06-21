@@ -73,6 +73,7 @@
             this.roomTypeCB.Size = new System.Drawing.Size(176, 21);
             this.roomTypeCB.TabIndex = 31;
             this.roomTypeCB.Visible = false;
+            this.roomTypeCB.SelectedIndexChanged += new System.EventHandler(this.roomTypeCB_SelectedIndexChanged);
             // 
             // label7
             // 

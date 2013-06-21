@@ -92,8 +92,11 @@ namespace TaxiClient.Hotel
 
             short x = 1;
             br.Amount = x;
-            br.RoomType.Amount = x;
-            br.RoomType.Name = roomTypeCB.SelectedItem.ToString();
+            //br.RoomType.Amount = x;
+            if (roomTypeCB.SelectedItem.ToString() != null)
+            {
+                br.RoomType.Name = roomTypeCB.SelectedItem.ToString();
+            }
             br.RoomType.MaxPersons = aantalPersons;
             row[0] = br;
 
@@ -111,8 +114,20 @@ namespace TaxiClient.Hotel
             String hotID = hotelsCB.SelectedValue.ToString();
             short HotID = 0;
            
-            MessageBox.Show("Changed hotel ID: " + hotID);
-            HotID = Convert.ToInt16(hotID);
+            
+
+            int Num;
+            bool isNum = int.TryParse(hotID.ToString(), out Num); 
+
+            if (isNum) 
+            {
+                MessageBox.Show("Changed hotel ID: " + hotID);
+                HotID = Convert.ToInt16(hotID); 
+            }
+            else       
+            {
+                HotID = 0; 
+            }
 
             String perNumb = numPersons.Value.ToString();
             short aantalPersons = Convert.ToInt16(perNumb);
@@ -140,17 +155,24 @@ namespace TaxiClient.Hotel
 
             using (HotelService.HotelBookingServiceClient client = new HotelService.HotelBookingServiceClient())
             {
-                rooms = client.getRoomTypesFromHotel(HotID, arrival, departure, aantalPersons);
-
-                foreach (HotelService.RoomType rom in rooms)
+                if (HotID > 0)
                 {
-                    roomies.Add(rom);
-                }
+                    rooms = client.getRoomTypesFromHotel(HotID, arrival, departure, aantalPersons);
+                    String roomTypeOut = "Following rooms are available: ";
+                    foreach (HotelService.RoomType rom in rooms)
+                    {
+                        roomies.Add(rom);
+                        roomTypeOut += " \n" + rom.Name.ToString() + " heeft ID: " + rom.RoomTypeId.ToString();
+                    }
 
-                roomTypeCB.DataSource = roomies;
-                roomTypeCB.DisplayMember = "Description";
-                roomTypeCB.ValueMember = "Name";
-                roomTypeCB.Visible = true;
+                    MessageBox.Show(roomTypeOut);
+
+                    roomTypeCB.DataSource = roomies;
+                    roomTypeCB.DisplayMember = "Name";
+                    roomTypeCB.ValueMember = roomTypeCB.DisplayMember;
+                    roomTypeCB.Visible = true;
+                }
+                else {}
             }
         }
 
@@ -162,6 +184,14 @@ namespace TaxiClient.Hotel
         private void numPersons_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void roomTypeCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (roomTypeCB.SelectedIndex >= 0)
+            {
+                MessageBox.Show("Gekozen kamer: " + roomTypeCB.SelectedValue.ToString());
+            }
         }
     }
 }
