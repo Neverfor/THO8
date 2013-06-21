@@ -92,11 +92,12 @@ namespace TaxiClient.Hotel
 
             short x = 1;
             br.Amount = x;
-            /*br.RoomType;
+
+
+            br.RoomType = roomTypeItem;
             //br.RoomType.Amount = x;
             String roomTypeNaam = roomTypeCB.SelectedValue.ToString();
-            MessageBox.Show("De selected room is: " + roomTypeNaam);
-             * */
+            MessageBox.Show("De selected room is: " + roomTypeNaam + "\n De selected room description is: " + roomTypeItem.Description);
             //br.RoomType.Name = roomTypeNaam;//roomTypeCB.SelectedValue.ToString();
             br.RoomType.MaxPersons = aantalPersons;
             row[0] = br;
@@ -187,10 +188,13 @@ namespace TaxiClient.Hotel
 
         }
 
+        HotelService.RoomType roomTypeItem;
+
         private void roomTypeCB_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (roomTypeCB.SelectedIndex >= 0 && roomTypeCB.SelectedItem != null)
             {
+                roomTypeItem = roomTypeCB.Items[roomTypeCB.SelectedIndex] as HotelService.RoomType;
                 MessageBox.Show("Gekozen kamer: " + roomTypeCB.SelectedValue.ToString());
             }
         }
