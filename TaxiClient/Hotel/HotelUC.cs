@@ -114,6 +114,7 @@ namespace TaxiClient.Hotel
             row[0] = br;
 
             client.bookRoom(hotID, row, arrival, departure, aantalPersons, Token);
+            FillDataGrid();
         }
 
         private void hotelsCB_SelectedIndexChanged(object sender, EventArgs e)
