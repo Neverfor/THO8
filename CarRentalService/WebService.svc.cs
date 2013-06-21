@@ -4,11 +4,11 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using CarService.Domain;
-using CarService.UserService;
+using CarRentalService.Domain;
+using CarRentalService.UserService;
 using System.Data.Entity;
 
-namespace CarService
+namespace CarRentalService
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "WebService" in both code and config file together.
     public class WebService : IWebService

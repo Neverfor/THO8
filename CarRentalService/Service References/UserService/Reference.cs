@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CarService.UserService {
+namespace CarRentalService.UserService {
     using System.Runtime.Serialization;
     using System;
     
@@ -240,10 +240,10 @@ namespace CarService.UserService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://userservice.th08.nl/UserService/Register", ReplyAction="http://userservice.th08.nl/UserService/RegisterResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(System.ServiceModel.FaultException), Action="http://userservice.th08.nl/UserService/RegisterFaultExceptionFault", Name="FaultException", Namespace="http://schemas.datacontract.org/2004/07/System.ServiceModel")]
-        string Register(CarService.UserService.User user);
+        string Register(CarRentalService.UserService.User user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://userservice.th08.nl/UserService/Register", ReplyAction="http://userservice.th08.nl/UserService/RegisterResponse")]
-        System.Threading.Tasks.Task<string> RegisterAsync(CarService.UserService.User user);
+        System.Threading.Tasks.Task<string> RegisterAsync(CarRentalService.UserService.User user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://userservice.th08.nl/UserService/IsUsernameAvailable", ReplyAction="http://userservice.th08.nl/UserService/IsUsernameAvailableResponse")]
         bool IsUsernameAvailable(string username);
@@ -266,17 +266,17 @@ namespace CarService.UserService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://userservice.th08.nl/UserService/GetUser", ReplyAction="http://userservice.th08.nl/UserService/GetUserResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(System.ServiceModel.FaultException), Action="http://userservice.th08.nl/UserService/GetUserFaultExceptionFault", Name="FaultException", Namespace="http://schemas.datacontract.org/2004/07/System.ServiceModel")]
-        CarService.UserService.User GetUser(string token);
+        CarRentalService.UserService.User GetUser(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://userservice.th08.nl/UserService/GetUser", ReplyAction="http://userservice.th08.nl/UserService/GetUserResponse")]
-        System.Threading.Tasks.Task<CarService.UserService.User> GetUserAsync(string token);
+        System.Threading.Tasks.Task<CarRentalService.UserService.User> GetUserAsync(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://userservice.th08.nl/UserService/Edit", ReplyAction="http://userservice.th08.nl/UserService/EditResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(System.ServiceModel.FaultException), Action="http://userservice.th08.nl/UserService/EditFaultExceptionFault", Name="FaultException", Namespace="http://schemas.datacontract.org/2004/07/System.ServiceModel")]
-        bool Edit(string token, CarService.UserService.User user);
+        bool Edit(string token, CarRentalService.UserService.User user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://userservice.th08.nl/UserService/Edit", ReplyAction="http://userservice.th08.nl/UserService/EditResponse")]
-        System.Threading.Tasks.Task<bool> EditAsync(string token, CarService.UserService.User user);
+        System.Threading.Tasks.Task<bool> EditAsync(string token, CarRentalService.UserService.User user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://userservice.th08.nl/UserService/Logout", ReplyAction="http://userservice.th08.nl/UserService/LogoutResponse")]
         void Logout(string token);
@@ -286,12 +286,12 @@ namespace CarService.UserService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface UserServiceChannel : CarService.UserService.UserService, System.ServiceModel.IClientChannel {
+    public interface UserServiceChannel : CarRentalService.UserService.UserService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class UserServiceClient : System.ServiceModel.ClientBase<CarService.UserService.UserService>, CarService.UserService.UserService {
+    public partial class UserServiceClient : System.ServiceModel.ClientBase<CarRentalService.UserService.UserService>, CarRentalService.UserService.UserService {
         
         public UserServiceClient() {
         }
@@ -312,11 +312,11 @@ namespace CarService.UserService {
                 base(binding, remoteAddress) {
         }
         
-        public string Register(CarService.UserService.User user) {
+        public string Register(CarRentalService.UserService.User user) {
             return base.Channel.Register(user);
         }
         
-        public System.Threading.Tasks.Task<string> RegisterAsync(CarService.UserService.User user) {
+        public System.Threading.Tasks.Task<string> RegisterAsync(CarRentalService.UserService.User user) {
             return base.Channel.RegisterAsync(user);
         }
         
@@ -344,19 +344,19 @@ namespace CarService.UserService {
             return base.Channel.LoginAsync(username, password);
         }
         
-        public CarService.UserService.User GetUser(string token) {
+        public CarRentalService.UserService.User GetUser(string token) {
             return base.Channel.GetUser(token);
         }
         
-        public System.Threading.Tasks.Task<CarService.UserService.User> GetUserAsync(string token) {
+        public System.Threading.Tasks.Task<CarRentalService.UserService.User> GetUserAsync(string token) {
             return base.Channel.GetUserAsync(token);
         }
         
-        public bool Edit(string token, CarService.UserService.User user) {
+        public bool Edit(string token, CarRentalService.UserService.User user) {
             return base.Channel.Edit(token, user);
         }
         
-        public System.Threading.Tasks.Task<bool> EditAsync(string token, CarService.UserService.User user) {
+        public System.Threading.Tasks.Task<bool> EditAsync(string token, CarRentalService.UserService.User user) {
             return base.Channel.EditAsync(token, user);
         }
         

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f3604d36-1a07-4aae-afda-eed4fffea892" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://userservice.devworks.nl/UserService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="UserService.wsdl" MetadataType="Wsdl" ID="a7452fd1-e393-4d50-b5af-5279bb7c35f0" SourceId="1" SourceUrl="http://userservice.devworks.nl/UserService.svc?wsdl" />
+    <MetadataFile FileName="UserService.xsd" MetadataType="Schema" ID="f5cad689-0a3c-4700-a2b7-ab2784925898" SourceId="1" SourceUrl="http://userservice.devworks.nl/UserService.svc?xsd=xsd2" />
+    <MetadataFile FileName="UserService1.xsd" MetadataType="Schema" ID="7eeaf078-2d4e-4977-aa5d-c38e43b95777" SourceId="1" SourceUrl="http://userservice.devworks.nl/UserService.svc?xsd=xsd1" />
+    <MetadataFile FileName="UserService2.xsd" MetadataType="Schema" ID="89b61b0b-61b3-4c5c-b156-4d4b3c543384" SourceId="1" SourceUrl="http://userservice.devworks.nl/UserService.svc?xsd=xsd4" />
+    <MetadataFile FileName="UserService3.xsd" MetadataType="Schema" ID="afd3a2ee-15f9-43f6-994a-f2c59f0c3e95" SourceId="1" SourceUrl="http://userservice.devworks.nl/UserService.svc?xsd=xsd0" />
+    <MetadataFile FileName="UserService1.wsdl" MetadataType="Wsdl" ID="9c2b1946-f66b-421a-a7c7-a0b80d3daad5" SourceId="1" SourceUrl="http://userservice.devworks.nl/UserService.svc?wsdl=wsdl1" />
+    <MetadataFile FileName="UserService2.wsdl" MetadataType="Wsdl" ID="261b471e-2b83-46b9-baa6-8cd52af1259b" SourceId="1" SourceUrl="http://userservice.devworks.nl/UserService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="UserService4.xsd" MetadataType="Schema" ID="5bb52761-c357-4a4d-a3e1-dacdfeb6b5a2" SourceId="1" SourceUrl="http://userservice.devworks.nl/UserService.svc?xsd=xsd3" />
+    <MetadataFile FileName="UserService.disco" MetadataType="Disco" ID="7435b5ef-247e-461d-8375-5ddab8d365fc" SourceId="1" SourceUrl="http://userservice.devworks.nl/UserService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using CarService.Domain;
+using CarRentalService.Domain;
 
-namespace CarService
+namespace CarRentalService
 {
     [ServiceContract(Namespace = "http://taxiservice.michaeldv.nl/webservices")]
     public interface IWebService

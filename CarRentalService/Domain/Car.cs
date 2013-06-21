@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
 
-namespace CarService.Domain
+namespace CarRentalService.Domain
 {
     [DataContract]
     public class Car

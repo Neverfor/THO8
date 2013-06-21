@@ -5,15 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
 
-namespace CarService.Domain
+namespace CarRentalService.Domain
 {
     [DataContract]
-    public class City
+    public class Dealer
     {
         [DataMember]
-        public int CityId { get; set; }
+        public int DealerId { get; set; }
         [DataMember]
-        public virtual Country Country { get; set; }
+        public virtual City City { get; set; }
         [DataMember]
         public string Name { get; set; }
     }

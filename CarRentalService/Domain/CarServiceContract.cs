@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 
-namespace CarService.Domain
+namespace CarRentalService.Domain
 {
     public class WebServiceContext : DbContext
     {
