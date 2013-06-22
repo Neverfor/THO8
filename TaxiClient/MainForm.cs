@@ -34,5 +34,11 @@ namespace TaxiClient
             this.mainPanel.Controls.Clear();
             this.mainPanel.Controls.Add(new Taxi.TaxiUC(this));
         }
+
+        private void autoBoekingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.mainPanel.Controls.Clear();
+            this.mainPanel.Controls.Add(new CarRental.CarRentalUC(this));
+        }
     }
 }

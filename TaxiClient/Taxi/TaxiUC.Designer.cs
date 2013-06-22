@@ -105,7 +105,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(943, 605);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "...";
+            this.tabPage2.Text = "Boeking overzicht";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // btnCancelBooking
@@ -247,12 +247,12 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(943, 605);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Taxi";
+            this.tabPage1.Text = "Boek taxi";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // btnFindTaxi
             // 
-            this.btnFindTaxi.Location = new System.Drawing.Point(692, 413);
+            this.btnFindTaxi.Location = new System.Drawing.Point(423, 397);
             this.btnFindTaxi.Name = "btnFindTaxi";
             this.btnFindTaxi.Size = new System.Drawing.Size(75, 23);
             this.btnFindTaxi.TabIndex = 20;
@@ -263,7 +263,7 @@
             // lblPassengers
             // 
             this.lblPassengers.AutoSize = true;
-            this.lblPassengers.Location = new System.Drawing.Point(39, 358);
+            this.lblPassengers.Location = new System.Drawing.Point(54, 370);
             this.lblPassengers.Name = "lblPassengers";
             this.lblPassengers.Size = new System.Drawing.Size(57, 13);
             this.lblPassengers.TabIndex = 18;
@@ -271,7 +271,7 @@
             // 
             // tbPassengers
             // 
-            this.tbPassengers.Location = new System.Drawing.Point(106, 355);
+            this.tbPassengers.Location = new System.Drawing.Point(121, 367);
             this.tbPassengers.Name = "tbPassengers";
             this.tbPassengers.Size = new System.Drawing.Size(46, 20);
             this.tbPassengers.TabIndex = 19;
@@ -279,7 +279,7 @@
             // rbArrival
             // 
             this.rbArrival.AutoSize = true;
-            this.rbArrival.Location = new System.Drawing.Point(171, 332);
+            this.rbArrival.Location = new System.Drawing.Point(186, 344);
             this.rbArrival.Name = "rbArrival";
             this.rbArrival.Size = new System.Drawing.Size(71, 17);
             this.rbArrival.TabIndex = 18;
@@ -290,7 +290,7 @@
             // 
             this.rbDeparture.AutoSize = true;
             this.rbDeparture.Checked = true;
-            this.rbDeparture.Location = new System.Drawing.Point(106, 332);
+            this.rbDeparture.Location = new System.Drawing.Point(121, 344);
             this.rbDeparture.Name = "rbDeparture";
             this.rbDeparture.Size = new System.Drawing.Size(58, 17);
             this.rbDeparture.TabIndex = 15;
@@ -302,7 +302,7 @@
             // 
             this.dtpTime.CustomFormat = "HH:mm ";
             this.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTime.Location = new System.Drawing.Point(305, 305);
+            this.dtpTime.Location = new System.Drawing.Point(320, 317);
             this.dtpTime.Name = "dtpTime";
             this.dtpTime.ShowUpDown = true;
             this.dtpTime.Size = new System.Drawing.Size(57, 20);
@@ -312,7 +312,7 @@
             // lblTime
             // 
             this.lblTime.AutoSize = true;
-            this.lblTime.Location = new System.Drawing.Point(284, 306);
+            this.lblTime.Location = new System.Drawing.Point(299, 318);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(20, 13);
             this.lblTime.TabIndex = 13;
@@ -321,7 +321,7 @@
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(64, 306);
+            this.lblDate.Location = new System.Drawing.Point(79, 318);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(36, 13);
             this.lblDate.TabIndex = 12;
@@ -329,7 +329,7 @@
             // 
             // dtpDate
             // 
-            this.dtpDate.Location = new System.Drawing.Point(106, 305);
+            this.dtpDate.Location = new System.Drawing.Point(121, 317);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(172, 20);
             this.dtpDate.TabIndex = 11;
@@ -347,7 +347,7 @@
             this.gbDestinationAddress.Controls.Add(this.tbDestZipCode);
             this.gbDestinationAddress.Controls.Add(this.tbDestNumber);
             this.gbDestinationAddress.Controls.Add(this.tbDestStreet);
-            this.gbDestinationAddress.Location = new System.Drawing.Point(4, 156);
+            this.gbDestinationAddress.Location = new System.Drawing.Point(19, 168);
             this.gbDestinationAddress.Name = "gbDestinationAddress";
             this.gbDestinationAddress.Size = new System.Drawing.Size(479, 143);
             this.gbDestinationAddress.TabIndex = 10;
@@ -446,7 +446,7 @@
             this.gbDepartureAddress.Controls.Add(this.tbDepZipCode);
             this.gbDepartureAddress.Controls.Add(this.tbDepNumber);
             this.gbDepartureAddress.Controls.Add(this.tbDepStreet);
-            this.gbDepartureAddress.Location = new System.Drawing.Point(4, 7);
+            this.gbDepartureAddress.Location = new System.Drawing.Point(19, 19);
             this.gbDepartureAddress.Name = "gbDepartureAddress";
             this.gbDepartureAddress.Size = new System.Drawing.Size(479, 143);
             this.gbDepartureAddress.TabIndex = 0;

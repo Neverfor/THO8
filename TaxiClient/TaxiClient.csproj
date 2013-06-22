@@ -57,6 +57,12 @@
     <Compile Include="Authentication\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CarRental\CarRentalUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CarRental\CarRentalUC.Designer.cs">
+      <DependentUpon>CarRentalUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Flight\FoundFlightsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,11 @@
     </Compile>
     <Compile Include="Hotel\HotelUC.Designer.cs">
       <DependentUpon>HotelUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\CarRentalService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Service References\Team2\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -114,6 +125,9 @@
     <EmbeddedResource Include="Authentication\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CarRental\CarRentalUC.resx">
+      <DependentUpon>CarRentalUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Flight\FoundFlightsForm.resx">
       <DependentUpon>FoundFlightsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,6 +157,7 @@
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\To8Libraries.Team2.User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -152,6 +167,32 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Service References\CarRentalService\TaxiClient.CarRentalService.Car.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CarRentalService\TaxiClient.CarRentalService.CarBooking.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CarRentalService\TaxiClient.CarRentalService.City.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CarRentalService\TaxiClient.CarRentalService.Country.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CarRentalService\TaxiClient.CarRentalService.Dealer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CarRentalService\WebService.wsdl" />
+    <None Include="Service References\CarRentalService\WebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CarRentalService\WebService1.wsdl" />
+    <None Include="Service References\CarRentalService\WebService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CarRentalService\WebService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\HotelService\HotelBookingService.wsdl" />
     <None Include="Service References\HotelService\item.wsdl" />
     <None Include="Service References\HotelService\item.xsd">
@@ -201,9 +242,6 @@
     <None Include="Service References\TaxiService\WebService4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Team2\TaxiClient.Team2.User.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\Team2\UserService.wsdl" />
     <None Include="Service References\Team2\UserService.xsd">
       <SubType>Designer</SubType>
@@ -230,6 +268,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CarRentalService\" />
     <WCFMetadataStorage Include="Service References\HotelService\" />
     <WCFMetadataStorage Include="Service References\TaxiService\" />
     <WCFMetadataStorage Include="Service References\Team2\" />
@@ -266,7 +305,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Attraction\" />
-    <Folder Include="Car\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\Team2\UserService.disco" />
@@ -288,6 +326,21 @@
       <Project>{fc6b4d74-817b-4535-9a92-f93984a334dd}</Project>
       <Name>To8Libraries</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CarRentalService\WebService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CarRentalService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CarRentalService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CarRentalService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
