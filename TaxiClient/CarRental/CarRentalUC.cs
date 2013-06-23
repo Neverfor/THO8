@@ -32,9 +32,8 @@ namespace TaxiClient.CarRental
                 if (string.IsNullOrEmpty(cbCountry.SelectedText))
                 {
                     Country country = cbCountry.Items[cbCountry.SelectedIndex] as Country;
-                    MessageBox.Show(client.GetCities(country).ToString());
-                    //cbCity.DataSource = client.GetCities(country);
-                    //cbCity.DisplayMember = "Name";
+                    cbCity.DataSource = client.GetCities(country);
+                    cbCity.DisplayMember = "Name";
                 }
             }
         }

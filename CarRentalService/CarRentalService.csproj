@@ -86,6 +86,15 @@
     <Compile Include="Domain\Country.cs" />
     <Compile Include="Domain\Dealer.cs" />
     <Compile Include="IWebService.cs" />
+    <Compile Include="Migrations\201306211151005_InitialCreate.cs" />
+    <Compile Include="Migrations\201306211151005_InitialCreate.Designer.cs">
+      <DependentUpon>201306211151005_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201306231804134_IDontKnowIfIAddedSomething.cs" />
+    <Compile Include="Migrations\201306231804134_IDontKnowIfIAddedSomething.Designer.cs">
+      <DependentUpon>201306231804134_IDontKnowIfIAddedSomething.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\UserService\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -96,7 +105,14 @@
       <DependentUpon>WebService.svc</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201306211151005_InitialCreate.resx">
+      <DependentUpon>201306211151005_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201306231804134_IDontKnowIfIAddedSomething.resx">
+      <DependentUpon>201306231804134_IDontKnowIfIAddedSomething.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Service References\UserService\UserService.wsdl" />
     <Content Include="packages.config" />

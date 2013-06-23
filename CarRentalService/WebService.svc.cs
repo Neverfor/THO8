@@ -24,15 +24,16 @@ namespace CarRentalService
 
         public City[] GetCities(Country country)
         {
-            using (WebServiceContext db = new WebServiceContext())
+            using (var db = new WebServiceContext())
             {
-                var vCities = from c in db.Cities
-                              where c.Country == country
-                              select c;
-                List<City> lCities = new List<City>();
-                foreach (City city in vCities)
-                    lCities.Add(city);
-                return lCities.ToArray();
+                //City[] cities = (from c in db.Cities
+                //                 where c.Country == country
+                //                 select c).ToArray();
+                //return cities;
+                City c1 = new City() { Name = "Lyon" };
+                City c2 = new City() { Name = "Bar-le-duc" };
+                City[] cities = { c1, c2 };
+                return db.Cities.ToArray();
             }
         }
 
