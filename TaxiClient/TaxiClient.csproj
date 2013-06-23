@@ -157,7 +157,6 @@
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\To8Libraries.Team2.User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -242,6 +241,9 @@
     <None Include="Service References\TaxiService\WebService4.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\Team2\TaxiClient.Team2.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\Team2\UserService.wsdl" />
     <None Include="Service References\Team2\UserService.xsd">
       <SubType>Designer</SubType>
@@ -307,27 +309,6 @@
     <Folder Include="Attraction\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\Team2\UserService.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\Team2\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\Team2\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\Team2\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\To8Libraries\To8Libraries.csproj">
-      <Project>{fc6b4d74-817b-4535-9a92-f93984a334dd}</Project>
-      <Name>To8Libraries</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\CarRentalService\WebService.disco" />
   </ItemGroup>
   <ItemGroup>
@@ -338,6 +319,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\CarRentalService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Team2\UserService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Team2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Team2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Team2\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

@@ -16,73 +16,61 @@ namespace TaxiClient.CarRental
         Form parentContainer;
         public CarRentalUC(Form parentContainer)
         {
-            this.parentContainer = parentContainer;
             InitializeComponent();
+            this.parentContainer = parentContainer;
             using (WebServiceClient client = new WebServiceClient())
             {
-                List<Country> countries = client.GetCountries().ToList();
-                cbCountry.DataSource = countries;
-                cbCountry.DisplayMember = "Name";
-                lblCarType.Text = "";
+
+                this.RefreshComboBoxes();
             }
         }
 
         private void cbCountry_SelectedIndexChanged(object sender, EventArgs e)
         {
-            using (WebServiceClient client = new WebServiceClient())
-            {
-                Country country = cbCountry.Items[cbCountry.SelectedIndex] as Country;
-                List<City> cities = client.GetCities(country).ToList();
-                cbCity.DataSource = cities;
-                cbCity.DisplayMember = "Name";
-                lblCarType.Text = "";
-                MessageBox.Show("Countries: " + cities.ToString());
-            }
+            this.RefreshComboBoxes();
         }
 
         private void cbCity_SelectedIndexChanged(object sender, EventArgs e)
         {
-            using (WebServiceClient client = new WebServiceClient())
-            {
-                City city = cbCity.Items[cbCity.SelectedIndex] as City;
-                List<Dealer> dealers = client.GetDealers(city).ToList();
-                cbDealer.DataSource = dealers;
-                cbDealer.DisplayMember = "Name";
-                lblCarType.Text = "";
-            }
+            this.RefreshComboBoxes();
         }
 
         private void cbDealer_SelectedIndexChanged(object sender, EventArgs e)
         {
-            using (WebServiceClient client = new WebServiceClient())
-            {
-                Dealer dealer = cbDealer.Items[cbDealer.SelectedIndex] as Dealer;
-                List<Car> cars = client.GetCars(dealer).ToList();
-                cbCar.DataSource = cars;
-                cbCar.DisplayMember = "Brand";
-                lblCarType.Text = "";
-            }
+            this.RefreshComboBoxes();
         }
 
         private void cbCar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            using (WebServiceClient client = new WebServiceClient())
-            {
-                Car car = cbCar.Items[cbCar.SelectedIndex] as Car;
-                lblCarType.Text = car.CarType.Type;
-            }
+            this.RefreshComboBoxes();
         }
 
-        private void try1(object sender, QueryAccessibilityHelpEventArgs e)
+        private void btnBookCar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("something is working");
+        }
+
+        private void RefreshComboBoxes()
         {
             using (WebServiceClient client = new WebServiceClient())
             {
-                Country country = cbCountry.Items[cbCountry.SelectedIndex] as Country;
-                List<City> cities = client.GetCities(country).ToList();
-                cbCity.DataSource = cities;
-                cbCity.DisplayMember = "Name";
-                lblCarType.Text = "";
-                MessageBox.Show("Countries: " + cities.ToString());
+                cbCountry.DataSource = client.GetCountries();
+                cbCountry.DisplayMember = "Name";
+
+                //Country country = cbCountry.Items[cbCountry.SelectedIndex] as Country;
+                //cbCity.DataSource = client.GetCities(country);
+                //cbCity.DisplayMember = "Name";
+
+                //City city = cbCity.Items[cbCity.SelectedIndex] as City;
+                //cbDealer.DataSource = client.GetDealers(city);
+                //cbDealer.DisplayMember = "Name";
+
+                //Dealer dealer = cbDealer.Items[cbDealer.SelectedIndex] as Dealer;
+                //cbCar.DataSource = client.GetCars(dealer);
+                //cbCar.DisplayMember = "Brand";
+
+                //Car car = cbCar.Items[cbCar.SelectedIndex] as Car;
+                //lblCarType.Text = car.CarType.Type;
             }
         }
     }
