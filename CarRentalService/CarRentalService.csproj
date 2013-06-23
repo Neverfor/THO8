@@ -78,13 +78,7 @@
     <Content Include="WebService.svc" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\Car.cs" />
-    <Compile Include="Domain\CarBooking.cs" />
     <Compile Include="Domain\CarServiceContract.cs" />
-    <Compile Include="Domain\CarTypes.cs" />
-    <Compile Include="Domain\City.cs" />
-    <Compile Include="Domain\Country.cs" />
-    <Compile Include="Domain\Dealer.cs" />
     <Compile Include="IWebService.cs" />
     <Compile Include="Migrations\201306211151005_InitialCreate.cs" />
     <Compile Include="Migrations\201306211151005_InitialCreate.Designer.cs">
@@ -93,6 +87,10 @@
     <Compile Include="Migrations\201306231804134_IDontKnowIfIAddedSomething.cs" />
     <Compile Include="Migrations\201306231804134_IDontKnowIfIAddedSomething.Designer.cs">
       <DependentUpon>201306231804134_IDontKnowIfIAddedSomething.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201306232021290_classesMergedIntoOneFile.cs" />
+    <Compile Include="Migrations\201306232021290_classesMergedIntoOneFile.Designer.cs">
+      <DependentUpon>201306232021290_classesMergedIntoOneFile.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -111,6 +109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201306231804134_IDontKnowIfIAddedSomething.resx">
       <DependentUpon>201306231804134_IDontKnowIfIAddedSomething.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201306232021290_classesMergedIntoOneFile.resx">
+      <DependentUpon>201306232021290_classesMergedIntoOneFile.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

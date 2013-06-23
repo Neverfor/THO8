@@ -16,6 +16,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelWebService", "..\..\..
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRentalService", "CarRentalService\CarRentalService.csproj", "{4AA5D56D-CE55-4026-8870-65F7AEFDCBA0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleClient", "ConsoleClient\ConsoleClient.csproj", "{52BC4D45-8F65-4AA1-84C4-A7F770A3AAB9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4AA5D56D-CE55-4026-8870-65F7AEFDCBA0} = {4AA5D56D-CE55-4026-8870-65F7AEFDCBA0}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +51,10 @@ Global
 		{4AA5D56D-CE55-4026-8870-65F7AEFDCBA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AA5D56D-CE55-4026-8870-65F7AEFDCBA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4AA5D56D-CE55-4026-8870-65F7AEFDCBA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52BC4D45-8F65-4AA1-84C4-A7F770A3AAB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52BC4D45-8F65-4AA1-84C4-A7F770A3AAB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52BC4D45-8F65-4AA1-84C4-A7F770A3AAB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52BC4D45-8F65-4AA1-84C4-A7F770A3AAB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

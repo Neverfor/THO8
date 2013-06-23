@@ -26,14 +26,13 @@ namespace CarRentalService
         {
             using (var db = new WebServiceContext())
             {
-                //City[] cities = (from c in db.Cities
-                //                 where c.Country == country
-                //                 select c).ToArray();
-                //return cities;
-                City c1 = new City() { Name = "Lyon" };
-                City c2 = new City() { Name = "Bar-le-duc" };
-                City[] cities = { c1, c2 };
-                return db.Cities.ToArray();
+                City[] cities = (from c in db.Cities
+                                 where c.Country == country
+                                 select c).ToArray();
+                //City c1 = new City() { Name = "Lyon" };
+                //City c2 = new City() { Name = "Bar-le-duc" };
+                //City[] cities = { c1, c2 };
+                return db.Cities.ToArray<City>();
             }
         }
 
