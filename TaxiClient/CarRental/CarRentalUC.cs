@@ -20,58 +20,66 @@ namespace TaxiClient.CarRental
             this.parentContainer = parentContainer;
             using (WebServiceClient client = new WebServiceClient())
             {
-
-                this.RefreshComboBoxes();
+                cbCountry.DataSource = client.GetCountries();
+                cbCountry.DisplayMember = "Name";
             }
         }
 
         private void cbCountry_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.RefreshComboBoxes();
+            using (WebServiceClient client = new WebServiceClient())
+            {
+                if (string.IsNullOrEmpty(cbCountry.SelectedText))
+                {
+                    Country country = cbCountry.Items[cbCountry.SelectedIndex] as Country;
+                    MessageBox.Show(client.GetCities(country).ToString());
+                    //cbCity.DataSource = client.GetCities(country);
+                    //cbCity.DisplayMember = "Name";
+                }
+            }
         }
 
         private void cbCity_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.RefreshComboBoxes();
+            //using (WebServiceClient client = new WebServiceClient())
+            //{
+            //    if (string.IsNullOrEmpty(cbCountry.SelectedText))
+            //    {
+            //        City city = cbCity.Items[cbCity.SelectedIndex] as City;
+            //        cbDealer.DataSource = client.GetDealers(city);
+            //        cbDealer.DisplayMember = "Name";
+            //    }
+            //}
         }
 
         private void cbDealer_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.RefreshComboBoxes();
+            //using (WebServiceClient client = new WebServiceClient())
+            //{
+            //    if (string.IsNullOrEmpty(cbCity.SelectedText))
+            //    {
+            //        Dealer dealer = cbDealer.Items[cbDealer.SelectedIndex] as Dealer;
+            //        cbCar.DataSource = client.GetCars(dealer);
+            //        cbCar.DisplayMember = "Brand";
+            //    }
+            //}
         }
 
         private void cbCar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.RefreshComboBoxes();
+            //using (WebServiceClient client = new WebServiceClient())
+            //{
+            //    if (string.IsNullOrEmpty(cbCity.SelectedText))
+            //    {
+            //        Car car = cbCar.Items[cbCar.SelectedIndex] as Car;
+            //        lblCarType.Text = car.CarType.Type;
+            //    }
+            //}
         }
 
         private void btnBookCar_Click(object sender, EventArgs e)
         {
             MessageBox.Show("something is working");
-        }
-
-        private void RefreshComboBoxes()
-        {
-            using (WebServiceClient client = new WebServiceClient())
-            {
-                cbCountry.DataSource = client.GetCountries();
-                cbCountry.DisplayMember = "Name";
-
-                //Country country = cbCountry.Items[cbCountry.SelectedIndex] as Country;
-                //cbCity.DataSource = client.GetCities(country);
-                //cbCity.DisplayMember = "Name";
-
-                //City city = cbCity.Items[cbCity.SelectedIndex] as City;
-                //cbDealer.DataSource = client.GetDealers(city);
-                //cbDealer.DisplayMember = "Name";
-
-                //Dealer dealer = cbDealer.Items[cbDealer.SelectedIndex] as Dealer;
-                //cbCar.DataSource = client.GetCars(dealer);
-                //cbCar.DisplayMember = "Brand";
-
-                //Car car = cbCar.Items[cbCar.SelectedIndex] as Car;
-                //lblCarType.Text = car.CarType.Type;
-            }
         }
     }
 }

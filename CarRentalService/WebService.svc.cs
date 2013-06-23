@@ -7,6 +7,7 @@ using System.Text;
 using CarRentalService.Domain;
 using CarRentalService.UserService;
 using System.Data.Entity;
+using System.Diagnostics;
 
 namespace CarRentalService
 {
@@ -25,10 +26,13 @@ namespace CarRentalService
         {
             using (WebServiceContext db = new WebServiceContext())
             {
-                var cities = from c in db.Cities
-                             where c.Country == country
-                             select c;
-                return cities.ToArray();
+                var vCities = from c in db.Cities
+                              where c.Country == country
+                              select c;
+                List<City> lCities = new List<City>();
+                foreach (City city in vCities)
+                    lCities.Add(city);
+                return lCities.ToArray();
             }
         }
 
@@ -37,9 +41,9 @@ namespace CarRentalService
             using (WebServiceContext db = new WebServiceContext())
             {
                 var dealers = from d in db.Dealers
-                              where d.City == city
+                              where d.City.CityId == city.CityId
                               select d;
-                return dealers.ToArray();
+                return dealers.ToArray<Dealer>();
             }
         }
 
@@ -48,9 +52,9 @@ namespace CarRentalService
             using (WebServiceContext db = new WebServiceContext())
             {
                 var cars = from c in db.Cars
-                           where c.Dealer == dealer
+                           where c.Dealer.DealerId == dealer.DealerId
                            select c;
-                return cars.ToArray();
+                return cars.ToArray<Car>();
             }
         }
 
