@@ -32,7 +32,7 @@ namespace TaxiClient.Hotel
 
             using (HotelService.HotelBookingServiceClient client = new HotelService.HotelBookingServiceClient())
             {
-                userBookings.DataSource = client.GetBookingsFromUser(Token); //GetUserBookings(req).TaxiBookings;
+                userBookings.DataSource = client.GetBookingsFromUser(Token);
             }
 
         }
@@ -77,9 +77,13 @@ namespace TaxiClient.Hotel
 
         private void bookBTN_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(hotelsCB.SelectedText) || string.IsNullOrEmpty(roomTypeCB.SelectedText)) 
+            {
+                MessageBox.Show("");
+            }
             String Token = Session.UserToken.ToString();
             string hotelStringID = hotelsCB.SelectedValue.ToString();
-            MessageBox.Show("Hotel ID is: " + hotelStringID);
+            //MessageBox.Show("Hotel ID is: " + hotelStringID);
             short hotID = Convert.ToInt16(hotelStringID);
             String perNumb = numPersons.Value.ToString();
             short aantalPersons = Convert.ToInt16(perNumb);
@@ -103,18 +107,28 @@ namespace TaxiClient.Hotel
 
             short x = 1;
             br.Amount = x;
-
-
             br.RoomType = roomTypeItem;
-            //br.RoomType.Amount = x;
+
             String roomTypeNaam = roomTypeCB.SelectedValue.ToString();
-            MessageBox.Show("De selected room is: " + roomTypeNaam + "\n De selected room description is: " + roomTypeItem.Description);
-            //br.RoomType.Name = roomTypeNaam;//roomTypeCB.SelectedValue.ToString();
+            MessageBox.Show("U heeft gekozen een " + roomTypeNaam + " kamer." + "\n De service verlener beschrijft kamers als volgt: " 
+                + " \n" + roomTypeItem.Description);
+
             br.RoomType.MaxPersons = aantalPersons;
             row[0] = br;
 
-            client.bookRoom(hotID, row, arrival, departure, aantalPersons, Token);
-            FillDataGrid();
+            if (roomTypeItem.GetType() == typeof(HotelService.RoomType))
+            {
+                client.bookRoom(hotID, row, arrival, departure, aantalPersons, Token);
+                FillDataGrid();
+            }
+            else 
+            {
+                MessageBox.Show("Auch!... Niet alles is ingevuld!", "Vul gegevens in...",
+		        MessageBoxButtons.OK,
+		        MessageBoxIcon.Exclamation,
+		        MessageBoxDefaultButton.Button1);
+                FillDataGrid(); 
+            }
         }
 
         private void hotelsCB_SelectedIndexChanged(object sender, EventArgs e)
@@ -135,7 +149,7 @@ namespace TaxiClient.Hotel
 
             if (isNum) 
             {
-                MessageBox.Show("Changed hotel ID: " + hotID);
+                //MessageBox.Show("Changed hotel ID: " + hotID);
                 HotID = Convert.ToInt16(hotID); 
             }
             else       
@@ -172,11 +186,11 @@ namespace TaxiClient.Hotel
                 if (HotID > 0)
                 {
                     rooms = client.getRoomTypesFromHotel(HotID, arrival, departure, aantalPersons);
-                    String roomTypeOut = "Following rooms are available: ";
+                    String roomTypeOut = "De volgende beschikbare kamer types zijn gevonden: ";
                     foreach (HotelService.RoomType rom in rooms)
                     {
                         roomies.Add(rom);
-                        roomTypeOut += " \n" + rom.Name.ToString() + " heeft ID: " + rom.RoomTypeId.ToString();
+                        roomTypeOut += "\n" + rom.Name.ToString() + " heeft ID: " + rom.RoomTypeId.ToString();
                     }
 
                     MessageBox.Show(roomTypeOut);
@@ -207,7 +221,7 @@ namespace TaxiClient.Hotel
             if (roomTypeCB.SelectedIndex >= 0 && roomTypeCB.SelectedItem != null)
             {
                 roomTypeItem = roomTypeCB.Items[roomTypeCB.SelectedIndex] as HotelService.RoomType;
-                MessageBox.Show("Gekozen kamer: " + roomTypeCB.SelectedValue.ToString());
+                //MessageBox.Show("Gekozen kamer: " + roomTypeCB.SelectedValue.ToString());
             }
         }
 

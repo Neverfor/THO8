@@ -46,6 +46,7 @@
             this.searchBTN = new System.Windows.Forms.Button();
             this.userBookings = new System.Windows.Forms.DataGridView();
             this.CancelBoekingBTN = new System.Windows.Forms.Button();
+            this.corpInfoVerlener = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numPersons)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBookings)).BeginInit();
             this.SuspendLayout();
@@ -212,10 +213,21 @@
             this.CancelBoekingBTN.Text = "Cancel Boeking";
             this.CancelBoekingBTN.UseVisualStyleBackColor = true;
             // 
+            // corpInfoVerlener
+            // 
+            this.corpInfoVerlener.AutoSize = true;
+            this.corpInfoVerlener.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.corpInfoVerlener.Location = new System.Drawing.Point(49, 349);
+            this.corpInfoVerlener.Name = "corpInfoVerlener";
+            this.corpInfoVerlener.Size = new System.Drawing.Size(371, 13);
+            this.corpInfoVerlener.TabIndex = 36;
+            this.corpInfoVerlener.Text = "Dit service is aangeboden door groep 5. All rights reserved. Your money - not.";
+            // 
             // HotelUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.corpInfoVerlener);
             this.Controls.Add(this.CancelBoekingBTN);
             this.Controls.Add(this.userBookings);
             this.Controls.Add(this.numPersons);
@@ -264,5 +276,6 @@
         private System.Windows.Forms.Button searchBTN;
         private System.Windows.Forms.DataGridView userBookings;
         private System.Windows.Forms.Button CancelBoekingBTN;
+        private System.Windows.Forms.Label corpInfoVerlener;
     }
 }
