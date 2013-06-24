@@ -39,7 +39,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
@@ -78,19 +79,12 @@
     <Content Include="WebService.svc" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\CarServiceContract.cs" />
+    <Compile Include="Domain\Contracts.cs" />
+    <Compile Include="Domain\Entities.cs" />
     <Compile Include="IWebService.cs" />
-    <Compile Include="Migrations\201306211151005_InitialCreate.cs" />
-    <Compile Include="Migrations\201306211151005_InitialCreate.Designer.cs">
-      <DependentUpon>201306211151005_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201306231804134_IDontKnowIfIAddedSomething.cs" />
-    <Compile Include="Migrations\201306231804134_IDontKnowIfIAddedSomething.Designer.cs">
-      <DependentUpon>201306231804134_IDontKnowIfIAddedSomething.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201306232021290_classesMergedIntoOneFile.cs" />
-    <Compile Include="Migrations\201306232021290_classesMergedIntoOneFile.Designer.cs">
-      <DependentUpon>201306232021290_classesMergedIntoOneFile.cs</DependentUpon>
+    <Compile Include="Migrations\201306241149136_nieuwe db.cs" />
+    <Compile Include="Migrations\201306241149136_nieuwe db.Designer.cs">
+      <DependentUpon>201306241149136_nieuwe db.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -102,17 +96,6 @@
     <Compile Include="WebService.svc.cs">
       <DependentUpon>WebService.svc</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201306211151005_InitialCreate.resx">
-      <DependentUpon>201306211151005_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201306231804134_IDontKnowIfIAddedSomething.resx">
-      <DependentUpon>201306231804134_IDontKnowIfIAddedSomething.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201306232021290_classesMergedIntoOneFile.resx">
-      <DependentUpon>201306232021290_classesMergedIntoOneFile.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Service References\UserService\UserService.wsdl" />
@@ -147,6 +130,11 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\UserService\" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201306241149136_nieuwe db.resx">
+      <DependentUpon>201306241149136_nieuwe db.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -160,7 +148,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>50667</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:55178/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

@@ -10,6 +10,11 @@ package booking_pkg;
 import javax.persistence.*;
 
 @Entity
+@NamedQueries({
+	@NamedQuery(name="Attractie.findAll", query="SELECT a FROM Attractie a"),
+	@NamedQuery(name="Attractie.findByNaam", query="SELECT a FROM Attractie a WHERE a.naam = :naam"),
+	@NamedQuery(name="Attractie.findById", query="SELECT a FROM Attractie a WHERE a.attractionID = :id")
+})
 public class Attractie  implements java.io.Serializable {
 	@Id
 	@GeneratedValue

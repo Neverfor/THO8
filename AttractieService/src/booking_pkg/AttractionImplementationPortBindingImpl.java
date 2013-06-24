@@ -7,14 +7,22 @@
 
 package booking_pkg;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 import org.hibernate.Session;
 
 import utils.HibernateUtil;
 
 public class AttractionImplementationPortBindingImpl implements booking_pkg.AttractionImplementation{
     public booking_pkg.AttractieType[] getAttractionTypes() throws java.rmi.RemoteException {
-    	
-    	return null;
+    
+    	EntityManagerFactory emf = Persistence.createEntityManagerFactory("attractieDB");
+        EntityManager em = emf.createEntityManager();
+        //User foundUser = em.createNamedQuery('User.', User.class).setParameter('name', name)
+          //.getSingleResult();
+        return null;
     }
 
     public int bookAttraction(int arg0, booking_pkg.OrderedTicket[] arg1, java.util.Calendar arg2, java.lang.String arg3) throws java.rmi.RemoteException {
