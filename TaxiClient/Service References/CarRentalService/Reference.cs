@@ -15,9 +15,9 @@ namespace TaxiClient.CarRentalService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Country", Namespace="http://schemas.datacontract.org/2004/07/CarRentalService.Domain")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CountryContract", Namespace="http://schemas.datacontract.org/2004/07/CarRentalService.Contracts")]
     [System.SerializableAttribute()]
-    public partial class Country : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class CountryContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -76,9 +76,9 @@ namespace TaxiClient.CarRentalService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="City", Namespace="http://schemas.datacontract.org/2004/07/CarRentalService.Domain")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CityContract", Namespace="http://schemas.datacontract.org/2004/07/CarRentalService.Contracts")]
     [System.SerializableAttribute()]
-    public partial class City : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class CityContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -87,7 +87,7 @@ namespace TaxiClient.CarRentalService {
         private int CityIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TaxiClient.CarRentalService.Country CountryField;
+        private TaxiClient.CarRentalService.CountryContract CountryField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NameField;
@@ -116,7 +116,7 @@ namespace TaxiClient.CarRentalService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TaxiClient.CarRentalService.Country Country {
+        public TaxiClient.CarRentalService.CountryContract Country {
             get {
                 return this.CountryField;
             }
@@ -153,15 +153,15 @@ namespace TaxiClient.CarRentalService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Dealer", Namespace="http://schemas.datacontract.org/2004/07/CarRentalService.Domain")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DealerContract", Namespace="http://schemas.datacontract.org/2004/07/CarRentalService.Contracts")]
     [System.SerializableAttribute()]
-    public partial class Dealer : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class DealerContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TaxiClient.CarRentalService.City CityField;
+        private TaxiClient.CarRentalService.CityContract CityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int DealerIdField;
@@ -180,7 +180,7 @@ namespace TaxiClient.CarRentalService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TaxiClient.CarRentalService.City City {
+        public TaxiClient.CarRentalService.CityContract City {
             get {
                 return this.CityField;
             }
@@ -230,9 +230,9 @@ namespace TaxiClient.CarRentalService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Car", Namespace="http://schemas.datacontract.org/2004/07/CarRentalService.Domain")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CarContract", Namespace="http://schemas.datacontract.org/2004/07/CarRentalService.Contracts")]
     [System.SerializableAttribute()]
-    public partial class Car : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class CarContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -244,13 +244,13 @@ namespace TaxiClient.CarRentalService {
         private int CarIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TaxiClient.CarRentalService.CarType CarTypeField;
+        private TaxiClient.CarRentalService.CarTypeContract CarTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime DateOfPurchaseField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TaxiClient.CarRentalService.Dealer DealerField;
+        private TaxiClient.CarRentalService.DealerContract DealerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string LicenceField;
@@ -292,7 +292,7 @@ namespace TaxiClient.CarRentalService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TaxiClient.CarRentalService.CarType CarType {
+        public TaxiClient.CarRentalService.CarTypeContract CarType {
             get {
                 return this.CarTypeField;
             }
@@ -318,7 +318,7 @@ namespace TaxiClient.CarRentalService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TaxiClient.CarRentalService.Dealer Dealer {
+        public TaxiClient.CarRentalService.DealerContract Dealer {
             get {
                 return this.DealerField;
             }
@@ -355,9 +355,9 @@ namespace TaxiClient.CarRentalService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CarType", Namespace="http://schemas.datacontract.org/2004/07/CarRentalService.Domain")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CarTypeContract", Namespace="http://schemas.datacontract.org/2004/07/CarRentalService.Contracts")]
     [System.SerializableAttribute()]
-    public partial class CarType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class CarTypeContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -448,15 +448,15 @@ namespace TaxiClient.CarRentalService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CarBooking", Namespace="http://schemas.datacontract.org/2004/07/CarRentalService.Domain")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CarBookingContract", Namespace="http://schemas.datacontract.org/2004/07/CarRentalService.Contracts")]
     [System.SerializableAttribute()]
-    public partial class CarBooking : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class CarBookingContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TaxiClient.CarRentalService.Car CarField;
+        private TaxiClient.CarRentalService.CarContract CarField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int CarBookingIdField;
@@ -484,7 +484,7 @@ namespace TaxiClient.CarRentalService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TaxiClient.CarRentalService.Car Car {
+        public TaxiClient.CarRentalService.CarContract Car {
             get {
                 return this.CarField;
             }
@@ -576,52 +576,52 @@ namespace TaxiClient.CarRentalService {
     public interface IWebService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://taxiservice.michaeldv.nl/webservices/IWebService/GetCountries", ReplyAction="http://taxiservice.michaeldv.nl/webservices/IWebService/GetCountriesResponse")]
-        TaxiClient.CarRentalService.Country[] GetCountries();
+        TaxiClient.CarRentalService.CountryContract[] GetCountries();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://taxiservice.michaeldv.nl/webservices/IWebService/GetCountries", ReplyAction="http://taxiservice.michaeldv.nl/webservices/IWebService/GetCountriesResponse")]
-        System.Threading.Tasks.Task<TaxiClient.CarRentalService.Country[]> GetCountriesAsync();
+        System.Threading.Tasks.Task<TaxiClient.CarRentalService.CountryContract[]> GetCountriesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://taxiservice.michaeldv.nl/webservices/IWebService/GetCities", ReplyAction="http://taxiservice.michaeldv.nl/webservices/IWebService/GetCitiesResponse")]
-        TaxiClient.CarRentalService.City[] GetCities(TaxiClient.CarRentalService.Country country);
+        TaxiClient.CarRentalService.CityContract[] GetCities(TaxiClient.CarRentalService.CountryContract country);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://taxiservice.michaeldv.nl/webservices/IWebService/GetCities", ReplyAction="http://taxiservice.michaeldv.nl/webservices/IWebService/GetCitiesResponse")]
-        System.Threading.Tasks.Task<TaxiClient.CarRentalService.City[]> GetCitiesAsync(TaxiClient.CarRentalService.Country country);
+        System.Threading.Tasks.Task<TaxiClient.CarRentalService.CityContract[]> GetCitiesAsync(TaxiClient.CarRentalService.CountryContract country);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://taxiservice.michaeldv.nl/webservices/IWebService/GetDealers", ReplyAction="http://taxiservice.michaeldv.nl/webservices/IWebService/GetDealersResponse")]
-        TaxiClient.CarRentalService.Dealer[] GetDealers(TaxiClient.CarRentalService.City city);
+        TaxiClient.CarRentalService.DealerContract[] GetDealers(TaxiClient.CarRentalService.CityContract city);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://taxiservice.michaeldv.nl/webservices/IWebService/GetDealers", ReplyAction="http://taxiservice.michaeldv.nl/webservices/IWebService/GetDealersResponse")]
-        System.Threading.Tasks.Task<TaxiClient.CarRentalService.Dealer[]> GetDealersAsync(TaxiClient.CarRentalService.City city);
+        System.Threading.Tasks.Task<TaxiClient.CarRentalService.DealerContract[]> GetDealersAsync(TaxiClient.CarRentalService.CityContract city);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://taxiservice.michaeldv.nl/webservices/IWebService/GetCars", ReplyAction="http://taxiservice.michaeldv.nl/webservices/IWebService/GetCarsResponse")]
-        TaxiClient.CarRentalService.Car[] GetCars(TaxiClient.CarRentalService.Dealer dealer);
+        TaxiClient.CarRentalService.CarContract[] GetCars(TaxiClient.CarRentalService.DealerContract dealer);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://taxiservice.michaeldv.nl/webservices/IWebService/GetCars", ReplyAction="http://taxiservice.michaeldv.nl/webservices/IWebService/GetCarsResponse")]
-        System.Threading.Tasks.Task<TaxiClient.CarRentalService.Car[]> GetCarsAsync(TaxiClient.CarRentalService.Dealer dealer);
+        System.Threading.Tasks.Task<TaxiClient.CarRentalService.CarContract[]> GetCarsAsync(TaxiClient.CarRentalService.DealerContract dealer);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://taxiservice.michaeldv.nl/webservices/IWebService/IsAvailable", ReplyAction="http://taxiservice.michaeldv.nl/webservices/IWebService/IsAvailableResponse")]
-        bool IsAvailable(TaxiClient.CarRentalService.Car car, System.DateTime startDate, System.DateTime endDate);
+        bool IsAvailable(TaxiClient.CarRentalService.CarContract car, System.DateTime startDate, System.DateTime endDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://taxiservice.michaeldv.nl/webservices/IWebService/IsAvailable", ReplyAction="http://taxiservice.michaeldv.nl/webservices/IWebService/IsAvailableResponse")]
-        System.Threading.Tasks.Task<bool> IsAvailableAsync(TaxiClient.CarRentalService.Car car, System.DateTime startDate, System.DateTime endDate);
+        System.Threading.Tasks.Task<bool> IsAvailableAsync(TaxiClient.CarRentalService.CarContract car, System.DateTime startDate, System.DateTime endDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://taxiservice.michaeldv.nl/webservices/IWebService/Book", ReplyAction="http://taxiservice.michaeldv.nl/webservices/IWebService/BookResponse")]
-        TaxiClient.CarRentalService.CarBooking Book(TaxiClient.CarRentalService.CarBooking booking, string token);
+        TaxiClient.CarRentalService.CarBookingContract Book(TaxiClient.CarRentalService.CarBookingContract booking, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://taxiservice.michaeldv.nl/webservices/IWebService/Book", ReplyAction="http://taxiservice.michaeldv.nl/webservices/IWebService/BookResponse")]
-        System.Threading.Tasks.Task<TaxiClient.CarRentalService.CarBooking> BookAsync(TaxiClient.CarRentalService.CarBooking booking, string token);
+        System.Threading.Tasks.Task<TaxiClient.CarRentalService.CarBookingContract> BookAsync(TaxiClient.CarRentalService.CarBookingContract booking, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://taxiservice.michaeldv.nl/webservices/IWebService/getUserBookings", ReplyAction="http://taxiservice.michaeldv.nl/webservices/IWebService/getUserBookingsResponse")]
-        TaxiClient.CarRentalService.CarBooking[] getUserBookings(string token);
+        TaxiClient.CarRentalService.CarBookingContract[] getUserBookings(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://taxiservice.michaeldv.nl/webservices/IWebService/getUserBookings", ReplyAction="http://taxiservice.michaeldv.nl/webservices/IWebService/getUserBookingsResponse")]
-        System.Threading.Tasks.Task<TaxiClient.CarRentalService.CarBooking[]> getUserBookingsAsync(string token);
+        System.Threading.Tasks.Task<TaxiClient.CarRentalService.CarBookingContract[]> getUserBookingsAsync(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://taxiservice.michaeldv.nl/webservices/IWebService/CancelBooking", ReplyAction="http://taxiservice.michaeldv.nl/webservices/IWebService/CancelBookingResponse")]
-        bool CancelBooking(TaxiClient.CarRentalService.CarBooking booking, string token);
+        bool CancelBooking(TaxiClient.CarRentalService.CarBookingContract booking, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://taxiservice.michaeldv.nl/webservices/IWebService/CancelBooking", ReplyAction="http://taxiservice.michaeldv.nl/webservices/IWebService/CancelBookingResponse")]
-        System.Threading.Tasks.Task<bool> CancelBookingAsync(TaxiClient.CarRentalService.CarBooking booking, string token);
+        System.Threading.Tasks.Task<bool> CancelBookingAsync(TaxiClient.CarRentalService.CarBookingContract booking, string token);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -651,67 +651,67 @@ namespace TaxiClient.CarRentalService {
                 base(binding, remoteAddress) {
         }
         
-        public TaxiClient.CarRentalService.Country[] GetCountries() {
+        public TaxiClient.CarRentalService.CountryContract[] GetCountries() {
             return base.Channel.GetCountries();
         }
         
-        public System.Threading.Tasks.Task<TaxiClient.CarRentalService.Country[]> GetCountriesAsync() {
+        public System.Threading.Tasks.Task<TaxiClient.CarRentalService.CountryContract[]> GetCountriesAsync() {
             return base.Channel.GetCountriesAsync();
         }
         
-        public TaxiClient.CarRentalService.City[] GetCities(TaxiClient.CarRentalService.Country country) {
+        public TaxiClient.CarRentalService.CityContract[] GetCities(TaxiClient.CarRentalService.CountryContract country) {
             return base.Channel.GetCities(country);
         }
         
-        public System.Threading.Tasks.Task<TaxiClient.CarRentalService.City[]> GetCitiesAsync(TaxiClient.CarRentalService.Country country) {
+        public System.Threading.Tasks.Task<TaxiClient.CarRentalService.CityContract[]> GetCitiesAsync(TaxiClient.CarRentalService.CountryContract country) {
             return base.Channel.GetCitiesAsync(country);
         }
         
-        public TaxiClient.CarRentalService.Dealer[] GetDealers(TaxiClient.CarRentalService.City city) {
+        public TaxiClient.CarRentalService.DealerContract[] GetDealers(TaxiClient.CarRentalService.CityContract city) {
             return base.Channel.GetDealers(city);
         }
         
-        public System.Threading.Tasks.Task<TaxiClient.CarRentalService.Dealer[]> GetDealersAsync(TaxiClient.CarRentalService.City city) {
+        public System.Threading.Tasks.Task<TaxiClient.CarRentalService.DealerContract[]> GetDealersAsync(TaxiClient.CarRentalService.CityContract city) {
             return base.Channel.GetDealersAsync(city);
         }
         
-        public TaxiClient.CarRentalService.Car[] GetCars(TaxiClient.CarRentalService.Dealer dealer) {
+        public TaxiClient.CarRentalService.CarContract[] GetCars(TaxiClient.CarRentalService.DealerContract dealer) {
             return base.Channel.GetCars(dealer);
         }
         
-        public System.Threading.Tasks.Task<TaxiClient.CarRentalService.Car[]> GetCarsAsync(TaxiClient.CarRentalService.Dealer dealer) {
+        public System.Threading.Tasks.Task<TaxiClient.CarRentalService.CarContract[]> GetCarsAsync(TaxiClient.CarRentalService.DealerContract dealer) {
             return base.Channel.GetCarsAsync(dealer);
         }
         
-        public bool IsAvailable(TaxiClient.CarRentalService.Car car, System.DateTime startDate, System.DateTime endDate) {
+        public bool IsAvailable(TaxiClient.CarRentalService.CarContract car, System.DateTime startDate, System.DateTime endDate) {
             return base.Channel.IsAvailable(car, startDate, endDate);
         }
         
-        public System.Threading.Tasks.Task<bool> IsAvailableAsync(TaxiClient.CarRentalService.Car car, System.DateTime startDate, System.DateTime endDate) {
+        public System.Threading.Tasks.Task<bool> IsAvailableAsync(TaxiClient.CarRentalService.CarContract car, System.DateTime startDate, System.DateTime endDate) {
             return base.Channel.IsAvailableAsync(car, startDate, endDate);
         }
         
-        public TaxiClient.CarRentalService.CarBooking Book(TaxiClient.CarRentalService.CarBooking booking, string token) {
+        public TaxiClient.CarRentalService.CarBookingContract Book(TaxiClient.CarRentalService.CarBookingContract booking, string token) {
             return base.Channel.Book(booking, token);
         }
         
-        public System.Threading.Tasks.Task<TaxiClient.CarRentalService.CarBooking> BookAsync(TaxiClient.CarRentalService.CarBooking booking, string token) {
+        public System.Threading.Tasks.Task<TaxiClient.CarRentalService.CarBookingContract> BookAsync(TaxiClient.CarRentalService.CarBookingContract booking, string token) {
             return base.Channel.BookAsync(booking, token);
         }
         
-        public TaxiClient.CarRentalService.CarBooking[] getUserBookings(string token) {
+        public TaxiClient.CarRentalService.CarBookingContract[] getUserBookings(string token) {
             return base.Channel.getUserBookings(token);
         }
         
-        public System.Threading.Tasks.Task<TaxiClient.CarRentalService.CarBooking[]> getUserBookingsAsync(string token) {
+        public System.Threading.Tasks.Task<TaxiClient.CarRentalService.CarBookingContract[]> getUserBookingsAsync(string token) {
             return base.Channel.getUserBookingsAsync(token);
         }
         
-        public bool CancelBooking(TaxiClient.CarRentalService.CarBooking booking, string token) {
+        public bool CancelBooking(TaxiClient.CarRentalService.CarBookingContract booking, string token) {
             return base.Channel.CancelBooking(booking, token);
         }
         
-        public System.Threading.Tasks.Task<bool> CancelBookingAsync(TaxiClient.CarRentalService.CarBooking booking, string token) {
+        public System.Threading.Tasks.Task<bool> CancelBookingAsync(TaxiClient.CarRentalService.CarBookingContract booking, string token) {
             return base.Channel.CancelBookingAsync(booking, token);
         }
     }

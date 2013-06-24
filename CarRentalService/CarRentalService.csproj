@@ -82,11 +82,6 @@
     <Compile Include="Domain\Contracts.cs" />
     <Compile Include="Domain\Entities.cs" />
     <Compile Include="IWebService.cs" />
-    <Compile Include="Migrations\201306241149136_nieuwe db.cs" />
-    <Compile Include="Migrations\201306241149136_nieuwe db.Designer.cs">
-      <DependentUpon>201306241149136_nieuwe db.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\UserService\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -129,11 +124,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\UserService\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201306241149136_nieuwe db.resx">
-      <DependentUpon>201306241149136_nieuwe db.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

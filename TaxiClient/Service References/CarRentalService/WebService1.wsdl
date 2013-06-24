@@ -4,7 +4,7 @@
     <xsd:schema targetNamespace="http://taxiservice.michaeldv.nl/webservices/Imports">
       <xsd:import schemaLocation="http://localhost:55178/WebService.svc?xsd=xsd0" namespace="http://taxiservice.michaeldv.nl/webservices" />
       <xsd:import schemaLocation="http://localhost:55178/WebService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:55178/WebService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CarRentalService.Domain" />
+      <xsd:import schemaLocation="http://localhost:55178/WebService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CarRentalService.Contracts" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IWebService_GetCountries_InputMessage">

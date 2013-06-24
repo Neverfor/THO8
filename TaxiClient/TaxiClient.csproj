@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -153,6 +156,7 @@
       <DependentUpon>TaxiUC.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -162,19 +166,19 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Service References\CarRentalService\TaxiClient.CarRentalService.Car.datasource">
+    <None Include="Service References\CarRentalService\TaxiClient.CarRentalService.CarBookingContract.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\CarRentalService\TaxiClient.CarRentalService.CarBooking.datasource">
+    <None Include="Service References\CarRentalService\TaxiClient.CarRentalService.CarContract.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\CarRentalService\TaxiClient.CarRentalService.City.datasource">
+    <None Include="Service References\CarRentalService\TaxiClient.CarRentalService.CityContract.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\CarRentalService\TaxiClient.CarRentalService.Country.datasource">
+    <None Include="Service References\CarRentalService\TaxiClient.CarRentalService.CountryContract.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\CarRentalService\TaxiClient.CarRentalService.Dealer.datasource">
+    <None Include="Service References\CarRentalService\TaxiClient.CarRentalService.DealerContract.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\CarRentalService\WebService.wsdl" />

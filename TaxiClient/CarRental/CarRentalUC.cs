@@ -20,8 +20,10 @@ namespace TaxiClient.CarRental
             this.parentContainer = parentContainer;
             using (WebServiceClient client = new WebServiceClient())
             {
-                cbCountry.DataSource = client.GetCountries();
+                CountryContract[] countries = client.GetCountries();
+                cbCountry.Items.AddRange(countries);
                 cbCountry.DisplayMember = "Name";
+                //cbCountry.SelectedValue = "-selecteer land-";
             }
         }
 
@@ -29,52 +31,81 @@ namespace TaxiClient.CarRental
         {
             using (WebServiceClient client = new WebServiceClient())
             {
-                if (string.IsNullOrEmpty(cbCountry.SelectedText))
-                {
-                    Country country = cbCountry.Items[cbCountry.SelectedIndex] as Country;
-                    cbCity.DataSource = client.GetCities(country);
-                    cbCity.DisplayMember = "Name";
-                }
+                CountryContract country = cbCountry.Items[cbCountry.SelectedIndex] as CountryContract;
+                CityContract[] cities = client.GetCities(country);
+                
+                cbCity.Items.Clear(); 
+                cbDealer.Items.Clear();
+                cbCar.Items.Clear();
+                ClearCarInfo();
+
+                cbCity.Items.AddRange(cities);
+                cbCity.DisplayMember = "Name";
+                //cbCity.SelectedValue = "-selecteer stad-";
             }
         }
 
         private void cbCity_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //using (WebServiceClient client = new WebServiceClient())
-            //{
-            //    if (string.IsNullOrEmpty(cbCountry.SelectedText))
-            //    {
-            //        City city = cbCity.Items[cbCity.SelectedIndex] as City;
-            //        cbDealer.DataSource = client.GetDealers(city);
-            //        cbDealer.DisplayMember = "Name";
-            //    }
-            //}
+            using (WebServiceClient client = new WebServiceClient())
+            {
+                CityContract city = cbCity.Items[cbCity.SelectedIndex] as CityContract;
+                DealerContract[] dealers = client.GetDealers(city);
+
+                cbDealer.Items.Clear(); 
+                cbCar.Items.Clear();
+                ClearCarInfo();
+
+                cbDealer.Items.AddRange(dealers);
+                cbDealer.DisplayMember = "Name";
+                //cbDealer.SelectedValue = "-selecteer dealer-";
+            }
         }
 
         private void cbDealer_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //using (WebServiceClient client = new WebServiceClient())
-            //{
-            //    if (string.IsNullOrEmpty(cbCity.SelectedText))
-            //    {
-            //        Dealer dealer = cbDealer.Items[cbDealer.SelectedIndex] as Dealer;
-            //        cbCar.DataSource = client.GetCars(dealer);
-            //        cbCar.DisplayMember = "Brand";
-            //    }
-            //}
+            using (WebServiceClient client = new WebServiceClient())
+            {
+                DealerContract dealer = cbDealer.Items[cbDealer.SelectedIndex] as DealerContract;
+                CarContract[] cars = client.GetCars(dealer);
+                
+                cbCar.Items.Clear();
+                ClearCarInfo();
+
+                cbCar.Items.AddRange(cars);
+                cbCar.DisplayMember = "Brand";
+                //cbCar.SelectedValue = "-selecteer auto-";
+            }
         }
 
         private void cbCar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //using (WebServiceClient client = new WebServiceClient())
-            //{
-            //    if (string.IsNullOrEmpty(cbCity.SelectedText))
-            //    {
-            //        Car car = cbCar.Items[cbCar.SelectedIndex] as Car;
-            //        lblCarType.Text = car.CarType.Type;
-            //    }
-            //}
+            using (WebServiceClient client = new WebServiceClient())
+            {
+                CarContract car = cbCar.Items[cbCar.SelectedIndex] as CarContract;
+
+                lblBrand.Text = car.Brand;
+                lblCarType.Text = "Auto type: " + car.CarType.Type;
+                lblMaxPersons.Text = "Zitruimte: " + car.CarType.Maxpersons + " pers.";
+                lblDateOfPurchase.Text = "Dag van aankoop: " + car.DateOfPurchase.ToString();
+                lblLicense.Text = "Kenteken: " + car.Licence;
+                lblPricePerDay.Text = "Prijs per dag: " + car.CarType.PricePerDay;
+                btnBookCar.Enabled = true;
+                
+            }
         }
+
+        private void ClearCarInfo()
+        {
+            lblBrand.Text = "";
+            lblDateOfPurchase.Text = "";
+            lblLicense.Text = "";
+            lblMaxPersons.Text = "";
+            lblPricePerDay.Text = "";
+            lblCarType.Text = "";
+            btnBookCar.Enabled = false;
+        }
+            
 
         private void btnBookCar_Click(object sender, EventArgs e)
         {
