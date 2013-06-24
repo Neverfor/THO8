@@ -2,37 +2,36 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Data.Entity;
 using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
 
-namespace CarRentalService.Domain.Contracts
+namespace CarRentalService.Contracts
 {
     [DataContract]
-    public class Car
+    public class CarContract
     {
         [DataMember]
         public int CarId { get; set; }
         [DataMember]
         public string Brand { get; set; }
         [DataMember]
-        public CarType CarType { get; set; }
+        public CarTypeContract CarType { get; set; }
         [DataMember]
         public DateTime DateOfPurchase { get; set; }
         [DataMember]
-        public Dealer Dealer { get; set; }
+        public DealerContract Dealer { get; set; }
         [DataMember]
         public string Licence { get; set; }
     }
 
     [DataContract]
-    public class CarBooking
+    public class CarBookingContract
     {
         [DataMember]
         public int CarBookingId { get; set; }
         [DataMember]
-        public Car Car { get; set; }
+        public CarContract Car { get; set; }
         [DataMember]
         public double Price { get; set; }
         [DataMember]
@@ -44,7 +43,7 @@ namespace CarRentalService.Domain.Contracts
     }
 
     [DataContract]
-    public class CarType
+    public class CarTypeContract
     {
         [DataMember]
         public int CarTypeId { get; set; }
@@ -57,18 +56,18 @@ namespace CarRentalService.Domain.Contracts
     }
 
     [DataContract]
-    public class City
+    public class CityContract
     {
         [DataMember]
         public int CityId { get; set; }
         [DataMember]
-        public Country Country { get; set; }
+        public CountryContract Country { get; set; }
         [DataMember]
         public string Name { get; set; }
     }
 
     [DataContract]
-    public class Country
+    public class CountryContract
     {
         [DataMember]
         public int CountryId { get; set; }
@@ -77,12 +76,12 @@ namespace CarRentalService.Domain.Contracts
     }
 
     [DataContract]
-    public class Dealer
+    public class DealerContract
     {
         [DataMember]
         public int DealerId { get; set; }
         [DataMember]
-        public City City { get; set; }
+        public CityContract City { get; set; }
         [DataMember]
         public string Name { get; set; }
     }

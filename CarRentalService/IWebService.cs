@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using CarRentalService.Domain;
+using CarRentalService.Contracts;
 
 namespace CarRentalService
 {
@@ -12,27 +12,27 @@ namespace CarRentalService
     public interface IWebService
     {
         [OperationContract]
-        Country[] GetCountries();
+        CountryContract[] GetCountries();
 
         [OperationContract]
-        City[] GetCities(Country country);
+        CityContract[] GetCities(CountryContract country);
 
         [OperationContract]
-        Dealer[] GetDealers(City city);
+        DealerContract[] GetDealers(CityContract city);
 
         [OperationContract]
-        Car[] GetCars(Dealer dealer);
+        CarContract[] GetCars(DealerContract dealer);
 
         [OperationContract]
-        bool IsAvailable(Car car, DateTime startDate, DateTime endDate);
+        bool IsAvailable(CarContract car, DateTime startDate, DateTime endDate);
 
         [OperationContract]
-        CarBooking Book(CarBooking booking, string token);
+        CarBookingContract Book(CarBookingContract booking, string token);
 
         [OperationContract]
-        CarBooking[] getUserBookings(string token);
+        CarBookingContract[] getUserBookings(string token);
 
         [OperationContract]
-        bool CancelBooking(CarBooking booking, string token);
+        bool CancelBooking(CarBookingContract booking, string token);
     }
 }

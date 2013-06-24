@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 
-namespace CarRentalService.Domain.Entities
+namespace CarRentalService.Entities
 {
     public class WebServiceContext : DbContext
     {
@@ -51,7 +51,7 @@ namespace CarRentalService.Domain.Entities
     public class City
     {
         public int CityId { get; set; }
-        public Country Country { get; set; }
+        public virtual Country Country { get; set; }
         public string Name { get; set; }
     }
 
