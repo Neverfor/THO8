@@ -30,14 +30,26 @@ namespace TaxiClient.Flight
                           departureDate.Value.Hour,
                           departureDate.Value.Minute,
                           0);
+                String vertrekPunt = vertrekTextBox.Text;
+                String rst = "";
+                TaxiClient.FlightService.AirportDTO arp = new TaxiClient.FlightService.AirportDTO();
+                TaxiClient.FlightService.AirportDTO [] airports = new TaxiClient.FlightService.AirportDTO [2000];
+
+                try
+                {
+                    airports = client.GetAirports(vertrekPunt);
+                    foreach (TaxiClient.FlightService.AirportDTO a in airports)
+                    {
+                        rst += a.Name.ToString() + " ";
+                    }
+                }
+                catch {}
+
+                
+                MessageBox.Show("Gevonden airports: \n" + rst);
                 //TaxiClient.FlightService.FlightDTO fl = new TaxiClient.FlightService.FlightDTO();
                 //client.ShowFlightsByDeparture(1, 1, departure, 1);
-                MessageBox.Show("Flights: " + client.ShowFlightsByDeparture(1, 1, departure, 1).ToString());
-
-
-                /*var window = new FoundFlightsForm();
-                window.Show();
-                 * */
+                //MessageBox.Show("Flights: " + client.ShowFlightsByDeparture(1, 1, departure, 1).ToString());
             }
         }
     }

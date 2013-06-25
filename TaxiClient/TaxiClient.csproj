@@ -69,12 +69,6 @@
     <Compile Include="CarRental\CarRentalUC.Designer.cs">
       <DependentUpon>CarRentalUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Flight\FoundFlightsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Flight\FoundFlightsForm.Designer.cs">
-      <DependentUpon>FoundFlightsForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Authentication\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,9 +140,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CarRental\CarRentalUC.resx">
       <DependentUpon>CarRentalUC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Flight\FoundFlightsForm.resx">
-      <DependentUpon>FoundFlightsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Authentication\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
