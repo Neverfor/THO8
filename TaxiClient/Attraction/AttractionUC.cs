@@ -27,6 +27,8 @@ namespace TaxiClient.Attraction
                 attractieType[] attractions = client.getAttractionTypes();
                 cbAttractionType.Items.AddRange(attractions);
                 cbAttractionType.DisplayMember = "attractionTypeName";
+
+                FillDataGrid();
             }
         }
 
@@ -83,6 +85,7 @@ namespace TaxiClient.Attraction
         {
             using (AttractionImplementationClient client = new AttractionImplementationClient())
             {
+                clearAttractionData();
 
                 string country = "";
                 int region = 0;
@@ -111,42 +114,25 @@ namespace TaxiClient.Attraction
                 }
 
                 dgAttractions.DataSource = client.getAttractions(country, region, city, atType);
-
-                //if (cbCountry.SelectedIndex > -1)
-                //{
-                //    country = cbCountry.Items[cbCountry.SelectedIndex] as country;
-                //    if (cbRegion.SelectedIndex > -1)
-                //    {
-                //        region = cbRegion.Items[cbRegion.SelectedIndex] as region;
-                //        if (cbCity.SelectedIndex > -1)
-                //        {
-                //            city = cbCity.Items[cbCity.SelectedIndex] as city;
-                //            if (cbAttractionType.SelectedIndex > -1)
-                //            {
-                //                atType = cbAttractionType.Items[cbAttractionType.SelectedIndex] as attractieType;
-                //                dgAttractions.DataSource = client.getAttractions("", 0, city.cityID, atType.attractionTypeID);
-                //            }
-                //            else
-                //            {
-                //                dgAttractions.DataSource = client.getAttractions("", 0, city.cityID, 0);
-                //            }
-                //        }
-                //        else
-                //        {
-                //            if (cbAttractionType.SelectedIndex > -1)
-                //            {
-                //                atType = cbAttractionType.Items[cbAttractionType.SelectedIndex] as attractieType;
-                //                dgAttractions.DataSource = client.getAttractions("", region.regionID, 0, atType.attractionTypeID);
-                //            }
-                //            else
-                //            {
-                //                dgAttractions.DataSource = client.getAttractions("", region.regionID, 0, 0);
-                //            }
-
-                //    }
-                //}
-
+                dgAttractions.ClearSelection();
             }
         }
+
+        private void dgAttractions_SelectionChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            int selectedRow = dgAttractions.SelectedRows[0].Index;
+            attractie attraction = dgAttractions.Rows[selectedRow].DataBoundItem as attractie;
+            rtbDescription.Text = attraction.description;
+            lblAddress_data.Text = attraction.address;
+            linkWebsite.Text = attraction.website;
+        }
+
+        private void clearAttractionData()
+        {
+            rtbDescription.Text = "";
+            lblAddress_data.Text = "";
+            linkWebsite.Text = "";
+        }
+
     }
 }

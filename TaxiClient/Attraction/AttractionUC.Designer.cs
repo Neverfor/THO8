@@ -32,11 +32,9 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.gbSearchAttraction = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.rtbDescription = new System.Windows.Forms.RichTextBox();
             this.linkWebsite = new System.Windows.Forms.LinkLabel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblAddress_data = new System.Windows.Forms.Label();
             this.lblWebsite = new System.Windows.Forms.Label();
             this.lblAddress = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
@@ -83,11 +81,9 @@
             // 
             // gbSearchAttraction
             // 
-            this.gbSearchAttraction.Controls.Add(this.label9);
-            this.gbSearchAttraction.Controls.Add(this.label6);
             this.gbSearchAttraction.Controls.Add(this.rtbDescription);
             this.gbSearchAttraction.Controls.Add(this.linkWebsite);
-            this.gbSearchAttraction.Controls.Add(this.label7);
+            this.gbSearchAttraction.Controls.Add(this.lblAddress_data);
             this.gbSearchAttraction.Controls.Add(this.lblWebsite);
             this.gbSearchAttraction.Controls.Add(this.lblAddress);
             this.gbSearchAttraction.Controls.Add(this.lblDescription);
@@ -107,55 +103,35 @@
             this.gbSearchAttraction.TabStop = false;
             this.gbSearchAttraction.Text = "Zoek attractie";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(509, 237);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(56, 13);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "Nederland";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(509, 224);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 13);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "4231 ED Meerkerk";
-            // 
             // rtbDescription
             // 
-            this.rtbDescription.Location = new System.Drawing.Point(512, 112);
+            this.rtbDescription.Location = new System.Drawing.Point(512, 133);
             this.rtbDescription.Name = "rtbDescription";
-            this.rtbDescription.Size = new System.Drawing.Size(296, 96);
+            this.rtbDescription.ReadOnly = true;
+            this.rtbDescription.Size = new System.Drawing.Size(296, 119);
             this.rtbDescription.TabIndex = 18;
             this.rtbDescription.Text = "";
             // 
             // linkWebsite
             // 
             this.linkWebsite.AutoSize = true;
-            this.linkWebsite.Location = new System.Drawing.Point(509, 254);
+            this.linkWebsite.Location = new System.Drawing.Point(509, 268);
             this.linkWebsite.Name = "linkWebsite";
-            this.linkWebsite.Size = new System.Drawing.Size(55, 13);
+            this.linkWebsite.Size = new System.Drawing.Size(0, 13);
             this.linkWebsite.TabIndex = 17;
-            this.linkWebsite.TabStop = true;
-            this.linkWebsite.Text = "linkLabel1";
             // 
-            // label7
+            // lblAddress_data
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(509, 211);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 13);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Kastanjehof 2";
+            this.lblAddress_data.AutoSize = true;
+            this.lblAddress_data.Location = new System.Drawing.Point(509, 255);
+            this.lblAddress_data.Name = "lblAddress_data";
+            this.lblAddress_data.Size = new System.Drawing.Size(0, 13);
+            this.lblAddress_data.TabIndex = 15;
             // 
             // lblWebsite
             // 
             this.lblWebsite.AutoSize = true;
-            this.lblWebsite.Location = new System.Drawing.Point(436, 254);
+            this.lblWebsite.Location = new System.Drawing.Point(436, 268);
             this.lblWebsite.Name = "lblWebsite";
             this.lblWebsite.Size = new System.Drawing.Size(49, 13);
             this.lblWebsite.TabIndex = 13;
@@ -164,7 +140,7 @@
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(436, 211);
+            this.lblAddress.Location = new System.Drawing.Point(436, 255);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(37, 13);
             this.lblAddress.TabIndex = 10;
@@ -173,7 +149,7 @@
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(436, 112);
+            this.lblDescription.Location = new System.Drawing.Point(436, 133);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(70, 13);
             this.lblDescription.TabIndex = 9;
@@ -202,6 +178,7 @@
             this.dgAttractions.Size = new System.Drawing.Size(323, 169);
             this.dgAttractions.TabIndex = 8;
             this.dgAttractions.VirtualMode = true;
+            this.dgAttractions.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAttractions_SelectionChanged);
             // 
             // attractionIDDataGridViewTextBoxColumn
             // 
@@ -345,12 +322,10 @@
         private System.Windows.Forms.BindingSource attractieBindingSource;
         private System.Windows.Forms.RichTextBox rtbDescription;
         private System.Windows.Forms.LinkLabel linkWebsite;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblAddress_data;
         private System.Windows.Forms.Label lblWebsite;
         private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.DataGridViewTextBoxColumn attractionIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn naamDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label6;
     }
 }
