@@ -35,6 +35,8 @@ namespace TaxiClient.Hotel
                 try
                 {
                     userBookings.DataSource = client.GetBookingsFromUser(Token);
+
+                    userBookings.Columns[5].Visible = false;
                 }
                 catch { }
             }

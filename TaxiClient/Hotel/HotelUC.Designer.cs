@@ -200,7 +200,7 @@
             this.userBookings.Location = new System.Drawing.Point(375, 38);
             this.userBookings.Name = "userBookings";
             this.userBookings.ReadOnly = true;
-            this.userBookings.Size = new System.Drawing.Size(580, 230);
+            this.userBookings.Size = new System.Drawing.Size(536, 230);
             this.userBookings.TabIndex = 34;
             this.userBookings.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
