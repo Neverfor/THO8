@@ -88,7 +88,7 @@
   <Class Name="TaxiService.ServicesDataContracts.TaxiPriceInfo">
     <Position X="3" Y="0.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAwAAAAIAAAAAEAAEAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAABwAAAAIAAAAAEAAEAAIAAAAAAAAAAEAAAAA=</HashCode>
       <FileName>ServiceDataContracts\ResponseDataContracts.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -135,9 +135,9 @@
     </AssociationLine>
     <TypeIdentifier />
     <ShowAsAssociation>
+      <Property Name="Taxi" />
       <Property Name="DepartureAddress" />
       <Property Name="DestinationAddress" />
-      <Property Name="Taxi" />
     </ShowAsAssociation>
   </Class>
   <Class Name="To8Libraries.Domain.User">
