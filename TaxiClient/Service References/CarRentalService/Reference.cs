@@ -87,9 +87,6 @@ namespace TaxiClient.CarRentalService {
         private int CityIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TaxiClient.CarRentalService.CountryContract CountryField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NameField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -111,19 +108,6 @@ namespace TaxiClient.CarRentalService {
                 if ((this.CityIdField.Equals(value) != true)) {
                     this.CityIdField = value;
                     this.RaisePropertyChanged("CityId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public TaxiClient.CarRentalService.CountryContract Country {
-            get {
-                return this.CountryField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CountryField, value) != true)) {
-                    this.CountryField = value;
-                    this.RaisePropertyChanged("Country");
                 }
             }
         }
@@ -161,9 +145,6 @@ namespace TaxiClient.CarRentalService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TaxiClient.CarRentalService.CityContract CityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int DealerIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -176,19 +157,6 @@ namespace TaxiClient.CarRentalService {
             }
             set {
                 this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public TaxiClient.CarRentalService.CityContract City {
-            get {
-                return this.CityField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CityField, value) != true)) {
-                    this.CityField = value;
-                    this.RaisePropertyChanged("City");
-                }
             }
         }
         
@@ -248,9 +216,6 @@ namespace TaxiClient.CarRentalService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime DateOfPurchaseField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TaxiClient.CarRentalService.DealerContract DealerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string LicenceField;
@@ -313,19 +278,6 @@ namespace TaxiClient.CarRentalService {
                 if ((this.DateOfPurchaseField.Equals(value) != true)) {
                     this.DateOfPurchaseField = value;
                     this.RaisePropertyChanged("DateOfPurchase");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public TaxiClient.CarRentalService.DealerContract Dealer {
-            get {
-                return this.DealerField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DealerField, value) != true)) {
-                    this.DealerField = value;
-                    this.RaisePropertyChanged("Dealer");
                 }
             }
         }

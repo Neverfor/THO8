@@ -18,12 +18,14 @@ namespace TaxiClient.CarRental
         {
             InitializeComponent();
             this.parentContainer = parentContainer;
+            FillDataGrid();
             using (WebServiceClient client = new WebServiceClient())
             {
                 CountryContract[] countries = client.GetCountries();
                 cbCountry.Items.AddRange(countries);
                 cbCountry.DisplayMember = "Name";
                 //cbCountry.SelectedValue = "-selecteer land-";
+
             }
         }
 
@@ -152,7 +154,7 @@ namespace TaxiClient.CarRental
                             car.Brand, sd, ed, days, price),
                         "Auto boeking",
                         MessageBoxButtons.YesNo
-                        );
+                    );
                     if (result == DialogResult.Yes)
                     {
                         CarBookingContract carBooking = new CarBookingContract()
@@ -163,7 +165,8 @@ namespace TaxiClient.CarRental
                             Price = price
                         };
                         client.Book(carBooking, Session.UserToken);
-                        //get to overview tab
+                        tabControl1.SelectedTab = tabPage2;
+                        FillDataGrid();
                     }
                 }
                 else
@@ -171,6 +174,39 @@ namespace TaxiClient.CarRental
                     MessageBox.Show("De auto is niet beschikbaar binnen de opgegeven tijd.");
                 }
             }
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+            FillDataGrid();
+        }
+
+        private void FillDataGrid()
+        {
+            using (WebServiceClient client = new WebServiceClient())
+            {
+                userBookingsDG.DataSource = client.getUserBookings(Session.UserToken);
+            }
+        }
+
+        private void btnCancelBooking_Click(object sender, EventArgs e)
+        {
+            int selectedRow = userBookingsDG.SelectedRows[0].Index;
+
+            try
+            {
+                using (WebServiceClient client = new WebServiceClient())
+                {
+                    CarBookingContract booking = userBookingsDG.Rows[selectedRow].DataBoundItem as CarBookingContract;
+
+                    client.CancelBooking(booking, Session.UserToken);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            FillDataGrid();
         }
     }
 }

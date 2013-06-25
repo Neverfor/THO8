@@ -159,55 +159,71 @@ namespace CarRentalService
             }
         }
 
-        public Contracts.CarBookingContract[] getUserBookings(string token)
+        public CarBookingContract[] getUserBookings(string token)
         {
-            //try
-            //{
-            //    int userId;
-            //    using (UserServiceClient client = new UserServiceClient())
-            //    {
-            //        userId = client.GetUser(token).UserId;
-            //    }
-            //    using (WebServiceContext db = new WebServiceContext())
-            //    {
-            //        var carBookings = from cb in db.CarBookings
-            //                          where cb.UserId == userId
-            //                          select cb;
-            //        return carBookings.ToArray();
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    throw ex;
-            //}
-            return null;
+            try
+            {
+                int userId;
+                using (UserServiceClient client = new UserServiceClient())
+                {
+                    userId = client.GetUser(token).UserId;
+                }
+                using (WebServiceContext db = new WebServiceContext())
+                {
+                    CarBooking[] carBookings = (from cb in db.CarBookings
+                                                where cb.UserId == userId
+                                                select cb).ToArray();
+                    CarBookingContract[] response = new CarBookingContract[carBookings.Count()];
+
+                    for (int i = 0; i < response.Length; i++)
+                    {
+                        response[i] = new CarBookingContract()
+                        {
+                            CarBookingId = carBookings[i].CarBookingId,
+                            StartDate = carBookings[i].StartDate,
+                            EndDate = carBookings[i].EndDate,
+                            Price = carBookings[i].Price,
+                            Car = new CarContract()
+                            {
+                                CarId = carBookings[i].Car.CarId,
+                                Brand = carBookings[i].Car.Brand
+                            }
+                        };
+                    }
+
+                    return response;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public bool CancelBooking(CarRentalService.Contracts.CarBookingContract booking, string token)
+        public bool CancelBooking(CarBookingContract booking, string token)
         {
-            //try
-            //{
-            //    int userId;
-            //    using (UserServiceClient client = new UserServiceClient())
-            //    {
-            //        userId = client.GetUser(token).UserId;
-            //    }
-            //    using (WebServiceContext db = new WebServiceContext())
-            //    {
-            //        var canceledCarBooking = from cb in db.CarBookings
-            //                                 where cb.CarBookingId == booking.CarBookingId && cb.UserId == userId
-            //                                 select cb;
-            //        db.CarBookings.Remove(canceledCarBooking.First());
-            //        db.SaveChanges();
+            try
+            {
+                int userId;
+                using (UserServiceClient client = new UserServiceClient())
+                {
+                    userId = client.GetUser(token).UserId;
+                }
+                using (WebServiceContext db = new WebServiceContext())
+                {
+                    var canceledCarBooking = from cb in db.CarBookings
+                                             where cb.CarBookingId == booking.CarBookingId && cb.UserId == userId
+                                             select cb;
+                    db.CarBookings.Remove(canceledCarBooking.First());
+                    db.SaveChanges();
 
-            //        return !db.CarBookings.Any(cb => cb.CarBookingId == booking.CarBookingId);
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    throw ex;
-            //}
-            return true;
+                    return !db.CarBookings.Any(cb => cb.CarBookingId == booking.CarBookingId);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

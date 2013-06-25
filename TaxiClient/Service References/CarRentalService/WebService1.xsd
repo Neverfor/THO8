@@ -22,7 +22,6 @@
   <xs:complexType name="CityContract">
     <xs:sequence>
       <xs:element minOccurs="0" name="CityId" type="xs:int" />
-      <xs:element minOccurs="0" name="Country" nillable="true" type="tns:CountryContract" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
@@ -35,7 +34,6 @@
   <xs:element name="ArrayOfDealerContract" nillable="true" type="tns:ArrayOfDealerContract" />
   <xs:complexType name="DealerContract">
     <xs:sequence>
-      <xs:element minOccurs="0" name="City" nillable="true" type="tns:CityContract" />
       <xs:element minOccurs="0" name="DealerId" type="xs:int" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
     </xs:sequence>
@@ -53,7 +51,6 @@
       <xs:element minOccurs="0" name="CarId" type="xs:int" />
       <xs:element minOccurs="0" name="CarType" nillable="true" type="tns:CarTypeContract" />
       <xs:element minOccurs="0" name="DateOfPurchase" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Dealer" nillable="true" type="tns:DealerContract" />
       <xs:element minOccurs="0" name="Licence" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>

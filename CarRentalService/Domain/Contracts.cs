@@ -19,8 +19,8 @@ namespace CarRentalService.Contracts
         public CarTypeContract CarType { get; set; }
         [DataMember]
         public DateTime DateOfPurchase { get; set; }
-        [DataMember]
-        public DealerContract Dealer { get; set; }
+        //[DataMember]
+        //public DealerContract Dealer { get; set; }
         [DataMember]
         public string Licence { get; set; }
     }
@@ -60,8 +60,8 @@ namespace CarRentalService.Contracts
     {
         [DataMember]
         public int CityId { get; set; }
-        [DataMember]
-        public CountryContract Country { get; set; }
+        //[DataMember]
+        //public CountryContract Country { get; set; }
         [DataMember]
         public string Name { get; set; }
     }
@@ -80,8 +80,8 @@ namespace CarRentalService.Contracts
     {
         [DataMember]
         public int DealerId { get; set; }
-        [DataMember]
-        public CityContract City { get; set; }
+        //[DataMember]
+        //public CityContract City { get; set; }
         [DataMember]
         public string Name { get; set; }
     }

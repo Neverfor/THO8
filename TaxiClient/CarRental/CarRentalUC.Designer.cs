@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.gbRentCar = new System.Windows.Forms.GroupBox();
@@ -58,10 +59,23 @@
             this.cbCountry = new System.Windows.Forms.ComboBox();
             this.lblCountry = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnCancelBooking = new System.Windows.Forms.Button();
+            this.userBookingsDG = new System.Windows.Forms.DataGridView();
+            this.carBookingIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carBookingContractBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.carContractBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.gbRentCar.SuspendLayout();
             this.gbSelectCar.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.userBookingsDG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carBookingContractBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carContractBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -361,6 +375,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnCancelBooking);
+            this.tabPage2.Controls.Add(this.userBookingsDG);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -368,6 +384,92 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Boeking overzicht";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // btnCancelBooking
+            // 
+            this.btnCancelBooking.Location = new System.Drawing.Point(660, 404);
+            this.btnCancelBooking.Name = "btnCancelBooking";
+            this.btnCancelBooking.Size = new System.Drawing.Size(106, 23);
+            this.btnCancelBooking.TabIndex = 2;
+            this.btnCancelBooking.Text = "Annuleer boeking";
+            this.btnCancelBooking.UseVisualStyleBackColor = true;
+            this.btnCancelBooking.Click += new System.EventHandler(this.btnCancelBooking_Click);
+            // 
+            // userBookingsDG
+            // 
+            this.userBookingsDG.AllowUserToAddRows = false;
+            this.userBookingsDG.AllowUserToDeleteRows = false;
+            this.userBookingsDG.AllowUserToResizeColumns = false;
+            this.userBookingsDG.AllowUserToResizeRows = false;
+            this.userBookingsDG.AutoGenerateColumns = false;
+            this.userBookingsDG.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.userBookingsDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.userBookingsDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.userBookingsDG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.carBookingIdDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn2,
+            this.priceDataGridViewTextBoxColumn});
+            this.userBookingsDG.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.carContractBindingSource, "Brand", true));
+            this.userBookingsDG.DataSource = this.carBookingContractBindingSource;
+            this.userBookingsDG.GridColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.userBookingsDG.Location = new System.Drawing.Point(6, 6);
+            this.userBookingsDG.MultiSelect = false;
+            this.userBookingsDG.Name = "userBookingsDG";
+            this.userBookingsDG.ReadOnly = true;
+            this.userBookingsDG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.userBookingsDG.Size = new System.Drawing.Size(760, 392);
+            this.userBookingsDG.TabIndex = 1;
+            this.userBookingsDG.VirtualMode = true;
+            // 
+            // carBookingIdDataGridViewTextBoxColumn
+            // 
+            this.carBookingIdDataGridViewTextBoxColumn.DataPropertyName = "CarBookingId";
+            this.carBookingIdDataGridViewTextBoxColumn.HeaderText = "Nr";
+            this.carBookingIdDataGridViewTextBoxColumn.Name = "carBookingIdDataGridViewTextBoxColumn";
+            this.carBookingIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Car";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Auto";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 140;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "StartDate";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Start dag";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 180;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "EndDate";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Eind dag";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 180;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Prijs";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.priceDataGridViewTextBoxColumn.Width = 118;
+            // 
+            // carBookingContractBindingSource
+            // 
+            this.carBookingContractBindingSource.DataSource = typeof(TaxiClient.CarRentalService.CarBookingContract);
+            // 
+            // carContractBindingSource
+            // 
+            this.carContractBindingSource.DataSource = typeof(TaxiClient.CarRentalService.CarContract);
             // 
             // CarRentalUC
             // 
@@ -382,6 +484,10 @@
             this.gbRentCar.PerformLayout();
             this.gbSelectCar.ResumeLayout(false);
             this.gbSelectCar.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.userBookingsDG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carBookingContractBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carContractBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -418,5 +524,14 @@
         private System.Windows.Forms.Label lblStartDay;
         private System.Windows.Forms.DateTimePicker dtpEndDay;
         private System.Windows.Forms.DateTimePicker dtpStartDay;
+        private System.Windows.Forms.DataGridView userBookingsDG;
+        private System.Windows.Forms.Button btnCancelBooking;
+        private System.Windows.Forms.BindingSource carBookingContractBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn carBookingIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource carContractBindingSource;
     }
 }
