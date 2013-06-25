@@ -194,11 +194,13 @@ namespace TaxiClient.Hotel
                     }
 
                     MessageBox.Show(roomTypeOut);
-
-                    roomTypeCB.DataSource = roomies;
-                    roomTypeCB.DisplayMember = "Name";
-                    roomTypeCB.ValueMember = "Name";
-                    roomTypeCB.Visible = true;
+                    if (rooms != null)
+                    {
+                        roomTypeCB.DataSource = roomies;
+                        roomTypeCB.DisplayMember = "Name";
+                        roomTypeCB.ValueMember = "Name";
+                        roomTypeCB.Visible = true;
+                    }
                 }
                 else {}
             }

@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TaxiClient.Authentication.LoginForm" Collapsed="true">
+    <Position X="17.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAIACQAAAAAAACAAAACAEAACQAAAgAAIABEAAA=</HashCode>
+      <FileName>Authentication\LoginForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TaxiClient.Authentication.RegisterForm" Collapsed="true">
+    <Position X="12.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAQIAIkAASAAAgAAAAKFIAACAEQAAwAAEgaAAAAkEEA=</HashCode>
+      <FileName>Authentication\RegisterForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TaxiClient.CarRental.CarRentalUC" Collapsed="true">
+    <Position X="9" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AECAAIBABCEAJABgAASACAADAAAAAgAAEEAAAAABBQg=</HashCode>
+      <FileName>CarRental\CarRentalUC.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TaxiClient.Flight.FlightUC" Collapsed="true">
+    <Position X="17.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAMAAgCgAABAAAECAAAQCAACAAAACAEAAAAQhBAA=</HashCode>
+      <FileName>Flight\FlightUC.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TaxiClient.Flight.FoundFlightsForm" Collapsed="true">
+    <Position X="9" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAUAACAAABAAAACAAAACAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Flight\FoundFlightsForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TaxiClient.Hotel.HotelUC" Collapsed="true">
+    <Position X="16" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgACAQAPAMABACIASAAgASAkAgCACAAAAAAABAgAA=</HashCode>
+      <FileName>Hotel\HotelUC.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TaxiClient.MainForm" Collapsed="true">
+    <Position X="9" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAoAAAACAAAREiAACAAAACIAAIABAAAAAAAAAIAAA=</HashCode>
+      <FileName>MainForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TaxiClient.Program" Collapsed="true">
+    <Position X="10.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAABAAACAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TaxiClient.Session" Collapsed="true">
+    <Position X="17.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Session.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TaxiClient.Properties.Resources" Collapsed="true">
+    <Position X="14.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TaxiClient.Properties.Settings" Collapsed="true">
+    <Position X="9" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TaxiClient.CarRentalService.Country" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgCAAAAgAAAAAAAAAQAgAAQAAAEAAAAAAIAAAA=</HashCode>
+      <FileName>Service References\CarRentalService\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TaxiClient.CarRentalService.City" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAADAAAAgAAAAAAAAAQAgAMAAAAECAAAAAIAAAA=</HashCode>
+      <FileName>Service References\CarRentalService\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TaxiClient.CarRentalService.Dealer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAgAAIAAAAAAQAgAAIAIAEAAAAAQIAAAA=</HashCode>
+      <FileName>Service References\CarRentalService\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TaxiClient.CarRentalService.Car" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAQAAAAAAAAECAgAEAgBAEKAAAACIBCAA=</HashCode>
+      <FileName>Service References\CarRentalService\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TaxiClient.CarRentalService.CarType" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAKCAABAAABAAAAAAAAIgAAAAAIMAQAAAAIAAAA=</HashCode>
+      <FileName>Service References\CarRentalService\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TaxiClient.CarRentalService.CarBooking" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACBQYDAAAQAAAACAgggAAAAAAEAAAAAEYAAAA=</HashCode>
+      <FileName>Service References\CarRentalService\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TaxiClient.CarRentalService.WebServiceClient" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AGAAAAAABgAAACBAgAAQAAACABAAACAAUAACAJAAAAA=</HashCode>
+      <FileName>Service References\CarRentalService\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TaxiClient.HotelService.Hotel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAIACACAAAwgAAAAAIAAAQAgAAAAAAEAAQgAAIAAAA=</HashCode>
+      <FileName>Service References\HotelService\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TaxiClient.HotelService.RoomType" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AYAEAAACAAAggAAAAAAAQASAggAAAAAEAAgAAAIAAAA=</HashCode>
+      <FileName>Service References\HotelService\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TaxiClient.HotelService.BookingRow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAGAAACAIAAEAAgAAAAAACAgAAAAAAEAAAAAAIAAAA=</HashCode>
+      <FileName>Service References\HotelService\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TaxiClient.HotelService.Booking" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AYAgAAAGAAIIAAAAAAAAABgAgAAAAAAEEAgAAQaAAAA=</HashCode>
+      <FileName>Service References\HotelService\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TaxiClient.HotelService.HotelBookingServiceClient" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAJABAAAAABAAIAAAAQAAAQABgAARAAAAAAAAAA=</HashCode>
+      <FileName>Service References\HotelService\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TaxiClient.TaxiService.TaxiPriceInfoRequest" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAIASBAAAAAAAAAAAAAAEgEAAAAQEAAAAgEIAACA=</HashCode>
+      <FileName>Service References\TaxiService\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TaxiClient.TaxiService.Address" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAgAAAIAECAAAAAgAMAAAAFAAYAAQIAAAA=</HashCode>
+      <FileName>Service References\TaxiService\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TaxiClient.TaxiService.TaxiPriceInfo">
+    <Position X="2.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>CAABAIACBwAAAAIAAAAAEAAEgAIAAAAEAAAAgEIMAAA=</HashCode>
+      <FileName>Service References\TaxiService\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TaxiClient.TaxiService.TaxiBookingRequest">
+    <Position X="0.5" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service References\TaxiService\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TaxiClient.TaxiService.TaxiBooking">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAgAAAAAAAAABAAAAAgAAAAAAA=</HashCode>
+      <FileName>Service References\TaxiService\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TaxiClient.TaxiService.UserBookingsRequest" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAIAAAAAAAgABAAgAAAABAEAAAAAAIAAAA=</HashCode>
+      <FileName>Service References\TaxiService\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TaxiClient.TaxiService.UserBookings" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAKAAAAAAAAAAAAAAAEgAAAAAAEAAAAAAIAAAA=</HashCode>
+      <FileName>Service References\TaxiService\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TaxiClient.TaxiService.CancelBookingRequest" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAIAAAAAAAgABAAgAAAABAEAAAAAAIAAAA=</HashCode>
+      <FileName>Service References\TaxiService\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TaxiClient.TaxiService.GetAddressRequest" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAoAAAAAgAAAAAAEBAAAAAIAABA=</HashCode>
+      <FileName>Service References\TaxiService\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TaxiClient.TaxiService.WebServiceClient" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAABEAAAAAEAAAAAAAAIIAAEAADUEIAAAQAAAA=</HashCode>
+      <FileName>Service References\TaxiService\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TaxiClient.Team2.User" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAEoiACAABgAIAQAARAgAhAMRAAAGAAAAAQYECAA=</HashCode>
+      <FileName>Service References\Team2\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TaxiClient.Team2.UserServiceClient" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAIAAgAAAIAAAABAAgiEAAQAQAAgAI=</HashCode>
+      <FileName>Service References\Team2\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TaxiClient.Taxi.TaxiUC" Collapsed="true">
+    <Position X="12.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gBCEAQARBGBJABEwohiADAQCUAAigCCNJAAAkJgVgag=</HashCode>
+      <FileName>Taxi\TaxiUC.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="TaxiClient.CarRentalService.IWebService" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AGAAAAAABgAAACBAgAAQAAACABAAACAAUAACAJAAAAA=</HashCode>
+      <FileName>Service References\CarRentalService\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TaxiClient.CarRentalService.IWebServiceChannel" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service References\CarRentalService\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TaxiClient.HotelService.IHotelBookingService" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAJABAAAAABAAIAAAAQAAAQABgAARAAAAAAAAAA=</HashCode>
+      <FileName>Service References\HotelService\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TaxiClient.HotelService.IHotelBookingServiceChannel" Collapsed="true">
+    <Position X="6.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service References\HotelService\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TaxiClient.TaxiService.IWebService" Collapsed="true">
+    <Position X="5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAABEAAAAAEAAAAAAAAIIAAEAADUEIAAAQAAAA=</HashCode>
+      <FileName>Service References\TaxiService\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TaxiClient.TaxiService.IWebServiceChannel" Collapsed="true">
+    <Position X="5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service References\TaxiService\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TaxiClient.Team2.UserService" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAIAAgAAAIAAAABAAgiEAAQAQAAgAI=</HashCode>
+      <FileName>Service References\Team2\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TaxiClient.Team2.UserServiceChannel" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service References\Team2\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="TaxiClient.HotelService.Status" Collapsed="true">
+    <Position X="9" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAIAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service References\HotelService\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

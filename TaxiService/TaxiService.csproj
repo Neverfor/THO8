@@ -120,6 +120,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Service References\Team2\UserService.wsdl" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Service References\Team2\UserService.xsd">
       <SubType>Designer</SubType>
     </None>
