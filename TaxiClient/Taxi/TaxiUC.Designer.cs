@@ -228,7 +228,7 @@
             this.dtpTime.ShowUpDown = true;
             this.dtpTime.Size = new System.Drawing.Size(57, 20);
             this.dtpTime.TabIndex = 14;
-            this.dtpTime.Value = new System.DateTime(2013, 6, 19, 12, 29, 4, 375);
+            this.dtpTime.Value = new System.DateTime(2000, 1, 1, System.DateTime.Now.Hour, System.DateTime.Now.Minute + 11, 0);
             // 
             // lblTime
             // 
@@ -254,7 +254,7 @@
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(172, 20);
             this.dtpDate.TabIndex = 11;
-            this.dtpDate.Value = new System.DateTime(2013, 6, 19, 12, 29, 4, 384);
+            this.dtpDate.Value = System.DateTime.Now;
             // 
             // gbDestinationAddress
             // 
