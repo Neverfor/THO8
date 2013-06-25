@@ -35,7 +35,6 @@ namespace TaxiClient.Hotel
                 try
                 {
                     userBookings.DataSource = client.GetBookingsFromUser(Token);
-
                     userBookings.Columns[5].Visible = false;
                 }
                 catch { }
@@ -75,18 +74,15 @@ namespace TaxiClient.Hotel
                     hotelsCB.ValueMember = "HotelId";
                     hotelsCB.Visible = true;
                 }
-                catch (Exception oo)
+                catch
                 {
-                    MessageBox.Show(oo.Message);
-                    //MessageBox.Show("Er zijn geen hotels gevonden", "Geen hotels gevonden", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Er zijn geen hotels gevonden", "Geen hotels gevonden", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
 
         private void bookBTN_Click(object sender, EventArgs e)
         {
-            // if (string.IsNullOrEmpty(hotelsCB.SelectedText) || string.IsNullOrEmpty(roomTypeCB.SelectedText)) 
-
             try
             {
                 String Token = Session.UserToken.ToString();
@@ -124,7 +120,6 @@ namespace TaxiClient.Hotel
                 br.RoomType.MaxPersons = aantalPersons;
                 row[0] = br;
 
-                // if (roomTypeItem.GetType() == typeof(HotelService.RoomType))
                 client.bookRoom(hotID, row, arrival, departure, aantalPersons, Token);
                 FillDataGrid();
             }
@@ -245,6 +240,32 @@ namespace TaxiClient.Hotel
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void CancelBoekingBTN_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bent u zeker dat u wilt geselecteerde boeking annuleren?", 
+                "Annuleer Boeking", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    int selectedRow = userBookings.SelectedRows[0].Index;
+                    int selectedId = Convert.ToInt32(userBookings.Rows[selectedRow].Cells[1].Value.ToString());
+                    short hottieID = 0;
+                    using (HotelService.HotelBookingServiceClient client = new HotelService.HotelBookingServiceClient())
+                    {
+                        try { hottieID = Convert.ToInt16(selectedId); }
+                        catch { }
+                        client.CancelBooking(hottieID);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                FillDataGrid();
+            }
         }
     }
 }
