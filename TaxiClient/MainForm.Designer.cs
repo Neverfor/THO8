@@ -36,6 +36,7 @@
             this.autoBoekingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.attractieBookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +58,8 @@
             this.flightBookingToolStripMenuItem,
             this.hotelBookingToolStripMenuItem,
             this.taxiBookingToolStripMenuItem,
-            this.autoBoekingToolStripMenuItem});
+            this.autoBoekingToolStripMenuItem,
+            this.attractieBookingToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.B)));
             this.toolStripMenuItem1.Size = new System.Drawing.Size(86, 20);
@@ -113,6 +115,13 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Welcome, to the new(B)ooking system!";
             // 
+            // attractieBookingToolStripMenuItem
+            // 
+            this.attractieBookingToolStripMenuItem.Name = "attractieBookingToolStripMenuItem";
+            this.attractieBookingToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.attractieBookingToolStripMenuItem.Text = "Attractie booking";
+            this.attractieBookingToolStripMenuItem.Click += new System.EventHandler(this.attractieBookingToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -143,5 +152,6 @@
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem autoBoekingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem attractieBookingToolStripMenuItem;
     }
 }

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://booking/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="AttractionImplementationService" targetNamespace="http://booking/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://terrapin.hopto.me:8080/WebService/AttractionImplementationService?xsd=1" namespace="http://booking/" />
+    </xsd:schema>
+  </types>
+  <message name="getCountries">
+    <part name="parameters" element="tns:getCountries" />
+  </message>
+  <message name="getCountriesResponse">
+    <part name="parameters" element="tns:getCountriesResponse" />
+  </message>
+  <message name="getRegions">
+    <part name="parameters" element="tns:getRegions" />
+  </message>
+  <message name="getRegionsResponse">
+    <part name="parameters" element="tns:getRegionsResponse" />
+  </message>
+  <message name="getBooking">
+    <part name="parameters" element="tns:getBooking" />
+  </message>
+  <message name="getBookingResponse">
+    <part name="parameters" element="tns:getBookingResponse" />
+  </message>
+  <message name="getCities">
+    <part name="parameters" element="tns:getCities" />
+  </message>
+  <message name="getCitiesResponse">
+    <part name="parameters" element="tns:getCitiesResponse" />
+  </message>
+  <message name="getAttractions">
+    <part name="parameters" element="tns:getAttractions" />
+  </message>
+  <message name="getAttractionsResponse">
+    <part name="parameters" element="tns:getAttractionsResponse" />
+  </message>
+  <message name="bookAttraction">
+    <part name="parameters" element="tns:bookAttraction" />
+  </message>
+  <message name="bookAttractionResponse">
+    <part name="parameters" element="tns:bookAttractionResponse" />
+  </message>
+  <message name="getAttractionTypes">
+    <part name="parameters" element="tns:getAttractionTypes" />
+  </message>
+  <message name="getAttractionTypesResponse">
+    <part name="parameters" element="tns:getAttractionTypesResponse" />
+  </message>
+  <portType name="AttractionImplementation">
+    <operation name="getCountries">
+      <input wsam:Action="http://booking/AttractionImplementation/getCountriesRequest" message="tns:getCountries" />
+      <output wsam:Action="http://booking/AttractionImplementation/getCountriesResponse" message="tns:getCountriesResponse" />
+    </operation>
+    <operation name="getRegions">
+      <input wsam:Action="http://booking/AttractionImplementation/getRegionsRequest" message="tns:getRegions" />
+      <output wsam:Action="http://booking/AttractionImplementation/getRegionsResponse" message="tns:getRegionsResponse" />
+    </operation>
+    <operation name="getBooking">
+      <input wsam:Action="http://booking/AttractionImplementation/getBookingRequest" message="tns:getBooking" />
+      <output wsam:Action="http://booking/AttractionImplementation/getBookingResponse" message="tns:getBookingResponse" />
+    </operation>
+    <operation name="getCities">
+      <input wsam:Action="http://booking/AttractionImplementation/getCitiesRequest" message="tns:getCities" />
+      <output wsam:Action="http://booking/AttractionImplementation/getCitiesResponse" message="tns:getCitiesResponse" />
+    </operation>
+    <operation name="getAttractions">
+      <input wsam:Action="http://booking/AttractionImplementation/getAttractionsRequest" message="tns:getAttractions" />
+      <output wsam:Action="http://booking/AttractionImplementation/getAttractionsResponse" message="tns:getAttractionsResponse" />
+    </operation>
+    <operation name="bookAttraction">
+      <input wsam:Action="http://booking/AttractionImplementation/bookAttractionRequest" message="tns:bookAttraction" />
+      <output wsam:Action="http://booking/AttractionImplementation/bookAttractionResponse" message="tns:bookAttractionResponse" />
+    </operation>
+    <operation name="getAttractionTypes">
+      <input wsam:Action="http://booking/AttractionImplementation/getAttractionTypesRequest" message="tns:getAttractionTypes" />
+      <output wsam:Action="http://booking/AttractionImplementation/getAttractionTypesResponse" message="tns:getAttractionTypesResponse" />
+    </operation>
+  </portType>
+  <binding name="AttractionImplementationPortBinding" type="tns:AttractionImplementation">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="getCountries">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getRegions">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getBooking">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getCities">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAttractions">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="bookAttraction">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAttractionTypes">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="AttractionImplementationService">
+    <port name="AttractionImplementationPort" binding="tns:AttractionImplementationPortBinding">
+      <soap:address location="http://terrapin.hopto.me:8080/WebService/AttractionImplementationService" />
+    </port>
+  </service>
+</definitions>
