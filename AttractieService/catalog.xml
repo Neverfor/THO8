@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/C:/Users/Michael/Downloads/AttractionService/AttractionService.wsdl" uri="src/conf/xml-resources/web-services/NewWebServiceFromWSDL/wsdl/AttractionService.wsdl"/>
+    <system systemId="file:/C:/Users/Michael/Downloads/AttractionService/AttractionService.xsd" uri="src/conf/xml-resources/web-services/NewWebServiceFromWSDL/wsdl/AttractionService.xsd"/>
+    <system systemId="http://localhost:8080/AttractieService/AttractionImplementationService?wsdl" uri="src/conf/xml-resources/web-service-references/AttractionImplementationService/wsdl/localhost_8080/AttractieService/AttractionImplementationService.wsdl"/>
+    <system systemId="http://localhost:8080/AttractieService/AttractionImplementationService?xsd=1" uri="src/conf/xml-resources/web-service-references/AttractionImplementationService/wsdl/localhost_8080/AttractieService/AttractionImplementationService.xsd_1.xsd"/>
+</catalog>
