@@ -20,6 +20,12 @@ namespace TaxiService.ServicesDataContracts
         public double Price { get; set; }
 
         [DataMember]
+        public Address DepartureAddress { get; set; }
+
+        [DataMember]
+        public Address DestinationAddress { get; set; }
+
+        [DataMember]
         public DateTime DepartureTime { get; set; }
 
         [DataMember]
