@@ -19,7 +19,7 @@ namespace TaxiClient.Hotel
             this.parentForm = parentForm;
             InitializeComponent();
             FillDataGrid();
-            
+
         }
 
         private void FillDataGrid()
@@ -32,7 +32,11 @@ namespace TaxiClient.Hotel
 
             using (HotelService.HotelBookingServiceClient client = new HotelService.HotelBookingServiceClient())
             {
-                userBookings.DataSource = client.GetBookingsFromUser(Token);
+                try
+                {
+                    userBookings.DataSource = client.GetBookingsFromUser(Token);
+                }
+                catch { }
             }
 
         }
@@ -54,90 +58,79 @@ namespace TaxiClient.Hotel
                 if (hotelsCB.Items.Count > 0)
                     hotelsCB.DataSource = null;
 
-                if ((hotels = client.getHotels(name, location)).Count() > 0)
+                try
                 {
+                    hotels = client.getHotels(name, location);
                     ArrayList hotelCollections = new ArrayList();
 
                     foreach (HotelService.Hotel hot in hotels)
                     {
                         hotelCollections.Add(hot);
-                        
+
                     }
                     hotelsCB.DataSource = hotelCollections;
                     hotelsCB.DisplayMember = "Name";
                     hotelsCB.ValueMember = "HotelId";
                     hotelsCB.Visible = true;
                 }
-                else
+                catch (Exception oo)
                 {
-                    MessageBox.Show("Er zijn geen hotels gevonden", "Geen hotels gevonden", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(oo.Message);
+                    //MessageBox.Show("Er zijn geen hotels gevonden", "Geen hotels gevonden", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
 
         private void bookBTN_Click(object sender, EventArgs e)
         {
-            /*
-            if (string.IsNullOrEmpty(hotelsCB.SelectedText) || string.IsNullOrEmpty(roomTypeCB.SelectedText)) 
+            // if (string.IsNullOrEmpty(hotelsCB.SelectedText) || string.IsNullOrEmpty(roomTypeCB.SelectedText)) 
+
+            try
             {
-                MessageBox.Show("");
-            }
-             * */
-            try{
-            String Token = Session.UserToken.ToString();
-            string hotelStringID = hotelsCB.SelectedValue.ToString();
-            //MessageBox.Show("Hotel ID is: " + hotelStringID);
-            short hotID = Convert.ToInt16(hotelStringID);
-            String perNumb = numPersons.Value.ToString();
-            short aantalPersons = Convert.ToInt16(perNumb);
-            
-             DateTime arrival = new DateTime(arrivalDate.Value.Year,
-                          arrivalDate.Value.Month,
-                          arrivalDate.Value.Day,
-                          arrivalDate.Value.Hour,
-                          arrivalDate.Value.Minute,
-                          0);
-            DateTime departure = new DateTime(departureDate.Value.Year,
-                       departureDate.Value.Month,
-                       departureDate.Value.Day,
-                       departureDate.Value.Hour,
-                       departureDate.Value.Minute,
-                       0);
+                String Token = Session.UserToken.ToString();
+                string hotelStringID = hotelsCB.SelectedValue.ToString();
+                short hotID = Convert.ToInt16(hotelStringID);
+                String perNumb = numPersons.Value.ToString();
+                short aantalPersons = Convert.ToInt16(perNumb);
 
-            HotelService.HotelBookingServiceClient client = new HotelService.HotelBookingServiceClient();
-            HotelService.BookingRow br = new HotelService.BookingRow();
-            HotelService.BookingRow[] row = new HotelService.BookingRow[1];
+                DateTime arrival = new DateTime(arrivalDate.Value.Year,
+                             arrivalDate.Value.Month,
+                             arrivalDate.Value.Day,
+                             arrivalDate.Value.Hour,
+                             arrivalDate.Value.Minute,
+                             0);
+                DateTime departure = new DateTime(departureDate.Value.Year,
+                           departureDate.Value.Month,
+                           departureDate.Value.Day,
+                           departureDate.Value.Hour,
+                           departureDate.Value.Minute,
+                           0);
 
-            short x = 1;
-            br.Amount = x;
-            br.RoomType = roomTypeItem;
+                HotelService.HotelBookingServiceClient client = new HotelService.HotelBookingServiceClient();
+                HotelService.BookingRow br = new HotelService.BookingRow();
+                HotelService.BookingRow[] row = new HotelService.BookingRow[1];
 
-            String roomTypeNaam = roomTypeCB.SelectedValue.ToString();
-            MessageBox.Show("U heeft gekozen een " + roomTypeNaam + " kamer." + "\n De service verlener beschrijft kamers als volgt: " 
-                + " \n" + roomTypeItem.Description);
+                short x = 1;
+                br.Amount = x;
+                br.RoomType = roomTypeItem;
 
-            br.RoomType.MaxPersons = aantalPersons;
-            row[0] = br;
+                String roomTypeNaam = roomTypeCB.SelectedValue.ToString();
+                MessageBox.Show("U heeft gekozen een " + roomTypeNaam + " kamer." 
+                    + "\n De service verlener beschrijft kamers als volgt: "
+                    + " \n" + roomTypeItem.Description);
 
-           // if (roomTypeItem.GetType() == typeof(HotelService.RoomType))
-            //{
-           // try
-            //{
+                br.RoomType.MaxPersons = aantalPersons;
+                row[0] = br;
+
+                // if (roomTypeItem.GetType() == typeof(HotelService.RoomType))
                 client.bookRoom(hotID, row, arrival, departure, aantalPersons, Token);
                 FillDataGrid();
             }
-            catch (Exception exc) { FillDataGrid(); MessageBox.Show("Fout!\n" + exc.Message); }
-            //}
-                /*
-            else 
-            {
-                MessageBox.Show("Auch!... Niet alles is ingevuld!", "Vul gegevens in...",
-		        MessageBoxButtons.OK,
-		        MessageBoxIcon.Exclamation,
-		        MessageBoxDefaultButton.Button1);
-                FillDataGrid(); 
+            catch 
+            { 
+                FillDataGrid();
+                MessageBox.Show("Niet alle velden zijn ingevuld");
             }
-                 * */
         }
 
         private void hotelsCB_SelectedIndexChanged(object sender, EventArgs e)
@@ -148,23 +141,25 @@ namespace TaxiClient.Hotel
             departureDate.Visible = true;
 
             ArrayList roomies = new ArrayList();
-            String hotID = hotelsCB.SelectedValue.ToString();
+            bool isNum = false;
             short HotID = 0;
-           
-            
 
-            int Num;
-            bool isNum = int.TryParse(hotID.ToString(), out Num); 
+            try
+            {
+                String hotID = hotelsCB.SelectedValue.ToString();
+                int Num;
+                isNum = int.TryParse(hotID.ToString(), out Num);
+                if (isNum)
+                {
+                    HotID = Convert.ToInt16(hotID);
+                }
 
-            if (isNum) 
-            {
-                //MessageBox.Show("Changed hotel ID: " + hotID);
-                HotID = Convert.ToInt16(hotID); 
+                else
+                {
+                    HotID = 0;
+                }
             }
-            else       
-            {
-                HotID = 0; 
-            }
+            catch { }
 
             String perNumb = numPersons.Value.ToString();
             short aantalPersons = Convert.ToInt16(perNumb);
@@ -190,33 +185,38 @@ namespace TaxiClient.Hotel
                 {
                     roomTypeCB.Items.Clear();
                 }
-                catch (Exception ee) { /*MessageBox.Show(ee.Message);*/ }
+                catch { }
             }
 
 
             using (HotelService.HotelBookingServiceClient client = new HotelService.HotelBookingServiceClient())
             {
+                String roomMsg = null;
                 if (HotID > 0)
                 {
                     try
                     {
                         rooms = client.getRoomTypesFromHotel(HotID, arrival, departure, aantalPersons);
-                        String roomTypeOut = "De volgende beschikbare kamer types zijn gevonden: ";
                         foreach (HotelService.RoomType rom in rooms)
                         {
                             roomies.Add(rom);
-                            roomTypeOut += "\n" + rom.Name.ToString() + " heeft ID: " + rom.RoomTypeId.ToString();
                         }
 
-                        MessageBox.Show(roomTypeOut);
+                        if (roomies.Count > 0) { roomMsg = "Found rooms!"; }
                         roomTypeCB.DataSource = roomies;
                         roomTypeCB.DisplayMember = "Name";
                         roomTypeCB.ValueMember = "Name";
                         roomTypeCB.Visible = true;
                     }
-                    catch { MessageBox.Show("Thank you for using our services. \n" + "Could you tell dev that he is noob?" + "\n Oh and: \nNiet alle gegevens zijn ingevuld!"); }
+                    catch 
+                    { 
+                        if(roomMsg == null)
+                        {
+                            MessageBox.Show("Dit hotel heeft geen vrije kamers.");
+                        }
+                    }
                 }
-                else {}
+                else { }
             }
         }
 
@@ -237,7 +237,6 @@ namespace TaxiClient.Hotel
             if (roomTypeCB.SelectedIndex >= 0 && roomTypeCB.SelectedItem != null)
             {
                 roomTypeItem = roomTypeCB.Items[roomTypeCB.SelectedIndex] as HotelService.RoomType;
-                //MessageBox.Show("Gekozen kamer: " + roomTypeCB.SelectedValue.ToString());
             }
         }
 
