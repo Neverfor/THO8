@@ -90,13 +90,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\DataSources\To8Libraries.Team2.User1.datasource" />
-    <Content Include="Service References\Team2\UserService.disco" />
-    <Content Include="Service References\Team2\configuration91.svcinfo" />
-    <Content Include="Service References\Team2\configuration.svcinfo" />
-    <Content Include="Service References\Team2\Reference.svcmap">
+    <None Include="Service References\Team2\UserService.disco" />
+    <None Include="Service References\Team2\configuration91.svcinfo" />
+    <None Include="Service References\Team2\configuration.svcinfo" />
+    <None Include="Service References\Team2\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <Content Include="Web.config" />
     <Content Include="WebService.svc" />
   </ItemGroup>
@@ -119,16 +119,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="Service References\Team2\UserService.wsdl" />
+    <None Include="Service References\Team2\UserService.wsdl" />
     <Content Include="ClassDiagram1.cd" />
     <None Include="Service References\Team2\UserService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Service References\Team2\UserService1.wsdl" />
+    <None Include="Service References\Team2\UserService1.wsdl" />
     <None Include="Service References\Team2\UserService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Service References\Team2\UserService2.wsdl" />
+    <None Include="Service References\Team2\UserService2.wsdl" />
     <None Include="Service References\Team2\UserService2.xsd">
       <SubType>Designer</SubType>
     </None>

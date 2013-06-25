@@ -169,7 +169,7 @@ namespace TaxiService
                 else
                 {
                     //Get booking with id from user
-                    bookings = from b in db.Bookings
+                    bookings = from b in db.Bookings.Include("DepartureAddress").Include("DestinationAddress")
                                where b.UserName.Equals(user) && b.Id.Equals(userBookingsRequest.BookingId)
                                select b;
                 }

@@ -29,7 +29,8 @@ namespace TaxiClient.Taxi
             {
                 UserBookingsRequest req = new UserBookingsRequest();
                 req.UserToken = Session.UserToken;
-                userBookingsDG.DataSource = client.GetUserBookings(req).TaxiBookings;
+                UserBookings userBookings = client.GetUserBookings(req);
+                userBookingsDG.DataSource = userBookings.TaxiBookings;
             }
         }
 
@@ -107,7 +108,8 @@ namespace TaxiClient.Taxi
                         tbrequest.AmountOfPassengers = response.AmountOfPassengers;
                         client.DoTaxiBooking(tbrequest);
 
-                        tabPage2.Show();
+                        tabTaxi.SelectedTab = tabPage2;
+                        FillDataGrid();
                     }
                 }
                 catch (FormatException fe)
