@@ -33,9 +33,9 @@
             this.flightBookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hotelBookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.taxiBookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.autoBoekingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.autoBoekingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
@@ -88,6 +88,14 @@
             this.taxiBookingToolStripMenuItem.Text = "Taxi Boeking";
             this.taxiBookingToolStripMenuItem.Click += new System.EventHandler(this.taxiBookingToolStripMenuItem_Click);
             // 
+            // autoBoekingToolStripMenuItem
+            // 
+            this.autoBoekingToolStripMenuItem.Name = "autoBoekingToolStripMenuItem";
+            this.autoBoekingToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.A)));
+            this.autoBoekingToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.autoBoekingToolStripMenuItem.Text = "Auto Boeking";
+            this.autoBoekingToolStripMenuItem.Click += new System.EventHandler(this.autoBoekingToolStripMenuItem_Click);
+            // 
             // mainPanel
             // 
             this.mainPanel.Controls.Add(this.label1);
@@ -104,13 +112,6 @@
             this.label1.Size = new System.Drawing.Size(191, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Welcome, to the new(B)ooking system!";
-            // 
-            // autoBoekingToolStripMenuItem
-            // 
-            this.autoBoekingToolStripMenuItem.Name = "autoBoekingToolStripMenuItem";
-            this.autoBoekingToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.autoBoekingToolStripMenuItem.Text = "Auto Boeking";
-            this.autoBoekingToolStripMenuItem.Click += new System.EventHandler(this.autoBoekingToolStripMenuItem_Click);
             // 
             // MainForm
             // 
