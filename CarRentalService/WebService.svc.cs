@@ -101,51 +101,62 @@ namespace CarRentalService
             }
         }
 
-        public bool IsAvailable(Contracts.CarContract car, DateTime startDate, DateTime endDate)
+        public bool IsAvailable(CarContract car, DateTime startDate, DateTime endDate)
         {
-            //using (WebServiceContext db = new WebServiceContext())
-            //{
-            //    var occupied = from cb in db.CarBookings
-            //                   where (cb.Car.CarId == car.CarId) &&
-            //                   ((cb.StartDate >= startDate && cb.StartDate < endDate) ||
-            //                   (cb.EndDate > startDate && cb.EndDate < endDate) ||
-            //                   (cb.StartDate < startDate && cb.EndDate > endDate))
-            //                   select cb;
-            //    try
-            //    {
-            //        occupied.First();
-            //        return true;
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        return false;
-            //    }
-            //}
-            return false;
+            using (WebServiceContext db = new WebServiceContext())
+            {
+                var occupied = from cb in db.CarBookings
+                               where (cb.Car.CarId == car.CarId) &&
+                               ((cb.StartDate >= startDate && cb.StartDate < endDate) ||
+                               (cb.EndDate > startDate && cb.EndDate < endDate) ||
+                               (cb.StartDate < startDate && cb.EndDate > endDate))
+                               select cb;
+                try
+                {
+                    occupied.First();
+                    return false;
+                }
+                catch (Exception ex)
+                {
+                    return true;
+                }
+            }
         }
 
-        public Contracts.CarBookingContract Book(CarRentalService.Contracts.CarBookingContract booking, string token)
+        public CarBookingContract Book(CarBookingContract booking, string token)
         {
-            //try
-            //{
-            //    int userId;
-            //    using (UserServiceClient client = new UserServiceClient())
-            //    {
-            //        userId = client.GetUser(token).UserId;
-            //    }
-            //    using (WebServiceContext db = new WebServiceContext())
-            //    {
-            //        booking.UserId = userId;
-            //        db.CarBookings.Add(booking);
-            //        db.SaveChanges();
-            //    }
-            //    return booking;
-            //}
-            //catch (Exception ex)
-            //{
-            //    throw ex;
-            //}
-            return null;
+            try
+            {
+                int userId;
+                using (UserServiceClient client = new UserServiceClient())
+                {
+                    userId = client.GetUser(token).UserId;
+                }
+                using (WebServiceContext db = new WebServiceContext())
+                {
+                    var vCar = from c in db.Cars
+                               where c.CarId == booking.Car.CarId
+                               select c;
+                    Car car = vCar.First();
+                    
+
+                    CarBooking cb = new CarBooking() 
+                    { 
+                        Car = car, 
+                        StartDate = booking.StartDate, 
+                        EndDate = booking.EndDate, 
+                        Price = booking.Price, 
+                        UserId = userId 
+                    };
+                    db.CarBookings.Add(cb);
+                    db.SaveChanges();
+                }
+                return booking;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public Contracts.CarBookingContract[] getUserBookings(string token)

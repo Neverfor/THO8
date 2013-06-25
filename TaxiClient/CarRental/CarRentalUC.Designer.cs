@@ -30,7 +30,17 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.gbCarInfo = new System.Windows.Forms.GroupBox();
+            this.gbRentCar = new System.Windows.Forms.GroupBox();
+            this.lblEndDay = new System.Windows.Forms.Label();
+            this.lblStartDay = new System.Windows.Forms.Label();
+            this.dtpEndDay = new System.Windows.Forms.DateTimePicker();
+            this.dtpStartDay = new System.Windows.Forms.DateTimePicker();
+            this.lblPricePerDay_data = new System.Windows.Forms.Label();
+            this.lblLicense_data = new System.Windows.Forms.Label();
+            this.lblBrand_data = new System.Windows.Forms.Label();
+            this.lblCarType_data = new System.Windows.Forms.Label();
+            this.lblMaxPersons_data = new System.Windows.Forms.Label();
+            this.lblDateOfPurchase_data = new System.Windows.Forms.Label();
             this.lblMaxPersons = new System.Windows.Forms.Label();
             this.lblPricePerDay = new System.Windows.Forms.Label();
             this.lblCarType = new System.Windows.Forms.Label();
@@ -50,7 +60,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.gbCarInfo.SuspendLayout();
+            this.gbRentCar.SuspendLayout();
             this.gbSelectCar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,7 +77,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.gbCarInfo);
+            this.tabPage1.Controls.Add(this.gbRentCar);
             this.tabPage1.Controls.Add(this.gbSelectCar);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -77,69 +87,177 @@
             this.tabPage1.Text = "Boek auto";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // gbCarInfo
+            // gbRentCar
             // 
-            this.gbCarInfo.Controls.Add(this.lblMaxPersons);
-            this.gbCarInfo.Controls.Add(this.lblPricePerDay);
-            this.gbCarInfo.Controls.Add(this.lblCarType);
-            this.gbCarInfo.Controls.Add(this.lblDateOfPurchase);
-            this.gbCarInfo.Controls.Add(this.lblLicense);
-            this.gbCarInfo.Controls.Add(this.lblBrand);
-            this.gbCarInfo.Controls.Add(this.btnBookCar);
-            this.gbCarInfo.Location = new System.Drawing.Point(345, 15);
-            this.gbCarInfo.Name = "gbCarInfo";
-            this.gbCarInfo.Size = new System.Drawing.Size(585, 286);
-            this.gbCarInfo.TabIndex = 4;
-            this.gbCarInfo.TabStop = false;
-            this.gbCarInfo.Text = "Auto Informatie";
+            this.gbRentCar.Controls.Add(this.lblEndDay);
+            this.gbRentCar.Controls.Add(this.lblStartDay);
+            this.gbRentCar.Controls.Add(this.dtpEndDay);
+            this.gbRentCar.Controls.Add(this.dtpStartDay);
+            this.gbRentCar.Controls.Add(this.lblPricePerDay_data);
+            this.gbRentCar.Controls.Add(this.lblLicense_data);
+            this.gbRentCar.Controls.Add(this.lblBrand_data);
+            this.gbRentCar.Controls.Add(this.lblCarType_data);
+            this.gbRentCar.Controls.Add(this.lblMaxPersons_data);
+            this.gbRentCar.Controls.Add(this.lblDateOfPurchase_data);
+            this.gbRentCar.Controls.Add(this.lblMaxPersons);
+            this.gbRentCar.Controls.Add(this.lblPricePerDay);
+            this.gbRentCar.Controls.Add(this.lblCarType);
+            this.gbRentCar.Controls.Add(this.lblDateOfPurchase);
+            this.gbRentCar.Controls.Add(this.lblLicense);
+            this.gbRentCar.Controls.Add(this.lblBrand);
+            this.gbRentCar.Controls.Add(this.btnBookCar);
+            this.gbRentCar.Location = new System.Drawing.Point(345, 15);
+            this.gbRentCar.Name = "gbRentCar";
+            this.gbRentCar.Size = new System.Drawing.Size(585, 286);
+            this.gbRentCar.TabIndex = 4;
+            this.gbRentCar.TabStop = false;
+            this.gbRentCar.Text = "Auto boeken";
+            // 
+            // lblEndDay
+            // 
+            this.lblEndDay.AutoSize = true;
+            this.lblEndDay.Enabled = false;
+            this.lblEndDay.Location = new System.Drawing.Point(57, 162);
+            this.lblEndDay.Name = "lblEndDay";
+            this.lblEndDay.Size = new System.Drawing.Size(52, 13);
+            this.lblEndDay.TabIndex = 19;
+            this.lblEndDay.Text = "Eind dag:";
+            // 
+            // lblStartDay
+            // 
+            this.lblStartDay.AutoSize = true;
+            this.lblStartDay.Enabled = false;
+            this.lblStartDay.Location = new System.Drawing.Point(57, 136);
+            this.lblStartDay.Name = "lblStartDay";
+            this.lblStartDay.Size = new System.Drawing.Size(53, 13);
+            this.lblStartDay.TabIndex = 18;
+            this.lblStartDay.Text = "Start dag:";
+            // 
+            // dtpEndDay
+            // 
+            this.dtpEndDay.Enabled = false;
+            this.dtpEndDay.Location = new System.Drawing.Point(115, 162);
+            this.dtpEndDay.Name = "dtpEndDay";
+            this.dtpEndDay.Size = new System.Drawing.Size(200, 20);
+            this.dtpEndDay.TabIndex = 17;
+            this.dtpEndDay.Value = new System.DateTime(2013, 6, 25, 0, 0, 0, 0);
+            // 
+            // dtpStartDay
+            // 
+            this.dtpStartDay.Enabled = false;
+            this.dtpStartDay.Location = new System.Drawing.Point(116, 136);
+            this.dtpStartDay.Name = "dtpStartDay";
+            this.dtpStartDay.Size = new System.Drawing.Size(200, 20);
+            this.dtpStartDay.TabIndex = 16;
+            this.dtpStartDay.Value = new System.DateTime(2013, 6, 25, 23, 59, 59, 0);
+            // 
+            // lblPricePerDay_data
+            // 
+            this.lblPricePerDay_data.AutoSize = true;
+            this.lblPricePerDay_data.Location = new System.Drawing.Point(159, 96);
+            this.lblPricePerDay_data.Name = "lblPricePerDay_data";
+            this.lblPricePerDay_data.Size = new System.Drawing.Size(0, 13);
+            this.lblPricePerDay_data.TabIndex = 15;
+            // 
+            // lblLicense_data
+            // 
+            this.lblLicense_data.AutoSize = true;
+            this.lblLicense_data.Location = new System.Drawing.Point(159, 83);
+            this.lblLicense_data.Name = "lblLicense_data";
+            this.lblLicense_data.Size = new System.Drawing.Size(0, 13);
+            this.lblLicense_data.TabIndex = 14;
+            // 
+            // lblBrand_data
+            // 
+            this.lblBrand_data.AutoSize = true;
+            this.lblBrand_data.Location = new System.Drawing.Point(159, 31);
+            this.lblBrand_data.Name = "lblBrand_data";
+            this.lblBrand_data.Size = new System.Drawing.Size(0, 13);
+            this.lblBrand_data.TabIndex = 13;
+            // 
+            // lblCarType_data
+            // 
+            this.lblCarType_data.AutoSize = true;
+            this.lblCarType_data.Location = new System.Drawing.Point(159, 44);
+            this.lblCarType_data.Name = "lblCarType_data";
+            this.lblCarType_data.Size = new System.Drawing.Size(0, 13);
+            this.lblCarType_data.TabIndex = 12;
+            // 
+            // lblMaxPersons_data
+            // 
+            this.lblMaxPersons_data.AutoSize = true;
+            this.lblMaxPersons_data.Location = new System.Drawing.Point(159, 57);
+            this.lblMaxPersons_data.Name = "lblMaxPersons_data";
+            this.lblMaxPersons_data.Size = new System.Drawing.Size(0, 13);
+            this.lblMaxPersons_data.TabIndex = 11;
+            // 
+            // lblDateOfPurchase_data
+            // 
+            this.lblDateOfPurchase_data.AutoSize = true;
+            this.lblDateOfPurchase_data.Location = new System.Drawing.Point(159, 70);
+            this.lblDateOfPurchase_data.Name = "lblDateOfPurchase_data";
+            this.lblDateOfPurchase_data.Size = new System.Drawing.Size(0, 13);
+            this.lblDateOfPurchase_data.TabIndex = 10;
             // 
             // lblMaxPersons
             // 
             this.lblMaxPersons.AutoSize = true;
-            this.lblMaxPersons.Location = new System.Drawing.Point(100, 56);
+            this.lblMaxPersons.Enabled = false;
+            this.lblMaxPersons.Location = new System.Drawing.Point(57, 57);
             this.lblMaxPersons.Name = "lblMaxPersons";
-            this.lblMaxPersons.Size = new System.Drawing.Size(0, 13);
+            this.lblMaxPersons.Size = new System.Drawing.Size(50, 13);
             this.lblMaxPersons.TabIndex = 9;
+            this.lblMaxPersons.Text = "Zitruimte:";
             // 
             // lblPricePerDay
             // 
             this.lblPricePerDay.AutoSize = true;
-            this.lblPricePerDay.Location = new System.Drawing.Point(100, 95);
+            this.lblPricePerDay.Enabled = false;
+            this.lblPricePerDay.Location = new System.Drawing.Point(57, 96);
             this.lblPricePerDay.Name = "lblPricePerDay";
-            this.lblPricePerDay.Size = new System.Drawing.Size(0, 13);
+            this.lblPricePerDay.Size = new System.Drawing.Size(68, 13);
             this.lblPricePerDay.TabIndex = 8;
+            this.lblPricePerDay.Text = "Prijs per dag:";
             // 
             // lblCarType
             // 
             this.lblCarType.AutoSize = true;
-            this.lblCarType.Location = new System.Drawing.Point(100, 43);
+            this.lblCarType.Enabled = false;
+            this.lblCarType.Location = new System.Drawing.Point(57, 44);
             this.lblCarType.Name = "lblCarType";
-            this.lblCarType.Size = new System.Drawing.Size(0, 13);
+            this.lblCarType.Size = new System.Drawing.Size(55, 13);
             this.lblCarType.TabIndex = 7;
+            this.lblCarType.Text = "Auto type:";
             // 
             // lblDateOfPurchase
             // 
             this.lblDateOfPurchase.AutoSize = true;
-            this.lblDateOfPurchase.Location = new System.Drawing.Point(100, 69);
+            this.lblDateOfPurchase.Enabled = false;
+            this.lblDateOfPurchase.Location = new System.Drawing.Point(57, 70);
             this.lblDateOfPurchase.Name = "lblDateOfPurchase";
-            this.lblDateOfPurchase.Size = new System.Drawing.Size(0, 13);
+            this.lblDateOfPurchase.Size = new System.Drawing.Size(96, 13);
             this.lblDateOfPurchase.TabIndex = 6;
+            this.lblDateOfPurchase.Text = "Dag van aankoop:";
             // 
             // lblLicense
             // 
             this.lblLicense.AutoSize = true;
-            this.lblLicense.Location = new System.Drawing.Point(100, 82);
+            this.lblLicense.Enabled = false;
+            this.lblLicense.Location = new System.Drawing.Point(57, 83);
             this.lblLicense.Name = "lblLicense";
-            this.lblLicense.Size = new System.Drawing.Size(0, 13);
+            this.lblLicense.Size = new System.Drawing.Size(56, 13);
             this.lblLicense.TabIndex = 5;
+            this.lblLicense.Text = "Kenteken:";
             // 
             // lblBrand
             // 
             this.lblBrand.AutoSize = true;
-            this.lblBrand.Location = new System.Drawing.Point(100, 30);
+            this.lblBrand.Enabled = false;
+            this.lblBrand.Location = new System.Drawing.Point(57, 31);
             this.lblBrand.Name = "lblBrand";
-            this.lblBrand.Size = new System.Drawing.Size(0, 13);
+            this.lblBrand.Size = new System.Drawing.Size(32, 13);
             this.lblBrand.TabIndex = 4;
+            this.lblBrand.Text = "Auto:";
             // 
             // btnBookCar
             // 
@@ -167,12 +285,12 @@
             this.gbSelectCar.Size = new System.Drawing.Size(324, 286);
             this.gbSelectCar.TabIndex = 2;
             this.gbSelectCar.TabStop = false;
-            this.gbSelectCar.Text = "Boek een auto";
+            this.gbSelectCar.Text = "Selecteer een auto";
             // 
             // lblCar
             // 
             this.lblCar.AutoSize = true;
-            this.lblCar.Location = new System.Drawing.Point(66, 103);
+            this.lblCar.Location = new System.Drawing.Point(57, 103);
             this.lblCar.Name = "lblCar";
             this.lblCar.Size = new System.Drawing.Size(29, 13);
             this.lblCar.TabIndex = 6;
@@ -208,7 +326,7 @@
             // lblCity
             // 
             this.lblCity.AutoSize = true;
-            this.lblCity.Location = new System.Drawing.Point(66, 49);
+            this.lblCity.Location = new System.Drawing.Point(57, 49);
             this.lblCity.Name = "lblCity";
             this.lblCity.Size = new System.Drawing.Size(29, 13);
             this.lblCity.TabIndex = 2;
@@ -235,7 +353,7 @@
             // lblCountry
             // 
             this.lblCountry.AutoSize = true;
-            this.lblCountry.Location = new System.Drawing.Point(64, 22);
+            this.lblCountry.Location = new System.Drawing.Point(57, 22);
             this.lblCountry.Name = "lblCountry";
             this.lblCountry.Size = new System.Drawing.Size(31, 13);
             this.lblCountry.TabIndex = 0;
@@ -260,8 +378,8 @@
             this.Size = new System.Drawing.Size(970, 645);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.gbCarInfo.ResumeLayout(false);
-            this.gbCarInfo.PerformLayout();
+            this.gbRentCar.ResumeLayout(false);
+            this.gbRentCar.PerformLayout();
             this.gbSelectCar.ResumeLayout(false);
             this.gbSelectCar.PerformLayout();
             this.ResumeLayout(false);
@@ -283,12 +401,22 @@
         private System.Windows.Forms.ComboBox cbCountry;
         private System.Windows.Forms.Label lblCountry;
         private System.Windows.Forms.Button btnBookCar;
-        private System.Windows.Forms.GroupBox gbCarInfo;
+        private System.Windows.Forms.GroupBox gbRentCar;
         private System.Windows.Forms.Label lblDateOfPurchase;
         private System.Windows.Forms.Label lblLicense;
         private System.Windows.Forms.Label lblBrand;
         private System.Windows.Forms.Label lblCarType;
         private System.Windows.Forms.Label lblMaxPersons;
         private System.Windows.Forms.Label lblPricePerDay;
+        private System.Windows.Forms.Label lblPricePerDay_data;
+        private System.Windows.Forms.Label lblLicense_data;
+        private System.Windows.Forms.Label lblBrand_data;
+        private System.Windows.Forms.Label lblCarType_data;
+        private System.Windows.Forms.Label lblMaxPersons_data;
+        private System.Windows.Forms.Label lblDateOfPurchase_data;
+        private System.Windows.Forms.Label lblEndDay;
+        private System.Windows.Forms.Label lblStartDay;
+        private System.Windows.Forms.DateTimePicker dtpEndDay;
+        private System.Windows.Forms.DateTimePicker dtpStartDay;
     }
 }

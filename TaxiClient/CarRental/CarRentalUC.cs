@@ -84,12 +84,24 @@ namespace TaxiClient.CarRental
             {
                 CarContract car = cbCar.Items[cbCar.SelectedIndex] as CarContract;
 
-                lblBrand.Text = car.Brand;
-                lblCarType.Text = "Auto type: " + car.CarType.Type;
-                lblMaxPersons.Text = "Zitruimte: " + car.CarType.Maxpersons + " pers.";
-                lblDateOfPurchase.Text = "Dag van aankoop: " + car.DateOfPurchase.ToString();
-                lblLicense.Text = "Kenteken: " + car.Licence;
-                lblPricePerDay.Text = "Prijs per dag: " + car.CarType.PricePerDay;
+                lblBrand.Enabled = true;
+                lblDateOfPurchase.Enabled = true;
+                lblLicense.Enabled = true;
+                lblMaxPersons.Enabled = true;
+                lblPricePerDay.Enabled = true;
+                lblCarType.Enabled = true;
+                lblStartDay.Enabled = true;
+                lblEndDay.Enabled = true;
+
+                lblBrand_data.Text = car.Brand;
+                lblCarType_data.Text = car.CarType.Type;
+                lblMaxPersons_data.Text = car.CarType.Maxpersons + " pers.";
+                lblDateOfPurchase_data.Text = car.DateOfPurchase.ToString();
+                lblLicense_data.Text = car.Licence;
+                lblPricePerDay_data.Text = car.CarType.PricePerDay.ToString(); ;
+
+                dtpEndDay.Enabled = true;
+                dtpStartDay.Enabled = true;
                 btnBookCar.Enabled = true;
                 
             }
@@ -97,19 +109,68 @@ namespace TaxiClient.CarRental
 
         private void ClearCarInfo()
         {
-            lblBrand.Text = "";
-            lblDateOfPurchase.Text = "";
-            lblLicense.Text = "";
-            lblMaxPersons.Text = "";
-            lblPricePerDay.Text = "";
-            lblCarType.Text = "";
+            lblBrand.Enabled = false;
+            lblDateOfPurchase.Enabled = false;
+            lblLicense.Enabled = false;
+            lblMaxPersons.Enabled = false;
+            lblPricePerDay.Enabled = false;
+            lblCarType.Enabled = false;
+            lblStartDay.Enabled = false;
+            lblEndDay.Enabled = false;
+
+            lblBrand_data.Text = "";
+            lblDateOfPurchase_data.Text = "";
+            lblLicense_data.Text = "";
+            lblMaxPersons_data.Text = "";
+            lblPricePerDay_data.Text = "";
+            lblCarType_data.Text = "";
+
+            dtpEndDay.Enabled = false;
+            dtpStartDay.Enabled = false;
             btnBookCar.Enabled = false;
         }
             
 
         private void btnBookCar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("something is working");
+            using (WebServiceClient client = new WebServiceClient())
+            {
+                CarContract car = cbCar.Items[cbCar.SelectedIndex] as CarContract;
+                DateTime sd, ed;
+                sd = dtpStartDay.Value;
+                sd = new DateTime(sd.Year, sd.Month, sd.Day, 0, 0, 0);
+                ed = dtpEndDay.Value;
+                ed = new DateTime(ed.Year, ed.Month, ed.Day, 23, 59, 59);
+
+                bool carIsAvailable = client.IsAvailable(car, sd, ed);
+                if (carIsAvailable)
+                {
+                    int days = (int)ed.Subtract(sd).TotalDays + 1;
+                    double price = days * car.CarType.PricePerDay;
+                    DialogResult result = MessageBox.Show(
+                        String.Format("Auto:\t{0} \nStart dag:\t{1} \nEind dag\t{2} \nDagen:\t{3} \nPrijs:\t{4} \n\nWilt u deze auto boeken?",
+                            car.Brand, sd, ed, days, price),
+                        "Auto boeking",
+                        MessageBoxButtons.YesNo
+                        );
+                    if (result == DialogResult.Yes)
+                    {
+                        CarBookingContract carBooking = new CarBookingContract()
+                        {
+                            Car = car,
+                            StartDate = sd,
+                            EndDate = ed,
+                            Price = price
+                        };
+                        client.Book(carBooking, Session.UserToken);
+                        //get to overview tab
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("De auto is niet beschikbaar binnen de opgegeven tijd.");
+                }
+            }
         }
     }
 }
