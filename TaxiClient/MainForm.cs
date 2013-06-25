@@ -19,7 +19,8 @@ namespace TaxiClient
 
         private void flightBookingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Not yet implemented!");
+            this.mainPanel.Controls.Clear();
+            this.mainPanel.Controls.Add(new Flight.FlightUC(this));
         }
 
         private void hotelBookingToolStripMenuItem_Click(object sender, EventArgs e)

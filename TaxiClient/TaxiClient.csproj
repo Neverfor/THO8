@@ -103,6 +103,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\FlightService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\Team2\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -250,6 +255,15 @@
     <None Include="Service References\CarRentalService\WebService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\FlightService\TaxiClient.FlightService.AirportDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FlightService\TaxiClient.FlightService.BookingDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FlightService\TaxiClient.FlightService.FlightDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\HotelService\HotelBookingService.wsdl" />
     <None Include="Service References\HotelService\item.wsdl" />
     <None Include="Service References\HotelService\item.xsd">
@@ -272,6 +286,20 @@
     </None>
     <None Include="Service References\HotelService\TaxiClient.HotelService.RoomType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FlightService\FlightService.wsdl" />
+    <None Include="Service References\FlightService\FlightService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FlightService\FlightService1.wsdl" />
+    <None Include="Service References\FlightService\FlightService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FlightService\FlightService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FlightService\FlightService3.xsd">
+      <SubType>Designer</SubType>
     </None>
     <None Include="Service References\TaxiService\TaxiClient.TaxiService.TaxiBooking.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -331,6 +359,7 @@
     <WCFMetadataStorage Include="Service References\AttractionService\" />
     <WCFMetadataStorage Include="Service References\CarRentalService\" />
     <WCFMetadataStorage Include="Service References\HotelService\" />
+    <WCFMetadataStorage Include="Service References\FlightService\" />
     <WCFMetadataStorage Include="Service References\TaxiService\" />
     <WCFMetadataStorage Include="Service References\Team2\" />
   </ItemGroup>
@@ -364,7 +393,9 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Service References\FlightService\FlightService.disco" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Service References\CarRentalService\WebService.disco" />
   </ItemGroup>
@@ -403,6 +434,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\AttractionService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FlightService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FlightService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FlightService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
