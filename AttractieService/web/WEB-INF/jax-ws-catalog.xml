@@ -4,4 +4,12 @@
     <system systemId="file:/C:/Users/Michael/Downloads/AttractionService/AttractionService.xsd" uri="src/conf/xml-resources/web-services/NewWebServiceFromWSDL/wsdl/AttractionService.xsd"/>
     <system systemId="http://localhost:8080/AttractieService/AttractionImplementationService?wsdl" uri="wsdl/localhost_8080/AttractieService/AttractionImplementationService.wsdl"/>
     <system systemId="http://localhost:8080/AttractieService/AttractionImplementationService?xsd=1" uri="wsdl/localhost_8080/AttractieService/AttractionImplementationService.xsd_1.xsd"/>
+    <system systemId="http://userservice.devworks.nl/UserService.svc?wsdl" uri="wsdl/userservice.devworks.nl/UserService.svc.wsdl"/>
+    <system systemId="http://userservice.devworks.nl/UserService.svc?wsdl=wsdl1" uri="wsdl/userservice.devworks.nl/UserService.svc.wsdl_wsdl1.wsdl"/>
+    <system systemId="http://userservice.devworks.nl/UserService.svc?wsdl=wsdl0" uri="wsdl/userservice.devworks.nl/UserService.svc.wsdl_wsdl0.wsdl"/>
+    <system systemId="http://userservice.devworks.nl/UserService.svc?xsd=xsd0" uri="wsdl/userservice.devworks.nl/UserService.svc.xsd_xsd0.xsd"/>
+    <system systemId="http://userservice.devworks.nl/UserService.svc?xsd=xsd3" uri="wsdl/userservice.devworks.nl/UserService.svc.xsd_xsd3.xsd"/>
+    <system systemId="http://userservice.devworks.nl/UserService.svc?xsd=xsd1" uri="wsdl/userservice.devworks.nl/UserService.svc.xsd_xsd1.xsd"/>
+    <system systemId="http://userservice.devworks.nl/UserService.svc?xsd=xsd2" uri="wsdl/userservice.devworks.nl/UserService.svc.xsd_xsd2.xsd"/>
+    <system systemId="http://userservice.devworks.nl/UserService.svc?xsd=xsd4" uri="wsdl/userservice.devworks.nl/UserService.svc.xsd_xsd4.xsd"/>
 </catalog>
