@@ -49,14 +49,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ZoekButton = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.boekingenOverzicht = new System.Windows.Forms.DataGridView();
+            this.flightsGrid = new System.Windows.Forms.DataGridView();
+            this.bookButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.babiesNB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.childrenNB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adultsNB)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.boekingenOverzicht)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flightsGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -71,6 +74,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.bookButton);
+            this.tabPage1.Controls.Add(this.flightsGrid);
             this.tabPage1.Controls.Add(this.babiesNB);
             this.tabPage1.Controls.Add(this.childrenNB);
             this.tabPage1.Controls.Add(this.adultsNB);
@@ -257,7 +262,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Controls.Add(this.boekingenOverzicht);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -266,13 +271,37 @@
             this.tabPage2.Text = "Boekingen Overzicht";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // boekingenOverzicht
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(48, 41);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(668, 224);
-            this.dataGridView1.TabIndex = 0;
+            this.boekingenOverzicht.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.boekingenOverzicht.Location = new System.Drawing.Point(48, 41);
+            this.boekingenOverzicht.Name = "boekingenOverzicht";
+            this.boekingenOverzicht.Size = new System.Drawing.Size(668, 224);
+            this.boekingenOverzicht.TabIndex = 0;
+            // 
+            // flightsGrid
+            // 
+            this.flightsGrid.AllowUserToAddRows = false;
+            this.flightsGrid.AllowUserToDeleteRows = false;
+            this.flightsGrid.AllowUserToResizeColumns = false;
+            this.flightsGrid.AllowUserToResizeRows = false;
+            this.flightsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.flightsGrid.Location = new System.Drawing.Point(408, 20);
+            this.flightsGrid.MultiSelect = false;
+            this.flightsGrid.Name = "flightsGrid";
+            this.flightsGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.flightsGrid.Size = new System.Drawing.Size(478, 230);
+            this.flightsGrid.TabIndex = 19;
+            // 
+            // bookButton
+            // 
+            this.bookButton.Location = new System.Drawing.Point(408, 268);
+            this.bookButton.Name = "bookButton";
+            this.bookButton.Size = new System.Drawing.Size(115, 23);
+            this.bookButton.TabIndex = 20;
+            this.bookButton.Text = "Boek Vlucht";
+            this.bookButton.UseVisualStyleBackColor = true;
+            this.bookButton.Click += new System.EventHandler(this.bookButton_Click);
             // 
             // FlightUC
             // 
@@ -288,7 +317,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.childrenNB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.adultsNB)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.boekingenOverzicht)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flightsGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -316,6 +346,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ZoekButton;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView boekingenOverzicht;
+        private System.Windows.Forms.Button bookButton;
+        private System.Windows.Forms.DataGridView flightsGrid;
     }
 }

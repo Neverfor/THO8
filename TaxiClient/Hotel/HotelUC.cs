@@ -27,8 +27,6 @@ namespace TaxiClient.Hotel
 
             Team2.UserService usrClient = new Team2.UserServiceClient();
             String Token = Session.UserToken.ToString();
-            var usr = usrClient.GetUser(Token);
-            int userID = Convert.ToInt32(usr.UserId.ToString());
 
             using (HotelService.HotelBookingServiceClient client = new HotelService.HotelBookingServiceClient())
             {

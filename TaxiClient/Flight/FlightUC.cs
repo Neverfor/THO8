@@ -18,6 +18,21 @@ namespace TaxiClient.Flight
         {
             this.parentForm = parentForm;
             InitializeComponent();
+            FillUserBookingsGrid();
+        }
+
+        public void FillUserBookingsGrid()
+        {
+            Team2.UserService usrClient = new Team2.UserServiceClient();
+            String Token = Session.UserToken.ToString();
+
+            TaxiClient.FlightService.FlightServiceClient client = new FlightService.FlightServiceClient();
+
+            try
+            {
+                boekingenOverzicht.DataSource = client.GetPersonalBookings(Token);
+            }
+            catch { } 
         }
 
         private void ZoekButton_Click(object sender, EventArgs e)
@@ -40,10 +55,11 @@ namespace TaxiClient.Flight
                 int passengers = 0;
 
                 passengers = Convert.ToInt32(adultsNB.Value.ToString()) 
-                    + Convert.ToInt32(childrenNB.Value.ToString()) + Convert.ToInt32(babiesNB.Value.ToString());
+                    + Convert.ToInt32(childrenNB.Value.ToString()) 
+                    + Convert.ToInt32(babiesNB.Value.ToString());
                 
-                TaxiClient.FlightService.AirportDTO arp = new TaxiClient.FlightService.AirportDTO();
-                TaxiClient.FlightService.FlightDTO flight = new TaxiClient.FlightService.FlightDTO();
+                //TaxiClient.FlightService.AirportDTO arp = new TaxiClient.FlightService.AirportDTO();
+               // TaxiClient.FlightService.FlightDTO flight = new TaxiClient.FlightService.FlightDTO();
                 TaxiClient.FlightService.AirportDTO [] airports = new TaxiClient.FlightService.AirportDTO [2000];
                 TaxiClient.FlightService.FlightDTO[] flights = new TaxiClient.FlightService.FlightDTO [2000];
 
@@ -56,7 +72,7 @@ namespace TaxiClient.Flight
                         departureAirportId = a.AiportId;
                     }
                 }
-                catch {}
+                catch { }
                 
                 try
                 {
@@ -72,6 +88,11 @@ namespace TaxiClient.Flight
                 try 
                 {
                     flights = client.ShowFlightsByDeparture(departureAirportId, destinationAirportId, depDate, passengers);
+                    try
+                    {
+                        flightsGrid.DataSource = flights;
+                    }
+                    catch { }
                 }
                 catch { }
 
@@ -85,16 +106,57 @@ namespace TaxiClient.Flight
                 catch { }
 
 
-
                 MessageBox.Show("Gevonden airports (vertrek): \n" + departureAirports + "\n"
                     + "Gevonden airports (bestemming): \n" + destinationAirports + "\n"
                     + possibleFlights);
 
-
-                //TaxiClient.FlightService.FlightDTO fl = new TaxiClient.FlightService.FlightDTO();
-                //client.ShowFlightsByDeparture(1, 1, departure, 1);
-                //MessageBox.Show("Flights: " + client.ShowFlightsByDeparture(1, 1, departure, 1).ToString());
             }
+        }
+
+        private void bookButton_Click(object sender, EventArgs e)
+        {
+           // int passengers = 0;
+
+           /* passengers = Convert.ToInt32(adultsNB.Value.ToString())
+                + Convert.ToInt32(childrenNB.Value.ToString()) 
+                + Convert.ToInt32(babiesNB.Value.ToString());
+            */
+            using (FlightService.FlightServiceClient client = new FlightService.FlightServiceClient())
+            {
+
+
+                Team2.UserService usrClient = new Team2.UserServiceClient();
+                String Token = Session.UserToken.ToString();
+
+                FlightService.PassengerDTO[] passengers;// = new FlightService.PassengerDTO[8];
+                passengers = new FlightService.PassengerDTO[0];
+
+                DialogResult result = MessageBox.Show("Bent u zeker dat u wilt geselecteerde vlucht boeken?",
+                    "Boek vlucht", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        int selectedRow = flightsGrid.SelectedRows[0].Index;
+                        int selectedId = Convert.ToInt32(flightsGrid.Rows[selectedRow].Cells[1].Value.ToString());
+                        short hottieID = 0;
+
+                        try 
+                        { 
+                            hottieID = Convert.ToInt16(selectedId); 
+                        }
+                        catch { }
+                        client.BookFlight(hottieID, passengers, Token);
+  
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    FillUserBookingsGrid();
+                }
+            }
+
         }
     }
 }
