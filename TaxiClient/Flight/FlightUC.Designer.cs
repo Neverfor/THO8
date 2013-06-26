@@ -30,16 +30,16 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.babiesNB = new System.Windows.Forms.NumericUpDown();
+            this.childrenNB = new System.Windows.Forms.NumericUpDown();
+            this.adultsNB = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.KlasseCombo = new System.Windows.Forms.ComboBox();
             this.departureDate = new System.Windows.Forms.DateTimePicker();
-            this.bestemmingTextBox = new System.Windows.Forms.TextBox();
-            this.vertrekTextBox = new System.Windows.Forms.TextBox();
+            this.destinationAirportNameTB = new System.Windows.Forms.TextBox();
+            this.departureAirportNameTB = new System.Windows.Forms.TextBox();
             this.vluchtTypeCombo = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,11 +49,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ZoekButton = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.babiesNB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.childrenNB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adultsNB)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -68,16 +71,16 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.numericUpDown3);
-            this.tabPage1.Controls.Add(this.numericUpDown2);
-            this.tabPage1.Controls.Add(this.numericUpDown1);
+            this.tabPage1.Controls.Add(this.babiesNB);
+            this.tabPage1.Controls.Add(this.childrenNB);
+            this.tabPage1.Controls.Add(this.adultsNB);
             this.tabPage1.Controls.Add(this.label9);
             this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.KlasseCombo);
             this.tabPage1.Controls.Add(this.departureDate);
-            this.tabPage1.Controls.Add(this.bestemmingTextBox);
-            this.tabPage1.Controls.Add(this.vertrekTextBox);
+            this.tabPage1.Controls.Add(this.destinationAirportNameTB);
+            this.tabPage1.Controls.Add(this.departureAirportNameTB);
             this.tabPage1.Controls.Add(this.vluchtTypeCombo);
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.label5);
@@ -94,26 +97,26 @@
             this.tabPage1.Text = "Zoek Vlucht";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown3
+            // babiesNB
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(148, 200);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(29, 20);
-            this.numericUpDown3.TabIndex = 18;
+            this.babiesNB.Location = new System.Drawing.Point(148, 200);
+            this.babiesNB.Name = "babiesNB";
+            this.babiesNB.Size = new System.Drawing.Size(29, 20);
+            this.babiesNB.TabIndex = 18;
             // 
-            // numericUpDown2
+            // childrenNB
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(148, 174);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(29, 20);
-            this.numericUpDown2.TabIndex = 17;
+            this.childrenNB.Location = new System.Drawing.Point(148, 174);
+            this.childrenNB.Name = "childrenNB";
+            this.childrenNB.Size = new System.Drawing.Size(29, 20);
+            this.childrenNB.TabIndex = 17;
             // 
-            // numericUpDown1
+            // adultsNB
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(148, 148);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(29, 20);
-            this.numericUpDown1.TabIndex = 16;
+            this.adultsNB.Location = new System.Drawing.Point(148, 148);
+            this.adultsNB.Name = "adultsNB";
+            this.adultsNB.Size = new System.Drawing.Size(29, 20);
+            this.adultsNB.TabIndex = 16;
             // 
             // label9
             // 
@@ -161,19 +164,19 @@
             this.departureDate.Size = new System.Drawing.Size(121, 20);
             this.departureDate.TabIndex = 10;
             // 
-            // bestemmingTextBox
+            // destinationAirportNameTB
             // 
-            this.bestemmingTextBox.Location = new System.Drawing.Point(148, 49);
-            this.bestemmingTextBox.Name = "bestemmingTextBox";
-            this.bestemmingTextBox.Size = new System.Drawing.Size(121, 20);
-            this.bestemmingTextBox.TabIndex = 9;
+            this.destinationAirportNameTB.Location = new System.Drawing.Point(148, 49);
+            this.destinationAirportNameTB.Name = "destinationAirportNameTB";
+            this.destinationAirportNameTB.Size = new System.Drawing.Size(121, 20);
+            this.destinationAirportNameTB.TabIndex = 9;
             // 
-            // vertrekTextBox
+            // departureAirportNameTB
             // 
-            this.vertrekTextBox.Location = new System.Drawing.Point(148, 23);
-            this.vertrekTextBox.Name = "vertrekTextBox";
-            this.vertrekTextBox.Size = new System.Drawing.Size(121, 20);
-            this.vertrekTextBox.TabIndex = 8;
+            this.departureAirportNameTB.Location = new System.Drawing.Point(148, 23);
+            this.departureAirportNameTB.Name = "departureAirportNameTB";
+            this.departureAirportNameTB.Size = new System.Drawing.Size(121, 20);
+            this.departureAirportNameTB.TabIndex = 8;
             // 
             // vluchtTypeCombo
             // 
@@ -254,6 +257,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -261,6 +265,14 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Boekingen Overzicht";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(48, 41);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(668, 224);
+            this.dataGridView1.TabIndex = 0;
             // 
             // FlightUC
             // 
@@ -272,9 +284,11 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.babiesNB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.childrenNB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adultsNB)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -283,16 +297,16 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown babiesNB;
+        private System.Windows.Forms.NumericUpDown childrenNB;
+        private System.Windows.Forms.NumericUpDown adultsNB;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox KlasseCombo;
         private System.Windows.Forms.DateTimePicker departureDate;
-        private System.Windows.Forms.TextBox bestemmingTextBox;
-        private System.Windows.Forms.TextBox vertrekTextBox;
+        private System.Windows.Forms.TextBox destinationAirportNameTB;
+        private System.Windows.Forms.TextBox departureAirportNameTB;
         private System.Windows.Forms.ComboBox vluchtTypeCombo;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -302,5 +316,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ZoekButton;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

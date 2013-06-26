@@ -24,29 +24,59 @@ namespace TaxiClient.Flight
         {
             using (FlightService.FlightServiceClient client = new FlightService.FlightServiceClient())
             {
-                DateTime departure = new DateTime(departureDate.Value.Year,
+                DateTime depDate = new DateTime(departureDate.Value.Year,
                           departureDate.Value.Month,
                           departureDate.Value.Day,
                           departureDate.Value.Hour,
                           departureDate.Value.Minute,
                           0);
-                String vertrekPunt = vertrekTextBox.Text;
-                String rst = "";
+                String departureAirportName = departureAirportNameTB.Text;
+                String departureAirports = "";
+                String destinationAirportName = destinationAirportNameTB.Text;
+                String destinationAirports = "";
+                String possibleFlights = "";
+                int departureAirportId = 0;
+                int destinationAirportId = 0;
+                int passengers = 0;
+
+                passengers = Convert.ToInt32(adultsNB.Value.ToString()) 
+                    + Convert.ToInt32(childrenNB.Value.ToString()) + Convert.ToInt32(babiesNB.Value.ToString());
+                
                 TaxiClient.FlightService.AirportDTO arp = new TaxiClient.FlightService.AirportDTO();
                 TaxiClient.FlightService.AirportDTO [] airports = new TaxiClient.FlightService.AirportDTO [2000];
 
                 try
                 {
-                    airports = client.GetAirports(vertrekPunt);
+                    airports = client.GetAirports(departureAirportName);
                     foreach (TaxiClient.FlightService.AirportDTO a in airports)
                     {
-                        rst += a.Name.ToString() + " ";
+                        departureAirports += a.Name.ToString() + " ";
+                        departureAirportId = a.AiportId;
                     }
                 }
                 catch {}
-
                 
-                MessageBox.Show("Gevonden airports: \n" + rst);
+                try
+                {
+                    airports = client.GetAirports(destinationAirportName);
+                    foreach (TaxiClient.FlightService.AirportDTO a in airports)
+                    {
+                        destinationAirports += a.Name.ToString() + " " + a.AiportId.ToString();
+                        destinationAirportId = Convert.ToInt32(a.AiportId.ToString());
+                    }
+                }
+                catch { }
+                try
+                {
+                    possibleFlights = client.ShowFlightsByDeparture(departureAirportId, destinationAirportId, depDate, passengers).ToString();
+                }
+                catch { }
+
+                MessageBox.Show("Gevonden airports (vertrek): \n" + departureAirports + "\n"
+                    + "Gevonden airports (bestemming): \n" + destinationAirports + "\n"
+                    + possibleFlights);
+
+
                 //TaxiClient.FlightService.FlightDTO fl = new TaxiClient.FlightService.FlightDTO();
                 //client.ShowFlightsByDeparture(1, 1, departure, 1);
                 //MessageBox.Show("Flights: " + client.ShowFlightsByDeparture(1, 1, departure, 1).ToString());
