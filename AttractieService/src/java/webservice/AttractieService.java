@@ -17,7 +17,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Join;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
-import nl.devworks.userservice.UserServiceGetUserFaultExceptionFaultFaultMessage;
+import nl.th08.userservice.UserServiceGetUserFaultExceptionFaultFaultMessage;
 
 /**
  *
@@ -44,8 +44,8 @@ public class AttractieService {
         emf = Persistence.createEntityManagerFactory("AttractieServicePU");
         em = emf.createEntityManager();
         em.getTransaction().begin();
-        nl.devworks.userservice.UserService_Service s = new nl.devworks.userservice.UserService_Service();
-        nl.devworks.userservice.UserService userv = s.getBasicHttpBindingUserService();
+        nl.th08.userservice.UserService_Service s = new nl.th08.userservice.UserService_Service();
+        nl.th08.userservice.UserService userv = s.getBasicHttpBindingUserService();
         int userID = 0;
         try {
             userID = userv.getUser(userToken).getUserId();
@@ -145,8 +145,8 @@ public class AttractieService {
     public java.util.List<booking.Booking> getBooking(int bookingID, java.lang.String userToken) {
         emf = Persistence.createEntityManagerFactory("AttractieServicePU");
         em = emf.createEntityManager();
-        nl.devworks.userservice.UserService_Service s = new nl.devworks.userservice.UserService_Service();
-        nl.devworks.userservice.UserService userv = s.getBasicHttpBindingUserService();
+        nl.th08.userservice.UserService_Service s = new nl.th08.userservice.UserService_Service();
+        nl.th08.userservice.UserService userv = s.getBasicHttpBindingUserService();
         int userID = 0;
         try {
             userID = userv.getUser(userToken).getUserId();

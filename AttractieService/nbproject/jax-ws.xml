@@ -39,9 +39,9 @@
       </wsimport-options>
     </client>
     <client name="UserService">
-      <wsdl-url>http://userservice.devworks.nl/UserService.svc?wsdl</wsdl-url>
-      <local-wsdl-file>userservice.devworks.nl/UserService.svc.wsdl</local-wsdl-file>
-      <package-name>nl.devworks.userservice</package-name>
+      <wsdl-url>http://userservice.devworks.nl/UserService.svc?singleWsdl</wsdl-url>
+      <local-wsdl-file>userservice.devworks.nl/UserService.svc.singlewsdl.wsdl</local-wsdl-file>
+      <package-name>nl.th08.userservice</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
         <wsimport-option>
@@ -54,7 +54,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://userservice.devworks.nl/UserService.svc?wsdl</wsimport-option-value>
+          <wsimport-option-value>http://userservice.devworks.nl/UserService.svc?singleWsdl</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>

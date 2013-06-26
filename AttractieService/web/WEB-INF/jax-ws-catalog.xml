@@ -12,4 +12,5 @@
     <system systemId="http://userservice.devworks.nl/UserService.svc?xsd=xsd1" uri="wsdl/userservice.devworks.nl/UserService.svc.xsd_xsd1.xsd"/>
     <system systemId="http://userservice.devworks.nl/UserService.svc?xsd=xsd2" uri="wsdl/userservice.devworks.nl/UserService.svc.xsd_xsd2.xsd"/>
     <system systemId="http://userservice.devworks.nl/UserService.svc?xsd=xsd4" uri="wsdl/userservice.devworks.nl/UserService.svc.xsd_xsd4.xsd"/>
+    <system systemId="http://userservice.devworks.nl/UserService.svc?singleWsdl" uri="wsdl/userservice.devworks.nl/UserService.svc.singlewsdl.wsdl"/>
 </catalog>

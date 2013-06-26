@@ -75,7 +75,7 @@ public class WebClientTests {
           List<OrderedTicket> ots = new ArrayList<OrderedTicket>();
           OrderedTicket ot = new OrderedTicket();
           ot.setAmount(1);
-          ot.setTicketTypeID(attractions.get(0).getAttractionType().getAttractionTypeID());
+          ot.setTicketTypeID(attractions.get(0).getTickets().get(0).getId());
           ots.add(ot);
           
           

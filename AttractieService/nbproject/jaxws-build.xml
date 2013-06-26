@@ -61,8 +61,8 @@
     </target>
     <target name="wsimport-client-UserService" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/UserService"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/UserService" destdir="${build.generated.dir}/jax-wsCache/UserService" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/UserService/wsdl/userservice.devworks.nl/UserService.svc.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" wsdlLocation="http://userservice.devworks.nl/UserService.svc?wsdl" xnocompile="true" xendorsed="true">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/UserService/wsdl/userservice.devworks.nl/UserService.svc.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/UserService" destdir="${build.generated.dir}/jax-wsCache/UserService" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/UserService/wsdl/userservice.devworks.nl/UserService.svc.singlewsdl.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" wsdlLocation="http://userservice.devworks.nl/UserService.svc?singleWsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/UserService/wsdl/userservice.devworks.nl/UserService.svc.singlewsdl.wsdl"/>
             <produces dir="${build.generated.dir}/jax-wsCache/UserService"/>
         </wsimport>
         <copy todir="${build.generated.sources.dir}/jax-ws">
@@ -72,7 +72,7 @@
         </copy>
     </target>
     <target name="wsimport-client-clean-UserService" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/nl/devworks/userservice"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/nl/th08/userservice"/>
         <delete dir="${build.generated.dir}/jax-wsCache/UserService"/>
     </target>
     <target name="wsimport-client-generate" depends="wsimport-client-AttractionImplementationService, wsimport-client-UserService"/>
