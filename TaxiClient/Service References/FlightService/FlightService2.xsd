@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://flightservice.themaopdracht8.nl" elementFormDefault="qualified" targetNamespace="http://flightservice.themaopdracht8.nl" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://flightservice.devworks.nl/FlightService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/FlightService.DataModels" />
+  <xs:element name="ShowFlightsByDeparture">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="departureId" type="xs:int" />
+        <xs:element minOccurs="0" name="destinationId" type="xs:int" />
+        <xs:element minOccurs="0" name="departureDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="passengers" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShowFlightsByDepartureResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/FlightService.DataModels" minOccurs="0" name="ShowFlightsByDepartureResult" nillable="true" type="q1:ArrayOfFlightDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShowFlightsByArrival">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="departureId" type="xs:int" />
+        <xs:element minOccurs="0" name="destinationId" type="xs:int" />
+        <xs:element minOccurs="0" name="arrivalDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="passengers" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShowFlightsByArrivalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/FlightService.DataModels" minOccurs="0" name="ShowFlightsByArrivalResult" nillable="true" type="q2:ArrayOfFlightDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAirports">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="searchValue" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAirportsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/FlightService.DataModels" minOccurs="0" name="GetAirportsResult" nillable="true" type="q3:ArrayOfAirportDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BookFlight">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="flightId" type="xs:int" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/FlightService.DataModels" minOccurs="0" name="passengers" nillable="true" type="q4:ArrayOfPassengerDTO" />
+        <xs:element minOccurs="0" name="userToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BookFlightResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/FlightService.DataModels" minOccurs="0" name="BookFlightResult" nillable="true" type="q5:BookingDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonalBookings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonalBookingsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/FlightService.DataModels" minOccurs="0" name="GetPersonalBookingsResult" nillable="true" type="q6:ArrayOfBookingDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFlightById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="flightId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFlightByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/FlightService.DataModels" minOccurs="0" name="GetFlightByIdResult" nillable="true" type="q7:FlightDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

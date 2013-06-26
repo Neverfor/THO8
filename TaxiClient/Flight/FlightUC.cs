@@ -12,40 +12,44 @@ namespace TaxiClient.Flight
 {
     public partial class FlightUC : UserControl
     {
-        bool validated = false;
+        Form parentForm;
 
-        public FlightUC()
+        public FlightUC(Form parentForm)
         {
+            this.parentForm = parentForm;
             InitializeComponent();
-        }
-
-        public bool isValidated()
-        {
-            if (KlasseCombo != null &&
-                vluchtTypeCombo != null &&
-                vertrekTextBox != null &&
-                bestemmingTextBox != null)
-            {
-                validated = true;
-            }
-            else
-            {
-                validated = false;
-            }
-            return validated;
         }
 
         private void ZoekButton_Click(object sender, EventArgs e)
         {
-            if (isValidated())
+            using (FlightService.FlightServiceClient client = new FlightService.FlightServiceClient())
             {
-                var window = new FoundFlightsForm();
-                window.Show();
-            }
+                DateTime departure = new DateTime(departureDate.Value.Year,
+                          departureDate.Value.Month,
+                          departureDate.Value.Day,
+                          departureDate.Value.Hour,
+                          departureDate.Value.Minute,
+                          0);
+                String vertrekPunt = vertrekTextBox.Text;
+                String rst = "";
+                TaxiClient.FlightService.AirportDTO arp = new TaxiClient.FlightService.AirportDTO();
+                TaxiClient.FlightService.AirportDTO [] airports = new TaxiClient.FlightService.AirportDTO [2000];
 
-            else
-            {
+                try
+                {
+                    airports = client.GetAirports(vertrekPunt);
+                    foreach (TaxiClient.FlightService.AirportDTO a in airports)
+                    {
+                        rst += a.Name.ToString() + " ";
+                    }
+                }
+                catch {}
 
+                
+                MessageBox.Show("Gevonden airports: \n" + rst);
+                //TaxiClient.FlightService.FlightDTO fl = new TaxiClient.FlightService.FlightDTO();
+                //client.ShowFlightsByDeparture(1, 1, departure, 1);
+                //MessageBox.Show("Flights: " + client.ShowFlightsByDeparture(1, 1, departure, 1).ToString());
             }
         }
     }

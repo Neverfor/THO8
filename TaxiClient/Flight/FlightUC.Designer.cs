@@ -37,7 +37,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.KlasseCombo = new System.Windows.Forms.ComboBox();
-            this.datePickerCombo = new System.Windows.Forms.DateTimePicker();
+            this.departureDate = new System.Windows.Forms.DateTimePicker();
             this.bestemmingTextBox = new System.Windows.Forms.TextBox();
             this.vertrekTextBox = new System.Windows.Forms.TextBox();
             this.vluchtTypeCombo = new System.Windows.Forms.ComboBox();
@@ -75,7 +75,7 @@
             this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.KlasseCombo);
-            this.tabPage1.Controls.Add(this.datePickerCombo);
+            this.tabPage1.Controls.Add(this.departureDate);
             this.tabPage1.Controls.Add(this.bestemmingTextBox);
             this.tabPage1.Controls.Add(this.vertrekTextBox);
             this.tabPage1.Controls.Add(this.vluchtTypeCombo);
@@ -154,12 +154,12 @@
             this.KlasseCombo.Size = new System.Drawing.Size(121, 21);
             this.KlasseCombo.TabIndex = 12;
             // 
-            // datePickerCombo
+            // departureDate
             // 
-            this.datePickerCombo.Location = new System.Drawing.Point(148, 103);
-            this.datePickerCombo.Name = "datePickerCombo";
-            this.datePickerCombo.Size = new System.Drawing.Size(121, 20);
-            this.datePickerCombo.TabIndex = 10;
+            this.departureDate.Location = new System.Drawing.Point(148, 103);
+            this.departureDate.Name = "departureDate";
+            this.departureDate.Size = new System.Drawing.Size(121, 20);
+            this.departureDate.TabIndex = 10;
             // 
             // bestemmingTextBox
             // 
@@ -290,7 +290,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox KlasseCombo;
-        private System.Windows.Forms.DateTimePicker datePickerCombo;
+        private System.Windows.Forms.DateTimePicker departureDate;
         private System.Windows.Forms.TextBox bestemmingTextBox;
         private System.Windows.Forms.TextBox vertrekTextBox;
         private System.Windows.Forms.ComboBox vluchtTypeCombo;

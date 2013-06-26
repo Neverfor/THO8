@@ -196,11 +196,14 @@
             // 
             this.userBookings.AllowUserToAddRows = false;
             this.userBookings.AllowUserToDeleteRows = false;
+            this.userBookings.AllowUserToResizeColumns = false;
+            this.userBookings.AllowUserToResizeRows = false;
             this.userBookings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.userBookings.Location = new System.Drawing.Point(375, 38);
             this.userBookings.Name = "userBookings";
             this.userBookings.ReadOnly = true;
-            this.userBookings.Size = new System.Drawing.Size(580, 230);
+            this.userBookings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.userBookings.Size = new System.Drawing.Size(536, 230);
             this.userBookings.TabIndex = 34;
             this.userBookings.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -212,6 +215,7 @@
             this.CancelBoekingBTN.TabIndex = 35;
             this.CancelBoekingBTN.Text = "Cancel Boeking";
             this.CancelBoekingBTN.UseVisualStyleBackColor = true;
+            this.CancelBoekingBTN.Click += new System.EventHandler(this.CancelBoekingBTN_Click);
             // 
             // corpInfoVerlener
             // 

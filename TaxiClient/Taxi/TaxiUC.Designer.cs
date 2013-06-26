@@ -228,7 +228,7 @@
             this.dtpTime.ShowUpDown = true;
             this.dtpTime.Size = new System.Drawing.Size(57, 20);
             this.dtpTime.TabIndex = 14;
-            this.dtpTime.Value = new System.DateTime(2000, 1, 1, System.DateTime.Now.Hour, System.DateTime.Now.Minute + 11, 0);
+            this.dtpTime.Value = new System.DateTime(2000, 1, 1, System.DateTime.Now.Hour, System.DateTime.Now.Minute, 0);
             // 
             // lblTime
             // 
