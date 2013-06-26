@@ -30,6 +30,7 @@ namespace TaxiClient.Attraction
                 cbAttractionType.DisplayMember = "attractionTypeName";
 
                 FillDataGrid();
+                fillUserBookings();
             }
         }
 
@@ -123,6 +124,14 @@ namespace TaxiClient.Attraction
             }
         }
 
+        private void fillUserBookings()
+        {
+            using (AttractionImplementationClient client = new AttractionImplementationClient())
+            {
+                userBookingsDG.DataSource = client.getBooking(0, Session.UserToken);
+            }
+        }
+
         private void dgAttractions_SelectionChanged(object sender, DataGridViewCellEventArgs e)
         {
             int selectedRow = dgAttractions.SelectedRows[0].Index;
@@ -198,6 +207,9 @@ namespace TaxiClient.Attraction
                 {
                     client.bookAttraction(attraction.attractionID, tickets.ToArray(), date, Session.UserToken);
                 }
+
+                tabControl.SelectedTab = tabPage2;
+                fillUserBookings();
             }
         }
 
@@ -249,6 +261,11 @@ namespace TaxiClient.Attraction
         private void cbTicketType_SelectedIndexChanged(object sender, EventArgs e)
         {
             nudTypeAmount.Value = 0;
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+            fillUserBookings();
         }
 
 

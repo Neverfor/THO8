@@ -32,6 +32,11 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.gbBookTickets = new System.Windows.Forms.GroupBox();
+            this.lblTicketType = new System.Windows.Forms.Label();
+            this.btnChoose = new System.Windows.Forms.Button();
+            this.nudTypeAmount = new System.Windows.Forms.NumericUpDown();
+            this.rtbTicketTypes = new System.Windows.Forms.RichTextBox();
+            this.cbTicketType = new System.Windows.Forms.ComboBox();
             this.btnBookTickets = new System.Windows.Forms.Button();
             this.lblDate = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
@@ -55,18 +60,31 @@
             this.cbCountry = new System.Windows.Forms.ComboBox();
             this.lblCountry = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.cbTicketType = new System.Windows.Forms.ComboBox();
-            this.rtbTicketTypes = new System.Windows.Forms.RichTextBox();
-            this.nudTypeAmount = new System.Windows.Forms.NumericUpDown();
-            this.btnChoose = new System.Windows.Forms.Button();
-            this.lblTicketType = new System.Windows.Forms.Label();
+            this.bookingBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.userBookingsDG = new System.Windows.Forms.DataGridView();
+            this.ticketsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bookingBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.orderedTicketsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bookingBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.attractionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datumSpecifiedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.gbBookTickets.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTypeAmount)).BeginInit();
             this.gbSearchAttraction.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAttractions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attractieBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTypeAmount)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBookingsDG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderedTicketsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -107,6 +125,56 @@
             this.gbBookTickets.TabIndex = 1;
             this.gbBookTickets.TabStop = false;
             this.gbBookTickets.Text = "Boek tickets";
+            // 
+            // lblTicketType
+            // 
+            this.lblTicketType.AutoSize = true;
+            this.lblTicketType.Enabled = false;
+            this.lblTicketType.Location = new System.Drawing.Point(52, 59);
+            this.lblTicketType.Name = "lblTicketType";
+            this.lblTicketType.Size = new System.Drawing.Size(31, 13);
+            this.lblTicketType.TabIndex = 30;
+            this.lblTicketType.Text = "Type";
+            // 
+            // btnChoose
+            // 
+            this.btnChoose.Enabled = false;
+            this.btnChoose.Location = new System.Drawing.Point(369, 53);
+            this.btnChoose.Name = "btnChoose";
+            this.btnChoose.Size = new System.Drawing.Size(61, 23);
+            this.btnChoose.TabIndex = 29;
+            this.btnChoose.Text = "Kies";
+            this.btnChoose.UseVisualStyleBackColor = true;
+            this.btnChoose.Click += new System.EventHandler(this.btnChoose_Click);
+            // 
+            // nudTypeAmount
+            // 
+            this.nudTypeAmount.Enabled = false;
+            this.nudTypeAmount.Location = new System.Drawing.Point(313, 56);
+            this.nudTypeAmount.Name = "nudTypeAmount";
+            this.nudTypeAmount.Size = new System.Drawing.Size(50, 20);
+            this.nudTypeAmount.TabIndex = 28;
+            // 
+            // rtbTicketTypes
+            // 
+            this.rtbTicketTypes.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.rtbTicketTypes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbTicketTypes.Location = new System.Drawing.Point(107, 83);
+            this.rtbTicketTypes.Name = "rtbTicketTypes";
+            this.rtbTicketTypes.ReadOnly = true;
+            this.rtbTicketTypes.Size = new System.Drawing.Size(323, 163);
+            this.rtbTicketTypes.TabIndex = 19;
+            this.rtbTicketTypes.Text = "";
+            // 
+            // cbTicketType
+            // 
+            this.cbTicketType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTicketType.FormattingEnabled = true;
+            this.cbTicketType.Location = new System.Drawing.Point(107, 56);
+            this.cbTicketType.Name = "cbTicketType";
+            this.cbTicketType.Size = new System.Drawing.Size(200, 21);
+            this.cbTicketType.TabIndex = 19;
+            this.cbTicketType.SelectedIndexChanged += new System.EventHandler(this.cbTicketType_SelectedIndexChanged);
             // 
             // btnBookTickets
             // 
@@ -338,6 +406,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.userBookingsDG);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -345,56 +414,91 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Boeking overzicht";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
-            // cbTicketType
+            // bookingBindingSource
             // 
-            this.cbTicketType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTicketType.FormattingEnabled = true;
-            this.cbTicketType.Location = new System.Drawing.Point(107, 56);
-            this.cbTicketType.Name = "cbTicketType";
-            this.cbTicketType.Size = new System.Drawing.Size(200, 21);
-            this.cbTicketType.TabIndex = 19;
-            this.cbTicketType.SelectedIndexChanged += new System.EventHandler(this.cbTicketType_SelectedIndexChanged);
+            this.bookingBindingSource.DataSource = typeof(TaxiClient.AttractionService.booking);
             // 
-            // rtbTicketTypes
+            // userBookingsDG
             // 
-            this.rtbTicketTypes.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.rtbTicketTypes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbTicketTypes.Location = new System.Drawing.Point(107, 83);
-            this.rtbTicketTypes.Name = "rtbTicketTypes";
-            this.rtbTicketTypes.ReadOnly = true;
-            this.rtbTicketTypes.Size = new System.Drawing.Size(323, 163);
-            this.rtbTicketTypes.TabIndex = 19;
-            this.rtbTicketTypes.Text = "";
+            this.userBookingsDG.AllowUserToAddRows = false;
+            this.userBookingsDG.AllowUserToDeleteRows = false;
+            this.userBookingsDG.AllowUserToResizeColumns = false;
+            this.userBookingsDG.AllowUserToResizeRows = false;
+            this.userBookingsDG.AutoGenerateColumns = false;
+            this.userBookingsDG.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.userBookingsDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.userBookingsDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.userBookingsDG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.attractionDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn,
+            this.datumDataGridViewTextBoxColumn,
+            this.datumSpecifiedDataGridViewCheckBoxColumn});
+            this.userBookingsDG.DataSource = this.bookingBindingSource2;
+            this.userBookingsDG.GridColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.userBookingsDG.Location = new System.Drawing.Point(15, 17);
+            this.userBookingsDG.MultiSelect = false;
+            this.userBookingsDG.Name = "userBookingsDG";
+            this.userBookingsDG.ReadOnly = true;
+            this.userBookingsDG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.userBookingsDG.Size = new System.Drawing.Size(922, 392);
+            this.userBookingsDG.TabIndex = 2;
+            this.userBookingsDG.VirtualMode = true;
             // 
-            // nudTypeAmount
+            // ticketsBindingSource
             // 
-            this.nudTypeAmount.Enabled = false;
-            this.nudTypeAmount.Location = new System.Drawing.Point(313, 56);
-            this.nudTypeAmount.Name = "nudTypeAmount";
-            this.nudTypeAmount.Size = new System.Drawing.Size(50, 20);
-            this.nudTypeAmount.TabIndex = 28;
+            this.ticketsBindingSource.DataMember = "tickets";
+            this.ticketsBindingSource.DataSource = this.attractieBindingSource;
             // 
-            // btnChoose
+            // bookingBindingSource1
             // 
-            this.btnChoose.Enabled = false;
-            this.btnChoose.Location = new System.Drawing.Point(369, 53);
-            this.btnChoose.Name = "btnChoose";
-            this.btnChoose.Size = new System.Drawing.Size(61, 23);
-            this.btnChoose.TabIndex = 29;
-            this.btnChoose.Text = "Kies";
-            this.btnChoose.UseVisualStyleBackColor = true;
-            this.btnChoose.Click += new System.EventHandler(this.btnChoose_Click);
+            this.bookingBindingSource1.DataSource = typeof(TaxiClient.AttractionService.booking);
             // 
-            // lblTicketType
+            // orderedTicketsBindingSource
             // 
-            this.lblTicketType.AutoSize = true;
-            this.lblTicketType.Enabled = false;
-            this.lblTicketType.Location = new System.Drawing.Point(52, 59);
-            this.lblTicketType.Name = "lblTicketType";
-            this.lblTicketType.Size = new System.Drawing.Size(31, 13);
-            this.lblTicketType.TabIndex = 30;
-            this.lblTicketType.Text = "Type";
+            this.orderedTicketsBindingSource.DataMember = "orderedTickets";
+            this.orderedTicketsBindingSource.DataSource = this.bookingBindingSource1;
+            // 
+            // bookingBindingSource2
+            // 
+            this.bookingBindingSource2.DataSource = typeof(TaxiClient.AttractionService.booking);
+            // 
+            // attractionDataGridViewTextBoxColumn
+            // 
+            this.attractionDataGridViewTextBoxColumn.DataPropertyName = "attraction";
+            this.attractionDataGridViewTextBoxColumn.HeaderText = "attraction";
+            this.attractionDataGridViewTextBoxColumn.Name = "attractionDataGridViewTextBoxColumn";
+            this.attractionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "status";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // datumDataGridViewTextBoxColumn
+            // 
+            this.datumDataGridViewTextBoxColumn.DataPropertyName = "datum";
+            this.datumDataGridViewTextBoxColumn.HeaderText = "datum";
+            this.datumDataGridViewTextBoxColumn.Name = "datumDataGridViewTextBoxColumn";
+            this.datumDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // datumSpecifiedDataGridViewCheckBoxColumn
+            // 
+            this.datumSpecifiedDataGridViewCheckBoxColumn.DataPropertyName = "datumSpecified";
+            this.datumSpecifiedDataGridViewCheckBoxColumn.HeaderText = "datumSpecified";
+            this.datumSpecifiedDataGridViewCheckBoxColumn.Name = "datumSpecifiedDataGridViewCheckBoxColumn";
+            this.datumSpecifiedDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // AttractionUC
             // 
@@ -407,11 +511,18 @@
             this.tabPage1.ResumeLayout(false);
             this.gbBookTickets.ResumeLayout(false);
             this.gbBookTickets.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTypeAmount)).EndInit();
             this.gbSearchAttraction.ResumeLayout(false);
             this.gbSearchAttraction.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAttractions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.attractieBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTypeAmount)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bookingBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBookingsDG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderedTicketsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingBindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -449,5 +560,16 @@
         private System.Windows.Forms.NumericUpDown nudTypeAmount;
         private System.Windows.Forms.RichTextBox rtbTicketTypes;
         private System.Windows.Forms.ComboBox cbTicketType;
+        private System.Windows.Forms.BindingSource bookingBindingSource;
+        private System.Windows.Forms.DataGridView userBookingsDG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn attractionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datumDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn datumSpecifiedDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.BindingSource bookingBindingSource2;
+        private System.Windows.Forms.BindingSource ticketsBindingSource;
+        private System.Windows.Forms.BindingSource bookingBindingSource1;
+        private System.Windows.Forms.BindingSource orderedTicketsBindingSource;
     }
 }
