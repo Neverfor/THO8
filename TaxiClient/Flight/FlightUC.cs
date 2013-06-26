@@ -34,7 +34,7 @@ namespace TaxiClient.Flight
                 String departureAirports = "";
                 String destinationAirportName = destinationAirportNameTB.Text;
                 String destinationAirports = "";
-                String possibleFlights = "";
+                String possibleFlights = "Mogelijke vluchten: \n";
                 int departureAirportId = 0;
                 int destinationAirportId = 0;
                 int passengers = 0;
@@ -43,11 +43,13 @@ namespace TaxiClient.Flight
                     + Convert.ToInt32(childrenNB.Value.ToString()) + Convert.ToInt32(babiesNB.Value.ToString());
                 
                 TaxiClient.FlightService.AirportDTO arp = new TaxiClient.FlightService.AirportDTO();
+                TaxiClient.FlightService.FlightDTO flight = new TaxiClient.FlightService.FlightDTO();
                 TaxiClient.FlightService.AirportDTO [] airports = new TaxiClient.FlightService.AirportDTO [2000];
+                TaxiClient.FlightService.FlightDTO[] flights = new TaxiClient.FlightService.FlightDTO [2000];
 
                 try
                 {
-                    airports = client.GetAirports(departureAirportName);
+                    airports = client.GetAirports(departureAirportName); 
                     foreach (TaxiClient.FlightService.AirportDTO a in airports)
                     {
                         departureAirports += a.Name.ToString() + " ";
@@ -66,11 +68,23 @@ namespace TaxiClient.Flight
                     }
                 }
                 catch { }
-                try
+
+                try 
                 {
-                    possibleFlights = client.ShowFlightsByDeparture(departureAirportId, destinationAirportId, depDate, passengers).ToString();
+                    flights = client.ShowFlightsByDeparture(departureAirportId, destinationAirportId, depDate, passengers);
                 }
                 catch { }
+
+                try
+                {
+                    foreach (TaxiClient.FlightService.FlightDTO f in flights)
+                    {
+                    possibleFlights += f.DestinationName + " " + f.AirplaneName + "\n";
+                    }
+                }
+                catch { }
+
+
 
                 MessageBox.Show("Gevonden airports (vertrek): \n" + departureAirports + "\n"
                     + "Gevonden airports (bestemming): \n" + destinationAirports + "\n"
