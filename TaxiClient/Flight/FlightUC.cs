@@ -100,7 +100,7 @@ namespace TaxiClient.Flight
                 {
                     foreach (TaxiClient.FlightService.FlightDTO f in flights)
                     {
-                    possibleFlights += f.DestinationName + " " + f.AirplaneName + "\n";
+                        possibleFlights += f.AirplaneName + " " + f.DepartureName + " naar" + f.DestinationName + "\n";
                     }
                 }
                 catch { }
@@ -115,9 +115,7 @@ namespace TaxiClient.Flight
 
         private void bookButton_Click(object sender, EventArgs e)
         {
-           // int passengers = 0;
-
-           /* passengers = Convert.ToInt32(adultsNB.Value.ToString())
+           /* int passengers = Convert.ToInt32(adultsNB.Value.ToString())
                 + Convert.ToInt32(childrenNB.Value.ToString()) 
                 + Convert.ToInt32(babiesNB.Value.ToString());
             */
