@@ -177,6 +177,7 @@ namespace TaxiClient.Attraction
         {
             rtbTicketTypes.Text = "";
             string name = "";
+            double price = 0;
             foreach (orderedTicket ot in tickets)
             {
                 foreach (ticketType tt in at.tickets)
@@ -184,18 +185,18 @@ namespace TaxiClient.Attraction
                     if (tt.id == ot.ticketTypeID)
                     {
                         name = tt.description;
+                        price = tt.price;
                         break;
                     }
                 }
-
-                rtbTicketTypes.Text += string.Format("{0} keer: {1}\n", ot.amount, name);
+                price *= ot.amount;
+                rtbTicketTypes.Text += string.Format("{0} keer: {1} €{2}\n", ot.amount, name, price);
             }
         }
 
         private void btnBookTickets_Click(object sender, EventArgs e)
         {
-            if (tickets.Count > 0 && 
-                dtpDate.Value > DateTime.Now)
+            if (tickets.Count > 0)
             {
                 int selectedRow = dgAttractions.SelectedRows[0].Index;
                 attractie attraction = dgAttractions.Rows[selectedRow].DataBoundItem as attractie;

@@ -60,12 +60,12 @@
             this.cbCountry = new System.Windows.Forms.ComboBox();
             this.lblCountry = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.bookingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.userBookingsDG = new System.Windows.Forms.DataGridView();
+            this.bookingBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.bookingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ticketsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bookingBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.orderedTicketsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bookingBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.attractionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,12 +79,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgAttractions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attractieBindingSource)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bookingBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBookingsDG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookingBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderedTicketsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bookingBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -416,10 +416,6 @@
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
-            // bookingBindingSource
-            // 
-            this.bookingBindingSource.DataSource = typeof(TaxiClient.AttractionService.booking);
-            // 
             // userBookingsDG
             // 
             this.userBookingsDG.AllowUserToAddRows = false;
@@ -447,6 +443,14 @@
             this.userBookingsDG.TabIndex = 2;
             this.userBookingsDG.VirtualMode = true;
             // 
+            // bookingBindingSource2
+            // 
+            this.bookingBindingSource2.DataSource = typeof(TaxiClient.AttractionService.booking);
+            // 
+            // bookingBindingSource
+            // 
+            this.bookingBindingSource.DataSource = typeof(TaxiClient.AttractionService.booking);
+            // 
             // ticketsBindingSource
             // 
             this.ticketsBindingSource.DataMember = "tickets";
@@ -461,44 +465,43 @@
             this.orderedTicketsBindingSource.DataMember = "orderedTickets";
             this.orderedTicketsBindingSource.DataSource = this.bookingBindingSource1;
             // 
-            // bookingBindingSource2
-            // 
-            this.bookingBindingSource2.DataSource = typeof(TaxiClient.AttractionService.booking);
-            // 
             // attractionDataGridViewTextBoxColumn
             // 
             this.attractionDataGridViewTextBoxColumn.DataPropertyName = "attraction";
-            this.attractionDataGridViewTextBoxColumn.HeaderText = "attraction";
+            this.attractionDataGridViewTextBoxColumn.HeaderText = "Attractie";
             this.attractionDataGridViewTextBoxColumn.Name = "attractionDataGridViewTextBoxColumn";
             this.attractionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.attractionDataGridViewTextBoxColumn.Width = 250;
             // 
             // priceDataGridViewTextBoxColumn
             // 
             this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Prijs";
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             this.priceDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // statusDataGridViewTextBoxColumn
             // 
             this.statusDataGridViewTextBoxColumn.DataPropertyName = "status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
             this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
             this.statusDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // datumDataGridViewTextBoxColumn
             // 
             this.datumDataGridViewTextBoxColumn.DataPropertyName = "datum";
-            this.datumDataGridViewTextBoxColumn.HeaderText = "datum";
+            this.datumDataGridViewTextBoxColumn.HeaderText = "Datum";
             this.datumDataGridViewTextBoxColumn.Name = "datumDataGridViewTextBoxColumn";
             this.datumDataGridViewTextBoxColumn.ReadOnly = true;
+            this.datumDataGridViewTextBoxColumn.Width = 200;
             // 
             // datumSpecifiedDataGridViewCheckBoxColumn
             // 
-            this.datumSpecifiedDataGridViewCheckBoxColumn.DataPropertyName = "datumSpecified";
+            this.datumSpecifiedDataGridViewCheckBoxColumn.DataPropertyName = "Datum gespecificeerd";
             this.datumSpecifiedDataGridViewCheckBoxColumn.HeaderText = "datumSpecified";
             this.datumSpecifiedDataGridViewCheckBoxColumn.Name = "datumSpecifiedDataGridViewCheckBoxColumn";
             this.datumSpecifiedDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.datumSpecifiedDataGridViewCheckBoxColumn.Width = 200;
             // 
             // AttractionUC
             // 
@@ -517,12 +520,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgAttractions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.attractieBindingSource)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bookingBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBookingsDG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookingBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderedTicketsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bookingBindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -562,14 +565,14 @@
         private System.Windows.Forms.ComboBox cbTicketType;
         private System.Windows.Forms.BindingSource bookingBindingSource;
         private System.Windows.Forms.DataGridView userBookingsDG;
+        private System.Windows.Forms.BindingSource bookingBindingSource2;
+        private System.Windows.Forms.BindingSource ticketsBindingSource;
+        private System.Windows.Forms.BindingSource bookingBindingSource1;
+        private System.Windows.Forms.BindingSource orderedTicketsBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn attractionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datumDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn datumSpecifiedDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.BindingSource bookingBindingSource2;
-        private System.Windows.Forms.BindingSource ticketsBindingSource;
-        private System.Windows.Forms.BindingSource bookingBindingSource1;
-        private System.Windows.Forms.BindingSource orderedTicketsBindingSource;
     }
 }
