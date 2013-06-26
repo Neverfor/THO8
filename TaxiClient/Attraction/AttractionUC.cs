@@ -14,6 +14,7 @@ namespace TaxiClient.Attraction
     public partial class AttractionUC : UserControl
     {
         Form parentContainer;
+        List<orderedTicket> tickets = new List<orderedTicket>(); 
         public AttractionUC(Form parentContainer)
         {
             InitializeComponent();
@@ -45,6 +46,7 @@ namespace TaxiClient.Attraction
                 cbRegion.Items.AddRange(regions);
                 cbRegion.DisplayMember = "regionName";
 
+                clearAttractionData();
                 FillDataGrid();
             }
         }
@@ -59,8 +61,9 @@ namespace TaxiClient.Attraction
                 cbCity.Items.Clear();
 
                 cbCity.Items.AddRange(cities);
-                cbRegion.DisplayMember = "cityName";
+                cbCity.DisplayMember = "cityName";
 
+                clearAttractionData();
                 FillDataGrid();
             }
         }
@@ -69,6 +72,7 @@ namespace TaxiClient.Attraction
         {
             using (AttractionImplementationClient client = new AttractionImplementationClient())
             {
+                clearAttractionData();
                 FillDataGrid();
             }
         }
@@ -77,6 +81,7 @@ namespace TaxiClient.Attraction
         {
             using (AttractionImplementationClient client = new AttractionImplementationClient())
             {
+                clearAttractionData();
                 FillDataGrid();
             }
         }
@@ -122,9 +127,24 @@ namespace TaxiClient.Attraction
         {
             int selectedRow = dgAttractions.SelectedRows[0].Index;
             attractie attraction = dgAttractions.Rows[selectedRow].DataBoundItem as attractie;
+            ticketType[] ticketTypes = attraction.tickets;
             rtbDescription.Text = attraction.description;
             lblAddress_data.Text = attraction.address;
             linkWebsite.Text = attraction.website;
+
+            lblDate.Enabled = true;
+            dtpDate.Enabled = true;
+            lblTicketType.Enabled = true;
+            cbTicketType.Enabled = true;
+            cbTicketType.Items.Clear();
+            cbTicketType.Items.AddRange(ticketTypes);
+            cbTicketType.DisplayMember = "description";
+            nudTypeAmount.Enabled = true;
+            btnChoose.Enabled = true;
+            btnBookTickets.Enabled = true;
+
+            tickets.Clear();
+            rtbTicketTypes.Text = "";
         }
 
         private void clearAttractionData()
@@ -132,7 +152,105 @@ namespace TaxiClient.Attraction
             rtbDescription.Text = "";
             lblAddress_data.Text = "";
             linkWebsite.Text = "";
+
+            lblDate.Enabled = false;
+            dtpDate.Enabled = false;
+            lblTicketType.Enabled = false;
+            cbTicketType.Items.Clear();
+            cbTicketType.Enabled = false;
+            nudTypeAmount.Enabled = false;
+            btnChoose.Enabled = false;
+            btnBookTickets.Enabled = false;
+            rtbTicketTypes.Text = "";
         }
+
+        private void PrintTicketTypes(attractie at)
+        {
+            rtbTicketTypes.Text = "";
+            string name = "";
+            foreach (orderedTicket ot in tickets)
+            {
+                foreach (ticketType tt in at.tickets)
+                {
+                    if (tt.id == ot.ticketTypeID)
+                    {
+                        name = tt.description;
+                        break;
+                    }
+                }
+
+                rtbTicketTypes.Text += string.Format("{0} keer: {1}\n", ot.amount, name);
+            }
+        }
+
+        private void btnBookTickets_Click(object sender, EventArgs e)
+        {
+            if (tickets.Count > 0 && 
+                dtpDate.Value > DateTime.Now)
+            {
+                int selectedRow = dgAttractions.SelectedRows[0].Index;
+                attractie attraction = dgAttractions.Rows[selectedRow].DataBoundItem as attractie;
+
+                DateTime date = dtpDate.Value;
+                date = new DateTime(date.Year, date.Month, date.Day);
+
+                using (AttractionImplementationClient client = new AttractionImplementationClient())
+                {
+                    client.bookAttraction(attraction.attractionID, tickets.ToArray(), date, Session.UserToken);
+                }
+            }
+        }
+
+        private void btnChoose_Click(object sender, EventArgs e)
+        {
+            int selectedRow = dgAttractions.SelectedRows[0].Index;
+            attractie attraction = dgAttractions.Rows[selectedRow].DataBoundItem as attractie;
+            ticketType tt = cbTicketType.Items[cbTicketType.SelectedIndex] as ticketType;
+            int amount = (int) nudTypeAmount.Value;
+            if (amount > 0)
+            {
+                bool done = false;
+                foreach (orderedTicket ot in tickets)
+                {
+                    if (ot.ticketTypeID == tt.id)
+                    {
+                        ot.amount = amount;
+                        done = true;
+                        break;
+                    }
+                }
+                if (!done)
+                {
+                    tickets.Add(new orderedTicket()
+                    {
+                        ticketTypeID = tt.id,
+                        amount = amount
+                    });
+                }
+                PrintTicketTypes(attraction);
+            }
+            else
+            {
+                orderedTicket ticket = null;
+                foreach (orderedTicket ot in tickets)
+                {
+                    if (ot.ticketTypeID == tt.id)
+                    {
+                        ticket = ot;
+                        break;
+                    }
+                }
+                tickets.Remove(ticket);
+                PrintTicketTypes(attraction);
+            }
+                        
+        }
+
+        private void cbTicketType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            nudTypeAmount.Value = 0;
+        }
+
 
     }
 }

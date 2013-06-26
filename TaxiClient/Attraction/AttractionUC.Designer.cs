@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.gbBookTickets = new System.Windows.Forms.GroupBox();
+            this.btnBookTickets = new System.Windows.Forms.Button();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.gbSearchAttraction = new System.Windows.Forms.GroupBox();
             this.rtbDescription = new System.Windows.Forms.RichTextBox();
             this.linkWebsite = new System.Windows.Forms.LinkLabel();
@@ -51,11 +55,18 @@
             this.cbCountry = new System.Windows.Forms.ComboBox();
             this.lblCountry = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.cbTicketType = new System.Windows.Forms.ComboBox();
+            this.rtbTicketTypes = new System.Windows.Forms.RichTextBox();
+            this.nudTypeAmount = new System.Windows.Forms.NumericUpDown();
+            this.btnChoose = new System.Windows.Forms.Button();
+            this.lblTicketType = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.gbBookTickets.SuspendLayout();
             this.gbSearchAttraction.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAttractions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attractieBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTypeAmount)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -70,6 +81,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.gbBookTickets);
             this.tabPage1.Controls.Add(this.gbSearchAttraction);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -78,6 +90,52 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Boek attractie";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // gbBookTickets
+            // 
+            this.gbBookTickets.Controls.Add(this.lblTicketType);
+            this.gbBookTickets.Controls.Add(this.btnChoose);
+            this.gbBookTickets.Controls.Add(this.nudTypeAmount);
+            this.gbBookTickets.Controls.Add(this.rtbTicketTypes);
+            this.gbBookTickets.Controls.Add(this.cbTicketType);
+            this.gbBookTickets.Controls.Add(this.btnBookTickets);
+            this.gbBookTickets.Controls.Add(this.lblDate);
+            this.gbBookTickets.Controls.Add(this.dtpDate);
+            this.gbBookTickets.Location = new System.Drawing.Point(15, 329);
+            this.gbBookTickets.Name = "gbBookTickets";
+            this.gbBookTickets.Size = new System.Drawing.Size(921, 268);
+            this.gbBookTickets.TabIndex = 1;
+            this.gbBookTickets.TabStop = false;
+            this.gbBookTickets.Text = "Boek tickets";
+            // 
+            // btnBookTickets
+            // 
+            this.btnBookTickets.Enabled = false;
+            this.btnBookTickets.Location = new System.Drawing.Point(733, 223);
+            this.btnBookTickets.Name = "btnBookTickets";
+            this.btnBookTickets.Size = new System.Drawing.Size(75, 23);
+            this.btnBookTickets.TabIndex = 27;
+            this.btnBookTickets.Text = "Boek";
+            this.btnBookTickets.UseVisualStyleBackColor = true;
+            this.btnBookTickets.Click += new System.EventHandler(this.btnBookTickets_Click);
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Enabled = false;
+            this.lblDate.Location = new System.Drawing.Point(52, 33);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(38, 13);
+            this.lblDate.TabIndex = 19;
+            this.lblDate.Text = "Datum";
+            // 
+            // dtpDate
+            // 
+            this.dtpDate.Enabled = false;
+            this.dtpDate.Location = new System.Drawing.Point(107, 30);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpDate.TabIndex = 0;
             // 
             // gbSearchAttraction
             // 
@@ -98,13 +156,15 @@
             this.gbSearchAttraction.Controls.Add(this.lblCountry);
             this.gbSearchAttraction.Location = new System.Drawing.Point(15, 15);
             this.gbSearchAttraction.Name = "gbSearchAttraction";
-            this.gbSearchAttraction.Size = new System.Drawing.Size(921, 581);
+            this.gbSearchAttraction.Size = new System.Drawing.Size(921, 307);
             this.gbSearchAttraction.TabIndex = 0;
             this.gbSearchAttraction.TabStop = false;
             this.gbSearchAttraction.Text = "Zoek attractie";
             // 
             // rtbDescription
             // 
+            this.rtbDescription.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.rtbDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbDescription.Location = new System.Drawing.Point(512, 133);
             this.rtbDescription.Name = "rtbDescription";
             this.rtbDescription.ReadOnly = true;
@@ -286,6 +346,56 @@
             this.tabPage2.Text = "Boeking overzicht";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // cbTicketType
+            // 
+            this.cbTicketType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTicketType.FormattingEnabled = true;
+            this.cbTicketType.Location = new System.Drawing.Point(107, 56);
+            this.cbTicketType.Name = "cbTicketType";
+            this.cbTicketType.Size = new System.Drawing.Size(200, 21);
+            this.cbTicketType.TabIndex = 19;
+            this.cbTicketType.SelectedIndexChanged += new System.EventHandler(this.cbTicketType_SelectedIndexChanged);
+            // 
+            // rtbTicketTypes
+            // 
+            this.rtbTicketTypes.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.rtbTicketTypes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbTicketTypes.Location = new System.Drawing.Point(107, 83);
+            this.rtbTicketTypes.Name = "rtbTicketTypes";
+            this.rtbTicketTypes.ReadOnly = true;
+            this.rtbTicketTypes.Size = new System.Drawing.Size(323, 163);
+            this.rtbTicketTypes.TabIndex = 19;
+            this.rtbTicketTypes.Text = "";
+            // 
+            // nudTypeAmount
+            // 
+            this.nudTypeAmount.Enabled = false;
+            this.nudTypeAmount.Location = new System.Drawing.Point(313, 56);
+            this.nudTypeAmount.Name = "nudTypeAmount";
+            this.nudTypeAmount.Size = new System.Drawing.Size(50, 20);
+            this.nudTypeAmount.TabIndex = 28;
+            // 
+            // btnChoose
+            // 
+            this.btnChoose.Enabled = false;
+            this.btnChoose.Location = new System.Drawing.Point(369, 53);
+            this.btnChoose.Name = "btnChoose";
+            this.btnChoose.Size = new System.Drawing.Size(61, 23);
+            this.btnChoose.TabIndex = 29;
+            this.btnChoose.Text = "Kies";
+            this.btnChoose.UseVisualStyleBackColor = true;
+            this.btnChoose.Click += new System.EventHandler(this.btnChoose_Click);
+            // 
+            // lblTicketType
+            // 
+            this.lblTicketType.AutoSize = true;
+            this.lblTicketType.Enabled = false;
+            this.lblTicketType.Location = new System.Drawing.Point(52, 59);
+            this.lblTicketType.Name = "lblTicketType";
+            this.lblTicketType.Size = new System.Drawing.Size(31, 13);
+            this.lblTicketType.TabIndex = 30;
+            this.lblTicketType.Text = "Type";
+            // 
             // AttractionUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -295,10 +405,13 @@
             this.Size = new System.Drawing.Size(970, 645);
             this.tabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.gbBookTickets.ResumeLayout(false);
+            this.gbBookTickets.PerformLayout();
             this.gbSearchAttraction.ResumeLayout(false);
             this.gbSearchAttraction.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAttractions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.attractieBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTypeAmount)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -327,5 +440,14 @@
         private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.DataGridViewTextBoxColumn attractionIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn naamDataGridViewTextBoxColumn;
+        private System.Windows.Forms.GroupBox gbBookTickets;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.DateTimePicker dtpDate;
+        private System.Windows.Forms.Button btnBookTickets;
+        private System.Windows.Forms.Label lblTicketType;
+        private System.Windows.Forms.Button btnChoose;
+        private System.Windows.Forms.NumericUpDown nudTypeAmount;
+        private System.Windows.Forms.RichTextBox rtbTicketTypes;
+        private System.Windows.Forms.ComboBox cbTicketType;
     }
 }
